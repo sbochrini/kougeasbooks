@@ -1,0 +1,24 @@
+ol li {
+    font-size: 12px;
+}
+
+/*.toggle.ios, .toggle-on.ios, .toggle-off.ios {
+    border-radius: 15px;
+}
+
+.toggle.ios .toggle-handle {
+    border-radius: 15px;
+}*/
+label.toggle-on, label.toggle-off{
+    font-size: 8px;
+}
+
+.div_subcat_checkboxes{
+    font-size: 12px;
+    padding-left: 20px;
+}
+
+
+/*.nav li.active{
+    color: white;
+}*/
