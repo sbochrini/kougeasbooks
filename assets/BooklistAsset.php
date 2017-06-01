@@ -18,24 +18,30 @@ class BooklistAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-
         'assets\jplist\dist\css\jplist.core.min.css',
+        'http://fonts.googleapis.com/css?family=Lato',
+        'http://code.jquery.com/ui/1.12.0-rc.1/themes/smoothness/jquery-ui.css',
+        'assets\jplist\dist\css\jplist.demo-pages.min.css',
+        'assets\jplist\dist\css\jplist.jquery-ui-bundle.min.css',
         'assets\jplist\dist\css\jplist.textbox-filter.min.css',
         'assets\jplist\dist\css\jplist.pagination-bundle.min.css',
-        //'https://cdn.datatables.net/v/bs-3.3.7/jq-2.2.4/dt-1.10.15/r-2.1.1/datatables.min.css'
+        'assets\jplist\dist\css\jplist.history-bundle.min.css',
+        'assets\jplist\dist\css\jplist.filter-toggle-bundle.min.css',
+        'assets\jplist\dist\css\jplist.list-grid-view.min.css',
 
     ];
     public $js = [
-//        'assets\jplist\dist\js\lib\require.js',
-        'assets\jplist\dist\js\jplist.core-ajax.min.js',
+        'assets\jplist\dist\js\jplist.core.min.js',
         'assets\jplist\dist\js\jplist.sort-bundle.min.js',
-        'assets\jplist\dist\js\jplist.pagination-bundle.min.js',
         'assets\jplist\dist\js\jplist.textbox-filter.min.js',
-        //'assets\js\jquery-3.1.1.min.js'
-        //'https://cdn.datatables.net/v/bs-3.3.7/jq-2.2.4/dt-1.10.15/r-2.1.1/datatables.min.js'
+        'assets\jplist\dist\js\jplist.pagination-bundle.min.js',
+        'assets\jplist\dist\js\jplist.history-bundle.min.js',
+        'assets\jplist\dist\js\jplist.filter-toggle-bundle.min.js',
+        'assets\jplist\dist\js\jplist.list-grid-view.min.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+        //'\app\assets\EshopperAsset'
     ];
 }

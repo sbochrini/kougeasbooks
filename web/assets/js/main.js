@@ -40,3 +40,43 @@ $(function() {
     }
 
 });
+$('document').ready(function(){
+
+    /**
+     * user defined functions
+     */
+    jQuery.fn.jplist.settings = {
+
+        /**
+         * PRICE: jquery ui range slider
+         */
+        priceSlider: function ($slider, $prev, $next){
+
+            $slider.slider({
+                min: 0,
+                max: 100,
+                range: true,
+                values: [0, 100],
+                slide: function (event, ui){
+                    $prev.text(ui.values[0]+' €');
+                    $next.text(ui.values[1]+' €');
+                }
+            });
+        }
+
+        /**
+         * PRICE: jquery ui set values
+         */
+        ,priceValues: function ($slider, $prev, $next){
+
+            $prev.text($slider.slider('values', 0)+' €');
+            $next.text($slider.slider('values', 1)+' €');
+        }
+    };
+
+    $('#demo').jplist({
+        itemsBox: '.list',
+        itemPath: '.list-item',
+        panelPath: '.jplist-panel'
+    });
+});

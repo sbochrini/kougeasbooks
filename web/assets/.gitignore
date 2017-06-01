@@ -2,3 +2,7 @@
 !.gitignore
 !js/
 !js/*
+!bootstrap-toggle-master/
+!bootstrap-toggle-master/*
+!jplist/
+!jplist/*

@@ -10,12 +10,12 @@ use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 use app\components\CategoryWidget;
 use yii\helpers\Url;
-//use app\assets\BooklistAsset;
+use app\assets\BooklistAsset;
 //use app\assets\JPagesAsset;
 use app\assets\EshopperAsset;
 
 AppAsset::register($this);
-//BooklistAsset::register($this);
+BooklistAsset::register($this);
 EshopperAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -34,7 +34,6 @@ EshopperAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -111,7 +110,7 @@ EshopperAsset::register($this);
     NavBar::end();
     ?>
 
-    <div class="">
+    <div class="container">
         <?= Breadcrumbs::widget([
             'homeLink' => [
                 'label' => 'Αρχική',
@@ -119,8 +118,8 @@ EshopperAsset::register($this);
             ],
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
-    </div>
-    <div class="">
+    <!--</div>
+    <div class="">-->
         <div class="row">
             <div class="col-sm-3">
                 <div class="left-sidebar">
@@ -129,9 +128,9 @@ EshopperAsset::register($this);
                 </div>
             </div>
             <div class="col-sm-9">
-                <div id="mainpage" class="container">
+                <!--<div id="mainpage" >-->
                     <?= $content ?>
-                </div>
+                <!--</div>-->
             </div>
         <div>
     </div>

@@ -23,7 +23,7 @@ class AppAsset extends AssetBundle
 
     ];
     public $js = [
-       //'assets\js\jquery-3.1.1.min.js'
+       'assets\js\main.js'
         //'https://cdn.datatables.net/v/bs-3.3.7/jq-2.2.4/dt-1.10.15/r-2.1.1/datatables.min.js'
 
     ];
