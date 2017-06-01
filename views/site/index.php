@@ -113,15 +113,17 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
     </section><!--/slider-->
-    <div class="col-sm-12 ">
+    <div class="col-sm-12">
         <div class="features_items"><!--features_items-->
             <h2 class="title text-center">Features Items</h2>
             <?php
-            $i=1;
+           // $i=1;
             foreach ($fav_books as $fav_book):
-                if(fmod($i,4)==0){
+               // $open_div=0;
+                /*if($i==1 || fmod($i,4)==1){
                     echo '<div class="row">';
-                }
+                   // $open_div=1;
+                }*/
 
                 echo '<div class="col-sm-3">';
                     echo '<div class="product-image-wrapper">';
@@ -134,13 +136,13 @@ $this->params['breadcrumbs'][] = $this->title;
                             }
                                     echo '<h2>'.$fav_book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2>';
                                     echo '<p>'.$fav_book->bk_title.'</p>';
-                                    echo '<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>';
+                                    echo '<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Λεπτομέρειες</a>';
                             echo '</div>';
                             echo '<div class="product-overlay">';
                             echo '<div class="overlay-content">';
                             echo '<h2>'.$fav_book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2>';
                             echo '<p>'.$fav_book->bk_title.'</p>';
-                            echo '<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>';
+                            echo '<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Λεπτομέρειες</a>';
                         echo '</div>';
                      echo '</div>';
                 echo '</div>';
@@ -152,11 +154,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
-                if(fmod($i,4)==0){
+                /*if( fmod($i,4)==0 || $i==(count($fav_books)+1)){
                     echo '</div>';
                 }
-
-                $i++;
+                $i++;*/
             endforeach;
             ?>
         </div><!--features_items-->
@@ -193,6 +194,5 @@ $this->params['breadcrumbs'][] = $this->title;
                 <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
             </div>
         </div>-->
-
     </div>
 </div>
