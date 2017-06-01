@@ -110,7 +110,7 @@ EshopperAsset::register($this);
     NavBar::end();
     ?>
 
-    <div class="container">
+    <div class="">
         <?= Breadcrumbs::widget([
             'homeLink' => [
                 'label' => 'Αρχική',
