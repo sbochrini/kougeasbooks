@@ -39,11 +39,11 @@ $this->params['breadcrumbs'][] = $model->cat_name;
                     [
                         'label'=>'Υποκατηγορίες',
                         'format' => 'html',
-                        'value' => function($model,$subcat_items) use ($subcat_items){
+                        'value' => function($model,$subcatitems) use ($subcat_items){
                             if($model->cat_subcat==0){
                                 return "<span class='not-set'>Δεν υπάρχουν υποκατηγορίες.</span>";
                             }else{
-                                return implode('<br>',$subcat_items);
+                                return implode('<br>',$subcatitems);
                             }
                         },
                     ]

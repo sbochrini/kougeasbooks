@@ -23,9 +23,9 @@ use dosamigos\google\maps\layers\BicyclingLayer;
 $this->title = 'Επικοινωνία';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-contact">
+<!--<div class="site-contact">
     <div class="page-header">
-        <h3><?= Html::encode($this->title) ?></h3>
+        <h3><?/*= Html::encode($this->title) */?></h3>
     </div>
 
     <style>
@@ -77,7 +77,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
         <div class="row content">
-            <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
+            <?php /*if (Yii::$app->session->hasFlash('contactFormSubmitted')): */?>
 
                 <div class="alert alert-success">
                     Thank you for contacting us. We will respond to you as soon as possible.
@@ -86,15 +86,15 @@ $this->params['breadcrumbs'][] = $this->title;
                 <p>
                     Note that if you turn on the Yii debugger, you should be able
                     to view the mail message on the mail panel of the debugger.
-                    <?php if (Yii::$app->mailer->useFileTransport): ?>
+                    <?php /*if (Yii::$app->mailer->useFileTransport): */?>
                         Because the application is in development mode, the email is not sent but saved as
-                        a file under <code><?= Yii::getAlias(Yii::$app->mailer->fileTransportPath) ?></code>.
+                        a file under <code><?/*= Yii::getAlias(Yii::$app->mailer->fileTransportPath) */?></code>.
                         Please configure the <code>useFileTransport</code> property of the <code>mail</code>
                         application component to be false to enable email sending.
-                    <?php endif; ?>
+                    <?php /*endif; */?>
                 </p>
 
-            <?php else: ?>
+            <?php /*else: */?>
 
                 <p>
                     Αν θέλετε να επικοινωνήσουμε μαζί σας, συμπληρώστε τη φόρμα που ακολουθεί, γράψτε μας στη θέση "Κείμενο" τι ακριβώς θέλετε, και πατήστε "Αποστολή".
@@ -103,31 +103,112 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="row">
                     <div class="col-lg-12">
 
-                        <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
+                        <?php /*$form = ActiveForm::begin(['id' => 'contact-form']); */?>
                         <div class="row">
                             <div class="col-lg-6">
-                                <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
+                                <?/*= $form->field($model, 'name')->textInput(['autofocus' => true]) */?>
                             </div>
                             <div class="col-lg-6">
-                                <?= $form->field($model, 'email') ?>
+                                <?/*= $form->field($model, 'email') */?>
                             </div>
                         </div>
-                            <?= $form->field($model, 'subject') ?>
+                            <?/*= $form->field($model, 'subject') */?>
 
-                            <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
+                            <?/*= $form->field($model, 'body')->textarea(['rows' => 6]) */?>
 
-                            <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
+                            <?/*= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
                                 'template' => '<div class="row"><div class="col-lg-5">{image}</div><div class="col-lg-5">{input}</div></div>',
-                            ]) ?>
+                            ]) */?>
 
                             <div class="form-group">
-                                <?= Html::submitButton('Αποστολή', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
+                                <?/*= Html::submitButton('Αποστολή', ['class' => 'btn btn-primary', 'name' => 'contact-button']) */?>
                             </div>
 
-                        <?php ActiveForm::end(); ?>
+                        <?php /*ActiveForm::end(); */?>
                     </div>
                 </div>
-            <?php endif; ?>
+            <?php /*endif; */?>
         </div>
-</div>
-
+</div>-->
+<div id="contact-page">
+    <div class="bg">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="title text-center"><strong>ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ</strong></h2>
+                <div id="gmap" class="contact-map">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="contact-form">
+                    <h2 class="title text-center">Get In Touch</h2>
+                    <div class="status alert alert-success" style="display: none"></div>
+                    <form id="main-contact-form" class="contact-form row" name="contact-form" method="post">
+                        <div class="form-group col-md-6">
+                            <input type="text" name="name" class="form-control" required="required" placeholder="Ονοματεπώνυμο">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="email" name="email" class="form-control" required="required" placeholder="Email">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <input type="text" name="subject" class="form-control" required="required" placeholder="Θέμα">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Μήνυμα"></textarea>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <input type="submit" name="submit" class="btn btn-primary pull-right" value="Αποστολή">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="contact-info">
+                    <h2 class="title text-center">Contact Info</h2>
+                    <address>
+                        <p>Παλιοβιβλιοπωλείο Ι. Κουγέας.</p>
+                        <p>935 W. Webster Ave New Streets Chicago, IL 60614, NY</p>
+                        <p>Newyork USA</p>
+                        <p>Mobile: +2346 17 38 93</p>
+                        <p>Fax: 1-714-252-0026</p>
+                        <p>Email: info@kougeasbooks.gr</p>
+                    </address>
+                    <div class="social-networks">
+                        <h2 class="title text-center">Social Networking</h2>
+                        <ul>
+                            <li>
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-youtube"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--/#contact-page-->
+<script>
+    function initMap() {
+        var uluru = {lat: 37.976889, lng: 23.723007};
+        var map = new google.maps.Map(document.getElementById('gmap'), {
+            zoom: 16,
+            center: uluru
+        });
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+        });
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeDM9r2cdsC5v2O343dzCKhgRpY1mnO0M&callback=initMap">
+</script>
