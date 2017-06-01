@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $model->cat_name;
                             if($model->cat_subcat==0){
                                 return "<span class='not-set'>Δεν υπάρχουν υποκατηγορίες.</span>";
                             }else{
-                                return implode('<br>',$subcatitems);
+                                return implode('<br>',$subcat_items);
                             }
                         },
                     ]

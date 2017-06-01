@@ -111,7 +111,8 @@ EshopperAsset::register($this);
     NavBar::end();
     ?>
 
-    <div class="">
+    <div class="container" style="padding-top: 20px;">
+
         <?= Breadcrumbs::widget([
             'homeLink' => [
                 'label' => 'Αρχική',
@@ -119,13 +120,13 @@ EshopperAsset::register($this);
             ],
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
-    </div>
-    <div class="container">
+    <!--</div>-->
+    <!--<div class="">-->
        <!-- <div class="row">-->
-            <div class="col-sm-9">
+
                 <div id="mainpage" class="container">
                     <?= $content ?>
-                </div>
+
             </div>
        <!-- <div>-->
     </div>

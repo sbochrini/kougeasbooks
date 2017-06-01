@@ -234,8 +234,7 @@ class BookcategoryController extends Controller
         if(isset($_GET['view']) && $_GET['view']==1){
             return $this->redirect(['index']);
         }else{
-            return $this->redirect(['index']);
-           // return $this->redirect(Yii::$app->request->referrer);
+            return $this->redirect(Yii::$app->request->referrer);
         }
     }
 

@@ -70,7 +70,11 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $categories = new BookCategory();
-        return $this->render('index',['categories'=>$categories]);
+        $fav_books =  Book::find()->where(['bk_favorite'=>1])->all();
+        return $this->render('index',[
+            'categories'=>$categories,
+            'fav_books'=>$fav_books,
+        ]);
     }
 
     /**

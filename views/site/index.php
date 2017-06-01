@@ -113,9 +113,55 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
     </section><!--/slider-->
-    <div class="body-content">
+    <div class="col-sm-12 ">
+        <div class="features_items"><!--features_items-->
+            <h2 class="title text-center">Features Items</h2>
+            <?php
+            $i=1;
+            foreach ($fav_books as $fav_book):
+                if(fmod($i,4)==0){
+                    echo '<div class="row">';
+                }
 
-        <div class="row">
+                echo '<div class="col-sm-3">';
+                    echo '<div class="product-image-wrapper">';
+                        echo '<div class="single-products">';
+                            echo '<div class="productinfo text-center">';
+                            if ($fav_book->bk_image_web_filename!='') {
+                                echo '<img src="' . Yii::$app->homeUrl . '/img/' . $fav_book->bk_image_web_filename . '" alt="" >';
+                            }else{
+                                echo '<img src="'.Yii::$app->homeUrl. '/pictures/no_image.png" alt="" >';
+                            }
+                                    echo '<h2>'.$fav_book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2>';
+                                    echo '<p>'.$fav_book->bk_title.'</p>';
+                                    echo '<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>';
+                            echo '</div>';
+                            echo '<div class="product-overlay">';
+                            echo '<div class="overlay-content">';
+                            echo '<h2>'.$fav_book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2>';
+                            echo '<p>'.$fav_book->bk_title.'</p>';
+                            echo '<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>';
+                        echo '</div>';
+                     echo '</div>';
+                echo '</div>';
+                echo '<div class="choose">';
+                echo '<ul class="nav nav-pills nav-justified">';
+                echo '<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>';
+                echo '<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>';
+                echo '</ul>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                if(fmod($i,4)==0){
+                    echo '</div>';
+                }
+
+                $i++;
+            endforeach;
+            ?>
+        </div><!--features_items-->
+
+        <!--<div class="row">
             <div class="col-lg-4">
                 <h2>Heading</h2>
 
@@ -146,7 +192,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
             </div>
-        </div>
+        </div>-->
 
     </div>
 </div>

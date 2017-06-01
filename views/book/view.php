@@ -30,6 +30,8 @@ $this->params['breadcrumbs'][] = $this->title;
             <?php
             if ($model->bk_image_web_filename!='') {
                 echo '<br /><p><img class="img-rounded" src="'.Yii::$app->homeUrl. '/img/'.$model->bk_image_web_filename.'"></p>';
+            }else{
+                echo '<br /><p><img class="img-rounded" src="'.Yii::$app->homeUrl. '/pictures/no_image.png"></p>';
             }
             ?>
         </div>
@@ -39,29 +41,38 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attributes' => [
                     //'bk_id',
                     'bk_title',
-                    'bkAuthor.auth_name',
+                    //'bkAuthor.auth_name',
+                    [
+                        'label'=>'Συγγραφέας',
+                        'format' => 'html',
+                        'value' => function($model){
+                            if($model->bk_author_id=="" || is_null($model->bk_author_id)){
+                                return "<span class='not-set'>Δεν έχει οριστεί.</span>";
+                            }else{
+                                return $model->bkAuthor['auth_name'];
+                            }
+                        },
+                    ],
                     'bkCat.cat_name',
                    // 'bkSubcat.subcat_name',
                     [
                         'label'=>'Υποκατηγορία',
                         'format' => 'html',
                         'value' => function($model){
-                            if($model->bk_subcat_id=="" || is_null($model->subcat_id)){
+                            if($model->bk_subcat_id=="" || is_null($model->bk_subcat_id)){
                                 return "<span class='not-set'>Δεν υπάρχει υποκατηγορία.</span>";
                             }else{
                                 return $model->bkSubcat['subcat_name'];
                             }
                         },
                     ],
-                   // 'bk_author_id',
-                    //'bk_cat_id',
                    // 'bk_publisher',
                     [
                         'label'=>'Εκδότης',
                         'format' => 'html',
                         'value' => function($model){
                             if($model->bk_publisher=="" || is_null($model->bk_publisher)){
-                                return "<span class='not-set'>Δεν υπάρχει υποκατηγορία.</span>";
+                                return "<span class='not-set'>Δεν έχει οριστεί.</span>";
                             }else{
                                 return $model->bk_publisher;
                             }
@@ -73,7 +84,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'format' => 'html',
                         'value' => function($model){
                             if($model->bk_pb_place=="" || is_null($model->bk_pb_place)){
-                                return "<span class='not-set'>Δεν υπάρχει υποκατηγορία.</span>";
+                                return "<span class='not-set'>Δεν έχει οριστεί.</span>";
                             }else{
                                 return $model->bk_pb_place;
                             }
@@ -85,13 +96,24 @@ $this->params['breadcrumbs'][] = $this->title;
                         'format' => 'html',
                         'value' => function($model){
                             if($model->bk_pb_year=="" || is_null($model->bk_pb_year)){
-                                return "<span class='not-set'>Δεν έχει οριστεί υποκατηγορία.</span>";
+                                return "<span class='not-set'>Δεν έχει οριστεί.</span>";
                             }else{
                                 return $model->bk_pb_year;
                             }
                         },
                     ],
-                    'bk_pages',
+                   // 'bk_pages',
+                    [
+                        'label'=>'Σελίδες',
+                        'format' => 'html',
+                        'value' => function($model){
+                            if($model->bk_pages=="" || is_null($model->bk_pages)){
+                                return "<span class='not-set'>Δεν έχει οριστεί.</span>";
+                            }else{
+                                return $model->bk_pages;
+                            }
+                        },
+                    ],
                     //'bk_price',
                     [
                         'label'=>'Τιμή',
