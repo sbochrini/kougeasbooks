@@ -9,7 +9,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <section id="slider"><!--slider-->
         <!--<div class="container">
             <div class="row">-->
-        <div class="col-sm-9">
+        <div class="col-sm-12">
             <div id="slider-carousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
@@ -122,10 +122,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                         <li><span data-path=".author" data-order="desc" data-type="text"><i class="fa fa-sort-alpha-desc"></i>  Συγγραφέας</span></li>
                                         <li><span data-path=".publisher" data-order="asc" data-type="text"><i class="fa fa-sort-alpha-asc"></i>  Εκδότης</span></li>
                                         <li><span data-path=".publisher" data-order="desc" data-type="text"><i class="fa fa-sort-alpha-desc"></i>  Εκδότης</span></li>
-                                        <!--li><span data-path=".year" data-order="asc" data-type="number">Έτος &uarr;</span></li>
-                                        <li><span data-path=".year" data-order="desc" data-type="number">Έτος &darr;</span></li-->
-                                        <li><span data-path=".price" data-order="asc" data-type="number"><i class="fa fa-sort-amount-asc"></i>  Τιμή αύξουσα</span></li>
-                                        <li><span data-path=".price" data-order="desc" data-type="number"><i class="fa fa-sort-amount-desc"></i>  Τιμή φθίνουσα</span></li>
+                                        <li><span data-path=".year" data-order="asc" data-type="number"><i class="fa fa-sort-amount-asc"></i> Χρονολογία</span></li>
+                                        <li><span data-path=".year" data-order="desc" data-type="number"><i class="fa fa-sort-amount-desc"></i> Χρονολογία</span></li>
+                                        <li><span data-path=".price" data-order="asc" data-type="number"><i class="fa fa-sort-amount-asc"></i>  Τιμή</span></li>
+                                        <li><span data-path=".price" data-order="desc" data-type="number"><i class="fa fa-sort-amount-desc"></i>  Τιμή</span></li>
                                     </ul>
                                 </div>
 
@@ -233,11 +233,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                         data-control-action="paging">
 
                                     <ul>
-                                        <li><span data-number="6"> 6 ανά σελίδα </span></li>
-                                        <li><span data-number="12"> 12 ανά σελίδα </span></li>
-                                        <li><span data-number="18" data-default="true"> 18 ανά σελίδα </span></li>
-                                        <li><span data-number="24"> 24 ανά σελίδα </span></li>
-                                        <li><span data-number="32"> 32 ανά σελίδα </span></li>
+                                        <li><span data-number="5"> 5 ανά σελίδα </span></li>
+										<li><span data-number="10"> 10 ανά σελίδα </span></li>
+										<li><span data-number="15" data-default="true"> 15 ανά σελίδα </span></li>
+										<li><span data-number="20"> 20 ανά σελίδα </span></li>
+										<li><span data-number="25"> 25 ανά σελίδα </span></li>
                                         <!--li><span data-number="all"> Προβολή όλων </span></li-->
                                     </ul>
                                 </div>
@@ -260,123 +260,138 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
                             </div>
                         </div>
+						<div class="list box text-shadow">
+							<!-- item 1 -->
+							<!--
+							<div class="list-item box">
+								
+								<div class="img">
+									<a href="https://en.wikipedia.org/wiki/GAZ-M20_Pobeda" title="">
+										<img src="<?php echo Yii::$app->homeUrl.'pictures/bookstore1.jpg';?>" alt="" title=""/>
+									</a>
+								</div>
 
-                        <?php
-                        // $i=1;
-                        echo '<div class="list box text-shadow">';
-                        ?>
-                        <div class="list-item box">
-                            <!-- img -->
-                            <div class="img">
-                                <a href="https://en.wikipedia.org/wiki/GAZ-M20_Pobeda" title="">
-                                    <img src="<?php echo Yii::$app->homeUrl.'pictures/bookstore1.jpg';?>" alt="" title=""/>
-                                </a>
-                            </div>
+								<div class="block">
+									<p class="title">
+										<a href="https://en.wikipedia.org/wiki/GAZ-M20_Pobeda" title="">ΑΑΑΑΑΑΑΑΑΑΑΑΑ </a>
+									</p>
+									<p>
+										<span class="header book-author">Συγγραφέας: </span>
+										<span class="author">ΑΑΑΑΑΑΑΑΑΑΑ.</span>
+									</p>
+									<p>
+										<span class="header book-publisher">Εκδότης: </span>
+										<span class="publisher">ΑΑΑΑΑΑΑΑΑΑΑΑ </span>
+									</p>
+									<p>
+										<span class="desc">Έτος: </span>
+										<span class="desc">1947</span>
+									</p>
+									<p>
+										<span class="header book-price">Τιμή: </span>
+										<span class="price"><span class="val">25.00</span> &euro;</span>
+									</p>
+									<p class="desc">ΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑ ΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑ.</p>
+								</div>
+							</div>
+							-->
 
-                            <!-- data -->
-                            <div class="block">
-                                <p class="title">
-                                    <a href="https://en.wikipedia.org/wiki/GAZ-M20_Pobeda" title="">ΑΑΑΑΑΑΑΑΑΑΑΑΑ </a>
-                                </p>
-                                <p>
-                                    <span class="header book-author">Συγγραφέας: </span>
-                                    <span class="author">ΑΑΑΑΑΑΑΑΑΑΑ.</span>
-                                </p>
-                                <p>
-                                    <span class="header book-publisher">Εκδότης: </span>
-                                    <span class="publisher">ΑΑΑΑΑΑΑΑΑΑΑΑ </span>
-                                </p>
-                                <p>
-                                    <span class="desc">Έτος: </span>
-                                    <span class="desc">1947</span>
-                                </p>
-                                <p>
-                                    <span class="header book-price">Τιμή: </span>
-                                    <span class="price"><span class="val">25.00</span> &euro;</span>
-                                </p>
-                                <p class="desc">ΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑ ΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑ.</p>
-                            </div>
-                        </div>
-
-                        <!-- item 2 -->
-                        <div class="list-item box">
-                            <!-- img -->
-                            <div class="img">
-                                <a href="https://en.wikipedia.org/wiki/GAZ-M20_Pobeda" title="">
-                                    <img src="<?php echo Yii::$app->homeUrl.'/pictures/bookstore2.jpg';?>" alt="" title=""/>
-                                </a>
-                            </div>
-
-                            <!-- data -->
-                            <div class="block">
-                                <p class="title">
-                                    <a href="https://en.wikipedia.org/wiki/GAZ-M20_Pobeda" title="">ΒΒΒΒΒΒΒΒΒ</a>
-                                </p>
-                                <p>
-                                    <span class="header book-author">Συγγραφέας: </span>
-                                    <span class="author">ΒΒΒΒΒΒΒΒΒ.</span>
-                                </p>
-                                <p>
-                                    <span class="header book-publisher">Εκδότης: </span>
-                                    <span class="publisher">ΒΒΒΒΒΒΒΒΒ</span>
-                                </p>
-                                <p>
-                                    <span class="desc">Έτος: </span>
-                                    <span class="desc">1946</span>
-                                </p>
-                                <p>
-                                    <span class="header book-price">Τιμή: </span>
-                                    <span class="price"><span class="val">21.00</span> &euro;</span>
-                                </p>
-                                <p class="desc">ΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒ ΒΒΒΒΒΒΒΒΒ.</p>
-                            </div>
-                        </div>
-                        <?php
-                        foreach ($fav_books as $fav_book):
-                            echo '<div class="list-item box">';
-                            echo '<div class="col-sm-3">';
-                            echo '<div class="product-image-wrapper">';
-                            echo '<div class="single-products">';
-                            echo '<div class="productinfo text-center">';
-                            echo '<div class="img">';
-                            echo '<a href="https://en.wikipedia.org/wiki/GAZ-M20_Pobeda" title="">';
-                            if ($fav_book->bk_image_web_filename!='') {
-                                echo '<img src="' . Yii::$app->homeUrl . 'img/' . $fav_book->bk_image_web_filename . '" alt="" >';
-                            }else{
-                                echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" >';
-                            }
-                            echo '</a>';
-                            echo '</div>';
-                            echo '<div class="block">';
-                            echo '<h2>'.$fav_book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2>';
-                            echo '<p class="title">'.$fav_book->bk_title.'</p>';
-                            echo ' <p>
-                                    <span class="header book-author">Συγγραφέας: </span>
-                                    <span class="author">ΒΒΒΒΒΒΒΒΒ.</span>
-                                </p>';
-                            echo '</div>';
-                            echo '<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Λεπτομέριες</a>';
-                            echo '</div>';
-                            echo '<div class="product-overlay">';
-                            echo '<div class="overlay-content">';
-                            echo '<h2>'.$fav_book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2>';
-                            echo '<p>'.$fav_book->bk_title.'</p>';
-                            echo '<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Λεπτομέριες</a>';
-                            echo '</div>';
-                            echo '</div>';
-                            echo '</div>';
-                            echo '<div class="choose">';
-                            echo '<ul class="nav nav-pills nav-justified">';
-                            echo '<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>';
-                            echo '<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>';
-                            echo '</ul>';
-                            echo '</div>';
-                            echo '</div>';
-                            echo '</div>';
-                            echo '</div>';
-                        endforeach;
-                        echo  '</div>'; //list box text-shadow
-                        ?>
+							<!-- item 2 -->
+							<!--
+							<div class="list-item box">
+								<div class="img">
+									<a href="https://en.wikipedia.org/wiki/GAZ-M20_Pobeda" title="">
+										<img src="<?php echo Yii::$app->homeUrl.'/pictures/bookstore2.jpg';?>" alt="" title=""/>
+									</a>
+								</div>
+							
+								<div class="block">
+									<p class="title">
+										<a href="https://en.wikipedia.org/wiki/GAZ-M20_Pobeda" title="">ΒΒΒΒΒΒΒΒΒ</a>
+									</p>
+									<p>
+										<span class="header book-author">Συγγραφέας: </span>
+										<span class="author">ΒΒΒΒΒΒΒΒΒ.</span>
+									</p>
+									<p>
+										<span class="header book-publisher">Εκδότης: </span>
+										<span class="publisher">ΒΒΒΒΒΒΒΒΒ</span>
+									</p>
+									<p>
+										<span class="desc">Έτος: </span>
+										<span class="desc">1946</span>
+									</p>
+									<p>
+										<span class="header book-price">Τιμή: </span>
+										<span class="price"><span class="val">21.00</span> &euro;</span>
+									</p>
+									<p class="desc">ΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒ ΒΒΒΒΒΒΒΒΒ.</p>
+								</div>
+							</div>
+							-->
+							<?php
+							foreach ($fav_books as $fav_book):
+							echo '<div class="list-item box">';
+								echo '<div class="product-image-wrapper">';
+								echo '<div class="single-products">';
+								echo '<div class="productinfo text-center">';
+								echo '<div class="img">';
+									echo '<a href="https://en.wikipedia.org/wiki/GAZ-M20_Pobeda" title="">';
+										if ($fav_book->bk_image_web_filename!='') {
+											echo '<img src="' . Yii::$app->homeUrl . 'img/' . $fav_book->bk_image_web_filename . '" alt="" title=""/>';
+										}else{
+											echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" >';
+										}
+									echo '</a>';
+								echo '</div>';
+								echo '<div class="block">';
+									echo '<p class="title">';
+									//echo '<h2>'.$fav_book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2>';
+									echo '<p class="title">'.$fav_book->bk_title.'</p>';
+										echo '<a href="https://en.wikipedia.org/wiki/GAZ-M20_Pobeda" title="">'.$fav_book->bk_price.'</a>';
+									echo '</p>';
+									echo ' <p>
+											<span class="header book-author">Συγγραφέας: </span>
+											<span class="author">'.$fav_book->bk_author_id.'</span>
+										</p>
+										<p>
+											<span class="header book-publisher">Εκδότης: </span>
+											<span class="publisher">'.$fav_book->bk_publisher.'</span>
+										</p>
+										<p>
+											<span class="year">Έτος: </span>
+											<span class="year">'.$fav_book->bk_pb_year.'</span>
+										</p>
+										<p>
+											<span class="header book-price">Τιμή: </span>
+											<span class="price"><span class="val">'.$fav_book->bk_price.'</span> &euro;</span>
+										</p>
+										<p class="desc">ΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒ ΒΒΒΒΒΒΒΒΒ.</p>';
+								echo '</div>';
+									echo '<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Λεπτομέριες</a>';
+									echo '</div>';
+									echo '<div class="product-overlay">';
+									echo '<div class="overlay-content">';
+									echo '<h2>'.$fav_book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2>';
+									echo '<p>'.$fav_book->bk_title.'</p>';
+									echo '<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Λεπτομέριες</a>';
+									echo '</div>';
+									echo '</div>';
+									echo '</div>';
+								
+								
+								echo '<div class="choose">';
+								echo '<ul class="nav nav-pills nav-justified">';
+								echo '<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>';
+								echo '<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>';
+								echo '</ul>';
+								echo '</div>';
+								echo '</div>';
+							echo '</div>';
+							
+							endforeach;
+							?>
+						</div> <!-- list box text-shadow -->
                         <div class="box jplist-no-results text-shadow align-center">
                             </br>
                             </br>
@@ -396,11 +411,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                     data-control-animate-to-top="true">
 
                                 <ul>
-                                    <li><span data-number="6"> 6 ανά σελίδα </span></li>
-                                    <li><span data-number="12"> 12 ανά σελίδα </span></li>
-                                    <li><span data-number="18" data-default="true"> 18 ανά σελίδα </span></li>
-                                    <li><span data-number="24"> 24 ανά σελίδα </span></li>
-                                    <li><span data-number="32"> 32 ανά σελίδα </span></li>
+                                    <li><span data-number="5"> 5 ανά σελίδα </span></li>
+									<li><span data-number="10"> 10 ανά σελίδα </span></li>
+									<li><span data-number="15" data-default="true"> 15 ανά σελίδα </span></li>
+									<li><span data-number="20"> 20 ανά σελίδα </span></li>
+									<li><span data-number="25"> 25 ανά σελίδα </span></li>
                                     <!--li><span data-number="all"> Προβολή όλων </span></li-->
                                 </ul>
                             </div>

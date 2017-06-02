@@ -4,5 +4,17 @@
 !js/*
 !bootstrap-toggle-master/
 !bootstrap-toggle-master/*
+!bootstrap-toggle-master/css/
+!bootstrap-toggle-master/css/*
+!bootstrap-toggle-master/doc/
+!bootstrap-toggle-master/doc/*
+!bootstrap-toggle-master/js/
+!bootstrap-toggle-master/js/*
 !jplist/
 !jplist/*
+!jplist/dist/
+!jplist/dist/*
+!jplist/dist/css/
+!jplist/dist/css/*
+!jplist/dist/js/
+!jplist/dist/js/*
