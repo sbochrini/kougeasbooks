@@ -304,12 +304,19 @@ $this->params['breadcrumbs'][] = $this->title;
 											<span class="header book-publisher">Εκδότης: </span>
 											<span class="publisher">'.$fav_book->bk_publisher.'</span>
 										</p>
-										<p>
-											<span class="header book-price"></span>
-											<span class="price"><span class="val"><h2 style="margin-top:0px;">'.$fav_book->bk_price.'</span> <i class="fa fa-eur" aria-hidden="true"></i></h2></span>
-										</p>';
+										<p>';
+                                if(is_null($fav_book->bk_price) || $fav_book->bk_price=""){
+                                    $bk_price="-";
+                                    $available='<h4><span class="label label-danger" role="alert">Μη διαθέσιμο</span><h4>';
+                                }else{
+                                    $bk_price=$fav_book->bk_price;
+                                    $available='<h4><span class="label label-success" role="alert"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Άμεσα διαθέσιμο</span><h4>';
+                                }
+								echo '<span class="header book-price"></span>
+											<span class="price"><span class="val"><h2 style="margin-top:0px;">'.$bk_price.'</span> <i class="fa fa-eur" aria-hidden="true"></i></h2></span>
+										</p><p>'.$available.'</p>';
                                 echo '</div>';
-                                echo '<a href="#" class="btn btn-default add-to-cart" style="margin-bottom:0px;"><i class="fa fa-shopping-cart"></i>Λεπτομέρειες</a>';
+                               // echo '<a href="#" class="btn btn-default add-to-cart" style="margin-bottom:0px;"><i class="fa fa-shopping-cart"></i>Λεπτομέρειες</a>';
                                 echo '</div>';
                                 /*echo '<div class="product-overlay">';
                                 echo '<div class="overlay-content">';
@@ -321,12 +328,12 @@ $this->params['breadcrumbs'][] = $this->title;
                                 echo '</div>';
 
 
-                                /*echo '<div class="choose">';
+                                echo '<div class="choose">';
                                 echo '<ul class="nav nav-pills nav-justified">';
-                                echo '<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>';
-                                echo '<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>';
+                                echo '<li><a href="#"><i class="fa fa-search-plus"></i>Λεπτομέρειες</a></li>';
+                                echo '<li><a href="#"><i class="fa fa-shopping-cart"></i>Άμεση Παραγγελία</a></li>';
                                 echo '</ul>';
-                                echo '</div>';*/
+                                echo '</div>';
                                 echo '</div>';
                                 echo '</div>';
 
