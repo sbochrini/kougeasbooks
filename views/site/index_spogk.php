@@ -1,15 +1,11 @@
 <?php
-use app\components\CategoryWidget;
 
 /* @var $this yii\web\View */
 
 /*$this->title = 'Κουγέας';*/
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<!--<div class="site-index">-->
-<div class="row">
-    <div class="col-sm-1"></div>
-    <div class="col-sm-10">
+<div class="site-index">
     <section id="slider"><!--slider-->
         <!--<div class="container">
             <div class="row">-->
@@ -73,17 +69,7 @@ $this->params['breadcrumbs'][] = $this->title;
          </div>-->
         </div>
     </section><!--/slider-->
-</div>
-    <div class="col-sm-1"></div>
-</div>
-<div class="row">
-    <div class="col-sm-3">
-        <div class="left-sidebar">
-            <h2>ΚΑΤΗΓΟΡΙΕΣ</h2>
-            <?= CategoryWidget::widget() ?>
-        </div>
-    </div>
-    <div class="col-sm-9">
+    <div class="col-sm-12">
         <div class="features_items"><!--features_items-->
             <h2 class="title text-center">Features Items</h2>
             <div class="box">
@@ -171,7 +157,6 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <!--[if lt IE 10]>
                                     <div class="jplist-label">Filter by Title:</div>
                                     <![endif]-->
-
                                     <input
                                             data-path=".title"
                                             type="text"
@@ -204,15 +189,15 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
 
                                 <!-- filter by publisher -->
-                                <div class="text-filter-box">
+                                <!--<div class="text-filter-box">
 
-                                    <i class="fa fa-search  jplist-icon"></i>
+                                    <i class="fa fa-search  jplist-icon"></i>-->
 
                                     <!--[if lt IE 10]>
-                                    <div class="jplist-label">Filter by Description:</div>
+                                    <<!--div class="jplist-label">Filter by Description:</div>-->
                                     <![endif]-->
 
-                                    <input
+                                    <!--<input
                                             data-path=".publisher"
                                             type="text"
                                             value=""
@@ -221,10 +206,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                             data-control-name="publisher-filter"
                                             data-control-action="filter"
                                     />
-                                </div>
+                                </div>-->
 
                                 <!-- views -->
-
                                 <div
                                         class="jplist-views"
                                         data-control-type="views"
@@ -232,9 +216,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                         data-control-action="views"
                                         data-default="jplist-grid-view">
 
-                                    <!--button type="button" class="jplist-view jplist-grid-view" data-type="jplist-grid-view"></button>
+                                    <button type="button" class="jplist-view jplist-grid-view" data-type="jplist-grid-view"></button>
                                     <button type="button" class="jplist-view jplist-list-view" data-type="jplist-list-view"></button>
-                                    <button type="button" class="jplist-view jplist-thumbs-view" data-type="jplist-thumbs-view"></button-->
+                                    <!--button type="button" class="jplist-view jplist-thumbs-view" data-type="jplist-thumbs-view"></button-->
                                 </div>
                             </div>
 
@@ -248,12 +232,12 @@ $this->params['breadcrumbs'][] = $this->title;
                                         data-control-action="paging">
 
                                     <ul>
-                                       <!-- <li><span data-number="6"> 6 ανά σελίδα </span></li>-->
-                                        <li><span data-number="12"> 12 ανά σελίδα </span></li>
-                                        <li><span data-number="16" data-default="true"> 16 ανά σελίδα </span></li>
-                                        <li><span data-number="24"> 24 ανά σελίδα </span></li>
-                                        <li><span data-number="32"> 32 ανά σελίδα </span></li>
-                                        <li><span data-number="all"> Προβολή όλων </span></li>
+                                        <li><span data-number="5"> 5 ανά σελίδα </span></li>
+										<li><span data-number="10"> 10 ανά σελίδα </span></li>
+										<li><span data-number="15" data-default="true"> 15 ανά σελίδα </span></li>
+										<li><span data-number="20"> 20 ανά σελίδα </span></li>
+										<li><span data-number="25"> 25 ανά σελίδα </span></li>
+                                        <!--li><span data-number="all"> Προβολή όλων </span></li-->
                                     </ul>
                                 </div>
 
@@ -275,64 +259,130 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
                             </div>
                         </div>
-                        <div class="list box text-shadow">
-                            <?php
-                            foreach ($fav_books as $fav_book):
-                                echo '<div class="list-item box">';
-                                echo '<div class="product-image-wrapper">';
-                                echo '<div class="single-products">';
-                                echo '<div class="productinfo text-center">';
-                                echo '<div class="img">';
-                                echo '<a href="https://en.wikipedia.org/wiki/GAZ-M20_Pobeda" title="">';
-                                if (file_exists(Yii::$app->homeUrl . 'img/' . $fav_book->bk_image_web_filename)) {
-                                    echo '<img src="' . Yii::$app->homeUrl . 'img/' . $fav_book->bk_image_web_filename . '" alt="" title=""/>';
-                                }else{
-                                    echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" >';
-                                }
-                                echo '</a>';
-                                echo '</div>';
-                                echo '<div class="block">';
-                                //echo '<h2>'.$fav_book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2>';
-                                echo '<p class="title">'.$fav_book->bk_title.'</p>';
-                                //echo '<a href="https://en.wikipedia.org/wiki/GAZ-M20_Pobeda" title="">'.$fav_book->bk_price.' &euro;</a>';
-                                echo '</p>';
-                                echo ' <p>
+						<div class="list box text-shadow">
+							<!-- item 1 -->
+							<!--
+							<div class="list-item box">
+								
+								<div class="img">
+									<a href="https://en.wikipedia.org/wiki/GAZ-M20_Pobeda" title="">
+										<img src="<?php echo Yii::$app->homeUrl.'pictures/bookstore1.jpg';?>" alt="" title=""/>
+									</a>
+								</div>
+
+								<div class="block">
+									<p class="title">
+										<a href="https://en.wikipedia.org/wiki/GAZ-M20_Pobeda" title="">ΑΑΑΑΑΑΑΑΑΑΑΑΑ </a>
+									</p>
+									<p>
+										<span class="header book-author">Συγγραφέας: </span>
+										<span class="author">ΑΑΑΑΑΑΑΑΑΑΑ.</span>
+									</p>
+									<p>
+										<span class="header book-publisher">Εκδότης: </span>
+										<span class="publisher">ΑΑΑΑΑΑΑΑΑΑΑΑ </span>
+									</p>
+									<p>
+										<span class="desc">Έτος: </span>
+										<span class="desc">1947</span>
+									</p>
+									<p>
+										<span class="header book-price">Τιμή: </span>
+										<span class="price"><span class="val">25.00</span> &euro;</span>
+									</p>
+									<p class="desc">ΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑ ΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑΑ.</p>
+								</div>
+							</div>
+							-->
+
+							<!-- item 2 -->
+							<!--
+							<div class="list-item box">
+								<div class="img">
+									<a href="https://en.wikipedia.org/wiki/GAZ-M20_Pobeda" title="">
+										<img src="<?php echo Yii::$app->homeUrl.'/pictures/bookstore2.jpg';?>" alt="" title=""/>
+									</a>
+								</div>
+							
+								<div class="block">
+									<p class="title">
+										<a href="https://en.wikipedia.org/wiki/GAZ-M20_Pobeda" title="">ΒΒΒΒΒΒΒΒΒ</a>
+									</p>
+									<p>
+										<span class="header book-author">Συγγραφέας: </span>
+										<span class="author">ΒΒΒΒΒΒΒΒΒ.</span>
+									</p>
+									<p>
+										<span class="header book-publisher">Εκδότης: </span>
+										<span class="publisher">ΒΒΒΒΒΒΒΒΒ</span>
+									</p>
+									<p>
+										<span class="desc">Έτος: </span>
+										<span class="desc">1946</span>
+									</p>
+									<p>
+										<span class="header book-price">Τιμή: </span>
+										<span class="price"><span class="val">21.00</span> &euro;</span>
+									</p>
+									<p class="desc">ΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒ ΒΒΒΒΒΒΒΒΒ.</p>
+								</div>
+							</div>
+							-->
+							<?php
+							foreach ($fav_books as $fav_book):
+							echo '<div class="list-item box">';
+								echo '<div class="product-image-wrapper">';
+								echo '<div class="single-products">';
+								echo '<div class="productinfo text-center">';
+								echo '<div class="img">';
+									echo '<a href="https://en.wikipedia.org/wiki/GAZ-M20_Pobeda" title="">';
+										if ($fav_book->bk_image_web_filename!='') {
+											echo '<img src="' . Yii::$app->homeUrl . 'img/' . $fav_book->bk_image_web_filename . '" alt="" title=""/>';
+										}else{
+											echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" >';
+										}
+									echo '</a>';
+								echo '</div>';
+								echo '<div class="block">';
+									echo '<p class="title">';
+									//echo '<h2>'.$fav_book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2>';
+									echo '<p class="title">'.$fav_book->bk_title.'</p>';
+										echo '<a href="https://en.wikipedia.org/wiki/GAZ-M20_Pobeda" title="">'.$fav_book->bk_price.'</a>';
+									echo '</p>';
+									echo ' <p>
 											<span class="header book-author">Συγγραφέας: </span>
-											<span class="author">'.$fav_book->bkAuthor['auth_name'].'</span>
+											<span class="author">'.$fav_book->bk_author_id.'</span>
 										</p>
 										<p>
-											<span class="header book-publisher">Εκδότης: </span>
-											<span class="publisher">'.$fav_book->bk_publisher.'</span>
+											<span class="header book-price">Τιμή: </span>
+											<span class="price"><span class="val"><h2>'.$fav_book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2></span></span>
 										</p>
-										<p>
-											<span class="header book-price"></span>
-											<span class="price"><span class="val"><h2 style="margin-top:0px;">'.$fav_book->bk_price.'</span> <i class="fa fa-eur" aria-hidden="true"></i></h2></span>
-										</p>';
-                                echo '</div>';
-                                echo '<a href="#" class="btn btn-default add-to-cart" style="margin-bottom:0px;"><i class="fa fa-shopping-cart"></i>Λεπτομέρειες</a>';
-                                echo '</div>';
-                                /*echo '<div class="product-overlay">';
-                                echo '<div class="overlay-content">';
-                                echo '<h2>'.$fav_book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2>';
-                                echo '<p>'.$fav_book->bk_title.'</p>';
-                                echo '<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Λεπτομέριες</a>';
-                                echo '</div>';
-                                echo '</div>';*/
-                                echo '</div>';
+										<p class="desc">ΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒΒ ΒΒΒΒΒΒΒΒΒ.</p>';
+								echo '</div>';
+									echo '<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Λεπτομέριες</a>';
+									echo '</div>';
+									/*echo '<div class="product-overlay">';
+									echo '<div class="overlay-content">';
+									echo '<h2>'.$fav_book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2>';
+									echo '<p>'.$fav_book->bk_title.'</p>';
+									echo '<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Λεπτομέριες</a>';
+									echo '</div>';
+									echo '</div>';*/
+									echo '</div>';
 
 
-                                /*echo '<div class="choose">';
-                                echo '<ul class="nav nav-pills nav-justified">';
-                                echo '<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>';
-                                echo '<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>';
-                                echo '</ul>';
-                                echo '</div>';*/
-                                echo '</div>';
-                                echo '</div>';
-
-                            endforeach;
-                            ?>
-                        </div> <!-- list box text-shadow -->
+								echo '<div class="choose">';
+								echo '<ul class="nav nav-pills nav-justified">';
+								echo '<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>';
+								echo '<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>';
+								echo '</ul>';
+								echo '</div>';
+								echo '</div>';
+							echo '</div>';
+							
+							endforeach;
+							?>
+						</div> <!-- list box text-shadow -->
                         <div class="box jplist-no-results text-shadow align-center">
                             </br>
                             </br>
@@ -343,7 +393,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <!-- panel -->
                         <div class="jplist-panel box panel-bottom">
 
-                            <!-- items per page dropdown
+                            <!-- items per page dropdown -->
                             <div
                                     class="jplist-drop-down"
                                     data-control-type="items-per-page-drop-down"
@@ -352,15 +402,14 @@ $this->params['breadcrumbs'][] = $this->title;
                                     data-control-animate-to-top="true">
 
                                 <ul>
-                                    <li><span data-number="6"> 6 ανά σελίδα </span></li>
-									<li><span data-number="12"> 12 ανά σελίδα </span></li>
-									<li><span data-number="18" data-default="true"> 18 ανά σελίδα </span></li>
-									<li><span data-number="24"> 24 ανά σελίδα </span></li>
-									<li><span data-number="30"> 30 ανά σελίδα </span></li>
-									<li><span data-number="all"> Προβολή όλων </span></li>
+                                    <li><span data-number="5"> 5 ανά σελίδα </span></li>
+									<li><span data-number="10"> 10 ανά σελίδα </span></li>
+									<li><span data-number="15" data-default="true"> 15 ανά σελίδα </span></li>
+									<li><span data-number="20"> 20 ανά σελίδα </span></li>
+									<li><span data-number="25"> 25 ανά σελίδα </span></li>
+                                    <!--li><span data-number="all"> Προβολή όλων </span></li-->
                                 </ul>
                             </div>
-							-->
 
                             <!-- pagination results -->
                             <div
@@ -386,4 +435,3 @@ $this->params['breadcrumbs'][] = $this->title;
         </div><!--features_items-->
     </div>
 </div>
-<!--</div>-->

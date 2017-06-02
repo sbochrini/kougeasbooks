@@ -888,6 +888,7 @@ h2.title {
 
 .productinfo{
  position:relative;
+ min-height: 360px;
 }
 
 .product-overlay {

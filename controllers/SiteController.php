@@ -69,6 +69,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $this->layout='main_without_catlist';
         $categories = new BookCategory();
         $fav_books =  Book::find()->where(['bk_favorite'=>1])->all();
         return $this->render('index',[

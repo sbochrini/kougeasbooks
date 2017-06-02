@@ -8,14 +8,13 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
-use app\components\CategoryWidget;
 use yii\helpers\Url;
-//use app\assets\BooklistAsset;
+use app\assets\BooklistAsset;
 //use app\assets\JPagesAsset;
 use app\assets\EshopperAsset;
 
 AppAsset::register($this);
-//BooklistAsset::register($this);
+BooklistAsset::register($this);
 EshopperAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -111,7 +110,7 @@ EshopperAsset::register($this);
     NavBar::end();
     ?>
 
-    <div class="container" style="padding-top: 20px;">
+    <div  class="row" style="padding-top: 20px;"> <!--class="container"-->
 
         <?= Breadcrumbs::widget([
             'homeLink' => [
@@ -120,16 +119,14 @@ EshopperAsset::register($this);
             ],
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
-    <!--</div>-->
+    </div>
     <!--<div class="">-->
        <!-- <div class="row">-->
 
-                <div id="mainpage" class="container">
-                    <?= $content ?>
-
-            </div>
+        <div  class="row"><!--class="container"-->
+            <?= $content ?>
+        </div>
        <!-- <div>-->
-    </div>
 </div>
 
 <footer id="footer"><!--Footer-->
