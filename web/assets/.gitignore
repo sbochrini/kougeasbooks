@@ -2,6 +2,8 @@
 !.gitignore
 !js/
 !js/*
+!js/eshopper/
+!js/eshopper/*
 !bootstrap-toggle-master/
 !bootstrap-toggle-master/*
 !bootstrap-toggle-master/css/
