@@ -305,7 +305,7 @@ $this->params['breadcrumbs'][] = $this->title;
 											<span class="publisher">'.$fav_book->bk_publisher.'</span>
 										</p>
 										<p>';
-                                if(is_null($fav_book->bk_price) || $fav_book->bk_price=""){
+                                if(is_null($fav_book->bk_price) || $fav_book->bk_price==""){
                                     $bk_price="-";
                                     $available='<h4><span class="label label-danger" role="alert">Μη διαθέσιμο</span><h4>';
                                 }else{
