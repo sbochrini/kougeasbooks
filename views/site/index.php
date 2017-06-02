@@ -1,5 +1,6 @@
 <?php
 use app\components\CategoryWidget;
+use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 
@@ -283,7 +284,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 echo '<div class="single-products">';
                                 echo '<div class="productinfo text-center">';
                                 echo '<div class="img">';
-                                echo '<a href="https://en.wikipedia.org/wiki/GAZ-M20_Pobeda" title="">';
+                                echo '<a href=# title="">';
                                 if (file_exists(Yii::$app->homeUrl . 'img/' . $fav_book->bk_image_web_filename)) {
                                     echo '<img src="' . Yii::$app->homeUrl . 'img/' . $fav_book->bk_image_web_filename . '" alt="" title=""/>';
                                 }else{
@@ -330,8 +331,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
                                 echo '<div class="choose">';
                                 echo '<ul class="nav nav-pills nav-justified">';
-                                echo '<li><a href="#"><i class="fa fa-search-plus"></i>Λεπτομέρειες</a></li>';
-                                echo '<li><a href="#"><i class="fa fa-shopping-cart"></i>Άμεση Παραγγελία</a></li>';
+                                //echo '<li><a href="#"><i class="fa fa-search-plus"></i>Λεπτομέρειες</a></li>';
+                                echo '<li>'.Html::a('<i class="fa fa-search-plus"></i>Λεπτομέρειες', ['bkdetails', 'id' => $fav_book->bk_id]).'</li>';
+                                echo '<li>'.Html::a('<i class="fa fa-shopping-cart"></i>Άμεση Παραγγελία', ['quickorder', 'id' => $fav_book->bk_id]).'</li>';
+                                //echo '<li><a href="#"><i class="fa fa-shopping-cart"></i>Άμεση Παραγγελία</a></li>';
                                 echo '</ul>';
                                 echo '</div>';
                                 echo '</div>';
