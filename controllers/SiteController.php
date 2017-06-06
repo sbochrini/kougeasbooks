@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\Book;
 use app\models\BookCategory;
+use app\models\Order;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -102,10 +103,14 @@ class SiteController extends Controller
     public function actionBkdetails($id)
     {
         /*$this->layout='main_without_catlist';
-        $categories = new BookCategory();
-        $fav_books =  Book::find()->where(['bk_favorite'=>1])->all();*/
-        return $this->render('bkdetails',[
-        ]);
+        $categories = new BookCategory();*/
+        $book =  Book::findOne(['bk_id'=>$id]);
+        $order = new Order();
+        return $this->render('bkdetails',
+            [
+                'book'=>$book,
+                'order'=>$order,
+            ]);
     }
 
     /**
