@@ -232,7 +232,7 @@ use yii\widgets\ActiveForm;
                 </div>
             </div>-->
 
-            <div class="tab-pane fade active in" id="reviews" >
+            <div class="tab-pane fade active in" id="reviews">
                 <div class="col-sm-12">
                     <ul>
                         <li><a href=""><i class="fa fa-user"></i>EUGEN</a></li>
@@ -242,7 +242,7 @@ use yii\widgets\ActiveForm;
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                     <p><b>Write Your Review</b></p>
 
-                    <form action="#">
+                    <!--<form action="#">
 										<span>
 											<input type="text" placeholder="Your Name"/>
 											<input type="email" placeholder="Email Address"/>
@@ -252,42 +252,48 @@ use yii\widgets\ActiveForm;
                         <button type="button" class="btn btn-default pull-right">
                             Submit
                         </button>
-                    </form>
+                    </form>-->
                 </div>
-                <?php $form = ActiveForm::begin(['id' => 'order_form']); ?>
+                <?php $form = ActiveForm::begin(
+                        [
+                            'id' => 'usr_order_form',
+                            'action'=> ['site/usrorder'],
+                            'method' => 'post',
+                    ]); ?>
                 <div class="row col-sm-12">
-                    <div class="row">
+                    <?= $form->field($order, 'order_bk_id')->hiddenInput(['value'=> $book->bk_id])->label(false) ?>
+                        <span class="row">
+                            <div class="col-sm-6">
+                                <?= $form->field($order, 'usr_name')->textInput(['maxlength' => true,'style' => 'width: 100%']) ?>
+                            </div>
+                            <div class="col-sm-6">
+                                <?= $form->field($order, 'usr_surname')->textInput(['maxlength' => true, 'style' => 'width: 100%']) ?>
+                            </div>
+                        </span>
+                    <span class="row ">
                         <div class="col-sm-6">
-                            <?= $form->field($order, 'usr_name')->textInput(['maxlength' => true]) ?>
+                            <?= $form->field($order, 'usr_phone')->textInput(['maxlength' => true, 'style' => 'width: 100%']) ?>
                         </div>
                         <div class="col-sm-6">
-                            <?= $form->field($order, 'usr_surname')->textInput(['maxlength' => true]) ?>
+                            <?= $form->field($order, 'usr_email')->textInput(['maxlength' => true, 'style' => 'width: 100%']) ?>
                         </div>
-                    </div>
-                    <div class="row ">
+                    </span>
+                    <span class="row">
                         <div class="col-sm-6">
-                            <?= $form->field($order, 'usr_phone')->textInput(['maxlength' => true]) ?>
-                        </div>
-                        <div class="col-sm-6">
-                            <?= $form->field($order, 'usr_email')->textInput(['maxlength' => true]) ?>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <?= $form->field($order, 'usr_address')->textInput(['maxlength' => true]) ?>
+                            <?= $form->field($order, 'usr_address')->textInput(['maxlength' => true, 'style' => 'width: 100%']) ?>
                         </div>
                         <div class="col-sm-4">
-                            <?= $form->field($order, 'usr_city')->textInput(['maxlength' => true]) ?>
+                            <?= $form->field($order, 'usr_city')->textInput(['maxlength' => true, 'style' => 'width: 100%']) ?>
                         </div>
                         <div class="col-sm-2">
-                            <?= $form->field($order, 'usr_pcode')->textInput(['maxlength' => true]) ?>
+                            <?= $form->field($order, 'usr_pcode')->textInput(['maxlength' => true, 'style' => 'width: 100%']) ?>
                         </div>
-                    </div>
-                    <div class="row">
+                    </span>
+                    <span class="row">
                         <div class="col-sm-12" style="padding-right: 15px; padding-left: 15px;">
-                            <?= $form->field($order, 'order_comment')->textArea(['maxlength' => true]) ?>
+                            <?= $form->field($order, 'order_comment')->textArea(['maxlength' => true])->label('Σχόλιο') ?>
                         </div>
-                    </div>
+                    </span>
                 </div>
                 <div class="row col-sm-12">
                     <div class="col-sm-12">

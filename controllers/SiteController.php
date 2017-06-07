@@ -113,6 +113,33 @@ class SiteController extends Controller
             ]);
     }
 
+    public function actionUsrorder()
+    {
+        $model = new Order();
+        if (Yii::$app->request->post()) {
+            $model->load(Yii::$app->request->post());
+            $model->order_complete=0;
+            $model->order_date=Yii::$app->formatter->asDate('now','Y-M-d');
+            $model->save();
+            $modal='<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                      <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                          Η παραγγελία σας καταχωρήθηκε
+                        </div>
+                      </div>
+                    </div>';
+            echo $modal;
+           // return $this->redirect(['view', 'id' => $model->order_id]);
+        } /*else {
+            return $this->render('create', [
+                'model' => $model,
+                'book' => $book,
+                'book_items'=>$book_items,
+            ]);
+        }*/
+    }
+
+
     /**
      * Logout action.
      *
