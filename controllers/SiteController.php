@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use yii\data\ActiveDataProvider;
-use yii\web\Session;
+use yii\db\Expression;
 
 
 class SiteController extends Controller
@@ -107,9 +107,9 @@ class SiteController extends Controller
         $categories = new BookCategory();*/
         $book =  Book::findOne(['bk_id'=>$id]);
         $order = new Order();
-        $recommended_books=Book::find()->where(['bk_grouping'=>$book->bk_grouping])->limit(3)->all();
-        $auth_recommended_books=Book::find()->where(['bk_author_id'=>$book->bk_author_id])->limit(3)->all();
-        $cat_recommended_books=Book::find()->where(['bk_cat_id'=>$book->bk_cat_id])->limit(3)->all();
+        $recommended_books=Book::find()->where(['bk_grouping'=>$book->bk_grouping] and ['not',['bk_id'=>$book->bk_id]])->orderBy(new Expression('rand()'))->limit(3)->all();
+        $auth_recommended_books=Book::find()->where(['bk_author_id'=>$book->bk_author_id])->orderBy(new Expression('rand()'))->limit(3)->all();
+        $cat_recommended_books=Book::find()->where(['bk_cat_id'=>$book->bk_cat_id])->orderBy(new Expression('rand()'))->limit(3)->all();
         return $this->render('bkdetails',
             [
                 'book'=>$book,
