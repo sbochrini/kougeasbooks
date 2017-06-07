@@ -12,6 +12,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use yii\data\ActiveDataProvider;
+use yii\web\Session;
 
 
 class SiteController extends Controller
@@ -106,10 +107,27 @@ class SiteController extends Controller
         $categories = new BookCategory();*/
         $book =  Book::findOne(['bk_id'=>$id]);
         $order = new Order();
+        $num_recommended=6;
+        $recommended_books=Book::find()->where(['bk_grouping'=>$book->bk_grouping])->limit(6)->all();
+        $num_recommended_books=count($recommended_books);
+        $cat_recommended_books=null;
+        $auth_recommended_books=null;
+        if($num_recommended_books<$num_recommended){
+            $limit_auth_recommended=$num_recommended-$num_recommended_books;
+            $auth_recommended_books=Book::find()->where(['bk_author_id'=>$book->bk_author_id])->limit($limit_auth_recommended)->all();
+            $num_auth_recommended_books=count($auth_recommended_books);
+            if(($num_auth_recommended_books+$num_recommended_books)<$num_recommended){
+                $limit_cat_recommended=$num_recommended-($num_recommended_books+$num_auth_recommended_books);
+                $cat_recommended_books=Book::find()->where(['bk_cat_id'=>$book->bk_cat_id])->limit($limit_cat_recommended)->all();
+            }
+        }
         return $this->render('bkdetails',
             [
                 'book'=>$book,
                 'order'=>$order,
+                'recommended_books'=>$recommended_books,
+                'auth_recommended_books'=>$auth_recommended_books,
+                'cat_recommended_books'=>$cat_recommended_books,
             ]);
     }
 
@@ -118,25 +136,15 @@ class SiteController extends Controller
         $model = new Order();
         if (Yii::$app->request->post()) {
             $model->load(Yii::$app->request->post());
-            $model->order_complete=0;
-            $model->order_date=Yii::$app->formatter->asDate('now','Y-M-d');
-            $model->save();
-            $modal='<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-                      <div class="modal-dialog modal-sm" role="document">
-                        <div class="modal-content">
-                          Η παραγγελία σας καταχωρήθηκε
-                        </div>
-                      </div>
-                    </div>';
-            echo $modal;
-           // return $this->redirect(['view', 'id' => $model->order_id]);
-        } /*else {
-            return $this->render('create', [
-                'model' => $model,
-                'book' => $book,
-                'book_items'=>$book_items,
-            ]);
-        }*/
+            $model->order_complete = 0;
+            $model->order_date = Yii::$app->formatter->asDate('now', 'Y-M-d');
+            if ($model->save()) {
+                Yii::$app->session->setFlash('success', 'H παραγγελία σας καταχωρήθηκε επιτυχώς.');
+            } else {
+                Yii::$app->session->setFlash('fail', 'Κάποιο σφάλμα προέκυψε. Παρακαλούμε δοκιμάστε ξανά! ');
+            }
+        }
+        return $this->redirect(Yii::$app->request->referrer);
     }
 
 

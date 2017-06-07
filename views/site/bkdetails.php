@@ -233,7 +233,8 @@ use yii\widgets\ActiveForm;
             </div>-->
 
             <div class="tab-pane fade active in" id="reviews">
-                <div class="col-sm-12">
+                <br>
+                <!--<div class="col-sm-12">
                     <ul>
                         <li><a href=""><i class="fa fa-user"></i>EUGEN</a></li>
                         <li><a href=""><i class="fa fa-clock-o"></i>12:41 PM</a></li>
@@ -242,7 +243,7 @@ use yii\widgets\ActiveForm;
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                     <p><b>Write Your Review</b></p>
 
-                    <!--<form action="#">
+                    <form action="#">
 										<span>
 											<input type="text" placeholder="Your Name"/>
 											<input type="email" placeholder="Email Address"/>
@@ -252,8 +253,24 @@ use yii\widgets\ActiveForm;
                         <button type="button" class="btn btn-default pull-right">
                             Submit
                         </button>
-                    </form>-->
-                </div>
+                    </form>
+                </div>-->
+                <?php if (Yii::$app->session->hasFlash('success')): ?>
+                    <div class="alert alert-success alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <h4><i class="icon fa fa-check"></i> Saved!</h4>
+                        <?= Yii::$app->session->getFlash('success') ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if (Yii::$app->session->hasFlash('fail')): ?>
+                    <div class="alert alert-danger alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <h4><i class="icon fa fa-exclamation-triangle"></i> Σφάλμα!</h4>
+                        <?= Yii::$app->session->getFlash('fail') ?>
+                    </div>
+                <?php endif; ?>
+
                 <?php $form = ActiveForm::begin(
                         [
                             'id' => 'usr_order_form',
@@ -307,7 +324,7 @@ use yii\widgets\ActiveForm;
     </div><!--/category-tab-->
 
     <div class="recommended_items"><!--recommended_items-->
-        <h2 class="title text-center">recommended items</h2>
+        <h2 class="title text-center">Προτεινόμενα</h2>
 
         <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -396,5 +413,4 @@ use yii\widgets\ActiveForm;
             </a>
         </div>
     </div><!--/recommended_items-->
-
 </div>

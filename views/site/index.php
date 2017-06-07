@@ -286,7 +286,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 echo '<div class="img">';
                                 echo '<a href=# title="">';
                                 $path=Yii::$app->basePath. '\web\img\\' . $fav_book->bk_image_web_filename;
-                                if (file_exists($path)) {
+                                if (!is_null($fav_book->bk_image_web_filename) && file_exists($path)) {
                                     echo '<img src="' . Yii::$app->homeUrl.'img/'.$fav_book->bk_image_web_filename.'" alt="" title=""/>';
                                 }else{
                                     echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" >';
