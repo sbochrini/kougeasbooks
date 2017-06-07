@@ -46,7 +46,7 @@ use yii\widgets\ActiveForm;
             <div class="product-information"><!--/product-information-->
                 <img src="images/product-details/new.jpg" class="newarrival" alt="" />
                 <h2><?php echo $book->bk_title; ?></h2>
-               <!-- <p>Web ID: 1089772</p>-->
+                <!-- <p>Web ID: 1089772</p>-->
                 <img src="images/product-details/rating.png" alt="" />
                 <span>
 									<span><?php echo $book->bk_price; ?><i class="fa fa-eur" aria-hidden="true"></i></span>
@@ -272,14 +272,14 @@ use yii\widgets\ActiveForm;
                 <?php endif; ?>
 
                 <?php $form = ActiveForm::begin(
-                        [
-                            'id' => 'usr_order_form',
-                            'action'=> ['site/usrorder'],
-                            'method' => 'post',
+                    [
+                        'id' => 'usr_order_form',
+                        'action'=> ['site/usrorder'],
+                        'method' => 'post',
                     ]); ?>
                 <div class="row col-sm-12">
                     <?= $form->field($order, 'order_bk_id')->hiddenInput(['value'=> $book->bk_id])->label(false) ?>
-                        <span class="row">
+                    <span class="row">
                             <div class="col-sm-6">
                                 <?= $form->field($order, 'usr_name')->textInput(['maxlength' => true,'style' => 'width: 100%']) ?>
                             </div>
@@ -328,89 +328,56 @@ use yii\widgets\ActiveForm;
 
         <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="item active">
-                    <div class="col-sm-4">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <img src="images/home/recommend1.jpg" alt="" />
-                                    <h2>$56</h2>
-                                    <p>Easy Polo Black Edition</p>
-                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <img src="images/home/recommend2.jpg" alt="" />
-                                    <h2>$56</h2>
-                                    <p>Easy Polo Black Edition</p>
-                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <img src="images/home/recommend3.jpg" alt="" />
-                                    <h2>$56</h2>
-                                    <p>Easy Polo Black Edition</p>
-                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="col-sm-4">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <img src="images/home/recommend1.jpg" alt="" />
-                                    <h2>$56</h2>
-                                    <p>Easy Polo Black Edition</p>
-                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <img src="images/home/recommend2.jpg" alt="" />
-                                    <h2>$56</h2>
-                                    <p>Easy Polo Black Edition</p>
-                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <img src="images/home/recommend3.jpg" alt="" />
-                                    <h2>$56</h2>
-                                    <p>Easy Polo Black Edition</p>
-                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                echo '<div class="item active">';
+                foreach ($recommended_books as $recommended_book):
+                    echo '<div class="col-sm-4">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">';
+                    echo '<img src="' . Yii::$app->homeUrl.'img/'.$recommended_book->bk_image_web_filename.'" alt="" />';
+                    echo '<h2>'.$recommended_book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2>';
+                    echo '<p>'.$recommended_book->bk_title.'</p>';
+                    echo '<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-search-plus"></i>Λεπτομέρειες</button>';
+                    echo '</div></div></div></div>';
+                endforeach;
+                echo '</div>';
+
+                echo '<div class="item ">';
+                foreach ($auth_recommended_books as $auth_recommended_book):
+                    echo '<div class="col-sm-4">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">';
+                    echo '<img src="' . Yii::$app->homeUrl.'img/'.$auth_recommended_book->bk_image_web_filename.'" alt="" />';
+                    echo '<h2>'.$auth_recommended_book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2>';
+                    echo '<p>'.$auth_recommended_book->bk_title.'</p>';
+                    echo '<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-search-plus"></i>Λεπτομέρειες</button>';
+                    echo '</div></div></div></div>';
+                endforeach;
+                echo '</div>';
+
+                echo '<div class="item ">';
+                foreach ($cat_recommended_books as $cat_recommended_book):
+                    echo '<div class="col-sm-4">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">';
+                    echo '<img src="' . Yii::$app->homeUrl.'img/'.$cat_recommended_book->bk_image_web_filename.'" alt="" />';
+                    echo '<h2>'.$cat_recommended_book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2>';
+                    echo '<p>'.$cat_recommended_book->bk_title.'</p>';
+                    echo '<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-search-plus"></i>Λεπτομέρειες</button>';
+                    echo '</div></div></div></div>';
+                endforeach;
+                echo '</div>';
+                ?>
+                <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev" style="left: 0;">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                    <i class="fa fa-angle-right"></i>
+                </a>
             </div>
-            <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-                <i class="fa fa-angle-left"></i>
-            </a>
-            <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        </div>
-    </div><!--/recommended_items-->
+        </div><!--/recommended_items-->
+    </div>
 </div>

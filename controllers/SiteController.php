@@ -107,20 +107,9 @@ class SiteController extends Controller
         $categories = new BookCategory();*/
         $book =  Book::findOne(['bk_id'=>$id]);
         $order = new Order();
-        $num_recommended=6;
-        $recommended_books=Book::find()->where(['bk_grouping'=>$book->bk_grouping])->limit(6)->all();
-        $num_recommended_books=count($recommended_books);
-        $cat_recommended_books=null;
-        $auth_recommended_books=null;
-        if($num_recommended_books<$num_recommended){
-            $limit_auth_recommended=$num_recommended-$num_recommended_books;
-            $auth_recommended_books=Book::find()->where(['bk_author_id'=>$book->bk_author_id])->limit($limit_auth_recommended)->all();
-            $num_auth_recommended_books=count($auth_recommended_books);
-            if(($num_auth_recommended_books+$num_recommended_books)<$num_recommended){
-                $limit_cat_recommended=$num_recommended-($num_recommended_books+$num_auth_recommended_books);
-                $cat_recommended_books=Book::find()->where(['bk_cat_id'=>$book->bk_cat_id])->limit($limit_cat_recommended)->all();
-            }
-        }
+        $recommended_books=Book::find()->where(['bk_grouping'=>$book->bk_grouping])->limit(3)->all();
+        $auth_recommended_books=Book::find()->where(['bk_author_id'=>$book->bk_author_id])->limit(3)->all();
+        $cat_recommended_books=Book::find()->where(['bk_cat_id'=>$book->bk_cat_id])->limit(3)->all();
         return $this->render('bkdetails',
             [
                 'book'=>$book,
