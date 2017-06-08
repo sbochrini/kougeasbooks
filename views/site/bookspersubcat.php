@@ -11,14 +11,6 @@ use yii\helpers\Html;
 $this->params['breadcrumbs'][] = $subcategory->subcat_name;
 ?>
 <div id="booklist" class="book-index">
-
-    <!-- <h1><?/*= Html::encode($this->title) */?></h1>
-    --><?php /* echo $this->render('_bookslistpercat',[
-        'category'=>$category,
-        'books' => $books,
-        'dataProvider'=>$dataProvider,
-    ]); */?>
-
     <div class="row">
         <div class="col-sm-12">
             <div class="features_items"><!--features_items-->

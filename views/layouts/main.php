@@ -79,7 +79,7 @@ EshopperAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Αρχική', 'url' => ['/site/index']],
-            ['label' => 'Κατάλογος Συγγραφέων', 'url' => ['/site/about']],
+            ['label' => 'Κατάλογος Συγγραφέων', 'url' => ['/site/authorcatalog']],
             ['label' => 'Τρόποι Παραγγελίας', 'url' => ['/site/orders']],
             ['label' => 'Επικοινωνία', 'url' => ['/site/contact']],
             /*Yii::$app->user->isGuest ? (

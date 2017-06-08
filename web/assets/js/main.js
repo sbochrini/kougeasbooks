@@ -97,3 +97,15 @@ $('#userorderModal').on('show.bs.modal', function(e) {
     });
 
 });
+
+$('button.alphabet').on("click", function(){
+    var letter=$(this).attr("id");
+    $.ajax({
+        url: 'index.php?r=site/authorcatalog',
+        type:'GET',
+        data: {letter:letter},
+        // success  : function(response) {
+        //     $('#mainpage').html(response);
+        // }
+    });
+});

@@ -2,11 +2,13 @@
 
 namespace app\controllers;
 
+use app\models\Author;
 use app\models\Book;
 use app\models\BookCategory;
 use app\models\Order;
 use app\models\Subcategory;
 use Yii;
+use yii\db\Query;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -195,12 +197,12 @@ class SiteController extends Controller
                 ->orderBy('bk_id')
                 ->all();
             $category=BookCategory::findOne(['cat_id'=>$cat_id]);
-           /* $dataProvider = new ActiveDataProvider([
-                'query' => Book::find()->where(['bk_cat_id' => $cat_id])->orderBy('bk_id DESC'),
-                'pagination' => [
-                    'pageSize' => 20,
-                ],
-            ]);*/
+            /* $dataProvider = new ActiveDataProvider([
+                 'query' => Book::find()->where(['bk_cat_id' => $cat_id])->orderBy('bk_id DESC'),
+                 'pagination' => [
+                     'pageSize' => 20,
+                 ],
+             ]);*/
             return $this->render('bookspercat',[
                 'category'=>$category,
                 'books' => $books,
@@ -332,6 +334,44 @@ class SiteController extends Controller
                         </form>';
             echo $modal;
         }
+    }
+
+    function actionAuthorcatalog(){
+
+        if(Yii::$app->request->get('letter')){
+            $q_search= new Query();
+            $q_search->select(['auth_id', 'auth_name'])->from('tbl_author')->where(['like', 'auth_name',[$_GET['letter'].'%']]);
+            //$q_search='SELECT author FROM lyrics WHERE author LIKE "'.$_GET['letter'].'%"';
+            /*$q_search = 'SELECT * FROM tbl_author WHERE auth_name LIKE "'.$_GET['letter'].'%"';
+            $result = Author::findBySql($q_search)->all();*/
+            $dataProvider = new ActiveDataProvider([
+                'query' =>$q_search ,
+                'pagination' => [
+                    'pageSize' => 30,
+                ],
+            ]);
+        }else{
+            $dataProvider = new ActiveDataProvider([
+                'query' => Author::find(),
+                'pagination' => [
+                    'pageSize' => 30,
+                ],
+            ]);
+        }
+        return $this->render('authorcatalog', [
+            //'all_authors' => $all_authors,
+            'dataProvider'=>$dataProvider
+        ]);
+    }
+
+    function actionBooksperauthor(){
+        $all_authors=Author::find();
+        if(Yii::$app->request->get('auth_id')){
+
+        }
+        return $this->render('booksperauthor', [
+            'all_authors' => $all_authors,
+        ]);
     }
 
 }

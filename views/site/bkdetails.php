@@ -82,10 +82,10 @@ $this->params['breadcrumbs'][] = $book->bk_title;
     <div class="category-tab shop-details-tab"><!--category-tab-->
         <div class="col-sm-12">
             <ul class="nav nav-tabs">
-                <li><a href="#details" data-toggle="tab">Γενικές Πληροφορίες</a></li>
+                <li  class="active"><a href="#details" data-toggle="tab">Γενικές Πληροφορίες</a></li>
                 <li><a href="#companyprofile" data-toggle="tab">Περιγραφή</a></li>
                 <!--<li><a href="#tag" data-toggle="tab">Tag</a></li>-->
-                <li class="active"><a href="#reviews" data-toggle="tab">Παραγγελία</a></li>
+                <li><a href="#reviews" data-toggle="tab">Παραγγελία</a></li>
             </ul>
         </div>
         <div class="tab-content">
