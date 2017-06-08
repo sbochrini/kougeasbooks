@@ -258,6 +258,10 @@ class SiteController extends Controller
             $modal .='<form id="usr_order_form" action="'.Url::to(['site/usrorder', 'id'=>$_POST['bk_id']]).'" method="post">
             <input name="_csrf" value="'.Yii::$app->request->getCsrfToken().'" type="hidden">
                              <div class="modal-body">
+                                 <div class="form-group field-order-order_bk_id required">
+                                    <input id="order-order_bk_id" class="form-control" name="Order[order_bk_id]" value="'.$_POST['bk_id'].'" type="hidden">
+                                    <div class="help-block"></div>
+                                 </div>
                                  <span>
                                      <div class="col-sm-6">
                                         <div class="form-group field-order-usr_name required">
