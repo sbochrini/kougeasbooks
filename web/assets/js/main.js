@@ -80,3 +80,20 @@ $('document').ready(function(){
         panelPath: '.jplist-panel'
     });
 });
+
+//------------index usr order modal---------------\\
+$('#userorderModal').on('show.bs.modal', function(e) {
+
+    var $modal = $(this);
+    var bk_id = e.relatedTarget.id;
+       $.ajax({
+        type: 'POST',
+        url: 'index.php?r=site/usrordermodal',
+        data: {bk_id  : bk_id},
+        success: function(data)
+        {
+            $modal.find('.modal-content').html(data);
+        }
+    });
+
+});

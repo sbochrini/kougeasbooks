@@ -19,8 +19,8 @@ class BooklistAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'assets\jplist\dist\css\jplist.core.min.css',
-        'http://fonts.googleapis.com/css?family=Lato',
-        'http://code.jquery.com/ui/1.12.0-rc.1/themes/smoothness/jquery-ui.css',
+        /*'http://fonts.googleapis.com/css?family=Lato',
+        'http://code.jquery.com/ui/1.12.0-rc.1/themes/smoothness/jquery-ui.css',*/
         'assets\jplist\dist\css\jplist.demo-pages.min.css',
         'assets\jplist\dist\css\jplist.jquery-ui-bundle.min.css',
         'assets\jplist\dist\css\jplist.textbox-filter.min.css',

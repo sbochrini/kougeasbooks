@@ -1,4 +1,5 @@
 <?php
+use yii\widgets\ActiveForm;
 use app\components\CategoryWidget;
 use yii\helpers\Html;
 
@@ -31,8 +32,8 @@ $this->params['breadcrumbs'][] = $this->title;
                             <button type="button" class="btn btn-default get">Get it now</button>
                         </div>
                         <div class="col-sm-6">
-                            <img src="<?php echo Yii::$app->request->baseUrl; ?>pictures/eshopper/home/girl1.jpg" class="girl img-responsive" alt="" />
-                            <img src="<?php echo Yii::$app->request->baseUrl; ?>pictures/eshopper/home/pricing.png"  class="pricing" alt="" />
+                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/bookstore1.jpg" class="girl img-responsive" alt="" />
+                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/pricing.png"  class="pricing" alt="" />
                         </div>
                     </div>
                     <div class="item">
@@ -43,8 +44,8 @@ $this->params['breadcrumbs'][] = $this->title;
                             <button type="button" class="btn btn-default get">Get it now</button>
                         </div>
                         <div class="col-sm-6">
-                            <img src="<?php echo Yii::$app->request->baseUrl; ?>pictures/eshopper/home/girl2.jpg" class="girl img-responsive" alt="" />
-                            <img src="<?php echo Yii::$app->request->baseUrl; ?>pictures/eshopper/home/pricing.png"  class="pricing" alt="" />
+                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/bookstore1.jpg" class="girl img-responsive" alt="" />
+                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/pricing.png"  class="pricing" alt="" />
                         </div>
                     </div>
 
@@ -56,8 +57,8 @@ $this->params['breadcrumbs'][] = $this->title;
                             <button type="button" class="btn btn-default get">Get it now</button>
                         </div>
                         <div class="col-sm-6">
-                            <img src="<?php echo Yii::$app->request->baseUrl; ?>pictures/eshopper/home/girl3.jpg" class="girl img-responsive" alt="" />
-                            <img src="<?php echo Yii::$app->request->baseUrl; ?>pictures/eshopper/home/pricing.png" class="pricing" alt="" />
+                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/bookstore1.jpg" class="girl img-responsive" alt="" />
+                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/pricing.png" class="pricing" alt="" />
                         </div>
                     </div>
 
@@ -334,7 +335,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 echo '<ul class="nav nav-pills nav-justified">';
                                 //echo '<li><a href="#"><i class="fa fa-search-plus"></i>Λεπτομέρειες</a></li>';
                                 echo '<li>'.Html::a('<i class="fa fa-search-plus"></i>Λεπτομέρειες', ['bkdetails', 'id' => $fav_book->bk_id]).'</li>';
-                                echo '<li>'.Html::a('<i class="fa fa-shopping-cart"></i>Άμεση Παραγγελία', ['quickorder', 'id' => $fav_book->bk_id]).'</li>';
+                                echo '<li><a id="'.$fav_book->bk_id.'" data-toggle="modal" href="#userorderModal"><i class="fa fa-shopping-cart"></i>Παραγγελία</a></li>';
                                 //echo '<li><a href="#"><i class="fa fa-shopping-cart"></i>Άμεση Παραγγελία</a></li>';
                                 echo '</ul>';
                                 echo '</div>';
@@ -398,3 +399,11 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 </div>
 <!--</div>-->
+
+<!-- Modal -->
+<div class="modal fade" id="userorderModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!--modal-content -->
+        </div>
+    </div>

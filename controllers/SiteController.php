@@ -13,6 +13,7 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use yii\data\ActiveDataProvider;
 use yii\db\Expression;
+use yii\helpers\Url;
 
 
 class SiteController extends Controller
@@ -245,4 +246,90 @@ class SiteController extends Controller
         ]);
 
     }
+
+    public function actionUsrordermodal()
+    {
+        if (isset($_POST['bk_id'])) {
+            $model = new Order();
+            $modal = '<div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Φόρμα παραγγελίας</h4>
+                    </div>';
+            $modal .='<form id="usr_order_form" action="'.Url::to(['site/usrorder', 'id'=>$_POST['bk_id']]).'" method="post">
+            <input name="_csrf" value="'.Yii::$app->request->getCsrfToken().'" type="hidden">
+                             <div class="modal-body">
+                                 <span>
+                                     <div class="col-sm-6">
+                                        <div class="form-group field-order-usr_name required">
+                                            <label class="control-label" for="order-usr_name">Όνομα</label>
+                                            <input id="order-usr_name" class="form-control" name="Order[usr_name]" maxlength="225" style="width: 100%" aria-required="true" type="text">
+                                            <div class="help-block"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group field-order-usr_surname required">
+                                            <label class="control-label" for="order-usr_surname">Επώνυμο</label>
+                                            <input id="order-usr_surname" class="form-control" name="Order[usr_surname]" maxlength="225" style="width: 100%" aria-required="true" type="text">
+                                            <div class="help-block"></div>
+                                        </div>
+                                    </div>
+                                 </span>
+                                 <span>
+                                    <div class="col-sm-6">
+                                        <div class="form-group field-order-usr_phone required">
+                                            <label class="control-label" for="order-usr_phone">Τηλέφωνο</label>
+                                            <input id="order-usr_phone" class="form-control" name="Order[usr_phone]" style="width: 100%" aria-required="true" type="text">
+                                            <div class="help-block"></div>
+                                        </div> 
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group field-order-usr_email required">
+                                            <label class="control-label" for="order-usr_email">E-mail</label>
+                                            <input id="order-usr_email" class="form-control" name="Order[usr_email]" maxlength="225" style="width: 100%" aria-required="true" type="text">
+                                            <div class="help-block"></div>
+                                        </div>                        
+                                    </div>
+                                </span>
+                                <span class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group field-order-usr_address">
+                                            <label class="control-label" for="order-usr_address">Διεύθυνση</label>
+                                            <input id="order-usr_address" class="form-control" name="Order[usr_address]" maxlength="225" style="width: 100%" type="text">
+                                            <div class="help-block"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group field-order-usr_city">
+                                            <label class="control-label" for="order-usr_city">Πόλη</label>
+                                            <input id="order-usr_city" class="form-control" name="Order[usr_city]" maxlength="225" style="width: 100%" type="text">
+                                            <div class="help-block"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group field-order-usr_pcode">
+                                            <label class="control-label" for="order-usr_pcode">Τ.Κ.</label>
+                                            <input id="order-usr_pcode" class="form-control" name="Order[usr_pcode]" style="width: 100%" type="text">
+                                            <div class="help-block"></div>
+                                        </div>
+                                    </div>
+                                </span>
+                                <span class="row">
+                                    <div class="col-sm-12" style="padding-right: 15px; padding-left: 15px;">
+                                        <div class="form-group field-order-order_comment">
+                                            <label class="control-label" for="order-order_comment">Σχόλιο</label>
+                                            <textarea id="order-order_comment" class="form-control" name="Order[order_comment]" maxlength="225"></textarea>
+                                            <div class="help-block"></div>
+                                        </div>
+                                    </div>
+                                </span>
+                             </div>
+                             <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 0; margin-top: 16px">Κλείσιμο</button>
+                                <button type="submit" class="btn btn-primary">Αποθήκευση</button>
+                             </div>
+                        </form>';
+            echo $modal;
+        }
+    }
+
 }

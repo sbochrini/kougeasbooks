@@ -7,8 +7,16 @@ use yii\widgets\ActiveForm;
     <div class="product-details"><!--product-details-->
         <div class="col-sm-5">
             <div class="view-product">
-                <img src="<?php echo Yii::$app->homeUrl. 'img/'.$book->bk_image_web_filename; ?>" alt="" />
-                <h3>ZOOM</h3>
+                <?php
+                $path=Yii::$app->basePath. '/web/img/' . $book->bk_image_web_filename;
+                if (is_file($path)) {
+                    echo '<img src="' . Yii::$app->homeUrl.'img/'.$book->bk_image_web_filename.'" alt="" title=""/>';
+                }else{
+                    echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" >';
+                }
+                ?>
+                <!--<img src="<?php /*echo Yii::$app->homeUrl. 'img/'.$book->bk_image_web_filename; */?>" alt="" />-->
+                <!--<h3>ZOOM</h3>-->
             </div>
             <!--<div id="similar-product" class="carousel slide" data-ride="carousel">
 
@@ -44,10 +52,10 @@ use yii\widgets\ActiveForm;
         </div>
         <div class="col-sm-7">
             <div class="product-information"><!--/product-information-->
-                <img src="images/product-details/new.jpg" class="newarrival" alt="" />
+                <img src="<?php echo Yii::$app->homeUrl; ?>pictures/new.jpg" class="newarrival" alt="" />
                 <h2><?php echo $book->bk_title; ?></h2>
                 <!-- <p>Web ID: 1089772</p>-->
-                <img src="images/product-details/rating.png" alt="" />
+               <!-- <img src="images/product-details/rating.png" alt="" />-->
                 <span>
 									<span><?php echo $book->bk_price; ?><i class="fa fa-eur" aria-hidden="true"></i></span>
                     <!--<label>Quantity:</label>
@@ -64,7 +72,7 @@ use yii\widgets\ActiveForm;
                 <?php $condition=((is_null($book->bk_condition) || $book->bk_condition=="")? "-" : $book->bk_condition )?>
                 <p><b>Κατάσταση:</b> <?php echo $condition; ?></p>
                 <!--<p><b>Brand:</b> E-SHOPPER</p>-->
-                <a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>
+                <a href=""><img src="<?php echo Yii::$app->homeUrl; ?>pictures/share.png" class="share img-responsive"  alt="" /></a>
             </div><!--/product-information-->
         </div>
     </div><!--/product-details-->
@@ -72,61 +80,25 @@ use yii\widgets\ActiveForm;
     <div class="category-tab shop-details-tab"><!--category-tab-->
         <div class="col-sm-12">
             <ul class="nav nav-tabs">
-                <li><a href="#details" data-toggle="tab">Λεπτομέρειες</a></li>
-                <!--<li><a href="#companyprofile" data-toggle="tab">Company Profile</a></li>
-                <li><a href="#tag" data-toggle="tab">Tag</a></li>-->
+                <li><a href="#details" data-toggle="tab">Γενικές Πληροφορίες</a></li>
+                <li><a href="#companyprofile" data-toggle="tab">Περιγραφή</a></li>
+                <!--<li><a href="#tag" data-toggle="tab">Tag</a></li>-->
                 <li class="active"><a href="#reviews" data-toggle="tab">Παραγγελία</a></li>
             </ul>
         </div>
         <div class="tab-content">
-            <div class="tab-pane fade" id="details" >
-                <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
-                                <img src="images/home/gallery1.jpg" alt="" />
-                                <h2>$56</h2>
-                                <p>Easy Polo Black Edition</p>
-                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
-                                <img src="images/home/gallery2.jpg" alt="" />
-                                <h2>$56</h2>
-                                <p>Easy Polo Black Edition</p>
-                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
-                                <img src="images/home/gallery3.jpg" alt="" />
-                                <h2>$56</h2>
-                                <p>Easy Polo Black Edition</p>
-                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
-                                <img src="images/home/gallery4.jpg" alt="" />
-                                <h2>$56</h2>
-                                <p>Easy Polo Black Edition</p>
-                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                            </div>
-                        </div>
-                    </div>
+            <div class="tab-pane fade active in" id="details" >
+                <div class="col-sm-7">
+
+                    <p><b>Τίτλος:</b> <?php echo $book->bk_title; ?></p>
+                    <p><b>Συγγραφέας:</b> <?php echo $book->bkAuthor['auth_name']; ?></p>
+                    <p><b>Εκδόσεις:</b> <?php echo $book->bk_publisher; ?></p>
+                    <p><b>Τόπος έκδοσης:</b> <?php echo $book->bk_pb_place; ?></p>
+                    <p><b>Έτος έκδοσης:</b> <?php echo $book->bk_pb_year; ?></p>
+                    <?php $condition=((is_null($book->bk_condition) || $book->bk_condition=="")? "-" : $book->bk_condition )?>
+                    <p><b>Κατάσταση:</b> <?php echo $condition; ?></p>
+                    <p><b>Σελίδες:</b> <?php echo $book->bk_pages; ?></p>
+
                 </div>
             </div>
 
@@ -232,7 +204,7 @@ use yii\widgets\ActiveForm;
                 </div>
             </div>-->
 
-            <div class="tab-pane fade active in" id="reviews">
+            <div class="tab-pane fade" id="reviews">
                 <br>
                 <!--<div class="col-sm-12">
                     <ul>
