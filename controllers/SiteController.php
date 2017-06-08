@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\models\Book;
 use app\models\BookCategory;
 use app\models\Order;
+use app\models\Subcategory;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -189,23 +190,20 @@ class SiteController extends Controller
 
         if(Yii::$app->request->get('id')){
             $cat_id = Yii::$app->request->get('id');
-
             $books= Book::find()
                 ->where(['bk_cat_id' => $cat_id])
                 ->orderBy('bk_id')
                 ->all();
             $category=BookCategory::findOne(['cat_id'=>$cat_id]);
-
-            $dataProvider = new ActiveDataProvider([
+           /* $dataProvider = new ActiveDataProvider([
                 'query' => Book::find()->where(['bk_cat_id' => $cat_id])->orderBy('bk_id DESC'),
                 'pagination' => [
                     'pageSize' => 20,
                 ],
-            ]);
+            ]);*/
             return $this->render('bookspercat',[
                 'category'=>$category,
                 'books' => $books,
-                'dataProvider'=>$dataProvider,
             ]);
         }else return $this->render('error');
     }
@@ -214,21 +212,21 @@ class SiteController extends Controller
     {
         if(Yii::$app->request->get('id')){
             $subcat_id = Yii::$app->request->get('id');
-
+            $subcategory=Subcategory::findOne(['subcat_id'=>$subcat_id]);
             $books= Book::find()
                 ->where(['bk_subcat_id' => $subcat_id])
                 ->orderBy('bk_id')
                 ->all();
         }
-        $dataProvider = new ActiveDataProvider([
+        /*$dataProvider = new ActiveDataProvider([
             'query' => Book::find()->where(['bk_subcat_id' => $subcat_id])->orderBy('bk_id DESC'),
             'pagination' => [
                 'pageSize' => 20,
             ],
-        ]);
-        return $this->renderAjax('bookspersubcat',[
+        ]);*/
+        return $this->render('bookspersubcat',[
             'books' => $books,
-            'dataProvider'=>$dataProvider,
+            'subcategory'=>$subcategory
         ]);
     }
     public function actionBookview($id)

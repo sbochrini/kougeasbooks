@@ -1,6 +1,8 @@
 <?php
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+
+$this->params['breadcrumbs'][] = $book->bk_title;
 ?>
 
 <div class="col-sm-9 padding-right">

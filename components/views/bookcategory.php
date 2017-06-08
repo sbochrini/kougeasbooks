@@ -43,7 +43,7 @@ use yii\helpers\Url;
                             echo '<div class="panel-body">';
                                 echo '<ul>';
                                 foreach($category->subcategories as $subcategory):
-                                    echo '<li><a id="subcat_'.$subcategory->subcat_id.'" type="button" class=" subcat"><a href="#">'.$subcategory->subcat_name.'</a></li>';
+                                    echo '<li><a id="subcat_'.$subcategory->subcat_id.'" type="button" class=" subcat"><a href="'.Url::toRoute(['site/bookspersubcat', 'id' => $subcategory->subcat_id]).'">'.$subcategory->subcat_name.'</a></li>';
                                 endforeach;
                                 echo '</ul>';
                             echo '</div>';
