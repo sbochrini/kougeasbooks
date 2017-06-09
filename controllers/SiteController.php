@@ -17,7 +17,7 @@ use app\models\ContactForm;
 use yii\data\ActiveDataProvider;
 use yii\db\Expression;
 use yii\helpers\Url;
-
+use yii\widgets\ListView;
 
 class SiteController extends Controller
 {
@@ -339,17 +339,21 @@ class SiteController extends Controller
     function actionAuthorcatalog(){
 
         if(Yii::$app->request->get('letter')){
+            /*$q_search=Author::find()->where(['like', 'auth_name',$_GET['letter'].'%',false]);*/
             $q_search= new Query();
-            $q_search->select(['auth_id', 'auth_name'])->from('tbl_author')->where(['like', 'auth_name',[$_GET['letter'].'%']]);
-            //$q_search='SELECT author FROM lyrics WHERE author LIKE "'.$_GET['letter'].'%"';
-            /*$q_search = 'SELECT * FROM tbl_author WHERE auth_name LIKE "'.$_GET['letter'].'%"';
-            $result = Author::findBySql($q_search)->all();*/
+            $q_search->select(['auth_id', 'auth_name'])->from('tbl_author')->where(['like', 'auth_name',$_GET['letter'].'%',false])->all();
             $dataProvider = new ActiveDataProvider([
                 'query' =>$q_search ,
                 'pagination' => [
                     'pageSize' => 30,
                 ],
             ]);
+            $list=ListView::widget([
+                'dataProvider' => $dataProvider,
+                'itemView' => '@app/views/site/_bookslistperauthor',
+                'summary' => "Εμφάνιση {begin} - {end} από {totalCount} συγγραφείς.",
+            ]);
+            echo $list;
         }else{
             $dataProvider = new ActiveDataProvider([
                 'query' => Author::find(),
@@ -357,11 +361,12 @@ class SiteController extends Controller
                     'pageSize' => 30,
                 ],
             ]);
+            return $this->render('authorcatalog', [
+                //'all_authors' => $all_authors,
+                'dataProvider'=>$dataProvider
+            ]);
         }
-        return $this->render('authorcatalog', [
-            //'all_authors' => $all_authors,
-            'dataProvider'=>$dataProvider
-        ]);
+
     }
 
     function actionBooksperauthor(){

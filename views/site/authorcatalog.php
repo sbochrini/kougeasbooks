@@ -37,6 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <button id="X" class="btn btn-default alphabet">X</button>
                 <button id="Y" class="btn btn-default alphabet">Y</button>
                 <button id="Z" class="btn btn-default alphabet">Z</button>
+                <button id="all_en" class="btn btn-default alphabet">All</button>
             </div>
         </div>
     </div>
@@ -68,12 +69,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 <button id="Χ" class="btn btn-default alphabet">Χ</button>
                 <button id="Ψ" class="btn btn-default alphabet">Ψ</button>
                 <button id="Ω" class="btn btn-default alphabet">Ω</button>
+                <button id="all_gr" class="btn btn-default alphabet">Όλα</button>
             </div>
         </div>
     </div>
     <br>
     <div class="container">
-        <ul>
+        <ul id="ul_authors">
             <?php
                 echo ListView::widget([
                     'dataProvider' => $dataProvider,

@@ -104,8 +104,8 @@ $('button.alphabet').on("click", function(){
         url: 'index.php?r=site/authorcatalog',
         type:'GET',
         data: {letter:letter},
-        // success  : function(response) {
-        //     $('#mainpage').html(response);
-        // }
+         success  : function(data) {
+             $('#ul_authors').html(data);
+         }
     });
 });

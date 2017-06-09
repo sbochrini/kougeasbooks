@@ -42,6 +42,30 @@ $config = [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
                 ],
+                [
+                    'class' => 'yii\log\FileTarget',
+                    'levels' => ['error', 'warning'],
+                    'logFile' => '@app/runtime/logs/error.log',
+                    'categories' => [
+                        'yii\db\*',
+                        'yii\web\HttpException:*',
+                    ],
+                    'except' => [
+                        'yii\web\HttpException:404',
+                    ],
+                ],
+                [
+                    'class' => 'yii\log\FileTarget',
+                    'levels' => [ 'trace'],
+                    'logFile' => '@app/runtime/logs/trace.log',
+                    'categories' => [
+                        'yii\db\*',
+                    ],
+                    'except' => [
+                        'yii\web\HttpException:404',
+                    ],
+                ]
+
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
