@@ -66,8 +66,11 @@ $this->params['breadcrumbs'][] = $this->title;
                     'dataProvider' => $dataProvider,
                     'itemView' => '_bookslistperauthor',
                     'summary' => "Εμφάνιση {begin} - {end} από {totalCount} συγγραφείς.",
+                    'emptyText' => 'Δεν βρέθηκαν αποτελέσματα.',
+                    'layout' => '{summary}<br>{items}<br>{pager}',
                 ]);
             ?>
+            <br><br>
         </ul>
     </div>
 </div>
