@@ -26,39 +26,38 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="carousel-inner">
                     <div class="item active">
                         <div class="col-sm-6">
-                            <h1><span>E</span>-SHOPPER</h1>
-                            <h2>Free E-Commerce Template</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                            <button type="button" class="btn btn-default get">Get it now</button>
+                            <h1><span>Βιβλιοπωλείο Κουγέας</span></h1>
+                            <h2>100 χρόνια κοντά σας</h2>
+                            <p>Πάντα με τις καλύτερες τιμές και τα πιο σπάνια βιβλία</p>
+                            <!--button type="button" class="btn btn-default get">Get it now</button-->
                         </div>
                         <div class="col-sm-6">
-                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/bookstore1.jpg" class="girl img-responsive" alt="" />
-                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/pricing.png"  class="pricing" alt="" />
+                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/bookstore1.jpg" class="girl img-responsive" style="min-height:283px" alt="" />
+                            <!--img src="<?php echo Yii::$app->homeUrl; ?>pictures/pricing.png"  class="pricing" alt="" /-->
+
                         </div>
                     </div>
                     <div class="item">
                         <div class="col-sm-6">
-                            <h1><span>E</span>-SHOPPER</h1>
-                            <h2>100% Responsive Design</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                            <button type="button" class="btn btn-default get">Get it now</button>
-                        </div>
+                            <h1><span>Βιβλιοπωλείο </span>Κουγέας</h1>
+                            <h2>99 χρόνια κοντά σας</h2>
+                            <p>Πάντα με τις καλύτερες τιμές και τα πιο σπάνια βιβλία</p>
+                            <!--button type="button" class="btn btn-default get">Get it now</button-->                        </div>
                         <div class="col-sm-6">
-                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/bookstore1.jpg" class="girl img-responsive" alt="" />
-                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/pricing.png"  class="pricing" alt="" />
+                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/bookstore2.jpg" class="girl img-responsive" style="min-height:283px" alt="" />
+                            <!--img src="<?php echo Yii::$app->homeUrl; ?>pictures/pricing.png"  class="pricing" alt="" /-->
                         </div>
                     </div>
 
                     <div class="item">
                         <div class="col-sm-6">
-                            <h1><span>E</span>-SHOPPER</h1>
-                            <h2>Free Ecommerce Template</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                            <button type="button" class="btn btn-default get">Get it now</button>
-                        </div>
+                            <h1><span></span>Βιβλιοπωλείο Κουγέας</h1>
+                            <h2>98 χρόνια κοντά σας</h2>
+                            <p>Πάντα με τις καλύτερες τιμές και τα πιο σπάνια βιβλία</p>
+                            <!--button type="button" class="btn btn-default get">Get it now</button-->                        </div>
                         <div class="col-sm-6">
-                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/bookstore1.jpg" class="girl img-responsive" alt="" />
-                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/pricing.png" class="pricing" alt="" />
+                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/bookstore3.jpg" class="girl img-responsive" style="min-height:283px" alt="" />
+                            <!--img src="<?php echo Yii::$app->homeUrl; ?>pictures/pricing.png"  class="pricing" alt="" /-->
                         </div>
                     </div>
 
@@ -78,7 +77,7 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
     <div class="col-sm-1"></div>
 </div>
-<div class="row">
+<div class="row" style="margin-top:20px">
     <div class="col-sm-3">
         <div class="left-sidebar">
             <h2>ΚΑΤΗΓΟΡΙΕΣ</h2>
@@ -87,7 +86,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <div class="col-sm-9">
         <div class="features_items"><!--features_items-->
-            <h2 class="title text-center">Features Items</h2>
+            <h2 class="title text-center">ΟΙ ΕΠΙΛΟΓΕΣ ΜΑΣ</h2>
             <div class="box">
                 <div class="center">
                     <div id="demo" class="box jplist" style="margin: 0px 0px 50px 0px">
@@ -95,7 +94,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <!-- ios button: show/hide panel -->
                         <div class="jplist-ios-button">
                             <i class="fa fa-sort"></i>
-                            jPList Actions
+                            Φίλτρα αναζήτησης
                         </div>
 
 
@@ -136,10 +135,12 @@ $this->params['breadcrumbs'][] = $this->title;
                                         <li><span data-path=".title" data-order="desc" data-type="text"><i class="fa fa-sort-alpha-desc"></i>  Τίτλος</span></li>
                                         <li><span data-path=".author" data-order="asc" data-type="text"><i class="fa fa-sort-alpha-asc"></i>  Συγγραφέας</span></li>
                                         <li><span data-path=".author" data-order="desc" data-type="text"><i class="fa fa-sort-alpha-desc"></i>  Συγγραφέας</span></li>
+										<!--
                                         <li><span data-path=".publisher" data-order="asc" data-type="text"><i class="fa fa-sort-alpha-asc"></i>  Εκδότης</span></li>
                                         <li><span data-path=".publisher" data-order="desc" data-type="text"><i class="fa fa-sort-alpha-desc"></i>  Εκδότης</span></li>
-                                        <li><span data-path=".year" data-order="asc" data-type="number"><i class="fa fa-sort-amount-asc"></i> Χρονολογία</span></li>
-                                        <li><span data-path=".year" data-order="desc" data-type="number"><i class="fa fa-sort-amount-desc"></i> Χρονολογία</span></li>
+										-->
+                                        <li><span data-path=".year" data-order="asc" data-type="number"><i class="fa fa-sort-numeric-asc"></i> Χρονολογία</span></li>
+                                        <li><span data-path=".year" data-order="desc" data-type="number"><i class="fa fa-sort-numeric-desc"></i> Χρονολογία</span></li>
                                         <li><span data-path=".price" data-order="asc" data-type="number"><i class="fa fa-sort-amount-asc"></i>  Τιμή</span></li>
                                         <li><span data-path=".price" data-order="desc" data-type="number"><i class="fa fa-sort-amount-desc"></i>  Τιμή</span></li>
                                     </ul>
@@ -148,7 +149,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                                 <!-- jQuery UI range slider -->
                                 <!-- priceSlider and priceValues are user function defined in jQuery.fn.jplist.settings -->
-                                <div
+                                <!--div
                                         class="jplist-range-slider"
                                         data-control-type="range-slider"
                                         data-control-name="range-slider-price"
@@ -160,10 +161,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <div class="value" data-type="prev-value"></div>
                                     <div class="ui-slider" data-type="ui-slider"></div>
                                     <div class="value" data-type="next-value"></div>
-                                </div>
-                            </div>
+                                </div-->
+                            <!--/div>
 
-                            <div class="row">
+                            <div class="row"-->
 
                                 <!-- filter by book title -->
                                 <div class="text-filter-box">
@@ -198,7 +199,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                             data-path=".author"
                                             type="text"
                                             value=""
-                                            placeholder="Φίλτρο με Συγγραφέα"
+                                            placeholder="Φίλτρο με συγγραφέα"
                                             data-control-type="textbox"
                                             data-control-name="author-filter"
                                             data-control-action="filter"
@@ -206,13 +207,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
 
                                 <!-- filter by publisher -->
-                                <div class="text-filter-box">
+                                <!--div class="text-filter-box">
 
                                     <i class="fa fa-search  jplist-icon"></i>
-
-                                    <!--[if lt IE 10]>
-                                    <div class="jplist-label">Filter by Description:</div>
-                                    <![endif]-->
 
                                     <input
                                             data-path=".publisher"
@@ -223,7 +220,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                             data-control-name="publisher-filter"
                                             data-control-action="filter"
                                     />
-                                </div>
+                                </div-->
 
                                 <!-- views -->
 
@@ -299,15 +296,33 @@ $this->params['breadcrumbs'][] = $this->title;
                                 echo '<p class="title">'.$fav_book->bk_title.'</p>';
                                 //echo '<a href="https://en.wikipedia.org/wiki/GAZ-M20_Pobeda" title="">'.$fav_book->bk_price.' &euro;</a>';
                                 echo '</p>';
-                                echo ' <p>
-											<span class="header book-author">Συγγραφέας: </span>
-											<span class="author">'.$fav_book->bkAuthor['auth_name'].'</span>
-										</p>
-										<p>
-											<span class="header book-publisher">Εκδότης: </span>
-											<span class="publisher">'.$fav_book->bk_publisher.'</span>
-										</p>
+                                // echo ' <div class="choose-no-border-publisher"><p>
+											// <span class="header book-author"><strong>Συγγραφέας: </strong></span>
+											// <span class="author">'.$fav_book->bkAuthor['auth_name'].'</span>
+										// </p>
+										// <p>
+											// <span class="header book-publisher"><strong>Εκδότης: </strong></span>
+											// <span class="publisher">'.$fav_book->bk_publisher.'</span>
+										// </p>
+										// <p>
+											// <span class="header book-publisher"><strong>Έτος: </strong></span>
+											// <span class="year">'.$fav_book->bk_pb_year.'</span>
+										// </p>
+										// </div>
+										// <p>';
+								echo ' <div class="choose-no-border-publisher">
+											<p>
+												<span class="header book-publisher"><strong>Έτος: </strong></span>
+												<span class="year">'.$fav_book->bk_pb_year.'</span>
+											</p>
+											<p style="height:34px">
+												<span class="header book-author"><strong>Συγγραφέας: </strong></span>
+												<span class="author">'.$fav_book->bkAuthor['auth_name'].'</span>
+											</p>
+										</div>
 										<p>';
+										
+										
                                 if(is_null($fav_book->bk_price) || $fav_book->bk_price==""){
                                     $bk_price="-";
                                     $available='<h4><span class="label label-danger" role="alert">Μη διαθέσιμο</span><h4>';
@@ -315,10 +330,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                     $bk_price=$fav_book->bk_price;
                                     $available='<h4><span class="label label-success" role="alert"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Άμεσα διαθέσιμο</span><h4>';
                                 }
-								echo '<span class="header book-price"></span>
-											<span class="price"><span class="val"><h2 style="margin-top:0px;">'.$bk_price.'</span> <i class="fa fa-eur" aria-hidden="true"></i></h2></span>
-										</p><p>'.$available.'</p>';
-                                echo '</div>';
+								echo '<div class="choose-no-border-price">
+										'.$available.'';
+                                echo '</div></div>';
                                // echo '<a href="#" class="btn btn-default add-to-cart" style="margin-bottom:0px;"><i class="fa fa-shopping-cart"></i>Λεπτομέρειες</a>';
                                 echo '</div>';
                                 /*echo '<div class="product-overlay">';
@@ -332,10 +346,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
                                 echo '<div class="choose">';
-                                echo '<ul class="nav nav-pills nav-justified">';
+                                echo '<ul class="nav nav-pills nav-justified" style="background-color:#EEEDED">';
                                 //echo '<li><a href="#"><i class="fa fa-search-plus"></i>Λεπτομέρειες</a></li>';
-                                echo '<li>'.Html::a('<i class="fa fa-search-plus"></i>Λεπτομέρειες', ['bkdetails', 'id' => $fav_book->bk_id]).'</li>';
-                                echo '<li><a id="'.$fav_book->bk_id.'" data-toggle="modal" href="#userorderModal"><i class="fa fa-shopping-cart"></i>Παραγγελία</a></li>';
+                                echo '<li>'.Html::a('<i class="fa fa-info-circle fa-2x"></i>', ['bkdetails', 'id' => $fav_book->bk_id]).'</li>';
+								echo '<li class="choose-no-border-price"><span class="header book-price"></span>
+											<span class="price"><span class="val">'.$bk_price.'</span> &euro;</span></li>';
+                                echo '<li><a id="'.$fav_book->bk_id.'" data-toggle="modal" href="#userorderModal"><i class="fa fa-shopping-bag fa-2x"></i></a></li>';
                                 //echo '<li><a href="#"><i class="fa fa-shopping-cart"></i>Άμεση Παραγγελία</a></li>';
                                 echo '</ul>';
                                 echo '</div>';

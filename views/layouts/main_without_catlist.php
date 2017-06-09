@@ -68,11 +68,13 @@ EshopperAsset::register($this);
 
 
     <?php
+	echo '<div class="row" style="margin-left:0px; margin-right:0px;">';
     NavBar::begin([
         'brandLabel' => 'Βιβλιοπωλείο Κουγέας',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse ',
+			'style' => 'border-radius:0px;',
         ],
     ]);
     echo Nav::widget([
@@ -96,6 +98,7 @@ EshopperAsset::register($this);
             )*/
         ],
     ]);
+	echo '</div>';
     ?>
 
      <!--   <form>
@@ -110,7 +113,7 @@ EshopperAsset::register($this);
     NavBar::end();
     ?>
 
-    <div  class="row" style="padding-top: 20px;"> <!--class="container"-->
+    <div  class="row" style="padding-top: 20px; margin-left:15px; margin-right:15px"> <!--class="container"-->
 
         <?= Breadcrumbs::widget([
             'homeLink' => [
@@ -123,14 +126,14 @@ EshopperAsset::register($this);
     <!--<div class="">-->
        <!-- <div class="row">-->
 
-        <div  class="row"><!--class="container"-->
+        <div  class="row" style="margin-left:15px; margin-right:15px"><!--class="container"-->
             <?= $content ?>
         </div>
        <!-- <div>-->
 </div>
 
-<footer id="footer"><!--Footer-->
-    <div class="footer-top">
+<footer id="footer"  style="margin-left:0px; margin-right:0px"><!--Footer-->
+    <!--div class="footer-top">
         <div class="container">
             <div class="row">
                 <div class="col-sm-2">
@@ -274,12 +277,12 @@ EshopperAsset::register($this);
 
             </div>
         </div>
-    </div>
+    </div-->
 
     <div class="footer-bottom">
         <div class="container">
                 <p class="pull-left">&copy; Βιβλιοπωλείο Κουγέας <?= date('Y') ?></p>
-                <p class="pull-right">Designed by <span><a target="_blank" href="#">Boula</a></span></p>
+                <p class="pull-right">Designed by <a href="mailto:s.bochrini@gmail.com">Voula Bochrini</a></p>
         </div>
     </div>
 

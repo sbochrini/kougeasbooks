@@ -877,9 +877,10 @@ h2.title {
 
 .productinfo p{
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   color: #696763;
+  overflow: auto;
 }
 
 .productinfo img{
@@ -970,6 +971,28 @@ h2.title {
 .add-to-cart:hover {
   background: #FE980F;
   color: #FFFFFF;
+}
+
+.choose-no-border-price{
+  border-top: none;
+  position: absolute;
+  width:100%;
+  bottom: 0;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.choose-no-border-publisher {
+  border-top: none;
+  position: absolute;
+  width:96%;
+  top: 0;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 250px;
 }
 
 .choose {
@@ -1173,9 +1196,8 @@ h2.title {
 }
 
 .view-product img {
-  border: 1px solid #F7F7F0;
-  height: 380px;
-  width: 100%;
+  height: 200px;
+  width: 200px;
 }
 
 .view-product h3 {
