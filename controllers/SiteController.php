@@ -385,13 +385,18 @@ class SiteController extends Controller
     }
 
     function actionBooksperauthor(){
-        $all_authors=Author::find();
         if(Yii::$app->request->get('auth_id')){
-
-        }
-        return $this->render('booksperauthor', [
-            'all_authors' => $all_authors,
-        ]);
+            $auth_id = Yii::$app->request->get('auth_id');
+            $books= Book::find()
+                ->where(['bk_author_id' => $auth_id])
+                ->orderBy('bk_id')
+                ->all();
+            $author=Author::findOne(['auth_id'=>$auth_id]);
+            return $this->render('booksperauthor',[
+                'author' => $author,
+                'books' => $books,
+            ]);
+        }else return $this->render('error');
     }
 
 }
