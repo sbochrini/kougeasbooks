@@ -337,23 +337,37 @@ class SiteController extends Controller
     }
 
     function actionAuthorcatalog(){
-
+        $gr=array('Α','Β','Γ','Δ','Ε','Ζ','Η','Θ','Ι','Κ','Λ','Μ','Ν','Ξ','Ο','Π','Ρ','Σ','Τ','Υ','Φ','Χ','Ψ','Ω');
         if(Yii::$app->request->get('letter')){
             /*$q_search=Author::find()->where(['like', 'auth_name',$_GET['letter'].'%',false]);*/
-            $q_search= new Query();
-            $q_search->select(['auth_id', 'auth_name'])->from('tbl_author')->where(['like', 'auth_name',$_GET['letter'].'%',false])->all();
-            $dataProvider = new ActiveDataProvider([
-                'query' =>$q_search ,
-                'pagination' => [
-                    'pageSize' => 30,
-                ],
-            ]);
-            $list=ListView::widget([
+            if(Yii::$app->request->get('letter')=='all_en' || Yii::$app->request->get('letter')=="all_gr"){
+                $dataProvider = new ActiveDataProvider([
+                    'query' => Author::find(),
+                    'pagination' => [
+                        'pageSize' => 30,
+                    ],
+                ]);
+            }else{
+                $q_search= new Query();
+                $q_search->select(['auth_id', 'auth_name'])->from('tbl_author')->where(['like', 'auth_name',$_GET['letter'].'%',false])->all();
+                $dataProvider = new ActiveDataProvider([
+                    'query' =>$q_search ,
+                    'pagination' => [
+                        'pageSize' => 30,
+                    ],
+                ]);
+            }
+            /*$list=ListView::widget([
                 'dataProvider' => $dataProvider,
                 'itemView' => '@app/views/site/_bookslistperauthor',
                 'summary' => "Εμφάνιση {begin} - {end} από {totalCount} συγγραφείς.",
             ]);
-            echo $list;
+            echo $list;*/
+            return $this->render('authorcatalog', [
+                //'all_authors' => $all_authors,
+                'dataProvider'=>$dataProvider,
+                'gr'=>$gr
+            ]);
         }else{
             $dataProvider = new ActiveDataProvider([
                 'query' => Author::find(),
@@ -363,7 +377,8 @@ class SiteController extends Controller
             ]);
             return $this->render('authorcatalog', [
                 //'all_authors' => $all_authors,
-                'dataProvider'=>$dataProvider
+                'dataProvider'=>$dataProvider,
+                'gr'=>$gr
             ]);
         }
 
