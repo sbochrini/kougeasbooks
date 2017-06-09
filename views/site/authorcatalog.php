@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 foreach (range('A', 'Z') as $char) {
                     echo Html::a($char,['authorcatalog', 'letter' => $char],['class' => 'btn btn-default alphabet']);
                 }
-                 echo Html::a("All", ['Authorcatalog', 'letter' => "all_en"],['class' => 'btn btn-default alphabet']);
+                 echo Html::a("All", ['authorcatalog', 'letter' => "all_en"],['class' => 'btn btn-default alphabet']);
                 ?>
             </div>
         </div>
@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 for ($i=0;$i<count($gr);$i++){
                     echo Html::a($gr[$i],['authorcatalog', 'letter' => $gr[$i]],['class' => 'btn btn-default alphabet']);
                 }
-                echo Html::a("Όλα", ['Authorcatalog', 'letter' => "all_gr"],['class' => 'btn btn-default alphabet']);
+                echo Html::a("Όλα", ['authorcatalog', 'letter' => "all_gr"],['class' => 'btn btn-default alphabet']);
                 ?>
                 <!--<button id="Α" class="btn btn-default alphabet">Α</button>
                 <button id="Β" class="btn btn-default alphabet">Β</button>
