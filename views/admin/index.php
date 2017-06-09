@@ -53,7 +53,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                 </div>
             </div>
-
         </div>
         <div class="row">
             <div class="col-sm-12">
@@ -130,6 +129,37 @@ $this->params['breadcrumbs'][] = $this->title;
                         echo 'Ολοκληρωμένες:</a>';
                         ?>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="h_dublicate_book">
+                <h4 class="panel-title">
+                    <div class="collapsed" role="button" data-toggle="collapse"  href="#dublicate_book">
+                        Διπλά Βιβλία:
+                        <?php echo '<span class="badge">'.$count_duplicates.'</span>'; ?>
+                        <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+                    </div>
+                </h4>
+            </div>
+            <div id="dublicate_book" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body list-group">
+                    <?php
+                    for($i=0;$i<count($duplicate_books);$i++){
+                        echo  '<a href="#" class="list-group-item">';
+                        echo '<strong>'.$duplicate_books[$i]['bk_title'].': </strong>';
+                        echo "<ul>";
+                        for($d=0;$d<count($duplicate_books[$i]['bk_cat']);$d++){
+                           /* if($d==count($duplicate_books[$i]['bk_cat'])-1){
+                                echo $duplicate_books[$i]['bk_cat'][$d];
+                            }else{*/
+                                echo '<li>'.$duplicate_books[$i]['bk_cat'][$d].'</li>';
+                            //}
+                        }
+                        echo "</ul>";
+                        echo '</a>';
+                    }
+                    ?>
                 </div>
             </div>
         </div>

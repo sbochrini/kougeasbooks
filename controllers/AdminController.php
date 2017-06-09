@@ -86,6 +86,23 @@ class AdminController extends Controller
         $available_books=Book::find()->where(['not',['bk_price'=>null]])->count();
         $no_available_books=Book::find()->where(['bk_price'=>null])->count();
 
+        $connection = Yii::$app->getDb();
+        $command = $connection->createCommand("SELECT bk_title, COUNT(*) c FROM tbl_book GROUP BY bk_title HAVING c > 1");
+        $title_duplicate_books = $command->queryAll();
+        $count_duplicates=count($title_duplicate_books);
+        $d=0;
+        foreach($title_duplicate_books as $title_duplicate_book):
+            $duplicate_books_models=Book::find()->where(['bk_title'=>$title_duplicate_book['bk_title']])->all();
+            $c=0;
+            foreach ($duplicate_books_models as $duplicate_books_model):
+                $duplicate_books[$d]['bk_title']=$duplicate_books_model->bk_title;
+                $duplicate_books[$d]['bk_cat'][$c]=$duplicate_books_model->bkCat['cat_name'];
+                $c++;
+            endforeach;
+            $d++;
+        endforeach;
+
+
         if (!Yii::$app->user->isGuest) {
            // return $this->goHome();
             $this->layout = 'admin';
@@ -101,6 +118,8 @@ class AdminController extends Controller
                     'uncompleted_orders'=>$uncompleted_orders,
                     'num_categories'=>$num_categories,
                     'subcats_per_cat'=>$subcats_per_cat,
+                    'duplicate_books'=>$duplicate_books,
+                    'count_duplicates'=>$count_duplicates,
                 ]
             );
         }
@@ -121,6 +140,8 @@ class AdminController extends Controller
                     'uncompleted_orders'=>$uncompleted_orders,
                     'num_categories'=>$num_categories,
                     'subcats_per_cat'=>$subcats_per_cat,
+                    'duplicate_books'=>$duplicate_books,
+                    'count_duplicates'=>$count_duplicates,
                 ]
             );
         }
