@@ -37,7 +37,7 @@ class Order extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['usr_name', 'usr_surname', 'usr_phone', 'usr_email', 'order_bk_id', 'order_date'], 'required', 'message' => 'Το πεδίο είναι υποχρεωτικό.'],
+            [['usr_name', 'usr_surname', 'usr_phone', 'order_bk_id', 'order_date'], 'required', 'message' => 'Το πεδίο είναι υποχρεωτικό.'],
             [['order_bk_id'],'required'],
             [['usr_email'],'email','message' => 'Το πεδίο e-mail πρέπει να είναι έγκυρη ηλεκρονική διεύθυνση.'],
             [['order_complete'], 'integer'],
