@@ -137,7 +137,7 @@ EshopperAsset::register($this);
 </div>
 
 <footer id="footer"><!--Footer-->
-    <div class="footer-top">
+    <!--<div class="footer-top">
         <div class="container">
             <div class="row">
                 <div class="col-sm-2">
@@ -281,7 +281,7 @@ EshopperAsset::register($this);
 
             </div>
         </div>
-    </div>
+    </div>-->
 
     <div class="footer-bottom">
         <div class="container">

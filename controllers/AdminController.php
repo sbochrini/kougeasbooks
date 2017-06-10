@@ -95,6 +95,7 @@ class AdminController extends Controller
             $duplicate_books_models=Book::find()->where(['bk_title'=>$title_duplicate_book['bk_title']])->all();
             $c=0;
             foreach ($duplicate_books_models as $duplicate_books_model):
+                $duplicate_books[$d]['bk_id']=$duplicate_books_model->bk_id;
                 $duplicate_books[$d]['bk_title']=$duplicate_books_model->bk_title;
                 $duplicate_books[$d]['bk_cat'][$c]=$duplicate_books_model->bkCat['cat_name'];
                 $c++;

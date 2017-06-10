@@ -1,6 +1,6 @@
 <?php
 /* @var $this yii\web\View */
-
+use yii\helpers\Html;
 
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -147,7 +147,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?php
                     for($i=0;$i<count($duplicate_books);$i++){
                         echo  '<a href="#" class="list-group-item">';
-                        echo '<strong>'.$duplicate_books[$i]['bk_title'].': </strong>';
+                        echo Html::a('<strong>'.$duplicate_books[$i]['bk_title'].': </strong>', ['book/view', 'id' => $duplicate_books[$i]['bk_id']], ['class' => '']);
                         echo "<ul>";
                         for($d=0;$d<count($duplicate_books[$i]['bk_cat']);$d++){
                            /* if($d==count($duplicate_books[$i]['bk_cat'])-1){

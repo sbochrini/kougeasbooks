@@ -103,23 +103,23 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="row">
 
                                 <!-- back button button -->
-                                <button
+                                <!--<button
                                         type="button"
                                         data-control-type="back-button"
                                         data-control-name="back-button"
                                         data-control-action="back-button">
                                     <i class="fa fa-arrow-left"></i> Πίσω
-                                </button>
+                                </button>-->
 
                                 <!-- reset button -->
-                                <button
+                                <!--<button
                                         type="button"
                                         class="back-button"
                                         data-control-type="reset"
                                         data-control-name="reset"
                                         data-control-action="reset">
                                     <i class="fa fa-undo"></i> Αρχικές ρυθμίσεις
-                                </button>
+                                </button>-->
 
 
                                 <!-- sort dropdown -->
@@ -179,7 +179,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                             data-path=".title"
                                             type="text"
                                             value=""
-                                            placeholder="Φίλτρο με τίτλο"
+                                            placeholder="Τίτλος"
                                             data-control-type="textbox"
                                             data-control-name="title-filter"
                                             data-control-action="filter"
@@ -199,7 +199,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                             data-path=".author"
                                             type="text"
                                             value=""
-                                            placeholder="Φίλτρο με συγγραφέα"
+                                            placeholder="Συγγραφέας"
                                             data-control-type="textbox"
                                             data-control-name="author-filter"
                                             data-control-action="filter"
@@ -282,7 +282,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 echo '<div class="single-products">';
                                 echo '<div class="productinfo text-center">';
                                 echo '<div class="img">';
-                                echo '<a href=# title="">';
+                                echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $fav_book->bk_id]).' title="">';
                                 $path=Yii::$app->basePath. '/web/img/' . $fav_book->bk_image_web_filename;
                                 if (is_file($path)) {
                                     echo '<img src="' . Yii::$app->homeUrl.'img/'.$fav_book->bk_image_web_filename.'" alt="" title=""/>';
@@ -294,8 +294,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 echo '<div class="block">';
                                 //echo '<h2>'.$fav_book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2>';
                                 echo '<p class="title">'.$fav_book->bk_title.'</p>';
-                                //echo '<a href="https://en.wikipedia.org/wiki/GAZ-M20_Pobeda" title="">'.$fav_book->bk_price.' &euro;</a>';
-                                echo '</p>';
+                                //echo '</p>';
                                 // echo ' <div class="choose-no-border-publisher"><p>
 											// <span class="header book-author"><strong>Συγγραφέας: </strong></span>
 											// <span class="author">'.$fav_book->bkAuthor['auth_name'].'</span>
@@ -347,12 +346,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
                                 echo '<div class="choose">';
                                 echo '<ul class="nav nav-pills nav-justified" style="background-color:#EEEDED">';
-                                //echo '<li><a href="#"><i class="fa fa-search-plus"></i>Λεπτομέρειες</a></li>';
                                 echo '<li>'.Html::a('<i class="fa fa-info-circle fa-2x"></i>', ['bkdetails', 'id' => $fav_book->bk_id]).'</li>';
 								echo '<li class="choose-no-border-price"><span class="header book-price"></span>
 											<span class="price"><span class="val">'.$bk_price.'</span> &euro;</span></li>';
                                 echo '<li><a id="'.$fav_book->bk_id.'" data-toggle="modal" href="#userorderModal"><i class="fa fa-shopping-bag fa-2x"></i></a></li>';
-                                //echo '<li><a href="#"><i class="fa fa-shopping-cart"></i>Άμεση Παραγγελία</a></li>';
                                 echo '</ul>';
                                 echo '</div>';
                                 echo '</div>';

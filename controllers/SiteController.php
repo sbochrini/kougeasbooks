@@ -342,14 +342,14 @@ class SiteController extends Controller
             /*$q_search=Author::find()->where(['like', 'auth_name',$_GET['letter'].'%',false]);*/
             if(Yii::$app->request->get('letter')=='all_en' || Yii::$app->request->get('letter')=="all_gr"){
                 $dataProvider = new ActiveDataProvider([
-                    'query' => Author::find(),
+                    'query' => Author::find()->orderby('auth_name'),
                     'pagination' => [
                         'pageSize' => 30,
                     ],
                 ]);
             }else{
                 $q_search= new Query();
-                $q_search->select(['auth_id', 'auth_name'])->from('tbl_author')->where(['like', 'auth_name',$_GET['letter'].'%',false])->all();
+                $q_search->select(['auth_id', 'auth_name'])->from('tbl_author')->where(['like', 'auth_name',$_GET['letter'].'%',false])->orderby('auth_name')->all();
                 $dataProvider = new ActiveDataProvider([
                     'query' =>$q_search ,
                     'pagination' => [
@@ -370,7 +370,7 @@ class SiteController extends Controller
             ]);
         }else{
             $dataProvider = new ActiveDataProvider([
-                'query' => Author::find(),
+                'query' => Author::find()->orderby('auth_name'),
                 'pagination' => [
                     'pageSize' => 30,
                 ],
