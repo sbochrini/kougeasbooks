@@ -60,7 +60,7 @@ class ContactForm extends Model
                 ->setTextBody($this->body)
                 ->send();
 
-            return true;
+                return true;
         }
         return false;
     }

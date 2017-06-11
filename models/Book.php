@@ -48,7 +48,7 @@ class Book extends \yii\db\ActiveRecord
             [['bk_author_id', 'bk_cat_id'], 'integer'],
             [['bk_pb_year'], 'safe'],
             [['bk_price'],'number','message' => 'Το πεδίο Τιμή πρέπει να είναι αριθμός.'],
-            [['bk_pb_year'],'number','message' => 'Το πεδίο Έτος Έκδοσης πρέπει να είναι αριθμός.'],
+            //[['bk_pb_year'],'number','message' => 'Το πεδίο Έτος Έκδοσης πρέπει να είναι αριθμός.'],
             //[['bk_price','bk_pb_year'], 'number'],
             //[['bk_pages'],'integer'],
             [['bk_condition'], 'string'],
