@@ -164,11 +164,17 @@ class SiteController extends Controller
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
             Yii::$app->mailer->compose()
-                ->setFrom($model->email)
+                ->setFrom([$model->email => $model->name])
                 ->setTo(Yii::$app->params['adminEmail'])
                 ->setSubject($model->subject)
-                //->setTextBody($model->body)
+                ->setTextBody($model->body)
                 ->send();
+            /*ini_set("SMTP","ssl://smtp.gmail.com");
+            ini_set("smtp_port","465");
+           $headers = "MIME-Version: 1.0" . "\r\n";
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+            $headers .= 'From: '.$model->name.' <'.$model->email .'>'. "\r\n";*/
+            mail(Yii::$app->params['adminEmail'],$model->subject,$model->body,$headers);
             Yii::$app->session->setFlash('contactFormSubmitted');
 
             return $this->refresh();
