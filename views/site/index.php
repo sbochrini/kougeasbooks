@@ -26,37 +26,46 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="carousel-inner">
                     <div class="item active">
                         <div class="col-sm-6">
-                            <h1><span>Βιβλιοπωλείο Κουγέας</span></h1>
-                            <h2>100 χρόνια κοντά σας</h2>
-                            <p>Πάντα με τις καλύτερες τιμές και τα πιο σπάνια βιβλία</p>
+                            <h1 style="margin-top:0px"><span>Βιβλιοπωλείο Κουγέας</span></h1>
+                            <h2>Κοντά σας από το XXXX</h2>
+                            <p>++++++++++++ Ως θεωρητικός φυσικός με έδρα το Κέιμπριτζ, έζησα τη ζωή μου σε μία ασυνήθιστη, προνομιακή φούσκα. 
+							Το Κέιμπριτζ είναι μία ασυνήθιστη πόλη, χτισμένη γύρω από τον πυρήνα ενός εκ των καλύτερων πανεπιστήμιων του κόσμου. 
+							Σε αυτή τη πόλη, η επιστημονική κοινότητα, της οποίας είμαι μέλος από 20 ετών, είναι ακόμη πιο εκλεπτυσμένη. 
+							</p>
                             <!--button type="button" class="btn btn-default get">Get it now</button-->
                         </div>
                         <div class="col-sm-6">
-                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/bookstore1.jpg" class="girl img-responsive" style="min-height:283px" alt="" />
+                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/kougeas_1.jpg" class="girl img-responsive" style="height:327px; width: 450px" alt="" />
                             <!--img src="<?php echo Yii::$app->homeUrl; ?>pictures/pricing.png"  class="pricing" alt="" /-->
 
                         </div>
                     </div>
                     <div class="item">
                         <div class="col-sm-6">
-                            <h1><span>Βιβλιοπωλείο </span>Κουγέας</h1>
-                            <h2>99 χρόνια κοντά σας</h2>
-                            <p>Πάντα με τις καλύτερες τιμές και τα πιο σπάνια βιβλία</p>
+                            <h1 style="margin-top:0px"><span>Βιβλιοπωλείο Κουγέας</span></h1>
+                            <h2>Κοντά σας από το XXXX</h2>
+                            <p>++++++++++++ Ως θεωρητικός φυσικός με έδρα το Κέιμπριτζ, έζησα τη ζωή μου σε μία ασυνήθιστη, προνομιακή φούσκα. 
+							Το Κέιμπριτζ είναι μία ασυνήθιστη πόλη, χτισμένη γύρω από τον πυρήνα ενός εκ των καλύτερων πανεπιστήμιων του κόσμου. 
+							Σε αυτή τη πόλη, η επιστημονική κοινότητα, της οποίας είμαι μέλος από 20 ετών, είναι ακόμη πιο εκλεπτυσμένη. 
+							</p>
                             <!--button type="button" class="btn btn-default get">Get it now</button-->                        </div>
                         <div class="col-sm-6">
-                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/bookstore2.jpg" class="girl img-responsive" style="min-height:283px" alt="" />
+                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/kougeas_2.jpg" class="girl img-responsive" style="height:327px; width: 450px" alt="" />
                             <!--img src="<?php echo Yii::$app->homeUrl; ?>pictures/pricing.png"  class="pricing" alt="" /-->
                         </div>
                     </div>
 
                     <div class="item">
                         <div class="col-sm-6">
-                            <h1><span></span>Βιβλιοπωλείο Κουγέας</h1>
-                            <h2>98 χρόνια κοντά σας</h2>
-                            <p>Πάντα με τις καλύτερες τιμές και τα πιο σπάνια βιβλία</p>
+                            <h1 style="margin-top:0px"><span>Βιβλιοπωλείο Κουγέας</span></h1>
+                            <h2>Κοντά σας από το XXXX</h2>
+                            <p>++++++++++++ Ως θεωρητικός φυσικός με έδρα το Κέιμπριτζ, έζησα τη ζωή μου σε μία ασυνήθιστη, προνομιακή φούσκα. 
+							Το Κέιμπριτζ είναι μία ασυνήθιστη πόλη, χτισμένη γύρω από τον πυρήνα ενός εκ των καλύτερων πανεπιστήμιων του κόσμου. 
+							Σε αυτή τη πόλη, η επιστημονική κοινότητα, της οποίας είμαι μέλος από 20 ετών, είναι ακόμη πιο εκλεπτυσμένη. 
+							</p>
                             <!--button type="button" class="btn btn-default get">Get it now</button-->                        </div>
                         <div class="col-sm-6">
-                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/bookstore3.jpg" class="girl img-responsive" style="min-height:283px" alt="" />
+                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/kougeas_3.jpg" class="girl img-responsive" style="height:327px; width: 450px" alt="" />
                             <!--img src="<?php echo Yii::$app->homeUrl; ?>pictures/pricing.png"  class="pricing" alt="" /-->
                         </div>
                     </div>
