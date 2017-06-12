@@ -181,7 +181,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                         <div class="col-md-6">
                             <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
-                                'template' => '<div class="col-lg-5">{image}</div><div class="col-lg-6">{input}</div>',
+                                'template' => '<div class="col-lg-6">{image}</div><div class="col-lg-6">{input}</div>',
                             ])->label(false) ?>
                         </div>
                         <div class="form-group col-md-12">
