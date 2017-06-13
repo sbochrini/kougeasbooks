@@ -333,8 +333,10 @@ $this->params['breadcrumbs'][] = $this->title;
 										
                                 if(is_null($fav_book->bk_price) || $fav_book->bk_price==""){
                                     $bk_price="-";
+                                    $disabled="disabled";
                                     $available='<h4><span class="label label-danger" role="alert"><small>Μη διαθέσιμο</small></span><h4>';
                                 }else{
+                                    $disabled="";
                                     $bk_price=$fav_book->bk_price;
                                     $available='<h4><span class="label label-success" role="alert"> <small>Άμεσα διαθέσιμο <i class="fa fa-paper-plane-o" aria-hidden="true"></i></small></span><h4>';
                                 }
@@ -358,7 +360,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 echo '<li>'.Html::a('<i class="fa fa-info-circle fa-2x"></i>', ['bkdetails', 'id' => $fav_book->bk_id]).'</li>';
 								echo '<li class="choose-no-border-price"><span class="header book-price"></span>
 											<span class="price"><span class="val">'.$bk_price.'</span> &euro;</span></li>';
-                                echo '<li><a id="'.$fav_book->bk_id.'" data-toggle="modal" href="#userorderModal"><i class="fa fa-shopping-bag fa-2x"></i></a></li>';
+                                echo '<li class="'.$disabled.'"><a id="'.$fav_book->bk_id.'" data-toggle="modal" href="#userorderModal"><i class="fa fa-shopping-bag fa-2x"></i></a></li>';
                                 echo '</ul>';
                                 echo '</div>';
                                 echo '</div>';
@@ -409,3 +411,38 @@ $this->params['breadcrumbs'][] = $this->title;
             <!--modal-content -->
         </div>
     </div>
+
+
+   <!-- <div class="modal fade" id="userorderModalsuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content"><div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Φόρμα παραγγελίας</h4>
+                </div><div class="modal-body">
+                    <div class="alert alert-success alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <h4><i class="icon fa fa-check"></i> Saved!</h4>H παραγγελία σας καταχωρήθηκε επιτυχώς.</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 0; margin-top: 16px">Κλείσιμο</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="userorderModalfail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content"><div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Φόρμα παραγγελίας</h4>
+                </div><div class="modal-body">
+                    <div class="alert alert-danger alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <<h4><i class="icon fa fa-exclamation-triangle"></i> Σφάλμα!</h4>Κάποιο σφάλμα προέκυψε. Παρακαλούμε δοκιμάστε ξανά!</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 0; margin-top: 16px">Κλείσιμο</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->

@@ -261,7 +261,7 @@ class SiteController extends Controller
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="myModalLabel">Φόρμα παραγγελίας</h4>
                     </div>';
-            $modal .='<form id="usr_order_form" action="'.Url::to(['site/usrorder', 'id'=>$_POST['bk_id']]).'" method="post">
+            $modal .='<form id="usr_index_order_form" action="'.Url::to(['site/usrorder', 'id'=>$_POST['bk_id']]).'" method="post">
             <input name="_csrf" value="'.Yii::$app->request->getCsrfToken().'" type="hidden">
                              <div class="modal-body">
                                  <div class="form-group field-order-order_bk_id required">
@@ -335,7 +335,7 @@ class SiteController extends Controller
                              </div>
                              <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 0; margin-top: 16px">Κλείσιμο</button>
-                                <button type="submit" class="btn btn-primary">Αποθήκευση</button>
+                                <button id="index_usrorder_submit" type="submit" class="btn btn-primary" data-toggle="modal" href="#userorderModalsuccess">Αποστολή</button>
                              </div>
                         </form>';
             echo $modal;

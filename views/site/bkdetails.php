@@ -299,33 +299,33 @@ $this->params['breadcrumbs'][] = $book->bk_title;
 
     <div class="recommended_items"><!--recommended_items-->
         <h2 class="title text-center">Προτεινόμενα</h2>
+		<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				<?php
+				if(!is_null($recommended_books)){
+					echo '<div class="item active">
+						<div class="box jplist jplist-grid-view">
+						<div class="list box text-shadow" style="margin:0 0">';
+					foreach ($recommended_books as $recommended_book):
+						echo '<div class="list-item box" style="width: 26%; margin-left:5%">
+								<div class="product-image-wrapper">
+									<div class="single-products">
+										<div class="productinfo text-center">';
+						echo '<div class="img">';
+						echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $recommended_book->bk_id]).' title="">';
+						$path=Yii::$app->basePath. '/web/img/' . $recommended_book->bk_image_web_filename;
+						if (is_file($path)) {
+							echo '<img src="' . Yii::$app->homeUrl.'img/'.$recommended_book->bk_image_web_filename.'" alt="" title=""/>';
+						}else{
+							echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" >';
+						}
+						echo '</a>';
+						echo '</div>';
+						echo '<div class="block">';
+						echo '<p class="title">'.$recommended_book->bk_title.'</p>';
 
-        <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <?php
-                if(!is_null($recommended_books)){
-                    echo '<div class="item active">';
-                    foreach ($recommended_books as $recommended_book):
-                        echo '<div class="col-sm-4">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">';
-                        echo '<div class="img">';
-                        echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $recommended_book->bk_id]).' title="">';
-                        $path=Yii::$app->basePath. '/web/img/' . $recommended_book->bk_image_web_filename;
-                        if (is_file($path)) {
-                            echo '<img src="' . Yii::$app->homeUrl.'img/'.$recommended_book->bk_image_web_filename.'" alt="" title=""/>';
-                        }else{
-                            echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" >';
-                        }
-                        echo '</a>';
-                        echo '</div>';
-                        echo '<div class="block">';
-                        echo '<p>'.$recommended_book->bk_title.'</p>';
-                        echo '</div>'; //block
-                        //echo '<img src="' . Yii::$app->homeUrl.'img/'.$recommended_book->bk_image_web_filename.'" alt="" />';
-                        echo '<h2>'.$recommended_book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2>';
-                        echo ' <div class="choose-no-border-publisher">
+						//echo '<img src="' . Yii::$app->homeUrl.'img/'.$recommended_book->bk_image_web_filename.'" alt="" />';
+						echo ' <div class="choose-no-border-publisher">
 											<p>
 												<span class="header book-publisher"><strong>Έτος: </strong></span>
 												<span class="year">'.$recommended_book->bk_pb_year.'</span>
@@ -335,64 +335,131 @@ $this->params['breadcrumbs'][] = $book->bk_title;
 												<span class="author">'.$recommended_book->bkAuthor['auth_name'].'</span>
 											</p>
 										</div>';
-                        echo '<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-info-circle fa-2x"></i>Λεπτομέρειες</button>';
-                        echo '</div></div></div></div>';
-                    endforeach;
-                    echo '</div>';
-                }
+						echo '</div>'; //block
+						
+						echo '</div>';
+						echo '<div class="choose">';
+                        echo '<ul class="nav nav-pills nav-justified" style="background-color:#DCD0C0">';
+                        echo '<li>'.Html::a('<i class="fa fa-info-circle fa-2x"></i>', ['bkdetails', 'id' => $recommended_book->bk_id]).'</li>';
+						echo '<li class="choose-no-border-price"><span class="header book-price"></span>
+								<span class="price"><span class="val">'.$recommended_book->bk_price.'</span> &euro;</span></li>';
+                        echo '<li><a id="'.$recommended_book->bk_id.'" data-toggle="modal" href="#userorderModal"><i class="fa fa-shopping-bag fa-2x"></i></a></li>';
+                        echo '</ul>';
+                        echo '</div>';
+						echo '</div></div></div>';
+					endforeach;
+					echo '</div></div></div>';
+				}
+				
+				if(!is_null($auth_recommended_books)){
+					echo '<div class="item">
+						<div class="box jplist jplist-grid-view">
+						<div class="list box text-shadow" style="margin:0 0">';
+					foreach ($auth_recommended_books as $auth_recommended_book):
+						echo '<div class="list-item box" style="width: 26%; margin-left:5%">
+								<div class="product-image-wrapper">
+									<div class="single-products">
+										<div class="productinfo text-center">';
+						echo '<div class="img">';
+						echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $auth_recommended_book->bk_id]).' title="">';
+						$path=Yii::$app->basePath. '/web/img/' . $auth_recommended_book->bk_image_web_filename;
+						if (is_file($path)) {
+							echo '<img src="' . Yii::$app->homeUrl.'img/'.$auth_recommended_book->bk_image_web_filename.'" alt="" title=""/>';
+						}else{
+							echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" >';
+						}
+						echo '</a>';
+						echo '</div>';
+						echo '<div class="block">';
+						echo '<p class="title">'.$auth_recommended_book->bk_title.'</p>';
 
-                if(!is_null($auth_recommended_books)){
-                    echo '<div class="item ">';
-                    foreach ($auth_recommended_books as $auth_recommended_book):
-                        echo '<div class="col-sm-4">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">';
-                        $path=Yii::$app->basePath. '/web/img/' . $auth_recommended_book->bk_image_web_filename;
-                        if (is_file($path)) {
-                            echo '<img src="' . Yii::$app->homeUrl.'img/'.$auth_recommended_book->bk_image_web_filename.'" alt="" title=""/>';
-                        }else{
-                            echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" >';
-                        }
-                        // echo '<img src="' . Yii::$app->homeUrl.'img/'.$auth_recommended_book->bk_image_web_filename.'" alt="" />';
-                        echo '<h2>'.$auth_recommended_book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2>';
-                        echo '<p>'.$auth_recommended_book->bk_title.'</p>';
-                        echo '<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-search-plus"></i>Λεπτομέρειες</button>';
-                        echo '</div></div></div></div>';
-                    endforeach;
-                    echo '</div>';
-                }
+						//echo '<img src="' . Yii::$app->homeUrl.'img/'.$auth_recommended_book->bk_image_web_filename.'" alt="" />';
+						echo ' <div class="choose-no-border-publisher">
+											<p>
+												<span class="header book-publisher"><strong>Έτος: </strong></span>
+												<span class="year">'.$auth_recommended_book->bk_pb_year.'</span>
+											</p>
+											<p style="height:34px">
+												<span class="header book-author"><strong>Συγγραφέας: </strong></span>
+												<span class="author">'.$auth_recommended_book->bkAuthor['auth_name'].'</span>
+											</p>
+										</div>';
+						echo '</div>'; //block
+						
+						echo '</div>';
+						echo '<div class="choose">';
+                        echo '<ul class="nav nav-pills nav-justified" style="background-color:#DCD0C0">';
+                        echo '<li>'.Html::a('<i class="fa fa-info-circle fa-2x"></i>', ['bkdetails', 'id' => $auth_recommended_book->bk_id]).'</li>';
+						echo '<li class="choose-no-border-price"><span class="header book-price"></span>
+								<span class="price"><span class="val">'.$auth_recommended_book->bk_price.'</span> &euro;</span></li>';
+                        echo '<li><a id="'.$auth_recommended_book->bk_id.'" data-toggle="modal" href="#userorderModal"><i class="fa fa-shopping-bag fa-2x"></i></a></li>';
+                        echo '</ul>';
+                        echo '</div>';
+						echo '</div></div></div>';
+					endforeach;
+					echo '</div></div></div>';
+				}
+				
+				
+				if(!is_null($cat_recommended_books)){
+					echo '<div class="item">
+						<div class="box jplist jplist-grid-view">
+						<div class="list box text-shadow" style="margin:0 0">';
+					foreach ($cat_recommended_books as $cat_recommended_book):
+						echo '<div class="list-item box" style="width: 26%; margin-left:5%">
+								<div class="product-image-wrapper">
+									<div class="single-products">
+										<div class="productinfo text-center">';
+						echo '<div class="img">';
+						echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $cat_recommended_book->bk_id]).' title="">';
+						$path=Yii::$app->basePath. '/web/img/' . $cat_recommended_book->bk_image_web_filename;
+						if (is_file($path)) {
+							echo '<img src="' . Yii::$app->homeUrl.'img/'.$cat_recommended_book->bk_image_web_filename.'" alt="" title=""/>';
+						}else{
+							echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" >';
+						}
+						echo '</a>';
+						echo '</div>';
+						echo '<div class="block">';
+						echo '<p class="title">'.$cat_recommended_book->bk_title.'</p>';
 
-                if(!is_null($auth_recommended_books)){
-                    echo '<div class="item ">';
-                    foreach ($cat_recommended_books as $cat_recommended_book):
-                        echo '<div class="col-sm-4">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">';
-                        $path=Yii::$app->basePath. '/web/img/' . $cat_recommended_book->bk_image_web_filename;
-                        if (is_file($path)) {
-                            echo '<img src="' . Yii::$app->homeUrl.'img/'.$cat_recommended_book->bk_image_web_filename.'" alt="" title=""/>';
-                        }else{
-                            echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" >';
-                        }
-                        //echo '<img src="' . Yii::$app->homeUrl.'img/'.$cat_recommended_book->bk_image_web_filename.'" alt="" />';
-                        echo '<h2>'.$cat_recommended_book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2>';
-                        echo '<p>'.$cat_recommended_book->bk_title.'</p>';
-                        echo '<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-search-plus"></i>Λεπτομέρειες</button>';
-                        echo '</div></div></div></div>';
-                    endforeach;
-                    echo '</div>';
-                }
+						//echo '<img src="' . Yii::$app->homeUrl.'img/'.$cat_recommended_book->bk_image_web_filename.'" alt="" />';
+						echo ' <div class="choose-no-border-publisher">
+											<p>
+												<span class="header book-publisher"><strong>Έτος: </strong></span>
+												<span class="year">'.$cat_recommended_book->bk_pb_year.'</span>
+											</p>
+											<p style="height:34px">
+												<span class="header book-author"><strong>Συγγραφέας: </strong></span>
+												<span class="author">'.$cat_recommended_book->bkAuthor['auth_name'].'</span>
+											</p>
+										</div>';
+						echo '</div>'; //block
+						
+						echo '</div>';
+						echo '<div class="choose">';
+                        echo '<ul class="nav nav-pills nav-justified" style="background-color:#DCD0C0">';
+                        echo '<li>'.Html::a('<i class="fa fa-info-circle fa-2x"></i>', ['bkdetails', 'id' => $cat_recommended_book->bk_id]).'</li>';
+						echo '<li class="choose-no-border-price"><span class="header book-price"></span>
+								<span class="price"><span class="val">'.$cat_recommended_book->bk_price.'</span> &euro;</span></li>';
+                        echo '<li><a id="'.$cat_recommended_book->bk_id.'" data-toggle="modal" href="#userorderModal"><i class="fa fa-shopping-bag fa-2x"></i></a></li>';
+                        echo '</ul>';
+                        echo '</div>';
+						echo '</div></div></div>';
+					endforeach;
+					echo '</div></div></div>';
+				}
 
-                ?>
-                <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev" style="left: 0;">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </div>
-        </div><!--/recommended_items-->
-    </div>
+
+
+				?>
+				<a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev" style="left: 0;margin-right:40px">
+					<i class="fa fa-angle-left"></i>
+				</a>
+				<a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+					<i class="fa fa-angle-right"></i>
+				</a>
+			</div>
+        </div>
+    </div><!--/recommended_items-->
 </div>
