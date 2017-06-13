@@ -333,10 +333,10 @@ $this->params['breadcrumbs'][] = $this->title;
 										
                                 if(is_null($fav_book->bk_price) || $fav_book->bk_price==""){
                                     $bk_price="-";
-                                    $available='<h4><span class="label label-danger" role="alert">Μη διαθέσιμο</span><h4>';
+                                    $available='<h4><span class="label label-danger" role="alert"><small>Μη διαθέσιμο</small></span><h4>';
                                 }else{
                                     $bk_price=$fav_book->bk_price;
-                                    $available='<h4><span class="label label-success" role="alert"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Άμεσα διαθέσιμο</span><h4>';
+                                    $available='<h4><span class="label label-success" role="alert"> <small>Άμεσα διαθέσιμο <i class="fa fa-paper-plane-o" aria-hidden="true"></i></small></span><h4>';
                                 }
 								echo '<div class="choose-no-border-price">
 										'.$available.'';
@@ -376,26 +376,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
                         <!-- panel -->
                         <div class="jplist-panel box panel-bottom">
-
-                            <!-- items per page dropdown
-                            <div
-                                    class="jplist-drop-down"
-                                    data-control-type="items-per-page-drop-down"
-                                    data-control-name="paging"
-                                    data-control-action="paging"
-                                    data-control-animate-to-top="true">
-
-                                <ul>
-                                    <li><span data-number="6"> 6 ανά σελίδα </span></li>
-									<li><span data-number="12"> 12 ανά σελίδα </span></li>
-									<li><span data-number="18" data-default="true"> 18 ανά σελίδα </span></li>
-									<li><span data-number="24"> 24 ανά σελίδα </span></li>
-									<li><span data-number="30"> 30 ανά σελίδα </span></li>
-									<li><span data-number="all"> Προβολή όλων </span></li>
-                                </ul>
-                            </div>
-							-->
-
                             <!-- pagination results -->
                             <div
                                     class="jplist-label"

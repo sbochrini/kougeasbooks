@@ -310,16 +310,32 @@ $this->params['breadcrumbs'][] = $book->bk_title;
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">';
+                        echo '<div class="img">';
+                        echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $recommended_book->bk_id]).' title="">';
                         $path=Yii::$app->basePath. '/web/img/' . $recommended_book->bk_image_web_filename;
                         if (is_file($path)) {
                             echo '<img src="' . Yii::$app->homeUrl.'img/'.$recommended_book->bk_image_web_filename.'" alt="" title=""/>';
                         }else{
                             echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" >';
                         }
+                        echo '</a>';
+                        echo '</div>';
+                        echo '<div class="block">';
+                        echo '<p>'.$recommended_book->bk_title.'</p>';
+                        echo '</div>'; //block
                         //echo '<img src="' . Yii::$app->homeUrl.'img/'.$recommended_book->bk_image_web_filename.'" alt="" />';
                         echo '<h2>'.$recommended_book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2>';
-                        echo '<p>'.$recommended_book->bk_title.'</p>';
-                        echo '<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-search-plus"></i>Λεπτομέρειες</button>';
+                        echo ' <div class="choose-no-border-publisher">
+											<p>
+												<span class="header book-publisher"><strong>Έτος: </strong></span>
+												<span class="year">'.$recommended_book->bk_pb_year.'</span>
+											</p>
+											<p style="height:34px">
+												<span class="header book-author"><strong>Συγγραφέας: </strong></span>
+												<span class="author">'.$recommended_book->bkAuthor['auth_name'].'</span>
+											</p>
+										</div>';
+                        echo '<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-info-circle fa-2x"></i>Λεπτομέρειες</button>';
                         echo '</div></div></div></div>';
                     endforeach;
                     echo '</div>';
