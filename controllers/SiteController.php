@@ -17,7 +17,7 @@ use app\models\ContactForm;
 use yii\data\ActiveDataProvider;
 use yii\db\Expression;
 use yii\helpers\Url;
-use yii\widgets\ListView;
+use yii\widgets\ActiveForm;
 
 class SiteController extends Controller
 {
@@ -256,14 +256,33 @@ class SiteController extends Controller
     public function actionUsrordermodal()
     {
         if (isset($_POST['bk_id'])) {
-            $model = new Order();
-            $modal = '<div class="modal-header">
+            $order = new Order();
+            $modal="";
+            /*$modal = '<div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="myModalLabel">Φόρμα παραγγελίας</h4>
                     </div>';
-            $modal .='<form id="usr_index_order_form" action="'.Url::to(['site/usrorder', 'id'=>$_POST['bk_id']]).'" method="post">
-            <input name="_csrf" value="'.Yii::$app->request->getCsrfToken().'" type="hidden">
-                             <div class="modal-body">
+            $modal.='<div class="modal-body">';*/
+           //<form id="usr_index_order_form" action="'.Url::to(['site/usrindexorder', 'id'=>$_POST['bk_id']]).'" method="post">
+            $form = ActiveForm::begin(
+                [
+                    'id' => 'usr_index_order_form',
+                    'action'=> ['site/usrindexorder'],
+                    'method' => 'post',
+
+                ]);
+            $modal.=$form->init();
+            $modal.=$form->field($order, 'order_bk_id')->hiddenInput(['value'=> $_POST['bk_id']])->label(false);
+            $modal.='<span><div class="col-sm-6">'.$form->field($order, 'usr_name')->textInput(['maxlength' => true,'style' => 'width: 100%']).'</div>';
+            $modal.='<div class="col-sm-6">'.$form->field($order, 'usr_surname')->textInput(['maxlength' => true, 'style' => 'width: 100%']).'</div></span>';
+            $modal.='<span><div class="col-sm-6">'.$form->field($order, 'usr_phone')->textInput(['maxlength' => true, 'style' => 'width: 100%']).'</div>';
+            $modal.='<div class="col-sm-6">'.$form->field($order, 'usr_email')->textInput(['maxlength' => true, 'style' => 'width: 100%']).'</div></span>';
+            $modal.='<span class="row"><div class="col-sm-6">'.$form->field($order, 'usr_address')->textInput(['maxlength' => true, 'style' => 'width: 100%']).'</div>';
+            $modal.='<div class="col-sm-4">'.$form->field($order, 'usr_city')->textInput(['maxlength' => true, 'style' => 'width: 100%']).'</div>';
+            $modal.='<div class="col-sm-2">'.$form->field($order, 'usr_pcode')->textInput(['maxlength' => true, 'style' => 'width: 100%']).'</div></span>';
+            $modal.='<span class="row"><div class="col-sm-12" style="padding-right: 15px; padding-left: 15px;">'.$form->field($order, 'order_comment')->textArea(['maxlength' => true])->label('Σχόλιο').'</div></span>';
+                /*$modal .='<input name="_csrf" value="'.Yii::$app->request->getCsrfToken().'" type="hidden">
+                           
                                  <div class="form-group field-order-order_bk_id required">
                                     <input id="order-order_bk_id" class="form-control" name="Order[order_bk_id]" value="'.$_POST['bk_id'].'" type="hidden">
                                     <div class="help-block"></div>
@@ -332,14 +351,33 @@ class SiteController extends Controller
                                         </div>
                                     </div>
                                 </span>
-                             </div>
-                             <div class="modal-footer">
+                             </div>';*/
+
+                             $modal.='<div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 0; margin-top: 16px">Κλείσιμο</button>
-                                <button id="index_usrorder_submit" type="submit" class="btn btn-primary" data-toggle="modal" href="#userorderModalsuccess">Αποστολή</button>
-                             </div>
-                        </form>';
+                                <button id="index_usrorder_submit" type="submit" class="btn btn-primary" >Αποστολή</button>
+                             </div>';
+            //ActiveForm::end();
+                       // </form>';
             echo $modal;
         }
+    }
+
+    public function actionUsrindexorder()
+    {
+        $model = new Order();
+        if (Yii::$app->request->post()) {
+            $model->load(Yii::$app->request->post());
+            $model->order_complete = 0;
+            $model->order_date = Yii::$app->formatter->asDate('now', 'Y-M-d');
+            if ($model->save()) {
+                Yii::$app->session->setFlash('indexsuccess', 'H παραγγελία σας καταχωρήθηκε επιτυχώς.');
+            } else {
+                Yii::$app->session->setFlash('indexfail', 'Κάποιο σφάλμα προέκυψε. Παρακαλούμε δοκιμάστε ξανά! ');
+            }
+        }
+
+        return $this->redirect(Yii::$app->request->referrer);
     }
 
     function actionAuthorcatalog(){

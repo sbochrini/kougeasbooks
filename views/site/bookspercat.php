@@ -259,10 +259,10 @@ $this->params['breadcrumbs'][] = $category->cat_name;
 
                                     if(is_null($book->bk_price) || $book->bk_price==""){
                                         $bk_price="-";
-                                        $available='<h4><span class="label label-danger" role="alert">Μη διαθέσιμο</span><h4>';
+                                        $available='<h4><span class="label label-danger" role="alert"><small>Μη διαθέσιμο</small></span><h4>';
                                     }else{
                                         $bk_price=$book->bk_price;
-                                        $available='<h4><span class="label label-success" role="alert"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Άμεσα διαθέσιμο</span><h4>';
+                                        $available='<h4><span class="label label-success" role="alert"> <small>Άμεσα διαθέσιμο <i class="fa fa-paper-plane-o" aria-hidden="true"></i></small></span><h4>';
                                     }
                                     echo '<div class="choose-no-border-price">
 										'.$available.'';
@@ -348,14 +348,71 @@ $this->params['breadcrumbs'][] = $category->cat_name;
     </div>
     <!--</div>-->
 
-    <!-- Modal -->
-    <div class="modal fade" id="userorderModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+
+
+    </div>
+
+<?php if (Yii::$app->session->hasFlash('indexsuccess')): ?>
+    <div class="modal fade" id="userindexorderModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <!--modal-content -->
+            <div class="modal-content"><div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Φόρμα παραγγελίας</h4>
+                </div><div class="modal-body">
+                    <div class="alert alert-success alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <h4><i class="icon fa fa-check"></i> Saved!</h4>
+                        <?= Yii::$app->session->getFlash('indexsuccess') ?>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 0; margin-top: 16px">Κλείσιμο</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+<?php endif; ?>
 
-
+<?php if (Yii::$app->session->hasFlash('indexfail')): ?>
+    <div class="modal fade" id="userindexorderModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content"><div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Φόρμα παραγγελίας</h4>
+                </div><div class="modal-body">
+                    <div class="alert alert-danger alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <h4><i class="icon fa fa-exclamation-triangle"></i> Σφάλμα!</h4>
+                        <?= Yii::$app->session->getFlash('indexfail') ?>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 0; margin-top: 16px">Κλείσιμο</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+<?php endif; ?>
+
+<!-- Modal -->
+<div class="modal fade" id="userorderModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Φόρμα παραγγελίας</h4>
+            </div>
+            <?php $form = ActiveForm::begin(
+                [
+                    'id' => 'usr_index_order_form',
+                    'action'=> ['site/usrindexorder'],
+                    'method' => 'post',
+                ]); ?>
+            <div class="modal-body">
+                <!--modal-body -->
+
+            </div>
+            <?php ActiveForm::end();?>
+        </div>
+    </div>
+</div>
