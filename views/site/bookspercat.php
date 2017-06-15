@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $category->cat_name;
     <div class="row">
         <div class="col-sm-12">
             <div class="features_items"><!--features_items-->
-                <h2 class="title text-center">ΟΙ ΕΠΙΛΟΓΕΣ ΜΑΣ</h2>
+                <h2 class="title text-center"><?php echo $category->cat_name; ?></h2>
                 <div class="box">
                     <div class="center">
                         <div id="demo" class="box jplist" style="margin: 0px 0px 50px 0px">

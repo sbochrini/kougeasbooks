@@ -34,7 +34,7 @@ use yii\helpers\Url;
                     echo '<div class="panel panel-default">';
                         echo '<div class="panel-heading">';
                             echo '<h4 class="panel-title">';
-                                echo '<a class=" cat_subcat" data-toggle="collapse" href="#cat_'.$category->cat_id.'"  aria-expanded="false" aria-controls="cat_'.$category->cat_id.'">'.$category->cat_name.'<span class="pull-right"><i class="fa fa-plus"></i></span></a>';
+                                echo '<a id="'.$category->cat_id.'" class="cat_subcat" data-toggle="collapse" href="#cat_'.$category->cat_id.'"  aria-expanded="false" aria-controls="cat_'.$category->cat_id.'">'.$category->cat_name.'<span class="pull-right"><i class="fa fa-plus"></i></span></a>';
                                 //echo '<div id="cat_'.$category->cat_id.'" class="collapse">';
                             echo '</h4>';
                         echo '</div>';
