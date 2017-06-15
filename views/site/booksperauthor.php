@@ -7,6 +7,8 @@
  */
 
 use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+
 $this->params['breadcrumbs'][] = ['label' => 'Κατάλογος συγγραφέων', 'url' => ['authorcatalog']];
 $this->params['breadcrumbs'][] = $author->auth_name;
 ?>

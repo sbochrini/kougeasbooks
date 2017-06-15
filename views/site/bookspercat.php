@@ -7,6 +7,8 @@
  */
 
 use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+
 $this->params['breadcrumbs'][] = $category->cat_name;
 ?>
 <div id="booklist" class="book-index">
