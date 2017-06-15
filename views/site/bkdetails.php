@@ -2,7 +2,19 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
+
+$session = Yii::$app->session;
+if(isset($session['authorcatalog']) && isset($session['booksperauthor'])){
+    $this->params['breadcrumbs'][] = ['label' => $session->get('authorcatalog'), 'url' => $session->get('urlauthorcatalog')];
+    $this->params['breadcrumbs'][] = ['label' => $session->get('booksperauthor'), 'url' => $session->get('urlbooksperauthor')];
+}elseif (isset($session['category']) && isset($session['subcategory'])){
+    $this->params['breadcrumbs'][] = ['label' => $session->get('urlcategory'), 'url' => $session->get('urlcategory')];
+    $this->params['breadcrumbs'][] = ['label' => $session->get('subcategory'), 'url' => $session->get('urlsubcategory')];
+}elseif (isset($session['category']) && !isset($session['subcategory'])){
+    $this->params['breadcrumbs'][] = ['label' => $session->get('urlcategory'), 'url' => $session->get('urlcategory')];
+}
 $this->params['breadcrumbs'][] = $book->bk_title;
+
 ?>
 
 <div class="col-sm-9 padding-right">

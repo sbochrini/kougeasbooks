@@ -18,6 +18,7 @@ use yii\data\ActiveDataProvider;
 use yii\db\Expression;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
+use yii\web\Session;
 
 class SiteController extends Controller
 {
@@ -201,7 +202,6 @@ class SiteController extends Controller
 
     public function actionBookspercat()
     {
-
         if(Yii::$app->request->get('id')){
             $cat_id = Yii::$app->request->get('id');
             $books= Book::find()

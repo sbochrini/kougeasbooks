@@ -9,6 +9,13 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
+$session = Yii::$app->session;
+$session->open();
+$session->set('category', $subcategory->subcatCat['cat_name']);
+$session->set('urlcategory', (['bookspercat','id'=>$subcategory->subcat_cat_id]));
+$session->set('subcategory', $subcategory->subcat_name);
+$session->set('urlsubcategory', (['bookspersubcat','id'=>$subcategory->subcat_id]));
+
 $this->params['breadcrumbs'][] = ['label' => $subcategory->subcatCat['cat_name'], 'url' => ['bookspercat','id'=>$subcategory->subcat_cat_id]];
 $this->params['breadcrumbs'][] = $subcategory->subcat_name;
 ?>

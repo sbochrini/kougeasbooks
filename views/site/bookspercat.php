@@ -9,6 +9,11 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
+$session = Yii::$app->session;
+$session->open();
+//$session->set('bookspercat', 'Κατηγορίες');
+$session->set('category', $category->cat_name);
+$session->set('urlcategory', (['bookspercat','id'=>$category->cat_id]));
 $this->params['breadcrumbs'][] = $category->cat_name;
 ?>
 <div id="booklist" class="book-index">

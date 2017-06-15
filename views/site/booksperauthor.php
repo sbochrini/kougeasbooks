@@ -9,6 +9,13 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
+$session = Yii::$app->session;
+$session->open();
+$session->set('authorcatalog', 'Κατάλογος συγγραφέων');
+$session->set('urlauthorcatalog', (['authorcatalog']));
+$session->set('booksperauthor', $author->auth_name);
+$session->set('urlbooksperauthor', (['booksperauthor','auth_id'=>$author->auth_id]));
+
 $this->params['breadcrumbs'][] = ['label' => 'Κατάλογος συγγραφέων', 'url' => ['authorcatalog']];
 $this->params['breadcrumbs'][] = $author->auth_name;
 ?>
