@@ -92,8 +92,20 @@ $('#userorderModal').on('show.bs.modal', function(e) {
         data: {bk_id  : bk_id},
         success: function(data)
         {
-            $modal.find('.modal-content').html(data);
+           // $modal.find('.modal-content').html(data);
+            $modal.find('.modal-body').html(data);
         }
     });
 
+});
+
+$(window).load(function() {
+    $('#userindexorderModal').modal('show');
+});
+
+$('.cat_subcat').click(function(){
+    var cat_id=$(this).attr('id');
+    url='index.php?r=site/bookspercat&id='+cat_id;
+   // alert(url);
+    window.location.href=url;
 });
