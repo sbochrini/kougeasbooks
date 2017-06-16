@@ -7,11 +7,14 @@ $session = Yii::$app->session;
 if(isset($session['authorcatalog']) && isset($session['booksperauthor'])){
     $this->params['breadcrumbs'][] = ['label' => $session->get('authorcatalog'), 'url' => $session->get('urlauthorcatalog')];
     $this->params['breadcrumbs'][] = ['label' => $session->get('booksperauthor'), 'url' => $session->get('urlbooksperauthor')];
+    $session->close();
 }elseif (isset($session['category']) && isset($session['subcategory'])){
     $this->params['breadcrumbs'][] = ['label' => $session->get('urlcategory'), 'url' => $session->get('urlcategory')];
     $this->params['breadcrumbs'][] = ['label' => $session->get('subcategory'), 'url' => $session->get('urlsubcategory')];
+    $session->close();
 }elseif (isset($session['category']) && !isset($session['subcategory'])){
     $this->params['breadcrumbs'][] = ['label' => $session->get('urlcategory'), 'url' => $session->get('urlcategory')];
+    $session->close();
 }
 $this->params['breadcrumbs'][] = $book->bk_title;
 

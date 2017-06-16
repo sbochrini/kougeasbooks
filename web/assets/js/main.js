@@ -79,6 +79,36 @@ $('document').ready(function(){
         itemPath: '.list-item',
         panelPath: '.jplist-panel'
     });
+
+    var url =window.location.href;
+    if(url.indexOf("bookspercat") > -1) {
+        var splited = url.split('bookspercat&id=');
+        if (typeof splited[1] !== 'undefined') {
+            var cat_id = splited[1];
+            var cat_ele = document.getElementById('cat_' + cat_id);
+            cat_ele.className += " in";
+        }
+    }
+    if(url.indexOf("bookspersubcat") > -1) {
+        var splited = url.split('bookspersubcat&id=');
+        if (typeof splited[1] !== 'undefined') {
+            var subcat_id = splited[1];
+            //alert(subcat_id);
+            var subcat_ele = document.getElementById('subcat_' + subcat_id);
+            var cat_subcat_eles = document.getElementsByClassName("panel-collapse");
+            for(var i = 0; i < cat_subcat_eles.length; i++ ){
+                if(cat_subcat_eles[i].contains(subcat_ele)){
+                   // alert(cat_subcat_eles[i].id);
+                    catsubcat_ele=cat_subcat_eles[i];
+                    catsubcat_ele.className += " in";
+                }
+            }
+            //var catsubcat_ele=cat_subcat_ele.contains(subcat_ele);
+
+        }
+    }
+
+
 });
 
 //------------index usr order modal---------------\\
@@ -105,7 +135,18 @@ $(window).load(function() {
 
 $('.cat_subcat').click(function(){
     var cat_id=$(this).attr('id');
-    url='index.php?r=site/bookspercat&id='+cat_id;
+  /*  $.ajax({
+        type: 'GET',
+        url: 'index.php?r=site/bookspercatwith',
+        data: {id  : cat_id},
+        success: function(data)
+        {
+            $('#booklist').html(data);
+        }
+    });*/
+   url='index.php?r=site/bookspercat&id='+cat_id;
    // alert(url);
     window.location.href=url;
+
 });
+

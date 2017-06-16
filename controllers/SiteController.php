@@ -222,6 +222,23 @@ class SiteController extends Controller
         }else return $this->render('error');
     }
 
+    /*public function actionBookspercatwith()
+    {
+        if(Yii::$app->request->get('id')){
+            $cat_id = Yii::$app->request->get('id');
+            $books= Book::find()
+                ->where(['bk_cat_id' => $cat_id])
+                ->orderBy('bk_grouping')
+                ->all();
+            $category=BookCategory::findOne(['cat_id'=>$cat_id]);
+            return $this->renderAjax('bookspercat',[
+                'category'=>$category,
+                'books' => $books,
+            ]);
+        }else return $this->renderAjax('error');
+    }*/
+
+
     public function actionBookspersubcat()
     {
         if(Yii::$app->request->get('id')){
