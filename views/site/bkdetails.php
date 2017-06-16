@@ -2,17 +2,20 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-if($_GET['bc']==1){
-    $this->params['breadcrumbs'][] = ['label' => $book->bkCat['cat_name'], 'url' => ['bookspercat','id'=>$book->bkCat['cat_id']]];
+if(isset($_GET['bc'])){
+    if($_GET['bc']==1){
+        $this->params['breadcrumbs'][] = ['label' => $book->bkCat['cat_name'], 'url' => ['bookspercat','id'=>$book->bkCat['cat_id']]];
+    }
+    elseif($_GET['bc']==2){
+        $this->params['breadcrumbs'][] = ['label' => $book->bkCat['cat_name'], 'url' => ['bookspercat','id'=>$book->bkCat['cat_id']]];
+        $this->params['breadcrumbs'][] = ['label' => $book->bkSubcat['subcat_name'], 'url' => ['bookspersubcat','id'=>$book->bkSubcat['subcat_id']]];
+    }
+    elseif($_GET['bc']==3){
+        $this->params['breadcrumbs'][] = ['label' => $book->bkCat['cat_name'], 'url' => ['bookspercat','id'=>$book->bkCat['cat_id']]];
+        $this->params['breadcrumbs'][] = ['label' => $book->bkCat['cat_name'], 'url' => ['bookspercat','id'=>$book->bkCat['cat_id']]];
+    }
 }
-elseif($_GET['bc']==2){
-    $this->params['breadcrumbs'][] = ['label' => $book->bkCat['cat_name'], 'url' => ['bookspercat','id'=>$book->bkCat['cat_id']]];
-    $this->params['breadcrumbs'][] = ['label' => $book->bkSubcat['subcat_name'], 'url' => ['bookspersubcat','id'=>$book->bkSubcat['subcat_id']]];
-}
-elseif($_GET['bc']==3){
-    $this->params['breadcrumbs'][] = ['label' => $book->bkCat['cat_name'], 'url' => ['bookspercat','id'=>$book->bkCat['cat_id']]];
-    $this->params['breadcrumbs'][] = ['label' => $book->bkCat['cat_name'], 'url' => ['bookspercat','id'=>$book->bkCat['cat_id']]];
-}
+
 
 $this->params['breadcrumbs'][] = $book->bk_title;
 
@@ -228,7 +231,7 @@ $this->params['breadcrumbs'][] = $book->bk_title;
 						
 						echo '</div>';
 						echo '<div class="choose">';
-                        echo '<ul class="nav nav-pills nav-justified" style="background-color:#DCD0C0">';
+                        echo '<ul class="nav nav-pills nav-justified">';
                         echo '<li>'.Html::a('<i class="fa fa-info-circle fa-2x"></i>', ['bkdetails', 'id' => $recommended_book->bk_id]).'</li>';
 						echo '<li class="choose-no-border-price"><span class="header book-price"></span>
 								<span class="price"><span class="val">'.$recommended_book->bk_price.'</span> &euro;</span></li>';
@@ -277,7 +280,7 @@ $this->params['breadcrumbs'][] = $book->bk_title;
 						
 						echo '</div>';
 						echo '<div class="choose">';
-                        echo '<ul class="nav nav-pills nav-justified" style="background-color:#DCD0C0">';
+                        echo '<ul class="nav nav-pills nav-justified">';
                         echo '<li>'.Html::a('<i class="fa fa-info-circle fa-2x"></i>', ['bkdetails', 'id' => $auth_recommended_book->bk_id]).'</li>';
 						echo '<li class="choose-no-border-price"><span class="header book-price"></span>
 								<span class="price"><span class="val">'.$auth_recommended_book->bk_price.'</span> &euro;</span></li>';
@@ -327,7 +330,7 @@ $this->params['breadcrumbs'][] = $book->bk_title;
 						
 						echo '</div>';
 						echo '<div class="choose">';
-                        echo '<ul class="nav nav-pills nav-justified" style="background-color:#DCD0C0">';
+                        echo '<ul class="nav nav-pills nav-justified">';
                         echo '<li>'.Html::a('<i class="fa fa-info-circle fa-2x"></i>', ['bkdetails', 'id' => $cat_recommended_book->bk_id]).'</li>';
 						echo '<li class="choose-no-border-price"><span class="header book-price"></span>
 								<span class="price"><span class="val">'.$cat_recommended_book->bk_price.'</span> &euro;</span></li>';

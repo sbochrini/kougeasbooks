@@ -283,7 +283,7 @@ $this->params['breadcrumbs'][] = $author->auth_name;
 
 
                                     echo '<div class="choose">';
-                                    echo '<ul class="nav nav-pills nav-justified" style="background-color:#EEEDED">';
+                                    echo '<ul class="nav nav-pills nav-justified">';
                                     echo '<li>'.Html::a('<i class="fa fa-info-circle fa-2x"></i>', ['bkdetails', 'id' => $book->bk_id, 'bc'=>3]).'</li>';
                                     echo '<li class="choose-no-border-price"><span class="header book-price"></span>
 											<span class="price"><span class="val">'.$bk_price.'</span> &euro;</span></li>';

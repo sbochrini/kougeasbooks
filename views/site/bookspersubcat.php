@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $subcategory->subcat_name;
     <div class="row">
         <div class="col-sm-12">
             <div class="features_items"><!--features_items-->
-                <h2 class="title text-center"><?php echo $subcategory->subcat_name; ?></h2>
+                <h2 class="title-great text-center"><?php echo $subcategory->subcat_name; ?></h2>
                 <div class="box">
                     <div class="center">
                         <div id="demo" class="box jplist" style="margin: 0px 0px 50px 0px">
@@ -272,7 +272,7 @@ $this->params['breadcrumbs'][] = $subcategory->subcat_name;
 
 
                                     echo '<div class="choose">';
-                                    echo '<ul class="nav nav-pills nav-justified" style="background-color:#EEEDED">';
+                                    echo '<ul class="nav nav-pills nav-justified">';
                                     echo '<li>'.Html::a('<i class="fa fa-info-circle fa-2x"></i>', ['bkdetails', 'id' => $book->bk_id, 'bc'=>2]).'</li>';
                                     echo '<li class="choose-no-border-price"><span class="header book-price"></span>
 											<span class="price"><span class="val">'.$bk_price.'</span> &euro;</span></li>';

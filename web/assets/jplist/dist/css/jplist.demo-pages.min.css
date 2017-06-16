@@ -211,11 +211,11 @@ h2 {
     color: #0C5F1F
 }
 ::-moz-selection {
-    background: #FFD800;
+    background: white; /*color select moz*/
     text-shadow: none
 }
 ::selection {
-    background: #FFD800;
+    background: white; /*color select text*/
     text-shadow: none
 }
 @media only screen and (max-width: 500px) {
@@ -391,7 +391,7 @@ h2 {
     color: #9FC2CE
 }
 .text-shadow {
-    text-shadow: 1px 1px 1px #fff
+	/* text-shadow: 1px 1px 1px #fff */
 }
 .title-15 {
     font-size: 15px
@@ -625,6 +625,7 @@ h2 {
     float: left;
     width: 100%
 }
+
 .box-25 {
     width: 25%
 }
@@ -1827,7 +1828,7 @@ h2 {
 }
 .jplist .title {
     font-size: 16px;
-    color: #fe980f
+    color: #373737; /*color books titles*/
 }
 .jplist .date {
     float: right;
@@ -1838,10 +1839,10 @@ h2 {
     color: #440e00
 }
 .jplist .price {
-    color: #fe980f;
+    color: #0381bb; /*color price*/
 }
 .jplist .list {
-    background: #fff;
+    background: #F4F4F4; /*color jplist table background*/
     margin: 30px 0
 }
 .jplist .list .img {
@@ -1916,7 +1917,7 @@ h2 {
 .jplist-grid-view .list-item {
     width: 23.5%;
     overflow: hidden;
-    margin: 20px 0
+	/* margin: 20px 0; */
 }
 .jplist-grid-view .list-item .img {
     width: 100%;
@@ -1938,7 +1939,8 @@ h2 {
 	overflow:auto;
 	font-weight: bold;
 	height: 95px;	
-    font-size: 13px
+    font-size: 13px;
+	color: #373737; /*color font for jplist book titles*/
 }
 .jplist-grid-view .list-item .date {
     float: none

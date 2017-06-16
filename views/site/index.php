@@ -358,7 +358,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
                                 echo '<div class="choose">';
-                                echo '<ul class="nav nav-pills nav-justified" style="background-color:#EEEDED">';
+                                echo '<ul class="nav nav-pills nav-justified">';
                                 echo '<li>'.Html::a('<i class="fa fa-info-circle fa-2x"></i>', ['bkdetails', 'id' => $fav_book->bk_id]).'</li>';
 								echo '<li class="choose-no-border-price"><span class="header book-price"></span>
 											<span class="price"><span class="val">'.$bk_price.'</span> &euro;</span></li>';
