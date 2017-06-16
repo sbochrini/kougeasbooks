@@ -108,6 +108,22 @@ $('document').ready(function(){
         }
     }
 
+    if(url.indexOf("authorcatalog") > -1) {
+        var splited = url.split('authorcatalog&letter=');
+        if (typeof splited[1] !== 'undefined') {
+            var letter = splited[1];
+            var alphabet = document.getElementsByClassName("alphabet");
+            for(var i = 0; i < alphabet.length; i++ ){
+                if(alphabet[i].textContent === letter || alphabet[i].getAttribute("href").indexOf(letter)>-1){
+                    letter_button=alphabet[i];
+                    letter_button.style.color = "blue";
+                }
+            }
+            //var catsubcat_ele=cat_subcat_ele.contains(subcat_ele);
+
+        }
+    }
+
 
 });
 

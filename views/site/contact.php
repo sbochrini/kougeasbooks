@@ -133,7 +133,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div id="contact-page">
     <div class="bg">
         <div class="row">
-            <h2 class="title text-center"><strong>ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ</strong></h2>
+            <h2 class="title text-center"> ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ </h2>
             <div class="col-sm-1"></div>
             <div class="col-sm-10">
 
