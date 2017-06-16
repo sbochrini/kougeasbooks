@@ -229,7 +229,7 @@ $this->params['breadcrumbs'][] = $this->title;
 </div><!--/#contact-page-->
 <script>
     function initMap() {
-        var uluru = {lat: 37.976889, lng: 23.723007};
+        var uluru = {lat: 37.977051, lng: 23.722362};
         var map = new google.maps.Map(document.getElementById('gmap'), {
             zoom: 16,
             center: uluru

@@ -103,8 +103,6 @@ $('document').ready(function(){
                     catsubcat_ele.className += " in";
                 }
             }
-            //var catsubcat_ele=cat_subcat_ele.contains(subcat_ele);
-
         }
     }
 
@@ -119,8 +117,6 @@ $('document').ready(function(){
                     letter_button.style.color = "blue";
                 }
             }
-            //var catsubcat_ele=cat_subcat_ele.contains(subcat_ele);
-
         }
     }
 
