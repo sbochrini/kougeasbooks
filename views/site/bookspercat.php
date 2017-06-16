@@ -9,11 +9,6 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-$session = Yii::$app->session;
-$session->open();
-//$session->set('bookspercat', 'Κατηγορίες');
-$session->set('category', $category->cat_name);
-$session->set('urlcategory', (['bookspercat','id'=>$category->cat_id]));
 $this->params['breadcrumbs'][] = $category->cat_name;
 ?>
 <div id="booklist" class="book-index">
@@ -224,7 +219,7 @@ $this->params['breadcrumbs'][] = $category->cat_name;
                                     echo '<div class="single-products">';
                                     echo '<div class="productinfo text-center">';
                                     echo '<div class="img">';
-                                    echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $book->bk_id]).' title="">';
+                                    echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $book->bk_id, 'bc'=>1]).' title="">';
                                     $path=Yii::$app->basePath. '/web/img/' . $book->bk_image_web_filename;
                                     if (is_file($path)) {
                                         echo '<img src="' . Yii::$app->homeUrl.'img/'.$book->bk_image_web_filename.'" alt="" title=""/>';
@@ -288,7 +283,7 @@ $this->params['breadcrumbs'][] = $category->cat_name;
 
                                     echo '<div class="choose">';
                                     echo '<ul class="nav nav-pills nav-justified" style="background-color:#EEEDED">';
-                                    echo '<li>'.Html::a('<i class="fa fa-info-circle fa-2x"></i>', ['bkdetails', 'id' => $book->bk_id]).'</li>';
+                                    echo '<li>'.Html::a('<i class="fa fa-info-circle fa-2x"></i>', ['bkdetails', 'id' => $book->bk_id, 'bc'=>1]).'</li>';
                                     echo '<li class="choose-no-border-price"><span class="header book-price"></span>
 											<span class="price"><span class="val">'.$bk_price.'</span> &euro;</span></li>';
                                     echo '<li><a id="'.$book->bk_id.'" data-toggle="modal" href="#userorderModal"><i class="fa fa-shopping-bag fa-2x"></i></a></li>';

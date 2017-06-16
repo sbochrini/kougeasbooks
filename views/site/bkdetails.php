@@ -2,20 +2,18 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-
-$session = Yii::$app->session;
-if(isset($session['authorcatalog']) && isset($session['booksperauthor'])){
-    $this->params['breadcrumbs'][] = ['label' => $session->get('authorcatalog'), 'url' => $session->get('urlauthorcatalog')];
-    $this->params['breadcrumbs'][] = ['label' => $session->get('booksperauthor'), 'url' => $session->get('urlbooksperauthor')];
-    $session->close();
-}elseif (isset($session['category']) && isset($session['subcategory'])){
-    $this->params['breadcrumbs'][] = ['label' => $session->get('urlcategory'), 'url' => $session->get('urlcategory')];
-    $this->params['breadcrumbs'][] = ['label' => $session->get('subcategory'), 'url' => $session->get('urlsubcategory')];
-    $session->close();
-}elseif (isset($session['category']) && !isset($session['subcategory'])){
-    $this->params['breadcrumbs'][] = ['label' => $session->get('urlcategory'), 'url' => $session->get('urlcategory')];
-    $session->close();
+if($_GET['bc']==1){
+    $this->params['breadcrumbs'][] = ['label' => $book->bkCat['cat_name'], 'url' => ['bookspercat','id'=>$book->bkCat['cat_id']]];
 }
+elseif($_GET['bc']==2){
+    $this->params['breadcrumbs'][] = ['label' => $book->bkCat['cat_name'], 'url' => ['bookspercat','id'=>$book->bkCat['cat_id']]];
+    $this->params['breadcrumbs'][] = ['label' => $book->bkSubcat['subcat_name'], 'url' => ['bookspersubcat','id'=>$book->bkSubcat['subcat_id']]];
+}
+elseif($_GET['bc']==3){
+    $this->params['breadcrumbs'][] = ['label' => $book->bkCat['cat_name'], 'url' => ['bookspercat','id'=>$book->bkCat['cat_id']]];
+    $this->params['breadcrumbs'][] = ['label' => $book->bkCat['cat_name'], 'url' => ['bookspercat','id'=>$book->bkCat['cat_id']]];
+}
+
 $this->params['breadcrumbs'][] = $book->bk_title;
 
 ?>

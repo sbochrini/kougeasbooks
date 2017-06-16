@@ -9,13 +9,6 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-$session = Yii::$app->session;
-$session->open();
-$session->set('authorcatalog', 'Κατάλογος συγγραφέων');
-$session->set('urlauthorcatalog', (['authorcatalog']));
-$session->set('booksperauthor', $author->auth_name);
-$session->set('urlbooksperauthor', (['booksperauthor','auth_id'=>$author->auth_id]));
-
 $this->params['breadcrumbs'][] = ['label' => 'Κατάλογος συγγραφέων', 'url' => ['authorcatalog']];
 $this->params['breadcrumbs'][] = $author->auth_name;
 ?>
@@ -227,7 +220,7 @@ $this->params['breadcrumbs'][] = $author->auth_name;
                                     echo '<div class="single-products">';
                                     echo '<div class="productinfo text-center">';
                                     echo '<div class="img">';
-                                    echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $book->bk_id]).' title="">';
+                                    echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $book->bk_id, 'bc'=>3]).' title="">';
                                     $path=Yii::$app->basePath. '/web/img/' . $book->bk_image_web_filename;
                                     if (is_file($path)) {
                                         echo '<img src="' . Yii::$app->homeUrl.'img/'.$book->bk_image_web_filename.'" alt="" title=""/>';
@@ -291,7 +284,7 @@ $this->params['breadcrumbs'][] = $author->auth_name;
 
                                     echo '<div class="choose">';
                                     echo '<ul class="nav nav-pills nav-justified" style="background-color:#EEEDED">';
-                                    echo '<li>'.Html::a('<i class="fa fa-info-circle fa-2x"></i>', ['bkdetails', 'id' => $book->bk_id]).'</li>';
+                                    echo '<li>'.Html::a('<i class="fa fa-info-circle fa-2x"></i>', ['bkdetails', 'id' => $book->bk_id, 'bc'=>3]).'</li>';
                                     echo '<li class="choose-no-border-price"><span class="header book-price"></span>
 											<span class="price"><span class="val">'.$bk_price.'</span> &euro;</span></li>';
                                     echo '<li><a id="'.$book->bk_id.'" data-toggle="modal" href="#userorderModal"><i class="fa fa-shopping-bag fa-2x"></i></a></li>';

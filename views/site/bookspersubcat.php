@@ -7,14 +7,8 @@
  */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\ActiveForm;
-
-$session = Yii::$app->session;
-$session->open();
-$session->set('category', $subcategory->subcatCat['cat_name']);
-$session->set('urlcategory', (['bookspercat','id'=>$subcategory->subcat_cat_id]));
-$session->set('subcategory', $subcategory->subcat_name);
-$session->set('urlsubcategory', (['bookspersubcat','id'=>$subcategory->subcat_id]));
 
 $this->params['breadcrumbs'][] = ['label' => $subcategory->subcatCat['cat_name'], 'url' => ['bookspercat','id'=>$subcategory->subcat_cat_id]];
 $this->params['breadcrumbs'][] = $subcategory->subcat_name;
@@ -167,10 +161,6 @@ $this->params['breadcrumbs'][] = $subcategory->subcat_name;
                                             data-control-name="views"
                                             data-control-action="views"
                                             data-default="jplist-grid-view">
-
-                                        <!--button type="button" class="jplist-view jplist-grid-view" data-type="jplist-grid-view"></button>
-                                        <button type="button" class="jplist-view jplist-list-view" data-type="jplist-list-view"></button>
-                                        <button type="button" class="jplist-view jplist-thumbs-view" data-type="jplist-thumbs-view"></button-->
                                     </div>
                                 </div>
 
@@ -219,7 +209,7 @@ $this->params['breadcrumbs'][] = $subcategory->subcat_name;
                                     echo '<div class="single-products">';
                                     echo '<div class="productinfo text-center">';
                                     echo '<div class="img">';
-                                    echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $book->bk_id]).' title="">';
+                                    echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $book->bk_id, 'bc'=>2]).' title="">';
                                     $path=Yii::$app->basePath. '/web/img/' . $book->bk_image_web_filename;
                                     if (is_file($path)) {
                                         echo '<img src="' . Yii::$app->homeUrl.'img/'.$book->bk_image_web_filename.'" alt="" title=""/>';
@@ -283,7 +273,7 @@ $this->params['breadcrumbs'][] = $subcategory->subcat_name;
 
                                     echo '<div class="choose">';
                                     echo '<ul class="nav nav-pills nav-justified" style="background-color:#EEEDED">';
-                                    echo '<li>'.Html::a('<i class="fa fa-info-circle fa-2x"></i>', ['bkdetails', 'id' => $book->bk_id]).'</li>';
+                                    echo '<li>'.Html::a('<i class="fa fa-info-circle fa-2x"></i>', ['bkdetails', 'id' => $book->bk_id, 'bc'=>2]).'</li>';
                                     echo '<li class="choose-no-border-price"><span class="header book-price"></span>
 											<span class="price"><span class="val">'.$bk_price.'</span> &euro;</span></li>';
                                     echo '<li><a id="'.$book->bk_id.'" data-toggle="modal" href="#userorderModal"><i class="fa fa-shopping-bag fa-2x"></i></a></li>';
