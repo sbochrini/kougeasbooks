@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $author->auth_name;
     <div class="row">
         <div class="col-sm-12">
             <div class="features_items"><!--features_items-->
-                <h2 class="title text-center">ΟΙ ΕΠΙΛΟΓΕΣ ΜΑΣ</h2>
+                <h2 class="title text-center"><?php echo $author->auth_name; ?></h2>
                 <div class="box">
                     <div class="center">
                         <div id="demo" class="box jplist" style="margin: 0px 0px 50px 0px">
@@ -223,7 +223,7 @@ $this->params['breadcrumbs'][] = $author->auth_name;
                                     echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $book->bk_id, 'bc'=>3]).' title="">';
                                     $path=Yii::$app->basePath. '/web/img/' . $book->bk_image_web_filename;
                                     if (is_file($path)) {
-                                        echo '<img src="' . Yii::$app->homeUrl.'img/'.$book->bk_image_web_filename.'" alt="" title=""/>';
+                                        echo '<img class="hvr-grow-shadow" src="' . Yii::$app->homeUrl.'img/'.$book->bk_image_web_filename.'" alt="" title=""/>';
                                     }else{
                                         echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" >';
                                     }

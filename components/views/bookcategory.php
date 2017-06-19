@@ -51,11 +51,11 @@ use yii\helpers\Url;
                         echo '</div>';
                      echo '</div>';
                 }else{
-                    echo '<div class="panel panel-default">';
+                    echo '<div class="panel panel-default hvr-underline-from-left">';
                         echo '<div class="panel-heading">';
                             echo '<h4 class="panel-title">';
                             //echo '<button id="cat_'.$category->cat_id.'" type="button" class="list-group-item catwithout"><a href="'.Url::toRoute(['site/bookspercat', 'id' => $category->cat_id]).'">'. $category->cat_name.'</a></button>';
-                                echo '<a id="cat_'.$category->cat_id.'" href="'.Url::toRoute(['site/bookspercat', 'id' => $category->cat_id]).'" class=" catwithout">'. $category->cat_name.'</a>';
+                                echo '<a id="cat_'.$category->cat_id.'" href="'.Url::toRoute(['site/bookspercat', 'id' => $category->cat_id]).'" class="catwithout">'. $category->cat_name.'</a>';
                             echo '</h4>';
                         echo '</div>';
                     echo '</div>';

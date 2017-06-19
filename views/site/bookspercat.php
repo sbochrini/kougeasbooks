@@ -222,7 +222,7 @@ $this->params['breadcrumbs'][] = $category->cat_name;
                                     echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $book->bk_id, 'bc'=>1]).' title="">';
                                     $path=Yii::$app->basePath. '/web/img/' . $book->bk_image_web_filename;
                                     if (is_file($path)) {
-                                        echo '<img src="' . Yii::$app->homeUrl.'img/'.$book->bk_image_web_filename.'" alt="" title=""/>';
+                                        echo '<img class="hvr-grow-shadow" src="' . Yii::$app->homeUrl.'img/'.$book->bk_image_web_filename.'" alt="" title=""/>';
                                     }else{
                                         echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" >';
                                     }
