@@ -291,10 +291,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                 echo '<div class="single-products">';
                                 echo '<div class="productinfo text-center">';
                                 echo '<div class="img">';
-                                echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $fav_book->bk_id]).' title="">';
+                                echo '<a  href='.\yii\helpers\Url::to(['bkdetails','id' => $fav_book->bk_id]).' title="">';
                                 $path=Yii::$app->basePath. '/web/img/' . $fav_book->bk_image_web_filename;
                                 if (is_file($path)) {
-                                    echo '<img src="' . Yii::$app->homeUrl.'img/'.$fav_book->bk_image_web_filename.'" alt="" title=""/>';
+                                    echo '<img class="hvr-grow-shadow" src="' . Yii::$app->homeUrl.'img/'.$fav_book->bk_image_web_filename.'" alt="" title=""/>';
                                 }else{
                                     echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" >';
                                 }
