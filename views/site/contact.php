@@ -133,7 +133,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div id="contact-page">
     <div class="bg">
         <div class="row">
-            <h2 class="title text-center"> ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ </h2>
+            <h2 class="title-large text-center"> ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ </h2>
             <div class="col-sm-1"></div>
             <div class="col-sm-10">
 
@@ -199,10 +199,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     <h2 class="title text-center">Contact Info</h2>
                     <address>
                         <p>Παλιοβιβλιοπωλείο Ι. Κουγέας.</p>
-                        <p>935 W. Webster Ave New Streets Chicago, IL 60614, NY</p>
-                        <p>Newyork USA</p>
-                        <p>Mobile: +2346 17 38 93</p>
-                        <p>Fax: 1-714-252-0026</p>
+                        <p>Άστιγγος 21 &amp; Θησείου 2</p>
+                        <p>Μοναστηράκι, Αθήνα</p>
+                        <p>Mobile: 6944948242</p>
+                        <p>Fax: 210 3219608</p>
                         <p>Email: info@kougeasbooks.gr</p>
                     </address>
                     <div class="social-networks">

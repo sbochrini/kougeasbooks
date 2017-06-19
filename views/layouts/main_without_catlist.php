@@ -70,7 +70,7 @@ EshopperAsset::register($this);
     <?php
 	echo '<div class="row" style="margin-left:0px; margin-right:0px;">';
     NavBar::begin([
-        'brandLabel' => 'Βιβλιοπωλείο Κουγέας',
+        'brandLabel' => 'Παλαιοβιβλιοπωλείο Κουγέας',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse ',
@@ -100,15 +100,6 @@ EshopperAsset::register($this);
     ]);
 	echo '</div>';
     ?>
-
-     <!--   <form>
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-        </form>-->
-
-
     <?php
     NavBar::end();
     ?>

@@ -22,8 +22,9 @@ $this->params['breadcrumbs'][] = $book->bk_title;
 ?>
 
 <div class="col-sm-9 padding-right">
+    <h2 class="title text-center">ΛΕΠΤΟΜΕΡΕΙΕΣ</h2>
     <div class="product-details"><!--product-details-->
-        <div class="col-sm-5">
+        <div class="col-sm-5 text-center">
             <div class="view-product">
                 <?php
                 $path=Yii::$app->basePath. '/web/img/' . $book->bk_image_web_filename;
@@ -36,57 +37,30 @@ $this->params['breadcrumbs'][] = $book->bk_title;
                 <!--<img src="<?php /*echo Yii::$app->homeUrl. 'img/'.$book->bk_image_web_filename; */?>" alt="" />-->
                 <!--<h3>ZOOM</h3>-->
             </div>
-            <!--<div id="similar-product" class="carousel slide" data-ride="carousel">
-
-                 Wrapper for slides
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
-                        <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
-                        <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
-                    </div>
-                    <div class="item">
-                        <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
-                        <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
-                        <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
-                    </div>
-                    <div class="item">
-                        <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
-                        <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
-                        <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
-                    </div>
-
-                </div>
-
-                 Controls
-                <a class="left item-control" href="#similar-product" data-slide="prev">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                <a class="right item-control" href="#similar-product" data-slide="next">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </div>-->
 
         </div>
         <div class="col-sm-7">
             <div class="product-information"><!--/product-information-->
-                <img src="<?php echo Yii::$app->homeUrl; ?>pictures/new.jpg" class="newarrival" alt="" />
+                <?php
+                if(is_null($book->bk_price)){
+                    $price="-";
+                    $img="notavailable";
+                }else{
+                    $price=$book->bk_price;
+                    $img="available";
+                }
+                ?>
+                <img src="<?php echo Yii::$app->homeUrl; ?>pictures/<?php echo $img; ?>.png" class="newarrival" alt="" />
                 <h2><?php echo $book->bk_title; ?></h2>
-                <!-- <p>Web ID: 1089772</p>-->
-               <!-- <img src="images/product-details/rating.png" alt="" />-->
                 <span>
-									<span><?php echo $book->bk_price; ?><i class="fa fa-eur" aria-hidden="true"></i></span>
-                    <!--<label>Quantity:</label>
-                    <input type="text" value="3" />
-                    <button type="button" class="btn btn-fefault cart">
-                        <i class="fa fa-shopping-cart"></i>
-                        Add to cart
-                    </button>-->
-								</span>
-                <p><b>Συγγραφέας:</b> <?php echo $book->bkAuthor['auth_name']; ?></p>
-                <p><b>Εκδόσεις:</b> <?php echo $book->bk_publisher; ?></p>
+                    <span><?php echo $price; ?><i class="fa fa-eur" aria-hidden="true"></i></span>
+                </span>
+                <?php $author=((is_null($book->bkAuthor['auth_name']) || $book->bkAuthor['auth_name']=="")? "-" : $book->bkAuthor['auth_name'] )?>
+                <p><b>Συγγραφέας:</b> <?php echo $author; ?></p>
+                <?php $publisher=((is_null($book->bk_publisher) || $book->bk_publisher=="")? "-" : $book->bk_publisher)?>
+                <p><b>Εκδόσεις:</b> <?php echo $publisher; ?></p>
                 <p><?php echo $book->bk_pb_place.", ".$book->bk_pb_year;?></p>
-                <p><b>Availability:</b> In Stock</p>
+                <!--<p><b>Availability:</b> In Stock</p>-->
                 <?php $condition=((is_null($book->bk_condition) || $book->bk_condition=="")? "-" : $book->bk_condition )?>
                 <p><b>Κατάσταση:</b> <?php echo $condition; ?></p>
                 <!--<p><b>Brand:</b> E-SHOPPER</p>-->
@@ -109,8 +83,8 @@ $this->params['breadcrumbs'][] = $book->bk_title;
                 <div class="col-sm-7">
 
                     <p><b>Τίτλος:</b> <?php echo $book->bk_title; ?></p>
-                    <p><b>Συγγραφέας:</b> <?php echo $book->bkAuthor['auth_name']; ?></p>
-                    <p><b>Εκδόσεις:</b> <?php echo $book->bk_publisher; ?></p>
+                    <p><b>Συγγραφέας:</b> <?php echo $author; ?></p>
+                    <p><b>Εκδόσεις:</b> <?php echo $publisher; ?></p>
                     <p><b>Τόπος έκδοσης:</b> <?php echo $book->bk_pb_place; ?></p>
                     <p><b>Έτος έκδοσης:</b> <?php echo $book->bk_pb_year; ?></p>
                     <?php $condition=((is_null($book->bk_condition) || $book->bk_condition=="")? "-" : $book->bk_condition )?>
@@ -190,7 +164,7 @@ $this->params['breadcrumbs'][] = $book->bk_title;
     </div><!--/category-tab-->
 
     <div class="recommended_items"><!--recommended_items-->
-        <h2 class="title text-center">Προτεινόμενα</h2>
+        <h2 class="title text-center">Προτεινομενα</h2>
 		<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">
 				<?php
@@ -354,4 +328,68 @@ $this->params['breadcrumbs'][] = $book->bk_title;
 			</div>
         </div>
     </div><!--/recommended_items-->
+</div>
+
+<?php if (Yii::$app->session->hasFlash('indexsuccess')): ?>
+    <div class="modal fade" id="userindexorderModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content"><div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Φόρμα παραγγελίας</h4>
+                </div><div class="modal-body">
+                    <div class="alert alert-success alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <h4><i class="icon fa fa-check"></i> Saved!</h4>
+                        <?= Yii::$app->session->getFlash('indexsuccess') ?>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 0; margin-top: 16px">Κλείσιμο</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+
+<?php if (Yii::$app->session->hasFlash('indexfail')): ?>
+    <div class="modal fade" id="userindexorderModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content"><div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Φόρμα παραγγελίας</h4>
+                </div><div class="modal-body">
+                    <div class="alert alert-danger alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <h4><i class="icon fa fa-exclamation-triangle"></i> Σφάλμα!</h4>
+                        <?= Yii::$app->session->getFlash('indexfail') ?>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 0; margin-top: 16px">Κλείσιμο</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+<!-- Modal -->
+<div class="modal fade" id="userorderModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Φόρμα παραγγελίας</h4>
+            </div>
+            <?php $form = ActiveForm::begin(
+                [
+                    'id' => 'usr_index_order_form',
+                    'action'=> ['site/usrindexorder'],
+                    'method' => 'post',
+                ]); ?>
+            <div class="modal-body">
+                <!--modal-body -->
+
+            </div>
+            <?php ActiveForm::end();?>
+        </div>
+    </div>
 </div>

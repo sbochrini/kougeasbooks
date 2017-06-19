@@ -69,7 +69,7 @@ EshopperAsset::register($this);
 
     <?php
     NavBar::begin([
-        'brandLabel' => 'Βιβλιοπωλείο Κουγέας',
+        'brandLabel' => 'Παλαιοβιβλιοπωλείο Κουγέας',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse ',
@@ -97,14 +97,6 @@ EshopperAsset::register($this);
         ],
     ]);
     ?>
-
-     <!--   <form>
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-        </form>-->
-
 
     <?php
     NavBar::end();
