@@ -8,7 +8,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="row">
     <div class="col-sm-12">
         <div class="features_items"><!--features_items-->
-            <h2 class="title text-center">Τρόποι επικοινωνίας</h2>
+            <h2 class="title text-center">ΤΡΟΠΟΙ ΠΑΡΑΓΓΕΛΙΑΣ</h2>
             <div class="box">
                 <div class="center">
                     <p><dl>

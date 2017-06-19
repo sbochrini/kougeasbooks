@@ -108,7 +108,7 @@ EshopperAsset::register($this);
 
         <?= Breadcrumbs::widget([
             'homeLink' => [
-                'label' => 'Αρχική',
+                'label' => 'ΑΡΧΙΚΗ',
                 'url' => ['site/index'],
             ],
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
