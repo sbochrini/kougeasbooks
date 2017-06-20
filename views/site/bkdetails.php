@@ -72,10 +72,10 @@ $this->params['breadcrumbs'][] = $book->bk_title;
     <div class="category-tab shop-details-tab"><!--category-tab-->
         <div class="col-sm-12">
             <ul class="nav nav-tabs">
-                <li  class="active"><a href="#details" data-toggle="tab">Γενικές Πληροφορίες</a></li>
-                <li><a href="#companyprofile" data-toggle="tab">Περιγραφή</a></li>
+                <li  class="active"><a href="#details" data-toggle="tab">ΓΕΝΙΚΕΣ ΠΛΗΡΟΦΟΡΙΕΣ</a></li>
+                <li><a href="#description" data-toggle="tab">ΠΕΡΙΓΡΑΦΗ</a></li>
                 <!--<li><a href="#tag" data-toggle="tab">Tag</a></li>-->
-                <li><a href="#reviews" data-toggle="tab">Παραγγελία</a></li>
+                <li><a href="#reviews" data-toggle="tab">ΠΑΡΑΓΓΕΛΙΑ</a></li>
             </ul>
         </div>
         <div class="tab-content">
@@ -91,6 +91,12 @@ $this->params['breadcrumbs'][] = $book->bk_title;
                     <p><b>Κατάσταση:</b> <?php echo $condition; ?></p>
                     <p><b>Σελίδες:</b> <?php echo $book->bk_pages; ?></p>
 
+                </div>
+            </div>
+            <div class="tab-pane fade active in" id="description" >
+                <div class="col-sm-7">
+                    <?php $description=((is_null($book->bk_description) || $book->bk_description=="")? "-" : $book->bk_description)?>
+                    <p><b>Περιγραφή:</b> <?php echo $description; ?></p>
                 </div>
             </div>
             <div class="tab-pane fade" id="reviews">

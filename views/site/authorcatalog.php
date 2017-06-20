@@ -4,7 +4,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ListView;
-$this->title = 'Κατάλογος συγγραφέων';
+$this->title = 'ΚΑΤΑΛΟΓΟΣ ΣΥΓΓΡΑΦΕΩΝ';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-about">

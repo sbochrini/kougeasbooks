@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'Τρόποι παραγγελίας';
+$this->title = 'ΤΡΟΠΟΙ ΠΑΡΑΓΓΕΛΙΑΣ';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="row">
