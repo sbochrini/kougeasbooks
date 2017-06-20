@@ -456,9 +456,15 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
            <?php $form = ActiveForm::begin(
             [
-            'id' => 'usr_index_order_form',
-            'action'=> ['site/usrindexorder'],
-            'method' => 'post',
+                /*'enableAjaxValidation' => true,
+                'enableClientValidation'=>true,*/
+                'id' => 'usr_index_order_form',
+                'action'=> ['site/usrindexorder'],
+                'method' => 'post',
+                'options' => [
+                    'enableAjaxValidation' => true,
+                    'enableClientValidation'=>true
+                ]
             ]); ?>
             <div class="modal-body">
                 <!--modal-body -->

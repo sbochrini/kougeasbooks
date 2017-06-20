@@ -162,3 +162,24 @@ $('.cat_subcat').click(function(){
 
 });
 
+
+/*$('#usr_index_order_form').yiiActiveForm('add', {
+    id: 'order-usr_name',
+    name: 'Order[usr_name]',
+    container: '.field-order-usr_name',
+    input: '#order-usr_name',
+    error: '.help-block',
+    validate:  function (attribute, value, messages, deferred, $form) {
+        yii.validation.required(value, messages, {message: "Validation Message Here"});
+    }
+});*/
+/*
+$('#usr_index_order_form').yiiActiveForm('validate', true);*/
+
+$('#usr_index_order_form-form').on('beforeSubmit', function (e) {
+    var data = $form.data("yiiActiveForm");
+    if (!confirm("Everything is correct. Submit?")) {
+        return false;
+    }
+    return true;
+});
