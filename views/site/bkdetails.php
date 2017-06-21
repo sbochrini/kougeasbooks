@@ -78,7 +78,7 @@ $this->params['breadcrumbs'][] = $book->bk_title;
                 <?php $tab_disabled=(($price=="-") ? "disabled" : "")?>
                 <?php $des_tab_href=(($price=="-") ? "" : "reviews")?>
                 <?php $des_data_toggle=(($price=="-") ? "" : 'data-toggle="tab"')?>
-                <li class="<?php echo $tab_disabled; ?>"><a href="#" <?php echo $des_data_toggle; ?>>ΠΑΡΑΓΓΕΛΙΑ</a></li>
+                <li class="<?php echo $tab_disabled; ?>"><a href="#<?php echo $des_tab_href; ?>" <?php echo $des_data_toggle; ?>>ΠΑΡΑΓΓΕΛΙΑ</a></li>
             </ul>
         </div>
         <div class="tab-content">

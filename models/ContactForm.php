@@ -24,11 +24,11 @@ class ContactForm extends Model
     {
         return [
             // name, email, subject and body are required
-            [['name', 'email', 'subject', 'body'], 'required'],
+            [['name', 'email', 'subject', 'body'], 'required', 'message' => 'Το πεδίο είναι υποχρεωτικό.'],
             // email has to be a valid email address
-            ['email', 'email'],
+            [['email'], 'email','message' => 'Το πεδίο e-mail πρέπει να είναι έγκυρη ηλεκτρονική διεύθυνση.'],
             // verifyCode needs to be entered correctly
-            ['verifyCode', 'captcha'],
+            ['verifyCode', 'captcha','message' => ' Ο κωδικός επιβεβαίωσης δεν είναι σωστός.'],
         ];
     }
 
