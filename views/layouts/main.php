@@ -45,7 +45,8 @@ EshopperAsset::register($this);
                     <div class="col-sm-6">
                         <div class="contactinfo">
                             <ul class="nav nav-pills">
-                                <li><a href="#"><i class="fa fa-phone"></i> +2 10 3219608</a></li>
+                                <li><a><i class="fa fa-phone"></i> 210 3219608</a></li>
+                                <li><a><i class="fa fa-mobile"></i> 6944948242</a></li>
                                 <li><a href="mailto:info@kougeasbooks.gr"><i class="fa fa-envelope"></i> info@kougeasbooks.gr</a></li>
                             </ul>
                         </div>
@@ -53,7 +54,7 @@ EshopperAsset::register($this);
                     <div class="col-sm-6">
                         <div class="social-icons pull-right">
                             <ul class="nav navbar-nav">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://www.facebook.com/palaiobibliopoleio/" target="_blank"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                                 <!--<li><a href="#"><i class="fa fa-dribbble"></i></a></li>-->

@@ -8,7 +8,7 @@ $this->title = 'ΚΑΤΑΛΟΓΟΣ ΣΥΓΓΡΑΦΕΩΝ';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-about">
-    <h2 class="title text-center">ΚΑΤΑΛΟΓΟΣ ΣΥΓΓΡΑΦΕΩΝ</h2>
+    <h2 class="title-large text-center">ΚΑΤΑΛΟΓΟΣ ΣΥΓΓΡΑΦΕΩΝ</h2>
     <div class="container">
         <div class="btn-toolbar">
             <div class="btn-group btn-group-sm">

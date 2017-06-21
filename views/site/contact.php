@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="col-sm-8">
                 <div class="row content">
                     <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
-                        <h2 class="title text-center">ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ</h2>
+                        <h2 class="title-large text-center">ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ</h2>
                         <div class="alert alert-success">
                             Ευχαριστούμε που επικοινωνήσατε μαζί μας. We will respond to you as soon as possible.
                         </div>
@@ -56,7 +56,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                     <?php else: ?>
                     <div class="contact-form">
-                        <h2 class="title text-center">ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ</h2>
+                        <h2 class="title-large text-center">ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ</h2>
                         <div class="status alert alert-success" style="display: none"></div>
                         <?php $form = ActiveForm::begin(['id' => 'contact-form', 'class'=>'contact-form row']); ?>
                         <!--<form id="main-contact-form" class="contact-form row" name="contact-form" method="post">-->
@@ -91,7 +91,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="contact-info">
                     <h2 class="title text-center">ΣΤΟΙΧΕΙΑ ΕΠΙΚΟΙΝΩΝΙΑΣ</h2>
                     <address>
-                        <p>Παλιοβιβλιοπωλείο Ι. Κουγέας.</p>
+                        <p>Παλαιοβιβλιοπωλείο Ι. Κουγέας.</p>
                         <p>Άστιγγος 21 &amp; Θησείου 2</p>
                         <p>Μοναστηράκι, Αθήνα</p>
                         <p>Κινητό: 6944948242</p>
