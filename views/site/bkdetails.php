@@ -339,6 +339,37 @@ $this->params['breadcrumbs'][] = $book->bk_title;
     </div><!--/recommended_items-->
 </div>
 
+
+<?php if (Yii::$app->session->hasFlash('success') || Yii::$app->session->hasFlash('fail')): ?>
+    <div class="modal fade" id="bkdetailsorderform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content"><div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Επιβεβαίωση παραγγελίας</h4>
+                </div><div class="modal-body">
+                    <?php if (Yii::$app->session->hasFlash('success')): ?>
+                    <div class="alert alert-success alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <h4><i class="icon fa fa-check"></i> Η παραγγελία σας ολοκληρώθηκε!</h4>
+                        <?= Yii::$app->session->getFlash('success') ?>
+                        <?php endif; ?>
+                        <?php if(Yii::$app->session->hasFlash('fail')): ?>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4><i class="icon fa fa-exclamation-triangle"></i> Παρουσιάστηκε κάποιο πρόβλημα!</h4>
+                            <?= Yii::$app->session->getFlash('fail') ?>
+                            <?php endif; ?>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 0; margin-top: 16px">Κλείσιμο</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+
+
 <?php if (Yii::$app->session->hasFlash('indexsuccess') || Yii::$app->session->hasFlash('success')): ?>
     <div class="modal fade" id="userindexorderModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
