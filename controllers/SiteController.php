@@ -133,9 +133,9 @@ class SiteController extends Controller
             $model->order_complete = 0;
             $model->order_date = Yii::$app->formatter->asDate('now', 'Y-M-d');
             if ($model->save()) {
-                Yii::$app->session->setFlash('success', 'H παραγγελία σας καταχωρήθηκε επιτυχώς.');
+                Yii::$app->session->setFlash('success', 'Σύντομα θα επικοινωνήσουμε μαζί σας σχετικά με τον τρόπο παραλαβής της.');
             } else {
-                Yii::$app->session->setFlash('fail', 'Κάποιο σφάλμα προέκυψε. Παρακαλούμε δοκιμάστε ξανά! ');
+                Yii::$app->session->setFlash('fail', 'Παρακαλούμε δοκιμάστε ξανά συμπληρώνοντας όλα τα υποχρεωτικά πεδία.');
             }
         }
         return $this->redirect(Yii::$app->request->referrer);
@@ -394,9 +394,9 @@ class SiteController extends Controller
             $model->order_complete = 0;
             $model->order_date = Yii::$app->formatter->asDate('now', 'Y-M-d');
             if ($model->save()) {
-                Yii::$app->session->setFlash('indexsuccess', 'H παραγγελία σας καταχωρήθηκε επιτυχώς.');
+                Yii::$app->session->setFlash('indexsuccess', 'Σύντομα θα επικοινωνήσουμε μαζί σας σχετικά με τον τρόπο παραλαβής της.');
             } else {
-                Yii::$app->session->setFlash('indexfail', 'Κάποιο σφάλμα προέκυψε. Παρακαλούμε δοκιμάστε ξανά! ');
+                Yii::$app->session->setFlash('indexfail', 'Παρακαλούμε δοκιμάστε ξανά συμπληρώνοντας όλα τα υποχρεωτικά πεδία. ');
             }
         }
 

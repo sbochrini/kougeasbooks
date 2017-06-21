@@ -410,11 +410,11 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="modal-dialog" role="document">
             <div class="modal-content"><div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Φόρμα παραγγελίας</h4>
+                    <h4 class="modal-title" id="myModalLabel">Επιβεβαίωση παραγγελίας</h4>
                 </div><div class="modal-body">
                     <div class="alert alert-success alert-dismissable">
                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                        <h4><i class="icon fa fa-check"></i> Saved!</h4>
+                        <h4><i class="icon fa fa-check"></i> Η παραγγελία σας ολοκληρώθηκε!</h4>
                         <?= Yii::$app->session->getFlash('indexsuccess') ?>
                     </div>
                     <div class="modal-footer">
@@ -431,11 +431,11 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="modal-dialog" role="document">
             <div class="modal-content"><div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Φόρμα παραγγελίας</h4>
+                    <h4 class="modal-title" id="myModalLabel">Επιβεβαίωση παραγγελίας</h4>
                 </div><div class="modal-body">
                     <div class="alert alert-danger alert-dismissable">
                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                        <h4><i class="icon fa fa-exclamation-triangle"></i> Σφάλμα!</h4>
+                        <h4><i class="icon fa fa-exclamation-triangle"></i> Παρουσιάστηκε κάποιο πρόβλημα!</h4>
                         <?= Yii::$app->session->getFlash('indexfail') ?>
                     </div>
                     <div class="modal-footer">

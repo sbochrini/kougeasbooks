@@ -177,6 +177,7 @@ $('.cat_subcat').click(function(){
 $('#usr_index_order_form').yiiActiveForm('validate', true);*/
 
 $('#usr_index_order_form-form').on('beforeSubmit', function (e) {
+    var form = $('#usr_index_order_form');
     var data = $form.data("yiiActiveForm");
     if (!confirm("Everything is correct. Submit?")) {
         return false;

@@ -75,7 +75,10 @@ $this->params['breadcrumbs'][] = $book->bk_title;
                 <li  class="active"><a href="#details" data-toggle="tab">ΓΕΝΙΚΕΣ ΠΛΗΡΟΦΟΡΙΕΣ</a></li>
                 <li><a href="#description" data-toggle="tab">ΠΕΡΙΓΡΑΦΗ</a></li>
                 <!--<li><a href="#tag" data-toggle="tab">Tag</a></li>-->
-                <li><a href="#reviews" data-toggle="tab">ΠΑΡΑΓΓΕΛΙΑ</a></li>
+                <?php $tab_disabled=(($price=="-") ? "disabled" : "")?>
+                <?php $des_tab_href=(($price=="-") ? "" : "reviews")?>
+                <?php $des_data_toggle=(($price=="-") ? "" : 'data-toggle="tab"')?>
+                <li class="<?php echo $tab_disabled; ?>"><a href="#" <?php echo $des_data_toggle; ?>>ΠΑΡΑΓΓΕΛΙΑ</a></li>
             </ul>
         </div>
         <div class="tab-content">
@@ -101,21 +104,21 @@ $this->params['breadcrumbs'][] = $book->bk_title;
             </div>
             <div class="tab-pane fade" id="reviews">
                 <br>
-                <?php if (Yii::$app->session->hasFlash('success')): ?>
+                <?php /*if (Yii::$app->session->hasFlash('success')): */?><!--
                     <div class="alert alert-success alert-dismissable">
                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                         <h4><i class="icon fa fa-check"></i> Saved!</h4>
-                        <?= Yii::$app->session->getFlash('success') ?>
+                        <?/*= Yii::$app->session->getFlash('success') */?>
                     </div>
-                <?php endif; ?>
+                <?php /*endif; */?>
 
-                <?php if (Yii::$app->session->hasFlash('fail')): ?>
+                <?php /*if (Yii::$app->session->hasFlash('fail')): */?>
                     <div class="alert alert-danger alert-dismissable">
                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                         <h4><i class="icon fa fa-exclamation-triangle"></i> Σφάλμα!</h4>
-                        <?= Yii::$app->session->getFlash('fail') ?>
+                        <?/*= Yii::$app->session->getFlash('fail') */?>
                     </div>
-                <?php endif; ?>
+                --><?php /*endif; */?>
 
                 <?php $form = ActiveForm::begin(
                     [
@@ -160,7 +163,7 @@ $this->params['breadcrumbs'][] = $book->bk_title;
                 </div>
                 <div class="row col-sm-12">
                     <div class="col-sm-12">
-                        <?= Html::submitButton( 'Αποστολή', ['class' => 'btn btn-default pull-right']) ?>
+                        <?= Html::submitButton( 'Αποστολή', ['class' => 'btn btn-default pull-right', 'data-toggle'=>"modal", 'data-target'=>"#userindexorderModal"]) ?>
                     </div>
                 </div>
                 <?php ActiveForm::end(); ?>
@@ -336,17 +339,22 @@ $this->params['breadcrumbs'][] = $book->bk_title;
     </div><!--/recommended_items-->
 </div>
 
-<?php if (Yii::$app->session->hasFlash('indexsuccess')): ?>
+<?php if (Yii::$app->session->hasFlash('indexsuccess') || Yii::$app->session->hasFlash('success')): ?>
     <div class="modal fade" id="userindexorderModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content"><div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Φόρμα παραγγελίας</h4>
+                    <h4 class="modal-title" id="myModalLabel">Επιβεβαίωση παραγγελίας</h4>
                 </div><div class="modal-body">
                     <div class="alert alert-success alert-dismissable">
                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                        <h4><i class="icon fa fa-check"></i> Saved!</h4>
-                        <?= Yii::$app->session->getFlash('indexsuccess') ?>
+                        <h4><i class="icon fa fa-check"></i> Η παραγγελία σας ολοκληρώθηκε!</h4>
+                        <?php if (Yii::$app->session->hasFlash('indexsuccess')): ?>
+                            <?= Yii::$app->session->getFlash('indexsuccess') ?>
+                        <?php endif; ?>
+                        <?php if(Yii::$app->session->hasFlash('success')): ?>
+                            <?= Yii::$app->session->getFlash('success') ?>
+                        <?php endif; ?>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 0; margin-top: 16px">Κλείσιμο</button>
@@ -357,17 +365,22 @@ $this->params['breadcrumbs'][] = $book->bk_title;
     </div>
 <?php endif; ?>
 
-<?php if (Yii::$app->session->hasFlash('indexfail')): ?>
+<?php if (Yii::$app->session->hasFlash('indexfail') || Yii::$app->session->hasFlash('fail')): ?>
     <div class="modal fade" id="userindexorderModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content"><div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Φόρμα παραγγελίας</h4>
+                    <h4 class="modal-title" id="myModalLabel">Επιβεβαίωση παραγγελίας</h4>
                 </div><div class="modal-body">
                     <div class="alert alert-danger alert-dismissable">
                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                        <h4><i class="icon fa fa-exclamation-triangle"></i> Σφάλμα!</h4>
-                        <?= Yii::$app->session->getFlash('indexfail') ?>
+                        <h4><i class="icon fa fa-exclamation-triangle"></i> Παρουσιάστηκε κάποιο πρόβλημα!</h4>
+                        <?php if (Yii::$app->session->hasFlash('indexfail')): ?>
+                            <?= Yii::$app->session->getFlash('indexfail') ?>
+                        <?php endif; ?>
+                        <?php if(Yii::$app->session->hasFlash('fail')): ?>
+                            <?= Yii::$app->session->getFlash('fail') ?>
+                        <?php endif; ?>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 0; margin-top: 16px">Κλείσιμο</button>
