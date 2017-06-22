@@ -184,3 +184,14 @@ $('#usr_index_order_form-form').on('beforeSubmit', function (e) {
     }
     return true;
 });
+
+
+yii.confirm = function (message, okCallback, cancelCallback) {
+    swal({
+        title: message,
+        type: 'warning',
+        showCancelButton: true,
+        closeOnConfirm: true,
+        allowOutsideClick: true
+    }, okCallback);
+};

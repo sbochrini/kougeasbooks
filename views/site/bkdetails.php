@@ -76,9 +76,9 @@ $this->params['breadcrumbs'][] = $book->bk_title;
                 <li><a href="#description" data-toggle="tab">ΠΕΡΙΓΡΑΦΗ</a></li>
                 <!--<li><a href="#tag" data-toggle="tab">Tag</a></li>-->
                 <?php $tab_disabled=(($price=="-") ? "disabled" : "")?>
-                <?php $des_tab_href=(($price=="-") ? "" : "reviews")?>
+                <?php $des_tab_href=(($price=="-") ? "" : 'href="#reviews"')?>
                 <?php $des_data_toggle=(($price=="-") ? "" : 'data-toggle="tab"')?>
-                <li class="<?php echo $tab_disabled; ?>"><a href="#<?php echo $des_tab_href; ?>" <?php echo $des_data_toggle; ?>>ΠΑΡΑΓΓΕΛΙΑ</a></li>
+                <li class="<?php echo $tab_disabled; ?>"><a <?php echo $des_tab_href; ?>" <?php echo $des_data_toggle; ?>>ΠΑΡΑΓΓΕΛΙΑ</a></li>
             </ul>
         </div>
         <div class="tab-content">
@@ -163,7 +163,13 @@ $this->params['breadcrumbs'][] = $book->bk_title;
                 </div>
                 <div class="row col-sm-12">
                     <div class="col-sm-12">
-                        <?= Html::submitButton( 'Αποστολή', ['class' => 'btn btn-default pull-right', 'data-toggle'=>"modal", 'data-target'=>"#userindexorderModal"]) ?>
+                        <?= Html::submitButton( 'Αποστολή',
+                            [
+                                'class' => 'btn btn-default pull-right',
+                                'data-confirm' =>'Ολοκλήρωση παραγγελίας;',
+                                /*'data-toggle'=>"modal",
+                                'data-target'=>"#userindexorderModal"*/
+                            ]) ?>
                     </div>
                 </div>
                 <?php ActiveForm::end(); ?>
@@ -340,25 +346,25 @@ $this->params['breadcrumbs'][] = $book->bk_title;
 </div>
 
 
-<?php if (Yii::$app->session->hasFlash('success') || Yii::$app->session->hasFlash('fail')): ?>
+<?php /*if (Yii::$app->session->hasFlash('success') || Yii::$app->session->hasFlash('fail')): */?><!--
     <div class="modal fade" id="bkdetailsorderform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content"><div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">Επιβεβαίωση παραγγελίας</h4>
                 </div><div class="modal-body">
-                    <?php if (Yii::$app->session->hasFlash('success')): ?>
+                    <?php /*if (Yii::$app->session->hasFlash('success')): */?>
                     <div class="alert alert-success alert-dismissable">
                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                         <h4><i class="icon fa fa-check"></i> Η παραγγελία σας ολοκληρώθηκε!</h4>
-                        <?= Yii::$app->session->getFlash('success') ?>
-                        <?php endif; ?>
-                        <?php if(Yii::$app->session->hasFlash('fail')): ?>
+                        <?/*= Yii::$app->session->getFlash('success') */?>
+                        <?php /*endif; */?>
+                        <?php /*if(Yii::$app->session->hasFlash('fail')): */?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <h4><i class="icon fa fa-exclamation-triangle"></i> Παρουσιάστηκε κάποιο πρόβλημα!</h4>
-                            <?= Yii::$app->session->getFlash('fail') ?>
-                            <?php endif; ?>
+                            <?/*= Yii::$app->session->getFlash('fail') */?>
+                            <?php /*endif; */?>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 0; margin-top: 16px">Κλείσιμο</button>
@@ -367,7 +373,7 @@ $this->params['breadcrumbs'][] = $book->bk_title;
             </div>
         </div>
     </div>
-<?php endif; ?>
+--><?php /*endif; */?>
 
 
 <?php if (Yii::$app->session->hasFlash('indexsuccess') || Yii::$app->session->hasFlash('success')): ?>

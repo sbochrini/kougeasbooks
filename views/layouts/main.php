@@ -13,10 +13,12 @@ use yii\helpers\Url;
 use app\assets\BooklistAsset;
 //use app\assets\JPagesAsset;
 use app\assets\EshopperAsset;
+use app\assets\SweetAlertAsset;
 
 AppAsset::register($this);
 BooklistAsset::register($this);
 EshopperAsset::register($this);
+SweetAlertAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
