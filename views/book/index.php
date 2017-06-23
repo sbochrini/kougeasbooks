@@ -197,6 +197,15 @@ $hidden_subcats=(!is_null($checked_subcats))?implode(",",$checked_subcats):"";
                 'class' => 'yii\grid\ActionColumn',
                 'template' => '{view} {update} {delete} {favorite}',
                 'buttons' => [
+                    'delete' => function($url, $model){
+                        return Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $model->bk_id], [
+                            'class' => '',
+                            'data' => [
+                                'confirm' => 'Ειστε σίγουρος ότι θέλετε να διαγράψετε το βιλίο: '.$model->bk_title.';',
+                                'method' => 'post',
+                            ],
+                        ]);
+                    },
                     'favorite' => function ($url, $model, $key) {
                         if($model->bk_favorite==0){
                             return Html::tag('a','<i class="fa fa-heart-o fa-lg" aria-hidden="true"></i>', ['update', 'id'=>$model->bk_id]);

@@ -1,6 +1,16 @@
 /**
  * Created by Voula on 19/4/2017.
  */
+yii.confirm = function (message, okCallback, cancelCallback) {
+    swal({
+        title: message,
+        type: 'warning',
+        showCancelButton: true,
+        closeOnConfirm: true,
+        cancelButtonText: 'Ακύρωση',
+        allowOutsideClick: true
+    }, okCallback);
+};
 //========================active current tab===================\\
 $(function() {
     var str=location.href;
@@ -194,6 +204,7 @@ $(document).ready(function () {
 
 
         }
+
 
         /*var grouping_inputs = $('#book-bk_grouping  input[type="checkbox"]');
         var $hidden_ids = [];

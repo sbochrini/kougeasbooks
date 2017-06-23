@@ -53,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 return Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $model->cat_id], [
                                     'class' => '',
                                     'data' => [
-                                        'confirm' => 'Διαγραφή κατηγορίας;',
+                                        'confirm' => 'Ειστε σίγουρος ότι θέλετε να διαγράψετε την κατηγορία: '.$model->cat_name.';',
                                         'method' => 'post',
                                     ],
                                 ]);

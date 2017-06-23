@@ -60,6 +60,15 @@ $this->params['breadcrumbs'][] = $this->title;
                 'class' => 'yii\grid\ActionColumn',
                 'template' => '{view} {update} {delete} {comment}',
                 'buttons' => [
+                    'delete' => function($url, $model){
+                        return Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $model->order_id], [
+                            'class' => '',
+                            'data' => [
+                                'confirm' => 'Ειστε σίγουρος ότι θέλετε να διαγράψετε την παραγγελία;',
+                                'method' => 'post',
+                            ],
+                        ]);
+                    },
                     'comment' => function ($url, $model, $key) {
                         return  '<a id="'.$model->order_id.'" data-toggle="modal" href="#admincommentModalindex"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>';
                            // Html::tag('a','<i class="fa fa-comment-o fa-lg" aria-hidden="true"></i>', ['admincomment', 'id'=>$model->order_id]);

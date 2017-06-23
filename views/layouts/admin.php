@@ -9,8 +9,11 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AdminAsset;
 use yii\helpers\Url;
+use app\assets\SweetAlertAsset;
 
 AdminAsset::register($this);
+SweetAlertAsset::register($this);
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
