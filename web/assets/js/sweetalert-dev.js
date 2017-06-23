@@ -756,7 +756,8 @@ var _injectedHtml = require('./injected-html');
 
 var _injectedHtml2 = _interopRequireDefault(_injectedHtml);
 
-var modalClass = '.sweet-alert';
+/*var modalClass = '.sweet-alert';*/
+var modalClass = '.modal';
 var overlayClass = '.sweet-overlay';
 
 var sweetAlertInitialize = function sweetAlertInitialize() {
@@ -901,8 +902,9 @@ var injectedHTML =
 // Dark overlay
 "<div class=\"sweet-overlay\" tabIndex=\"-1\"></div>" +
 
-// Modal
-"<div class=\"sweet-alert\">" +
+// Modal -----------------vou---------------
+//"<div class=\"sweet-alert\">" +
+"<div class=\"modal\">" +
 
 // Error icon
 "<div class=\"sa-icon sa-error\">\n      <span class=\"sa-x-mark\">\n        <span class=\"sa-line sa-left\"></span>\n        <span class=\"sa-line sa-right\"></span>\n      </span>\n    </div>" +

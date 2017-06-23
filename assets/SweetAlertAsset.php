@@ -22,5 +22,6 @@ class SweetAlertAsset extends AssetBundle
         ];
     public $js = [
        'assets\js\sweetalert.min.js'
+        //'assets\js\sweetalert.js'
     ];
 }
