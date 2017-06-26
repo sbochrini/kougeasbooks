@@ -60,7 +60,21 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="status alert alert-success" style="display: none"></div>
                         <?php $form = ActiveForm::begin(['id' => 'contact-form', 'class'=>'contact-form row']); ?>
                         <!--<form id="main-contact-form" class="contact-form row" name="contact-form" method="post">-->
-                        <div class="form-group col-md-6">
+
+                        <div class="col-md-6">
+                            <?= $form->field($model,'name')->textInput(['maxlength' => true, 'placeholder'=>"Ονοματεπώνυμο" ])->label(false) ?>
+
+                        </div>
+                        <div class="col-md-6">
+                            <?= $form->field($model,'email')->textInput(['maxlength' => true, 'placeholder'=>"Email" ])->label(false) ?>
+                        </div>
+                        <div class="col-md-12">
+                            <?= $form->field($model,'subject')->textInput(['maxlength' => true, 'placeholder'=>"Θέμα" ])->label(false) ?>
+                        </div>
+                        <div class="col-md-12">
+                            <?= $form->field($model,'body')->textArea(['maxlength' => true,'placeholder'=>"Μήνυμα", 'id'=>"message" ])->label(false) ?>
+                        </div>
+                       <!--<div class="form-group col-md-6">
                             <input type="text" name="ContactForm[name]" class="form-control" required="required" placeholder="Ονοματεπώνυμο">
                         </div>
                         <div class="form-group col-md-6">
@@ -71,7 +85,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                         <div class="form-group col-md-12">
                             <textarea name="ContactForm[body]" id="message" required="required" class="form-control" rows="8" placeholder="Μήνυμα"></textarea>
-                        </div>
+                        </div>-->
                         <div class="col-md-6">
                             <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
                                 'template' => '<div class="col-lg-6">{image}</div><div class="col-lg-6">{input}</div>',
