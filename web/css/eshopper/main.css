@@ -942,9 +942,9 @@ h2.title-great:before{
   overflow: auto;
 }
 
-.productinfo img{
+/*.productinfo img{
   width: 100%;
-}
+}*/
 
 .productinfo{
  position:relative;

@@ -145,19 +145,18 @@ $this->params['breadcrumbs'][] = $this->title;
             <div id="dublicate_book" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                 <div class="panel-body list-group">
                     <?php
-                    for($i=0;$i<count($duplicate_books);$i++){
-                        echo  '<a href="#" class="list-group-item">';
-                        echo Html::a('<strong>'.$duplicate_books[$i]['bk_title'].': </strong>', ['book/view', 'id' => $duplicate_books[$i]['bk_id']], ['class' => '']);
-                        echo "<ul>";
+                    for($i=0;$i<count($subcats_per_cat);$i++){
+                        echo  '<div href="#" class="list-group-item">';
+                        //echo '<strong>'.$duplicate_books[$i]['bk_title'].'</strong>';
+                        echo "<table class='table table-hover table-condensed'><thead>";
+                        echo '<tr class="danger"><th>'.$duplicate_books[$i]['bk_title'].'<th></th></th></tr></thead>';
+                        echo '<tbody>';
                         for($d=0;$d<count($duplicate_books[$i]['bk_cat']);$d++){
-                           /* if($d==count($duplicate_books[$i]['bk_cat'])-1){
-                                echo $duplicate_books[$i]['bk_cat'][$d];
-                            }else{*/
-                                echo '<li>'.$duplicate_books[$i]['bk_cat'][$d].'</li>';
-                            //}
+                            echo '<tr><td><li>'.$duplicate_books[$i]['bk_cat'][$d].'</td><td>'.Html::a('<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>', ['book/view', 'id' => $duplicate_books[$i]['bk_ids'][$d]]).'</td></li></tr>';
                         }
-                        echo "</ul>";
-                        echo '</a>';
+                        echo '</tbody>';
+                        echo "</table>";
+                        echo '</div>';
                     }
                     ?>
                 </div>

@@ -97,6 +97,7 @@ class AdminController extends Controller
             foreach ($duplicate_books_models as $duplicate_books_model):
                 $duplicate_books[$d]['bk_id']=$duplicate_books_model->bk_id;
                 $duplicate_books[$d]['bk_title']=$duplicate_books_model->bk_title;
+                $duplicate_books[$d]['bk_ids'][$c]=$duplicate_books_model->bk_id;
                 $duplicate_books[$d]['bk_cat'][$c]=$duplicate_books_model->bkCat['cat_name'];
                 $c++;
             endforeach;
