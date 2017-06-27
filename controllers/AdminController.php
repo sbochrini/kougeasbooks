@@ -13,7 +13,7 @@ use app\models\Book;
 use app\models\Author;
 use app\models\BookCategory;
 use app\models\Order;
-use app\models\ContactForm;
+use yii\helpers\Url;
 
 class AdminController extends Controller
 {
@@ -53,6 +53,22 @@ class AdminController extends Controller
      *
      * @return string
      */
+    public function actionLogin()
+    {
+        /*$this->layout = 'adminLogin';
+        if (!Yii::$app->user->isGuest) {
+            return $this->redirect('index');
+        }
+        $model = new LoginForm();
+        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            return $this->goBack();
+        }
+        return $this->render('login', [
+            'model' => $model,
+        ]);*/
+        return $this->redirect(Url::toRoute('admin/index'));
+    }
+
     public function actionIndex()
     {
         $this->layout = 'adminLogin';
@@ -159,11 +175,9 @@ class AdminController extends Controller
      */
     public function actionLogout()
     {
-        Yii::$app->user->logout();
-
-       // return $this->goHome();
-        $model = new LoginForm();
         $this->layout='adminLogin';
+        Yii::$app->user->logout();
+        $model = new LoginForm();
         return $this->render('login', ['model' => $model]);
     }
 }

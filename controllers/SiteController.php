@@ -12,13 +12,10 @@ use yii\db\Query;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
-use app\models\LoginForm;
 use app\models\ContactForm;
 use yii\data\ActiveDataProvider;
 use yii\db\Expression;
-use yii\helpers\Url;
 use yii\widgets\ActiveForm;
-use yii\web\Session;
 
 class SiteController extends Controller
 {
@@ -90,20 +87,21 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionLogin()
+    /*public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
+            return $this->redirect('admin/index');
         }
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         }
-        return $this->render('login', [
+        return $this->render('admin/login', [
             'model' => $model,
         ]);
-    }
+       return $this->redirect(Url::toRoute('admin/login'));
+    }*/
 
 
     public function actionBkdetails($id)
@@ -147,12 +145,12 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionLogout()
+   /* public function actionLogout()
     {
         Yii::$app->user->logout();
 
         return $this->goHome();
-    }
+    }*/
 
     /**
      * Displays contact page.
@@ -175,7 +173,7 @@ class SiteController extends Controller
            $headers = "MIME-Version: 1.0" . "\r\n";
             $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
             $headers .= 'From: '.$model->name.' <'.$model->email .'>'. "\r\n";*/
-            mail(Yii::$app->params['adminEmail'],$model->subject,$model->body,$headers);
+           // mail(Yii::$app->params['adminEmail'],$model->subject,$model->body,$headers);
             Yii::$app->session->setFlash('contactFormSubmitted');
 
             return $this->refresh();

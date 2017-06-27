@@ -316,7 +316,7 @@ class BookController extends Controller
     {
         $model=Book::findOne($id);
         if ($model->bk_image_web_filename!='') {
-            $img_path=Yii::$app->basePath. '\web\img\\'.$model->bk_image_web_filename;
+            $img_path=Yii::$app->basePath. '/web/img/'.$model->bk_image_web_filename;
             unlink($img_path);
         }
         $model->delete();
