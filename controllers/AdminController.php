@@ -39,6 +39,10 @@ class AdminController extends Controller
                     'logout' => ['post'],
                 ],
             ],
+            'error' => [
+                'class' => 'yii\web\ErrorAction',
+                'view' => '@app/views/admin/error.php'
+            ],
         ];
     }
 
