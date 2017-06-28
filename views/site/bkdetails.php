@@ -127,6 +127,9 @@ $this->params['breadcrumbs'][] = $book->bk_title;
                         'method' => 'post',
                     ]); ?>
                 <div class="row col-sm-12">
+                    <span class="row">
+                        <p class="pull-right"><i>Τα πεδία με <span style="display: inline;color:red;">*</span> είναι υποχρεωτικά.</i></p>
+                    </span>
                     <?= $form->field($order, 'order_bk_id')->hiddenInput(['value'=> $book->bk_id])->label(false) ?>
                     <span class="row">
                             <div class="col-sm-6">

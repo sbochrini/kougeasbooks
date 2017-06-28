@@ -123,8 +123,13 @@ SweetAlertAsset::register($this);
     </div>
 </div>
 
-<footer class="container-fluid text-center">
-    <p>Footer Text</p>
+<footer id="footer">
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="pull-left">&copy; Βιβλιοπωλείο Κουγέας <?= date('Y') ?></p>
+            <p class="pull-right">Designed by <span><a target="_blank" href="#"><strong>SBochrini</strong></a></span></p>
+        </div>
+    </div>
 </footer>
 
 <?php $this->endBody() ?>
