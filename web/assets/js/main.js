@@ -136,6 +136,7 @@ $('#userorderModal').on('show.bs.modal', function(e) {
         {
            // $modal.find('.modal-content').html(data);
             $modal.find('.modal-body').html(data);
+            //$modal.find('.modal-footer').before(data);
         }
     });
 
@@ -175,7 +176,7 @@ $('.cat_subcat').click(function(){
 });*/
 /*
 $('#usr_index_order_form').yiiActiveForm('validate', true);*/
-
+/*
 $('#usr_index_order_form-form').on('beforeSubmit', function (e) {
     var form = $('#usr_index_order_form');
     var data = $form.data("yiiActiveForm");
@@ -183,7 +184,7 @@ $('#usr_index_order_form-form').on('beforeSubmit', function (e) {
         return false;
     }
     return true;
-});
+});*/
 
 
 yii.confirm = function (message, okCallback, cancelCallback) {

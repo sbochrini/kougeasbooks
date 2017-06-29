@@ -454,21 +454,19 @@ $this->params['breadcrumbs'][] = $this->title;
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Φόρμα παραγγελίας</h4>
             </div>
+            <div class="pull-right" style="padding-top:10px;padding-right:10px;padding-bottom:2px;font-size:12px"><i>Τα πεδία με <span style="display: inline;color:red;">*</span> είναι υποχρεωτικά.</i></div>
            <?php $form = ActiveForm::begin(
             [
-                /*'enableAjaxValidation' => true,
-                'enableClientValidation'=>true,*/
                 'id' => 'usr_index_order_form',
                 'action'=> ['site/usrindexorder'],
                 'method' => 'post',
-                'options' => [
-                    'enableAjaxValidation' => true,
-                    'enableClientValidation'=>true
-                ]
             ]); ?>
             <div class="modal-body">
                 <!--modal-body -->
-
+                <!--<div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 0; margin-top: 16px">Κλείσιμο</button>
+                    <button id="index_usrorder_submit" type="submit" class="btn btn-primary" >Αποστολή</button>
+                </div>-->
             </div>
             <?php ActiveForm::end();?>
     </div>

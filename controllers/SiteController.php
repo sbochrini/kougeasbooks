@@ -281,18 +281,11 @@ class SiteController extends Controller
            //<form id="usr_index_order_form" action="'.Url::to(['site/usrindexorder', 'id'=>$_POST['bk_id']]).'" method="post">
             $form = ActiveForm::begin(
                 [
-                    /*'enableAjaxValidation' => true,
-                    'enableClientValidation'=>true,*/
                     'id' => 'usr_index_order_form',
                     'action'=> ['site/usrindexorder'],
                     'method' => 'post',
-                    'options' => [
-                        'enableAjaxValidation' => true,
-                        'enableClientValidation'=>true
-
-                    ]
                 ]);
-            $modal.=$form->init();
+            //$modal.=$form->init();
             $modal.=$form->field($order, 'order_bk_id')->hiddenInput(['value'=> $_POST['bk_id']])->label(false);
             $modal.='<span><div class="col-sm-6">'.$form->field($order, 'usr_name')->textInput(['maxlength' => true,'style' => 'width: 100%']).'</div>';
             $modal.='<div class="col-sm-6">'.$form->field($order, 'usr_surname')->textInput(['maxlength' => true, 'style' => 'width: 100%']).'</div></span>';

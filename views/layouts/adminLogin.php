@@ -47,7 +47,7 @@ AppAsset::register($this);
     <div class="footer-bottom">
         <div class="container">
             <p class="pull-left">&copy; Βιβλιοπωλείο Κουγέας <?= date('Y') ?></p>
-            <p class="pull-right">Designed by <span><a target="_blank" href="#">Boula</a></span></p>
+            <p class="pull-right">Designed by <span><a href="mailto:s.bochrini@gmail.com">SBochrini</a></span></p>
         </div>
     </div>
 </footer>

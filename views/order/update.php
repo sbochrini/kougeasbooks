@@ -7,8 +7,8 @@ use yii\helpers\Html;
 
 $this->title = 'Επεξεργασία Παραγγελίας: ' . $model->order_id;
 $this->params['breadcrumbs'][] = ['label' => 'Παραγγελίες', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->order_id, 'url' => ['view', 'id' => $model->order_id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = ['label' => "Παραγγελία ".$model->order_id, 'url' => ['view', 'id' => $model->order_id]];
+$this->params['breadcrumbs'][] = 'Επεξεργασία';
 ?>
 <div class="order-update">
     <div class="page-header">

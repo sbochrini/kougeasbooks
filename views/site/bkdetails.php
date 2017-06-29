@@ -438,6 +438,7 @@ $this->params['breadcrumbs'][] = $book->bk_title;
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Φόρμα παραγγελίας</h4>
             </div>
+            <div class="pull-right" style="padding-top:10px;padding-right:10px;padding-bottom:2px;font-size:12px"><i>Τα πεδία με <span style="display: inline;color:red;">*</span> είναι υποχρεωτικά.</i></div>
             <?php $form = ActiveForm::begin(
                 [
                     'id' => 'usr_index_order_form',
