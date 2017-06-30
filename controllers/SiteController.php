@@ -282,7 +282,7 @@ class SiteController extends Controller
             $form = ActiveForm::begin(
                 [
                     'id' => 'usr_index_order_form',
-                    'action'=> ['site/usrindexorder'],
+                    //'action'=> ['site/usrindexorder'],
                     'method' => 'post',
                 ]);
             //$modal.=$form->init();

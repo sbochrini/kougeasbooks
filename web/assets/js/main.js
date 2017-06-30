@@ -1,6 +1,12 @@
 /**
  * Created by Voula on 19/4/2017.
  */
+var check_name=0;
+var check_surname=0;
+var check_phone=0;
+var check_email=0;
+var has_email=0;
+
 $(function() {
     $('button.catwithout').on("click", function(){
         var str=$(this).attr("id");
@@ -98,7 +104,7 @@ $('document').ready(function(){
             var cat_subcat_eles = document.getElementsByClassName("panel-collapse");
             for(var i = 0; i < cat_subcat_eles.length; i++ ){
                 if(cat_subcat_eles[i].contains(subcat_ele)){
-                   // alert(cat_subcat_eles[i].id);
+                    // alert(cat_subcat_eles[i].id);
                     catsubcat_ele=cat_subcat_eles[i];
                     catsubcat_ele.className += " in";
                 }
@@ -128,18 +134,79 @@ $('#userorderModal').on('show.bs.modal', function(e) {
 
     var $modal = $(this);
     var bk_id = e.relatedTarget.id;
-       $.ajax({
+    $.ajax({
         type: 'POST',
         url: 'index.php?r=site/usrordermodal',
         data: {bk_id  : bk_id},
         success: function(data)
         {
-           // $modal.find('.modal-content').html(data);
+            // $modal.find('.modal-content').html(data);
             $modal.find('.modal-body').html(data);
             //$modal.find('.modal-footer').before(data);
         }
     });
 
+    $('#usr_index_order_form').on('beforeSubmit', function (e) {
+        if( !$("#order-usr_name").val() || $.trim($("#order-usr_name").val()) === ""){
+            $("div.field-order-usr_name").addClass('has-error');
+            $(".field-order-usr_name > .help-block").append("Το πεδίο είναι υποχρεωτικό.");
+            check_name=0;
+        }else{
+            $("div.field-order-usr_name").removeClass('has-error');
+            $(".field-order-usr_name > .help-block").empty();
+            check_name=1;
+        }
+        if( !$("#order-usr_surname").val() || $.trim($("#order-usr_surname").val()) === "" ){
+            $("div.field-order-usr_surname").addClass('has-error');
+            $(".field-order-usr_surname > .help-block").append("Το πεδίο είναι υποχρεωτικό.");
+            check_surname=0;
+        }else{
+            check_surname=1;
+        }
+        if( !$("#order-usr_phone").val() || $.trim($("#order-usr_phone").val()) === ""  ){
+            $("div.field-order-usr_phone").addClass('has-error');
+            $(".field-order-usr_phone > .help-block").append("Το πεδίο είναι υποχρεωτικό.");
+            check_phone=0;
+        }else{
+            if(!$.isNumeric($("#order-usr_phone").val())){
+                $("div.field-order-usr_phone").addClass('has-error');
+                $(".field-order-usr_phone > .help-block").append("Το πεδίο τηλέφωνο πρέπει να είναι αριθμός.");
+                check_phone=0;
+            }else{
+                check_phone=1;
+            }
+        }
+
+        var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+        var email=$("#order-usr_email").val();
+        if($.trim(email)!==""){
+            has_email=1;
+            if (testEmail.test(email)){
+                check_email=1;
+            }else{
+                $("div.field-order-usr_email").addClass('has-error');
+                $(".field-order-usr_email > .help-block").append("Το πεδίο e-mail πρέπει να είναι έγκυρη ηλεκτρονική διεύθυνση.");
+                check_email=0;
+            }
+        }
+
+
+        if(check_name===0 || check_surname===0 || check_phone===0 ||check_email === 0) {
+            e.preventDefault();
+            alert("alalal");
+            return false;
+        } else {
+            alert("xxxxxxxxxxx");
+            $.ajax({
+                type: 'POST',
+                url: 'index.php?r=site/usrindexorder',
+                data: $("#usr_index_order_form").serialize(),
+                success: function (response) {
+
+                }
+            });
+        }
+    });
 });
 
 $(window).load(function() {
@@ -148,43 +215,49 @@ $(window).load(function() {
 
 $('.cat_subcat').click(function(){
     var cat_id=$(this).attr('id');
-  /*  $.ajax({
-        type: 'GET',
-        url: 'index.php?r=site/bookspercatwith',
-        data: {id  : cat_id},
-        success: function(data)
-        {
-            $('#booklist').html(data);
-        }
-    });*/
-   url='index.php?r=site/bookspercat&id='+cat_id;
-   // alert(url);
+    /*  $.ajax({
+     type: 'GET',
+     url: 'index.php?r=site/bookspercatwith',
+     data: {id  : cat_id},
+     success: function(data)
+     {
+     $('#booklist').html(data);
+     }
+     });*/
+    url='index.php?r=site/bookspercat&id='+cat_id;
+    // alert(url);
     window.location.href=url;
 
 });
 
+/*var $form = $("#usr_index_order_form");
+ var data = $form.data("yiiActiveForm");
+ $.each(data.attributes, function() {
+ this.status = 3;
+ });*/
+
 
 /*$('#usr_index_order_form').yiiActiveForm('add', {
-    id: 'order-usr_name',
-    name: 'Order[usr_name]',
-    container: '.field-order-usr_name',
-    input: '#order-usr_name',
-    error: '.help-block',
-    validate:  function (attribute, value, messages, deferred, $form) {
-        yii.validation.required(value, messages, {message: "Validation Message Here"});
-    }
-});*/
+ id: 'order-usr_name',
+ name: 'Order[usr_name]',
+ container: '.field-order-usr_name',
+ input: '#order-usr_name',
+ error: '.help-block',
+ validate:  function (attribute, value, messages, deferred, $form) {
+ yii.validation.required(value, messages, {message: "Validation Message Here"});
+ }
+ });*/
 /*
-$('#usr_index_order_form').yiiActiveForm('validate', true);*/
+ $('#usr_index_order_form').yiiActiveForm('validate', true);*/
 /*
-$('#usr_index_order_form-form').on('beforeSubmit', function (e) {
-    var form = $('#usr_index_order_form');
-    var data = $form.data("yiiActiveForm");
-    if (!confirm("Everything is correct. Submit?")) {
-        return false;
-    }
-    return true;
-});*/
+ $('#usr_index_order_form-form').on('beforeSubmit', function (e) {
+ var form = $('#usr_index_order_form');
+ var data = $form.data("yiiActiveForm");
+ if (!confirm("Everything is correct. Submit?")) {
+ return false;
+ }
+ return true;
+ });*/
 
 
 yii.confirm = function (message, okCallback, cancelCallback) {

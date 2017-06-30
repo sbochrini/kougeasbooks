@@ -458,7 +458,7 @@ $this->params['breadcrumbs'][] = $this->title;
            <?php $form = ActiveForm::begin(
             [
                 'id' => 'usr_index_order_form',
-                'action'=> ['site/usrindexorder'],
+                //'action'=> ['site/usrindexorder'],
                 'method' => 'post',
             ]); ?>
             <div class="modal-body">
