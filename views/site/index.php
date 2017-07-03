@@ -2,11 +2,14 @@
 use yii\widgets\ActiveForm;
 use app\components\CategoryWidget;
 use yii\helpers\Html;
+use yii\web\View;
 
 /* @var $this yii\web\View */
 
 /*$this->title = 'Κουγέας';*/
 $this->params['breadcrumbs'][] = $this->title;
+
+$this->registerJsFile(Yii::$app->basePath.'/vendor/yiisoft/yii2/assets/yii.activeForm.js',['position' => View::POS_END]);
 ?>
 <!--<div class="site-index">-->
 <div class="row">
@@ -458,7 +461,7 @@ $this->params['breadcrumbs'][] = $this->title;
            <?php $form = ActiveForm::begin(
             [
                 'id' => 'usr_index_order_form',
-                //'action'=> ['site/usrindexorder'],
+                'action'=> ['site/usrindexorder'],
                 'method' => 'post',
             ]); ?>
             <div class="modal-body">

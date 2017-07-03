@@ -17,6 +17,7 @@ use yii\data\ActiveDataProvider;
 use yii\db\Expression;
 use yii\widgets\ActiveForm;
 
+
 class SiteController extends Controller
 {
     /**
@@ -271,6 +272,7 @@ class SiteController extends Controller
     public function actionUsrordermodal()
     {
         if (isset($_POST['bk_id'])) {
+
             $order = new Order();
             $modal="";
             /*$modal = '<div class="modal-header">
@@ -282,7 +284,7 @@ class SiteController extends Controller
             $form = ActiveForm::begin(
                 [
                     'id' => 'usr_index_order_form',
-                    //'action'=> ['site/usrindexorder'],
+                    'action'=> ['site/usrindexorder'],
                     'method' => 'post',
                 ]);
             //$modal.=$form->init();

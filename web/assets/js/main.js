@@ -146,7 +146,9 @@ $('#userorderModal').on('show.bs.modal', function(e) {
         }
     });
 
-    $('#usr_index_order_form').on('beforeSubmit', function (e) {
+    $('#usr_index_order_form').on('keyup', function (e) {
+        var which_input=$(this).attr('id');
+       alert(which_input);
         if( !$("#order-usr_name").val() || $.trim($("#order-usr_name").val()) === ""){
             $("div.field-order-usr_name").addClass('has-error');
             $(".field-order-usr_name > .help-block").append("Το πεδίο είναι υποχρεωτικό.");
@@ -208,6 +210,11 @@ $('#userorderModal').on('show.bs.modal', function(e) {
         }
     });
 });
+
+/*$('#userorderModal').on('shown.bs.modal', function(e) {
+    $('#usr_index_order_form').yiiActiveForm();
+    alert("gamw");
+});*/
 
 $(window).load(function() {
     $('#userindexorderModal').modal('show');
