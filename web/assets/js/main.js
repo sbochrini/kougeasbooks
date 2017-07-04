@@ -131,7 +131,10 @@ $('document').ready(function(){
 
 //------------index usr order modal---------------\\
 $('#userorderModal').on('show.bs.modal', function(e) {
-
+    document.getElementById("usr_index_order_form").reset();
+    $(".has-error").removeClass('has-error');
+    $(".help-block").empty();
+    //$("#usr_index_order_form").reset();
     var $modal = $(this);
     var bk_id = e.relatedTarget.id;
     $.ajax({
@@ -141,12 +144,12 @@ $('#userorderModal').on('show.bs.modal', function(e) {
         success: function(data)
         {
             // $modal.find('.modal-content').html(data);
-            $modal.find('.modal-body').html(data);
+            $modal.find('.modal-body').append(data);
             //$modal.find('.modal-footer').before(data);
         }
     });
 
-    $('#usr_index_order_form').on('keyup', function (e) {
+    /*$('#usr_index_order_form').on('keyup', function (e) {
         var which_input=$(this).attr('id');
        alert(which_input);
         if( !$("#order-usr_name").val() || $.trim($("#order-usr_name").val()) === ""){
@@ -208,7 +211,7 @@ $('#userorderModal').on('show.bs.modal', function(e) {
                 }
             });
         }
-    });
+    });*/
 });
 
 /*$('#userorderModal').on('shown.bs.modal', function(e) {
