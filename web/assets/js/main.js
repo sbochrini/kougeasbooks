@@ -126,6 +126,10 @@ $('document').ready(function(){
         }
     }
 
+    $('.cat_collapse i').on('click',function(){
+        $(this).toggleClass('fa-plus fa-minus');
+        //alert("despacito");
+    });
 
 });
 
@@ -214,10 +218,7 @@ $('#userorderModal').on('show.bs.modal', function(e) {
     });*/
 });
 
-/*$('#userorderModal').on('shown.bs.modal', function(e) {
-    $('#usr_index_order_form').yiiActiveForm();
-    alert("gamw");
-});*/
+
 
 $(window).load(function() {
     $('#userindexorderModal').modal('show');
@@ -239,36 +240,6 @@ $('.cat_subcat').click(function(){
     window.location.href=url;
 
 });
-
-/*var $form = $("#usr_index_order_form");
- var data = $form.data("yiiActiveForm");
- $.each(data.attributes, function() {
- this.status = 3;
- });*/
-
-
-/*$('#usr_index_order_form').yiiActiveForm('add', {
- id: 'order-usr_name',
- name: 'Order[usr_name]',
- container: '.field-order-usr_name',
- input: '#order-usr_name',
- error: '.help-block',
- validate:  function (attribute, value, messages, deferred, $form) {
- yii.validation.required(value, messages, {message: "Validation Message Here"});
- }
- });*/
-/*
- $('#usr_index_order_form').yiiActiveForm('validate', true);*/
-/*
- $('#usr_index_order_form-form').on('beforeSubmit', function (e) {
- var form = $('#usr_index_order_form');
- var data = $form.data("yiiActiveForm");
- if (!confirm("Everything is correct. Submit?")) {
- return false;
- }
- return true;
- });*/
-
 
 yii.confirm = function (message, okCallback, cancelCallback) {
     swal({

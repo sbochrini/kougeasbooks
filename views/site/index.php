@@ -9,7 +9,6 @@ use yii\web\View;
 /*$this->title = 'Κουγέας';*/
 $this->params['breadcrumbs'][] = $this->title;
 
-$this->registerJsFile(Yii::$app->basePath.'/vendor/yiisoft/yii2/assets/yii.activeForm.js',['position' => View::POS_END]);
 ?>
 <!--<div class="site-index">-->
 <div class="row">
