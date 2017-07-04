@@ -470,35 +470,43 @@ $this->registerJsFile(Yii::$app->basePath.'/vendor/yiisoft/yii2/assets/yii.activ
                 <!--modal-body -->
 
                 <span>
-                    <div class="col-sm-6">
-                    <?=$form->field($order, 'usr_name')->textInput(['maxlength' => true,'style' => 'width: 100%'])?>
-                    </div>
-                    <div class="col-sm-6">
-                        <?=$form->field($order, 'usr_surname')->textInput(['maxlength' => true, 'style' => 'width: 100%']) ?>
+                    <div class="row">
+                        <div class="col-sm-6">
+                        <?=$form->field($order, 'usr_name')->textInput(['maxlength' => true,'style' => 'width: 100%'])?>
+                        </div>
+                        <div class="col-sm-6">
+                            <?=$form->field($order, 'usr_surname')->textInput(['maxlength' => true, 'style' => 'width: 100%']) ?>
+                        </div>
                     </div>
                 </span>
                 <span>
-                    <div class="col-sm-6">
-                        <?=$form->field($order, 'usr_phone')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
-                    </div>
-                    <div class="col-sm-6">
-                        <?=$form->field($order, 'usr_email')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
-                    </div>
-                </span>
-                <span class="row">
-                    <div class="col-sm-6">
-                        <?=$form->field($order, 'usr_address')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
-                    </div>
-                    <div class="col-sm-4">
-                        <?=$form->field($order, 'usr_city')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
-                    </div>
-                    <div class="col-sm-2">
-                        <?=$form->field($order, 'usr_pcode')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <?=$form->field($order, 'usr_phone')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
+                        </div>
+                        <div class="col-sm-6">
+                            <?=$form->field($order, 'usr_email')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
+                        </div>
                     </div>
                 </span>
                 <span class="row">
-                    <div class="col-sm-12" style="padding-right: 15px; padding-left: 15px;">
-                        <?=$form->field($order, 'order_comment')->textArea(['maxlength' => true])->label('Σχόλιο')?>
+                     <div class="row">
+                        <div class="col-sm-6">
+                            <?=$form->field($order, 'usr_address')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
+                        </div>
+                        <div class="col-sm-4">
+                            <?=$form->field($order, 'usr_city')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
+                        </div>
+                        <div class="col-sm-2">
+                            <?=$form->field($order, 'usr_pcode')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
+                        </div>
+                     </div>
+                </span>
+                <span class="row">
+                    <div class="row">
+                        <div class="col-sm-12" style="padding-right: 15px; padding-left: 15px;">
+                            <?=$form->field($order, 'order_comment')->textArea(['maxlength' => true])->label('Σχόλιο')?>
+                        </div>
                     </div>
                 </span>
 
@@ -512,5 +520,10 @@ $this->registerJsFile(Yii::$app->basePath.'/vendor/yiisoft/yii2/assets/yii.activ
     </div>
 </div>
 
-
+<?php
+$this->registerJs(
+    '$(".help-block").css("font-size", "12px");',
+    View::POS_READY
+);
+?>
 

@@ -282,18 +282,7 @@ class SiteController extends Controller
                     'action'=> ['site/usrindexorder'],
                     'method' => 'post',
                 ]);
-            //$modal.=$form->init();
             $modal.=$form->field($order, 'order_bk_id')->hiddenInput(['value'=> $_POST['bk_id']])->label(false);
-            /*$modal.='<span><div class="col-sm-6">'.$form->field($order, 'usr_name')->textInput(['maxlength' => true,'style' => 'width: 100%']).'</div>';
-            $modal.='<div class="col-sm-6">'.$form->field($order, 'usr_surname')->textInput(['maxlength' => true, 'style' => 'width: 100%']).'</div></span>';
-            $modal.='<span><div class="col-sm-6">'.$form->field($order, 'usr_phone')->textInput(['maxlength' => true, 'style' => 'width: 100%']).'</div>';
-            $modal.='<div class="col-sm-6">'.$form->field($order, 'usr_email')->textInput(['maxlength' => true, 'style' => 'width: 100%']).'</div></span>';
-            $modal.='<span class="row"><div class="col-sm-6">'.$form->field($order, 'usr_address')->textInput(['maxlength' => true, 'style' => 'width: 100%']).'</div>';
-            $modal.='<div class="col-sm-4">'.$form->field($order, 'usr_city')->textInput(['maxlength' => true, 'style' => 'width: 100%']).'</div>';
-            $modal.='<div class="col-sm-2">'.$form->field($order, 'usr_pcode')->textInput(['maxlength' => true, 'style' => 'width: 100%']).'</div></span>';
-            $modal.='<span class="row"><div class="col-sm-12" style="padding-right: 15px; padding-left: 15px;">'.$form->field($order, 'order_comment')->textArea(['maxlength' => true])->label('Σχόλιο').'</div></span>';*/
-                /*$modal .='<input name="_csrf" value="'.Yii::$app->request->getCsrfToken().'" type="hidden">
-            ActiveForm::end();*/
             echo $modal;
         }
     }

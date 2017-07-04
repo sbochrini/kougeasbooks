@@ -1,6 +1,8 @@
 <?php
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\web\View;
+
 if(isset($_GET['bc'])){
     if($_GET['bc']==1){
         $this->params['breadcrumbs'][] = ['label' => $book->bkCat['cat_name'], 'url' => ['bookspercat','id'=>$book->bkCat['cat_id']]];
@@ -226,7 +228,7 @@ $this->params['breadcrumbs'][] = $book->bk_title;
                         echo '<li>'.Html::a('<i class="fa fa-info-circle fa-2x"></i>', ['bkdetails', 'id' => $recommended_book->bk_id]).'</li>';
 						echo '<li class="choose-no-border-price"><span class="header book-price"></span>
 								<span class="price"><span class="val">'.$recommended_book->bk_price.'</span> &euro;</span></li>';
-                        echo '<li><a id="'.$recommended_book->bk_id.'" data-toggle="modal" href="#userorderModal"><i class="fa fa-shopping-bag fa-2x"></i></a></li>';
+                        echo '<li><a id="'.$recommended_book->bk_id.'" data-toggle="modal" href="#userorderModal" data-backdrop="static"><i class="fa fa-shopping-bag fa-2x"></i></a></li>';
                         echo '</ul>';
                         echo '</div>';
 						echo '</div></div></div>';
@@ -275,7 +277,7 @@ $this->params['breadcrumbs'][] = $book->bk_title;
                         echo '<li>'.Html::a('<i class="fa fa-info-circle fa-2x"></i>', ['bkdetails', 'id' => $auth_recommended_book->bk_id]).'</li>';
 						echo '<li class="choose-no-border-price"><span class="header book-price"></span>
 								<span class="price"><span class="val">'.$auth_recommended_book->bk_price.'</span> &euro;</span></li>';
-                        echo '<li><a id="'.$auth_recommended_book->bk_id.'" data-toggle="modal" href="#userorderModal"><i class="fa fa-shopping-bag fa-2x"></i></a></li>';
+                        echo '<li><a id="'.$auth_recommended_book->bk_id.'" data-toggle="modal" href="#userorderModal" data-backdrop="static"><i class="fa fa-shopping-bag fa-2x"></i></a></li>';
                         echo '</ul>';
                         echo '</div>';
 						echo '</div></div></div>';
@@ -325,7 +327,7 @@ $this->params['breadcrumbs'][] = $book->bk_title;
                         echo '<li>'.Html::a('<i class="fa fa-info-circle fa-2x"></i>', ['bkdetails', 'id' => $cat_recommended_book->bk_id]).'</li>';
 						echo '<li class="choose-no-border-price"><span class="header book-price"></span>
 								<span class="price"><span class="val">'.$cat_recommended_book->bk_price.'</span> &euro;</span></li>';
-                        echo '<li><a id="'.$cat_recommended_book->bk_id.'" data-toggle="modal" href="#userorderModal"><i class="fa fa-shopping-bag fa-2x"></i></a></li>';
+                        echo '<li><a id="'.$cat_recommended_book->bk_id.'" data-toggle="modal" href="#userorderModal" data-backdrop="static"><i class="fa fa-shopping-bag fa-2x"></i></a></li>';
                         echo '</ul>';
                         echo '</div>';
 						echo '</div></div></div>';
@@ -450,35 +452,43 @@ $this->params['breadcrumbs'][] = $book->bk_title;
                 <!--modal-body -->
 
                 <span>
-                    <div class="col-sm-6">
-                    <?=$form->field($order, 'usr_name')->textInput(['maxlength' => true,'style' => 'width: 100%'])?>
-                    </div>
-                    <div class="col-sm-6">
-                        <?=$form->field($order, 'usr_surname')->textInput(['maxlength' => true, 'style' => 'width: 100%']) ?>
+                    <div class="row">
+                        <div class="col-sm-6">
+                        <?=$form->field($order, 'usr_name')->textInput(['maxlength' => true,'style' => 'width: 100%'])?>
+                        </div>
+                        <div class="col-sm-6">
+                            <?=$form->field($order, 'usr_surname')->textInput(['maxlength' => true, 'style' => 'width: 100%']) ?>
+                        </div>
                     </div>
                 </span>
                 <span>
-                    <div class="col-sm-6">
-                        <?=$form->field($order, 'usr_phone')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
-                    </div>
-                    <div class="col-sm-6">
-                        <?=$form->field($order, 'usr_email')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
-                    </div>
-                </span>
-                <span class="row">
-                    <div class="col-sm-6">
-                        <?=$form->field($order, 'usr_address')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
-                    </div>
-                    <div class="col-sm-4">
-                        <?=$form->field($order, 'usr_city')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
-                    </div>
-                    <div class="col-sm-2">
-                        <?=$form->field($order, 'usr_pcode')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <?=$form->field($order, 'usr_phone')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
+                        </div>
+                        <div class="col-sm-6">
+                            <?=$form->field($order, 'usr_email')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
+                        </div>
                     </div>
                 </span>
                 <span class="row">
-                    <div class="col-sm-12" style="padding-right: 15px; padding-left: 15px;">
-                        <?=$form->field($order, 'order_comment')->textArea(['maxlength' => true])->label('Σχόλιο')?>
+                     <div class="row">
+                        <div class="col-sm-6">
+                            <?=$form->field($order, 'usr_address')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
+                        </div>
+                        <div class="col-sm-4">
+                            <?=$form->field($order, 'usr_city')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
+                        </div>
+                        <div class="col-sm-2">
+                            <?=$form->field($order, 'usr_pcode')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
+                        </div>
+                     </div>
+                </span>
+                <span class="row">
+                    <div class="row">
+                        <div class="col-sm-12" style="padding-right: 15px; padding-left: 15px;">
+                            <?=$form->field($order, 'order_comment')->textArea(['maxlength' => true])->label('Σχόλιο')?>
+                        </div>
                     </div>
                 </span>
 
@@ -491,3 +501,11 @@ $this->params['breadcrumbs'][] = $book->bk_title;
         </div>
     </div>
 </div>
+
+<?php
+$this->registerJs(
+    '$(".help-block").css("font-size", "12px");',
+    View::POS_READY
+);
+?>
+
