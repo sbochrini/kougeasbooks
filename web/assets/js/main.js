@@ -235,7 +235,7 @@ $('.cat_subcat').click(function(){
      $('#booklist').html(data);
      }
      });*/
-    url='index.php?r=site/bookspercat&id='+cat_id;
+    var url='index.php?r=site/bookspercat&id='+cat_id;
     // alert(url);
     window.location.href=url;
 

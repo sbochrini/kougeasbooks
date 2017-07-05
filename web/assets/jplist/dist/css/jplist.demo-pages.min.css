@@ -1861,7 +1861,7 @@ h2 {
     margin-bottom: 10px
 }*/
 .jplist .list .img img {
-    height: 100px;
+    height: 200px;
     border-radius: 3px;
     margin-top: 10px;
     margin-bottom: 10px
@@ -1938,15 +1938,19 @@ h2 {
     text-align: center
 }
 .jplist-grid-view .list-item .block p {
-    padding: 0 0 0 0
+    padding: 0 0 0 0;
 }
 .jplist-grid-view .list-item .block .title {
     line-height: 1.5em;
-	overflow:auto;
+   /* height: 10.0em;*/
+	/*overflow:auto;*/
 	font-weight: bold;
-	height: 95px;	
+	height: 95px;
     font-size: 13px;
 	color: #373737; /*color font for jplist book titles*/
+    white-space: nowrap;
+    overflow:hidden !important;
+    text-overflow: ellipsis;
 }
 .jplist-grid-view .list-item .date {
     float: none

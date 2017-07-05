@@ -30,13 +30,11 @@ $this->params['breadcrumbs'][] = $book->bk_title;
                 <?php
                 $path=Yii::$app->basePath. '/web/img/' . $book->bk_image_web_filename;
                 if (is_file($path)) {
-                    echo '<img src="' . Yii::$app->homeUrl.'img/'.$book->bk_image_web_filename.'" alt="" title=""/>';
+                    echo '<img class="img-thumbnail" src="' . Yii::$app->homeUrl.'img/'.$book->bk_image_web_filename.'" alt="" title=""/>';
                 }else{
                     echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" >';
                 }
                 ?>
-                <!--<img src="<?php /*echo Yii::$app->homeUrl. 'img/'.$book->bk_image_web_filename; */?>" alt="" />-->
-                <!--<h3>ZOOM</h3>-->
             </div>
 
         </div>
@@ -197,17 +195,17 @@ $this->params['breadcrumbs'][] = $book->bk_title;
 									<div class="single-products">
 										<div class="productinfo text-center">';
 						echo '<div class="img">';
-						echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $recommended_book->bk_id]).' title="">';
+						echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $recommended_book->bk_id]).' title="'.$recommended_book->bk_title.'">';
 						$path=Yii::$app->basePath. '/web/img/' . $recommended_book->bk_image_web_filename;
 						if (is_file($path)) {
-							echo '<img src="' . Yii::$app->homeUrl.'img/'.$recommended_book->bk_image_web_filename.'" alt="" title=""/>';
+							echo '<img class="img-thumbnail" src="' . Yii::$app->homeUrl.'img/'.$recommended_book->bk_image_web_filename.'" alt="" title="'.$recommended_book->bk_title.'"/>';
 						}else{
-							echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" >';
+							echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" title="'.$recommended_book->bk_title.'" >';
 						}
 						echo '</a>';
 						echo '</div>';
 						echo '<div class="block">';
-						echo '<p class="title">'.$recommended_book->bk_title.'</p>';
+						echo '<p class="title" title="'.$recommended_book->bk_title.'">'.$recommended_book->bk_title.'</p>';
 
 						//echo '<img src="' . Yii::$app->homeUrl.'img/'.$recommended_book->bk_image_web_filename.'" alt="" />';
 						echo ' <div class="choose-no-border-publisher">
@@ -246,17 +244,17 @@ $this->params['breadcrumbs'][] = $book->bk_title;
 									<div class="single-products">
 										<div class="productinfo text-center">';
 						echo '<div class="img">';
-						echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $auth_recommended_book->bk_id]).' title="">';
+						echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $auth_recommended_book->bk_id]).' title="'.$auth_recommended_book->bk_title.'">';
 						$path=Yii::$app->basePath. '/web/img/' . $auth_recommended_book->bk_image_web_filename;
 						if (is_file($path)) {
-							echo '<img src="' . Yii::$app->homeUrl.'img/'.$auth_recommended_book->bk_image_web_filename.'" alt="" title=""/>';
+							echo '<img class="img-thumbnail" src="' . Yii::$app->homeUrl.'img/'.$auth_recommended_book->bk_image_web_filename.'" alt="" title="'.$auth_recommended_book->bk_title.'"/>';
 						}else{
-							echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" >';
+							echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" title="'.$auth_recommended_book->bk_title.'" >';
 						}
 						echo '</a>';
 						echo '</div>';
 						echo '<div class="block">';
-						echo '<p class="title">'.$auth_recommended_book->bk_title.'</p>';
+						echo '<p class="title" title="'.$auth_recommended_book->bk_title.'">'.$auth_recommended_book->bk_title.'</p>';
 
 						//echo '<img src="' . Yii::$app->homeUrl.'img/'.$auth_recommended_book->bk_image_web_filename.'" alt="" />';
 						echo ' <div class="choose-no-border-publisher">
@@ -296,19 +294,18 @@ $this->params['breadcrumbs'][] = $book->bk_title;
 									<div class="single-products">
 										<div class="productinfo text-center">';
 						echo '<div class="img">';
-						echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $cat_recommended_book->bk_id]).' title="">';
+						echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $cat_recommended_book->bk_id]).' title="'.$cat_recommended_book->bk_title.'">';
 						$path=Yii::$app->basePath. '/web/img/' . $cat_recommended_book->bk_image_web_filename;
 						if (is_file($path)) {
-							echo '<img src="' . Yii::$app->homeUrl.'img/'.$cat_recommended_book->bk_image_web_filename.'" alt="" title=""/>';
+							echo '<img class="img-thumbnail" src="' . Yii::$app->homeUrl.'img/'.$cat_recommended_book->bk_image_web_filename.'" alt="" title="'.$cat_recommended_book->bk_title.'"/>';
 						}else{
-							echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" >';
+							echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" title="'.$cat_recommended_book->bk_title.'" >';
 						}
 						echo '</a>';
 						echo '</div>';
 						echo '<div class="block">';
-						echo '<p class="title">'.$cat_recommended_book->bk_title.'</p>';
+						echo '<p class="title" title="'.$cat_recommended_book->bk_title.'" >'.$cat_recommended_book->bk_title.'</p>';
 
-						//echo '<img src="' . Yii::$app->homeUrl.'img/'.$cat_recommended_book->bk_image_web_filename.'" alt="" />';
 						echo ' <div class="choose-no-border-publisher">
 											<p>
 												<span class="header book-publisher"><strong>Έτος: </strong></span>
