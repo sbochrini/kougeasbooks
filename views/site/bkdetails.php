@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $book->bk_title;
                 if (is_file($path)) {
                     echo '<img class="img-thumbnail" src="' . Yii::$app->homeUrl.'img/'.$book->bk_image_web_filename.'" alt="" title=""/>';
                 }else{
-                    echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" >';
+                    echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.jpg" alt="" >';
                 }
                 ?>
             </div>
@@ -200,7 +200,7 @@ $this->params['breadcrumbs'][] = $book->bk_title;
 						if (is_file($path)) {
 							echo '<img class="img-thumbnail" src="' . Yii::$app->homeUrl.'img/'.$recommended_book->bk_image_web_filename.'" alt="" title="'.$recommended_book->bk_title.'"/>';
 						}else{
-							echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" title="'.$recommended_book->bk_title.'" >';
+							echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.jpg" alt="" title="'.$recommended_book->bk_title.'" >';
 						}
 						echo '</a>';
 						echo '</div>';
@@ -249,7 +249,7 @@ $this->params['breadcrumbs'][] = $book->bk_title;
 						if (is_file($path)) {
 							echo '<img class="img-thumbnail" src="' . Yii::$app->homeUrl.'img/'.$auth_recommended_book->bk_image_web_filename.'" alt="" title="'.$auth_recommended_book->bk_title.'"/>';
 						}else{
-							echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" title="'.$auth_recommended_book->bk_title.'" >';
+							echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.jpg" title="'.$auth_recommended_book->bk_title.'" >';
 						}
 						echo '</a>';
 						echo '</div>';
@@ -299,7 +299,7 @@ $this->params['breadcrumbs'][] = $book->bk_title;
 						if (is_file($path)) {
 							echo '<img class="img-thumbnail" src="' . Yii::$app->homeUrl.'img/'.$cat_recommended_book->bk_image_web_filename.'" alt="" title="'.$cat_recommended_book->bk_title.'"/>';
 						}else{
-							echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" title="'.$cat_recommended_book->bk_title.'" >';
+							echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.jpg" title="'.$cat_recommended_book->bk_title.'" >';
 						}
 						echo '</a>';
 						echo '</div>';
