@@ -298,7 +298,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 if (is_file($path)) {
                                     echo '<img class="img-thumbnail hvr-grow-shadow" src="' . Yii::$app->homeUrl.'img/'.$fav_book->bk_image_web_filename.'" alt="" title="'.$fav_book->bk_title.'"/>';
                                 }else{
-                                    echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" title="'.$fav_book->bk_title.'" >';
+                                    echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.jpg" alt="" title="'.$fav_book->bk_title.'" >';
                                 }
                                 echo '</a>';
                                 echo '</div>';
