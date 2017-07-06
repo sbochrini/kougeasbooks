@@ -2746,6 +2746,10 @@ h2.title-great:before{
     color: #fff;
     background-color: #95A2AC;
 }
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: red;
+    background-color: transparent;
+}
 .container > .navbar-header {
     margin-right: 0;
     margin-left: 0;

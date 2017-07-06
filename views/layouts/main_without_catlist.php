@@ -104,26 +104,26 @@ EshopperAsset::register($this);
     <?php
     NavBar::end();
     ?>
+    <div class="container">
+        <div  class="row" style="padding-top: 20px; margin-left:15px; margin-right:15px"> <!--class="container"-->
 
-    <div  class="row" style="padding-top: 20px; margin-left:15px; margin-right:15px"> <!--class="container"-->
-
-        <?= Breadcrumbs::widget([
-            'homeLink' => [
-                'label' => 'ΑΡΧΙΚΗ',
-                'url' => ['site/index'],
-            ],
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-    </div>
-    <!--<div class="">-->
-       <!-- <div class="row">-->
-
-        <div  class="row" style="margin-left:15px; margin-right:15px"><!--class="container"-->
-            <?= $content ?>
+            <?= Breadcrumbs::widget([
+                'homeLink' => [
+                    'label' => 'ΑΡΧΙΚΗ',
+                    'url' => ['site/index'],
+                ],
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ]) ?>
         </div>
-       <!-- <div>-->
-</div>
+        <!--<div class="">-->
+           <!-- <div class="row">-->
 
+            <div  class="row" style="margin-left:15px; margin-right:15px"><!--class="container"-->
+                <?= $content ?>
+            </div>
+           <!-- <div>-->
+    </div>
+</div>
 <footer id="footer"  style="margin-left:0px; margin-right:0px"><!--Footer-->
    <div class="footer-bottom">
         <div class="container">

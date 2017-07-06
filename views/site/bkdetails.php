@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $book->bk_title;
 
 ?>
 
-<div class="col-sm-9 padding-right">
+<div class="col-sm-12 padding-right">
     <h2 class="title text-center">ΛΕΠΤΟΜΕΡΕΙΕΣ</h2>
     <div class="product-details"><!--product-details-->
         <div class="col-sm-5 text-center">
