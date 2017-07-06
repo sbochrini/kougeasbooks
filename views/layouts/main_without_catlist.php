@@ -105,7 +105,7 @@ EshopperAsset::register($this);
     NavBar::end();
     ?>
     <div class="container">
-        <div  class="row" style="padding-top: 20px; margin-left:15px; margin-right:15px"> <!--class="container"-->
+        <!--<div  class="row" style="padding-top: 20px; margin-left:15px; margin-right:15px"> --><!--class="container"-->
 
             <?= Breadcrumbs::widget([
                 'homeLink' => [
@@ -114,7 +114,7 @@ EshopperAsset::register($this);
                 ],
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
-        </div>
+        <!--</div>-->
         <!--<div class="">-->
            <!-- <div class="row">-->
 

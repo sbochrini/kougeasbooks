@@ -75,6 +75,7 @@ SweetAlertAsset::register($this);
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse ',
+            'style' => 'border-radius:0px; height: 100px;',
         ],
     ]);
     echo Nav::widget([
