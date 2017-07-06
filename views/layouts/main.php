@@ -71,7 +71,7 @@ SweetAlertAsset::register($this);
 
     <?php
     NavBar::begin([
-        'brandLabel' => 'Παλαιοβιβλιοπωλείο Κουγέας',
+        'brandLabel' => '<img src="'.Yii::$app->homeUrl.'pictures/logo.png" class="pull-left"/>Παλαιοβιβλιοπωλείο Κουγέας',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse ',

@@ -2723,3 +2723,39 @@ h2.title-great:before{
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+
+/*-----------------navbar voula------------------*/
+.navbar-inverse {
+    background-color: #446F88;
+    border-color: #446F88;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+.navbar {
+    position: relative;
+    min-height: 100px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: #95A2AC;
+}
+.container > .navbar-header {
+    margin-right: 0;
+    margin-left: 0;
+    height: auto;
+    min-height: 100%;
+}
+.navbar-inverse .navbar-brand{
+    color: white;
+}
+.navbar > .container {
+    height: 100px;
+}
+/*-----------------navbar voula end------------------*/
