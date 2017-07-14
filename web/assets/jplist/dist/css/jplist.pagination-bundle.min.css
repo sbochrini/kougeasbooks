@@ -21,7 +21,7 @@
 
 .jplist-panel .jplist-pagination button:hover {
     display: inline-block;
-    color: #0381bb; /*color not-active in pagination hover*/
+    color: #446f88; /*color not-active in pagination hover*/
     height: 30px;
     line-height: 30px;
     padding: 0 10px
@@ -29,7 +29,7 @@
 
 .jplist-panel .jplist-pagination .jplist-current {
     font-weight: bold;
-    color: #0381bb; /*color active in pagination*/
+    color: #446f88; /*color active in pagination*/
 }
 .jplist-panel .jplist-pagination .jplist-pagingprev,
 .jplist-panel .jplist-pagination .jplist-pagingmid,

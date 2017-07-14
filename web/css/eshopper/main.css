@@ -1085,7 +1085,7 @@ h2.title-great:before{
 
 .choose ul li a:hover{
 	background:none;
-	color:#0381bb; /*color bag and details icons hover*/
+	color:#446f88; /*color bag and details icons hover*/
 }
 
 .label-danger {
@@ -1121,7 +1121,7 @@ h2.title-great:before{
 }
 
 .category-tab ul  li  a:hover{
-	color: #0381bb; /*color book details box font hover*/
+	color: #446f88; /*color book details box font hover*/
 	background-color: #DCD0C0; /*color book details box background hover*/
 }
 
@@ -1132,7 +1132,7 @@ h2.title-great:before{
   -moz-border-top-colors: none;
   background-color: #DCD0C0; /*color book details box table header background*/
   border:0px;
-  color: #0381bb;
+  color: #446f88;
   cursor: default;
   margin-right:0;
   margin-left:0;
@@ -1218,8 +1218,8 @@ h2.title-great:before{
 }
 
 .pagination  .active  a, .pagination  .active  span, .pagination  .active  a:hover, .pagination  .active  span:hover, .pagination  .active  a:focus, .pagination  .active  span:focus {
-  background-color: #0381bb; /*color authors catalog pagination*/
-  border-color: #0381bb; /*color authors catalog pagination*/
+  background-color: #446f88; /*color authors catalog pagination*/
+  border-color: #446f88; /*color authors catalog pagination*/
   color: #FFFFFF;
   cursor: default;
   z-index: 2;
@@ -1239,7 +1239,7 @@ h2.title-great:before{
 }
 
 .pagination  li  a:hover{
-	background:#0381bb; /*color bkdetails pagination hover*/
+	background:#446f88; /*color bkdetails pagination hover*/
 	color:#fff;
 }
 
@@ -1353,7 +1353,7 @@ h2.title-great:before{
 }
 
 .product-information span span {
-  color: #0381bb; /*color book details price*/
+  color: #446f88; /*color book details price*/
   float: left;
   font-family: 'Roboto', sans-serif;
   font-size: 30px;
@@ -2664,7 +2664,7 @@ h2.title-great:before{
 }
 
 .contact-info .social-networks ul li a:hover{
-  color: #0381bb; /*social media hover*/
+  color: #446f88; /*social media hover*/
 }
 
 .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle){
@@ -2683,15 +2683,15 @@ h2.title-great:before{
 }
 
 .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle):hover{
-	background-color: #0381bb; /*color letters in authors catalogs background hover*/
+	background-color: #446f88; /*color letters in authors catalogs background hover*/
 }
 
 .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle):hover{
-	background-color: #0381bb; /*color letters in authors catalogs background hover*/
+	background-color: #446f88; /*color letters in authors catalogs background hover*/
 }
 
 .btn-group > .btn:last-child:not(:first-child):hover, .btn-group > .dropdown-toggle:not(:first-child):hover{
-	background-color: #0381bb; /*color letters in authors catalogs background hover*/
+	background-color: #446f88; /*color letters in authors catalogs background hover*/
 }
 
 .hvr-grow-shadow {

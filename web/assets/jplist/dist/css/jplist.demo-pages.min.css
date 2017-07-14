@@ -172,7 +172,7 @@ pre code {
 }
 a {
     text-decoration: none;
-    color: #0381bb;
+    color: #446f88;
     font-weight: 700
 }
 a.normal {
@@ -1839,7 +1839,7 @@ h2 {
     color: #440e00
 }
 .jplist .price {
-    color: #0381bb; /*color price*/
+    color: #446f88; /*color price*/
 }
 .jplist .list {
     background: #F4F4F4; /*color jplist table background*/
