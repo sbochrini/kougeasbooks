@@ -21,7 +21,7 @@ use yii\web\UrlManager;
 <!--    <div class="img">-->
        <!-- --><?php
 /*        if ($model->bk_image_web_filename!='')
-            echo '<a href="'.Url::toRoute(["site/bookview",'id' => $model->bk_id]).'"><img src="'.Yii::$app->homeUrl. 'img/'.$model->bk_image_web_filename.'"></a>'; else echo '<a href="#">'.Yii::$app->homeUrl.'pictures/no_image.png'.'</a>';
+            echo '<a href="'.Url::toRoute(["site/bookview",'id' => $model->bk_id]).'"><img src="'.Yii::$app->homeUrl. 'img/'.$model->bk_image_web_filename.'"></a>'; else echo '<a href="#">'.Yii::$app->homeUrl.'pictures/no_image.jpg'.'</a>';
         */?>
    <!-- </div>-->
     <!-- data -->
@@ -49,7 +49,7 @@ use yii\web\UrlManager;
             <?php
             foreach($books as $book):
                     if ($book->bk_image_web_filename!='')
-                     echo '<li style="display: inline-block;"><a href="'.Url::toRoute(["site/bookview",'id' => $book->bk_id]).'"><img src="'.Yii::$app->homeUrl. 'img/'.$book->bk_image_web_filename.'"></a><div class="title">'.Html::encode($book->bk_title).'</div></li>'; else echo '<li style="display: inline-block"><img src="'.Yii::$app->homeUrl.'pictures/no_image.png"><div class="title">'.Html::encode($book->bk_title).'</div></li>';
+                     echo '<li style="display: inline-block;"><a href="'.Url::toRoute(["site/bookview",'id' => $book->bk_id]).'"><img src="'.Yii::$app->homeUrl. 'img/'.$book->bk_image_web_filename.'"></a><div class="title">'.Html::encode($book->bk_title).'</div></li>'; else echo '<li style="display: inline-block"><img src="'.Yii::$app->homeUrl.'pictures/no_image.jpg"><div class="title">'.Html::encode($book->bk_title).'</div></li>';
                     ?>
 
         <?php endforeach; ?>

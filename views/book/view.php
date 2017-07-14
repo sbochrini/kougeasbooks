@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             if ($model->bk_image_web_filename!='') {
                 echo '<br /><p><img class="img-rounded" src="'.Yii::$app->homeUrl. '/img/'.$model->bk_image_web_filename.'"></p>';
             }else{
-                echo '<br /><p><img class="img-rounded" src="'.Yii::$app->homeUrl. '/pictures/no_image.png"></p>';
+                echo '<br /><p><img class="img-rounded" src="'.Yii::$app->homeUrl. '/pictures/no_image.jpg"></p>';
             }
             ?>
         </div>

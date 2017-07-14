@@ -116,7 +116,7 @@ $hidden_subcats=(!is_null($checked_subcats))?implode(",",$checked_subcats):"";
                 'format' => 'raw',
                 'value' => function ($model) {
                     if ($model->bk_image_web_filename!='')
-                        return '<img class="img-rounded" src="'.Yii::$app->homeUrl. 'img/'.$model->bk_image_web_filename.'" width="50px" height="auto">'; else return '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" width="50px" height="auto">';
+                        return '<img class="img-rounded" src="'.Yii::$app->homeUrl. 'img/'.$model->bk_image_web_filename.'" width="50px" height="auto">'; else return '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.jpg" width="50px" height="auto">';
                 },
             ],
             [

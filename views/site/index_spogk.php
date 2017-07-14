@@ -339,7 +339,7 @@ $this->params['breadcrumbs'][] = $this->title;
 										if ($fav_book->bk_image_web_filename!='') {
 											echo '<img src="' . Yii::$app->homeUrl . 'img/' . $fav_book->bk_image_web_filename . '" alt="" title=""/>';
 										}else{
-											echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.png" alt="" >';
+											echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.jpg" alt="" >';
 										}
 									echo '</a>';
 								echo '</div>';

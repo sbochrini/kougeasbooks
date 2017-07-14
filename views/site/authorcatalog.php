@@ -9,7 +9,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-about">
     <h2 class="title-large text-center">ΚΑΤΑΛΟΓΟΣ ΣΥΓΓΡΑΦΕΩΝ</h2>
-    <div class="container">
+    <div class="row" style="margin-left: 0; margin-right:0">
         <div class="btn-toolbar">
             <div class="btn-group btn-group-sm">
                 <?php
@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
     <br>
-    <div class="container">
+    <div class="row" style="margin-left: 0; margin-right:0">
         <div class="btn-toolbar">
             <div class="btn-group btn-group-sm">
                 <?php
@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
     <br>
-    <div class="container">
+    <div class="row" style="margin-left: 0; margin-right:0">
         <ul id="ul_authors">
             <?php
                 echo ListView::widget([
