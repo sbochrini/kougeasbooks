@@ -55,13 +55,13 @@ $this->params['breadcrumbs'][] = $book->bk_title;
                     <span><?php echo $price; ?><i class="fa fa-eur" aria-hidden="true"></i></span>
                 </span>
                 <?php $author=((is_null($book->bkAuthor['auth_name']) || $book->bkAuthor['auth_name']=="")? "-" : $book->bkAuthor['auth_name'] )?>
-                <p><b>Συγγραφέας:</b> <?php echo $author; ?></p>
+                <p class="p_hover"><b>Συγγραφέας:</b> <?php echo $author; ?></p>
                 <?php $publisher=((is_null($book->bk_publisher) || $book->bk_publisher=="")? "-" : $book->bk_publisher)?>
-                <p><b>Εκδόσεις:</b> <?php echo $publisher; ?></p>
-                <p><?php echo $book->bk_pb_place.", ".$book->bk_pb_year;?></p>
+                <p class="p_hover"><b>Εκδόσεις:</b> <?php echo $publisher; ?></p>
+                <p class="p_hover"><?php echo $book->bk_pb_place.", ".$book->bk_pb_year;?></p>
                 <!--<p><b>Availability:</b> In Stock</p>-->
                 <?php $condition=((is_null($book->bk_condition) || $book->bk_condition=="")? "-" : $book->bk_condition )?>
-                <p><b>Κατάσταση:</b> <?php echo $condition; ?></p>
+                <p class="p_hover"><b>Κατάσταση:</b> <?php echo $condition; ?></p>
                 <!--<p><b>Brand:</b> E-SHOPPER</p>-->
                 <a href=""><img src="<?php echo Yii::$app->homeUrl; ?>pictures/share.png" class="share img-responsive"  alt="" /></a>
             </div><!--/product-information-->
@@ -82,7 +82,7 @@ $this->params['breadcrumbs'][] = $book->bk_title;
         </div>
         <div class="tab-content">
             <div class="tab-pane fade active in" id="details" >
-                <div class="col-sm-7">
+                <div class="col-sm-7 tab-content-details">
 
                     <p><b>Τίτλος:</b> <?php echo $book->bk_title; ?></p>
                     <p><b>Συγγραφέας:</b> <?php echo $author; ?></p>
@@ -96,7 +96,7 @@ $this->params['breadcrumbs'][] = $book->bk_title;
                 </div>
             </div>
             <div class="tab-pane fade active in" id="description" >
-                <div class="col-sm-7">
+                <div class="col-sm-7 tab-content-details">
                     <?php $description=((is_null($book->bk_description) || $book->bk_description=="")? "-" : $book->bk_description)?>
                     <p><b>Περιγραφή:</b> <?php echo $description; ?></p>
                 </div>
@@ -209,11 +209,11 @@ $this->params['breadcrumbs'][] = $book->bk_title;
 
 						//echo '<img src="' . Yii::$app->homeUrl.'img/'.$recommended_book->bk_image_web_filename.'" alt="" />';
 						echo ' <div class="choose-no-border-publisher">
-											<p>
+											<p class="p_hover">
 												<span class="header book-publisher"><strong>Έτος: </strong></span>
 												<span class="year">'.$recommended_book->bk_pb_year.'</span>
 											</p>
-											<p style="height:34px">
+											<p class="p_hover" style="height:34px">
 												<span class="header book-author"><strong>Συγγραφέας: </strong></span>
 												<span class="author">'.$recommended_book->bkAuthor['auth_name'].'</span>
 											</p>
@@ -258,11 +258,11 @@ $this->params['breadcrumbs'][] = $book->bk_title;
 
 						//echo '<img src="' . Yii::$app->homeUrl.'img/'.$auth_recommended_book->bk_image_web_filename.'" alt="" />';
 						echo ' <div class="choose-no-border-publisher">
-											<p>
+											<p class="p_hover">
 												<span class="header book-publisher"><strong>Έτος: </strong></span>
 												<span class="year">'.$auth_recommended_book->bk_pb_year.'</span>
 											</p>
-											<p style="height:34px">
+											<p class="p_hover" style="height:34px">
 												<span class="header book-author"><strong>Συγγραφέας: </strong></span>
 												<span class="author">'.$auth_recommended_book->bkAuthor['auth_name'].'</span>
 											</p>
@@ -307,11 +307,11 @@ $this->params['breadcrumbs'][] = $book->bk_title;
 						echo '<p class="title" title="'.$cat_recommended_book->bk_title.'" >'.$cat_recommended_book->bk_title.'</p>';
 
 						echo ' <div class="choose-no-border-publisher">
-											<p>
+											<p class="p_hover">
 												<span class="header book-publisher"><strong>Έτος: </strong></span>
 												<span class="year">'.$cat_recommended_book->bk_pb_year.'</span>
-											</p>
-											<p style="height:34px">
+											</p >
+											<p class="p_hover" style="height:34px">
 												<span class="header book-author"><strong>Συγγραφέας: </strong></span>
 												<span class="author">'.$cat_recommended_book->bkAuthor['auth_name'].'</span>
 											</p>

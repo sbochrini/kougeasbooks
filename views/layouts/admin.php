@@ -26,7 +26,7 @@ SweetAlertAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
     <link rel="stylesheet" href="<?php echo Yii::$app->request->baseUrl; ?>/css/font-awesome-4.7.0/css/font-awesome.min.css">
-    <?= Html::csrfMetaTags() ?>
+
     <style>
         /* Remove the navbar's default margin-bottom and rounded borders */
         .navbar {

@@ -223,7 +223,7 @@ $this->params['breadcrumbs'][] = $author->auth_name;
                                     echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $book->bk_id, 'bc'=>3]).' title="">';
                                     $path=Yii::$app->basePath. '/web/img/' . $book->bk_image_web_filename;
                                     if (is_file($path)) {
-                                        echo '<img class="hvr-grow-shadow" src="' . Yii::$app->homeUrl.'img/'.$book->bk_image_web_filename.'" alt="" title=""/>';
+                                        echo '<img class="img-thumbnail hvr-grow-shadow" src="' . Yii::$app->homeUrl.'img/'.$book->bk_image_web_filename.'" alt="" title=""/>';
                                     }else{
                                         echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.jpg" alt="" >';
                                     }
@@ -248,11 +248,11 @@ $this->params['breadcrumbs'][] = $author->auth_name;
                                     // </div>
                                     // <p>';
                                     echo ' <div class="choose-no-border-publisher">
-											<p>
+											<p class="p_hover">
 												<span class="header book-publisher"><strong>Έτος: </strong></span>
 												<span class="year">'.$book->bk_pb_year.'</span>
 											</p>
-											<p style="height:34px">
+											<p class="p_hover" style="height:34px">
 												<span class="header book-author"><strong>Συγγραφέας: </strong></span>
 												<span class="author">'.$book->bkAuthor['auth_name'].'</span>
 											</p>

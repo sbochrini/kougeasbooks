@@ -71,7 +71,7 @@ EshopperAsset::register($this);
     <?php
 	echo '<div class="row" style="margin-left:0px; margin-right:0px;">';
     NavBar::begin([
-        'brandLabel' => '<div class="row"><div class="col-sm-3"><img src="'.Yii::$app->homeUrl.'pictures/logo.png" class="pull-left"/></div><div class="logo-header col-sm-6">Παλαιοβιβλιοπωλείο Κουγέας</div></div>',
+        'brandLabel' => '<div class="row"><div class="col-sm-3"><img src="'.Yii::$app->homeUrl.'pictures/logo.png" class="pull-left"/></div><div class="logo-header col-sm-6" style="margin-top: 15px;">Παλαιοβιβλιοπωλείο Κουγέας</div></div>',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse ',
@@ -79,7 +79,10 @@ EshopperAsset::register($this);
         ],
     ]);
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
+        'options' => [
+            'class' => 'navbar-nav navbar-right',
+            'style' => 'margin-top: 25px',
+        ],
         'items' => [
             ['label' => 'Αρχική', 'url' => ['/site/index']],
             ['label' => 'Κατάλογος Συγγραφέων', 'url' => ['/site/authorcatalog']],

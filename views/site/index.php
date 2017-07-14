@@ -308,11 +308,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                 //echo '<h2>'.$fav_book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2>';
                                 echo '<p class="title" title="'.$fav_book->bk_title.'">'.$fav_book->bk_title.'</p>';
 								echo ' <div class="choose-no-border-publisher">
-											<p>
+											<p class="p_hover">
 												<span class="header book-publisher"><strong>Έτος: </strong></span>
 												<span class="year">'.$fav_book->bk_pb_year.'</span>
 											</p>
-											<p style="height:34px">
+											<p class="p_hover" style="height:34px">
 												<span class="header book-author"><strong>Συγγραφέας: </strong></span>
 												<span class="author">'.$fav_book->bkAuthor['auth_name'].'</span>
 											</p>
