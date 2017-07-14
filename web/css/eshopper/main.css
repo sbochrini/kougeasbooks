@@ -568,7 +568,7 @@ ul.sub-menu {
 }
 
 .footer-bottom p span a {
-  color: #FE980F;
+  color: #446f88;
   font-style: italic;
   text-decoration: underline;
 }
@@ -2728,8 +2728,12 @@ h2.title-great:before{
 
 /*-----------------navbar voula------------------*/
 .navbar-inverse {
-    background-color: #446F88;
-    border-color: #446F88;
+    background-color: #3c6177;
+    border-color: #3c6177;
+  background: -webkit-linear-gradient(left, #3c6177 , #99b9cc); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #3c6177, #99b9cc); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right,#3c6177, #99b9cc); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #3c6177 , #99b9cc); /* Standard syntax (must be last) */
 }
 .navbar-inverse .navbar-nav > li > a {
     color: white;
@@ -2749,7 +2753,7 @@ h2.title-great:before{
     background-color: #95A2AC;
 }
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-    color: red;
+    color: #335366;
     background-color: transparent;
 }
 .container > .navbar-header {

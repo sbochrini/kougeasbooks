@@ -113,8 +113,7 @@ SweetAlertAsset::register($this);
             ],
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
-    <!--</div>
-    <div class="">-->
+
         <div class="row">
             <div class="col-sm-3">
                 <div class="left-sidebar">
@@ -127,18 +126,18 @@ SweetAlertAsset::register($this);
                     <?= $content ?>
                 <!--</div>-->
             </div>
-        <div>
+        </div>
     </div>
 </div>
 
-<footer id="footer">
-    <div class="footer-bottom">
-        <div class="container">
-                <p class="pull-left">&copy; Βιβλιοπωλείο Κουγέας <?= date('Y') ?></p>
-                <p class="pull-right">Designed by <span><a href="mailto:s.bochrini@gmail.com">SBochrini</a></span></p>
-        </div>
-    </div>
-</footer><!--/Footer-->
+        <footer id="footer"  style="margin-left:0px; margin-right:0px"><!--Footer-->
+            <div class="footer-bottom">
+                <div class="container">
+                    <p class="pull-left">&copy; Βιβλιοπωλείο Κουγέας <?= date('Y') ?></p>
+                    <p class="pull-right">Designed by <span><a href="mailto:s.bochrini@gmail.com">SBochrini</a></span></p>
+                </div>
+            </div>
+        </footer><!--/Footer-->
 
 
 <?php $this->endBody() ?>
