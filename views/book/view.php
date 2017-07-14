@@ -29,9 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-sm-4">
             <?php
             if ($model->bk_image_web_filename!='') {
-                echo '<br /><p><img class="img-rounded" src="'.Yii::$app->homeUrl. '/img/'.$model->bk_image_web_filename.'"></p>';
+                echo '<br /><p><img class="img-rounded" src="'.Yii::$app->homeUrl. '/img/'.$model->bk_image_web_filename.'" style="max-width:250px;" alt=""></p>';
             }else{
-                echo '<br /><p><img class="img-rounded" src="'.Yii::$app->homeUrl. '/pictures/no_image.jpg"></p>';
+                echo '<br /><p><img class="img-rounded" src="'.Yii::$app->homeUrl. '/pictures/no_image.jpg" style="max-width:250px;" alt=""></p>';
             }
             ?>
         </div>

@@ -2737,10 +2737,10 @@ h2.title-great:before{
     min-height: 100px;
     margin-bottom: 20px;
     border: 1px solid transparent;
-    border-top-color: transparent;
+    /*border-top-color: transparent;
     border-right-color: transparent;
     border-bottom-color: transparent;
-    border-left-color: transparent;
+    border-left-color: transparent;*/
 }
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
     color: #fff;
@@ -2763,3 +2763,8 @@ h2.title-great:before{
     height: 100px;
 }
 /*-----------------navbar voula end------------------*/
+#text-div{
+  background-image: url('../../pictures/paper.jpg');
+  background-repeat: repeat;
+  padding: 20px;
+}

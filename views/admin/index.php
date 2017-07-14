@@ -149,7 +149,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         echo  '<div href="#" class="list-group-item">';
                         //echo '<strong>'.$duplicate_books[$i]['bk_title'].'</strong>';
                         echo "<table class='table table-hover table-condensed'><thead>";
-                        echo '<tr class="danger"><th>'.$duplicate_books[$i]['bk_title'].'<th></th></th></tr></thead>';
+                        echo '<tr class="danger"><th>Βιβλιο: <u>'.$duplicate_books[$i]['bk_title'].'</u> στις καηγορίες:<th></th></th></tr></thead>';
                         echo '<tbody>';
                         for($d=0;$d<count($duplicate_books[$i]['bk_cat']);$d++){
                             echo '<tr><td><li>'.$duplicate_books[$i]['bk_cat'][$d].'</td><td>'.Html::a('<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>', ['book/view', 'id' => $duplicate_books[$i]['bk_ids'][$d]]).'</td></li></tr>';

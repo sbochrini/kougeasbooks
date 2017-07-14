@@ -25,49 +25,43 @@ $this->params['breadcrumbs'][] = $this->title;
                     <li data-target="#slider-carousel" data-slide-to="2"></li>
                 </ol>
 
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <div class="col-sm-6">
-                            <h1 style="margin-top:0px"><span>Βιβλιοπωλείο Κουγέας</span></h1>
-                            <h2>Κοντά σας από το XXXX</h2>
-                            <p>++++++++++++ Ως θεωρητικός φυσικός με έδρα το Κέιμπριτζ, έζησα τη ζωή μου σε μία ασυνήθιστη, προνομιακή φούσκα. 
-							Το Κέιμπριτζ είναι μία ασυνήθιστη πόλη, χτισμένη γύρω από τον πυρήνα ενός εκ των καλύτερων πανεπιστήμιων του κόσμου. 
-							Σε αυτή τη πόλη, η επιστημονική κοινότητα, της οποίας είμαι μέλος από 20 ετών, είναι ακόμη πιο εκλεπτυσμένη. 
-							</p>
+                <div class="carousel-inner" >
+                    <div class=" item active" style="padding-left: 60px;">
+                        <div class="col-sm-6" >
+                            <h1 style="margin-top:25%"><span><i>Καλώς ορίσατε στο ηλεκτρονικό μας παλαιοβιβλιοπολείο</i></span></h1>
+                           <!-- <h2> </h2>-->
                             <!--button type="button" class="btn btn-default get">Get it now</button-->
                         </div>
                         <div class="col-sm-6">
-                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/kougeas_1.jpg" class="girl img-responsive" style="height:327px; width: 450px" alt="" />
+                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/kougeas_1.jpg" class="girl img-responsive" style="height:327px; width: 450px; padding:10px;" alt="" />
                             <!--img src="<?php echo Yii::$app->homeUrl; ?>pictures/pricing.png"  class="pricing" alt="" /-->
 
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item" style="padding-left: 60px;">
                         <div class="col-sm-6">
-                            <h1 style="margin-top:0px"><span>Βιβλιοπωλείο Κουγέας</span></h1>
-                            <h2>Κοντά σας από το XXXX</h2>
-                            <p>++++++++++++ Ως θεωρητικός φυσικός με έδρα το Κέιμπριτζ, έζησα τη ζωή μου σε μία ασυνήθιστη, προνομιακή φούσκα. 
-							Το Κέιμπριτζ είναι μία ασυνήθιστη πόλη, χτισμένη γύρω από τον πυρήνα ενός εκ των καλύτερων πανεπιστήμιων του κόσμου. 
-							Σε αυτή τη πόλη, η επιστημονική κοινότητα, της οποίας είμαι μέλος από 20 ετών, είναι ακόμη πιο εκλεπτυσμένη. 
+                            <!--<h1 style="margin-top:0px"><span>Βιβλιοπωλείο Κουγέας</span></h1>-->
+                            <h2 style="margin-top:20%"><span>Κοντά σας από το 1990</span></h2>
+                            <p>
+                                Στα ράφια μας θα βρείτε παλιά, παλαιά, σπάνια βιβλία, βιβλία δυσεύρετα, 19ου, αιώνα και παλαιότυπα.
 							</p>
                             <!--button type="button" class="btn btn-default get">Get it now</button-->                        </div>
                         <div class="col-sm-6">
-                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/kougeas_2.jpg" class="girl img-responsive" style="height:327px; width: 450px" alt="" />
+                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/kougeas_2.jpg" class="girl img-responsive" style="height:327px; width: 450px; padding:10px;" alt="" />
                             <!--img src="<?php echo Yii::$app->homeUrl; ?>pictures/pricing.png"  class="pricing" alt="" /-->
                         </div>
                     </div>
 
-                    <div class="item">
+                    <div class="item" style="padding-left: 60px;">
                         <div class="col-sm-6">
-                            <h1 style="margin-top:0px"><span>Βιβλιοπωλείο Κουγέας</span></h1>
-                            <h2>Κοντά σας από το XXXX</h2>
-                            <p>++++++++++++ Ως θεωρητικός φυσικός με έδρα το Κέιμπριτζ, έζησα τη ζωή μου σε μία ασυνήθιστη, προνομιακή φούσκα. 
-							Το Κέιμπριτζ είναι μία ασυνήθιστη πόλη, χτισμένη γύρω από τον πυρήνα ενός εκ των καλύτερων πανεπιστήμιων του κόσμου. 
-							Σε αυτή τη πόλη, η επιστημονική κοινότητα, της οποίας είμαι μέλος από 20 ετών, είναι ακόμη πιο εκλεπτυσμένη. 
+                            <!--<h1 style="margin-top:0px"><span>Βιβλιοπωλείο Κουγέας</span></h1>-->
+                            <h2 style="margin-top:20%"><span>Κοντά σας από το 1990</span></h2>
+                            <p>
+                                υπάρχουν πολλά περιηγητικά βιβλία, ξένα περιοδικά από το 1830 έως το 1900, βιβλία ιστορικού λαογραφικού και τοπικού περιεχομένου.
 							</p>
                             <!--button type="button" class="btn btn-default get">Get it now</button-->                        </div>
                         <div class="col-sm-6">
-                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/kougeas_3.jpg" class="girl img-responsive" style="height:327px; width: 450px" alt="" />
+                            <img src="<?php echo Yii::$app->homeUrl; ?>pictures/kougeas_3.jpg" class="girl img-responsive" style="height:327px; width: 450px; padding:10px;" alt="" />
                             <!--img src="<?php echo Yii::$app->homeUrl; ?>pictures/pricing.png"  class="pricing" alt="" /-->
                         </div>
                     </div>
@@ -87,6 +81,16 @@ $this->params['breadcrumbs'][] = $this->title;
     </section><!--/slider-->
 </div>
     <div class="col-sm-1"></div>
+</div>
+<div class="row">
+    <div  id="text-div" >
+        <p><i>Καλώς ορίσατε στο Ηλεκτρονικό μας Βιβλιοπωλείο. <br>
+            Το Παλαιοβιβλιοπωλείο μας λειτουργεί από το 1967 στο Μοναστηράκι. Αρχικά από τον ιδρυτή του Βασίλειο Ι. Κουγέα στην οδό Άστιγγος 6 και από το 1990 από τον Ιωάννη Β. Κουγέα στην οδό Άστιγγος 21 & Θησείου. Από φέτος με τη συμπλήρωση 50 χρόνων ζωής, μπαίνει σε λειτουργία και Ηλεκτρονικό Βιβλιοπωλείο το οποίο θα εμπλουτίζεται σταδιακά, με στόχο σε σύντομο χρονικό διάστημα να γεμίσουν τα "ράφια" του.
+            Ιδιαίτερο  βάρος δίνεται στις παλαιές και σπάνιες εκδόσεις, κυρίως ελληνικών βιβλίων. Οι κύριοι τομείς δραστηριότητας αφορούν στην Ιστορία, Τοπική Ιστορία, Λαογραφία, Ελληνική Λογοτεχνία, Παιδική Λογοτεχνία, Περιοδικά, Σπάνια Σχολικά Βιβλία, Εικονογραφημένες εκδόσεις και επιλεγμένα βιβλία σε πολλούς άλλους τομείς, όπως Τέχνη, Θέατρο, Ημερολόγια, Λευκώματα κλπ.<br>
+            Ευχόμαστε να απολαύσετε το ταξίδι της αναζήτησης στο μαγικό κόσμο των βιβλίων.  Θα χαρούμε να σας εξυπηρετήσουμε.<br>
+            Ιωάννης  Κουγέας  &  Συνεργάτες
+            </i></p>
+    </div>
 </div>
 <div class="row" style="margin-top:20px">
     <div class="col-sm-3">
