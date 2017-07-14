@@ -677,7 +677,8 @@ ul.sub-menu {
   margin-bottom: 35px;
   padding-bottom: 20px;
   padding-top: 15px;
-  background-color: #DCD0C0; /*color left menu background*/
+  /*background-color: #DCD0C0; color left menu background*/
+  background-color:#F0F0E9;
 }
 .left-sidebar h2, .brands_products h2 {
   color: #DCD0C0; /*color left menu title*/
@@ -769,7 +770,8 @@ h2.title-great:before{
 }
 
 .category-products .panel-default .panel-heading {
-  background-color: #DCD0C0; /*color left menu categories background*/
+ /* background-color: #DCD0C0;*/ /*color left menu categories background*/
+  background-color:#F0F0E9;
   border: 0 none;
   color: #DCD0C0; /*color left menu categories background*/
   padding: 5px 20px;
@@ -2766,5 +2768,13 @@ h2.title-great:before{
 #text-div{
   background-image: url('../../pictures/paper.jpg');
   background-repeat: repeat;
-  padding: 20px;
+  padding: 30px;
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: justify;
+  text-shadow: 1px 1px grey;
+}
+
+#text-div span{
+  line-height: 3.5;
 }
