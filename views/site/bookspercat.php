@@ -220,10 +220,10 @@ $this->params['breadcrumbs'][] = $category->cat_name;
                                     echo '<div class="single-products">';
                                     echo '<div class="productinfo text-center">';
                                     echo '<div class="img">';
-                                    echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $book->bk_id, 'bc'=>1]).' title="">';
+                                    echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $book->bk_id, 'bc'=>1]).' title="'.$book->bk_title.'">';
                                     $path=Yii::$app->basePath. '/web/img/' . $book->bk_image_web_filename;
                                     if (is_file($path)) {
-                                        echo '<img class="img-thumbnail hvr-grow-shadow" src="' . Yii::$app->homeUrl.'img/'.$book->bk_image_web_filename.'" alt="" title=""/>';
+                                        echo '<img class="img-thumbnail hvr-grow-shadow" src="' . Yii::$app->homeUrl.'img/'.$book->bk_image_web_filename.'" alt="" title="'.$book->bk_title.'"/>';
                                     }else{
                                         echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.jpg" alt="" >';
                                     }
@@ -231,7 +231,7 @@ $this->params['breadcrumbs'][] = $category->cat_name;
                                     echo '</div>';
                                     echo '<div class="block">';
                                     //echo '<h2>'.$book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2>';
-                                    echo '<p class="title">'.$book->bk_title.'</p>';
+                                    echo '<p class="title" title="'.$book->bk_title.'">'.$book->bk_title.'</p>';
                                     //echo '</p>';
                                     // echo ' <div class="choose-no-border-publisher"><p>
                                     // <span class="header book-author"><strong>Συγγραφέας: </strong></span>
