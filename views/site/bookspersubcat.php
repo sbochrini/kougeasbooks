@@ -8,6 +8,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\web\View;
 
 $this->params['breadcrumbs'][] = ['label' => $subcategory->subcatCat['cat_name'], 'url' => ['bookspercat','id'=>$subcategory->subcat_cat_id]];
 $this->params['breadcrumbs'][] = $subcategory->subcat_name;
@@ -392,6 +393,9 @@ $this->params['breadcrumbs'][] = $subcategory->subcat_name;
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Φόρμα παραγγελίας</h4>
             </div>
+            <span class="row col-sm-12">
+                <div class="pull-right" style="padding-top:10px;padding-right:10px;padding-bottom:10px;font-size:12px"><i>Τα πεδία με <span style="display: inline;color:red;">*</span> είναι υποχρεωτικά.</i></div>
+            </span>
             <?php $form = ActiveForm::begin(
                 [
                     'id' => 'usr_index_order_form',
@@ -401,8 +405,61 @@ $this->params['breadcrumbs'][] = $subcategory->subcat_name;
             <div class="modal-body">
                 <!--modal-body -->
 
+                <span>
+                    <div class="row">
+                        <div class="col-sm-6">
+                        <?=$form->field($order, 'usr_name')->textInput(['maxlength' => true,'style' => 'width: 100%'])?>
+                        </div>
+                        <div class="col-sm-6">
+                            <?=$form->field($order, 'usr_surname')->textInput(['maxlength' => true, 'style' => 'width: 100%']) ?>
+                        </div>
+                    </div>
+                </span>
+                <span>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <?=$form->field($order, 'usr_phone')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
+                        </div>
+                        <div class="col-sm-6">
+                            <?=$form->field($order, 'usr_email')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
+                        </div>
+                    </div>
+                </span>
+                <span class="row">
+                     <div class="row">
+                        <div class="col-sm-6">
+                            <?=$form->field($order, 'usr_address')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
+                        </div>
+                        <div class="col-sm-4">
+                            <?=$form->field($order, 'usr_city')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
+                        </div>
+                        <div class="col-sm-2">
+                            <?=$form->field($order, 'usr_pcode')->textInput(['maxlength' => true, 'style' => 'width: 100%'])?>
+                        </div>
+                     </div>
+                </span>
+                <span class="row">
+                    <div class="row">
+                        <div class="col-sm-12" style="padding-right: 15px; padding-left: 15px;">
+                            <?=$form->field($order, 'order_comment')->textArea(['maxlength' => true])->label('Σχόλιο')?>
+                        </div>
+                    </div>
+                </span>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius: 0; margin-top: 16px">Κλείσιμο</button>
+                    <button id="index_usrorder_submit" type="submit" class="btn btn-primary" >Αποστολή</button>
+                </div>
             </div>
             <?php ActiveForm::end();?>
         </div>
     </div>
 </div>
+
+<?php
+$this->registerJs(
+    '$(".help-block").css("font-size", "12px");',
+    View::POS_READY
+);
+?>
+

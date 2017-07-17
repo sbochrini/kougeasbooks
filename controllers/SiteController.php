@@ -204,6 +204,7 @@ class SiteController extends Controller
     public function actionBookspercat()
     {
         if(Yii::$app->request->get('id')){
+            $order=new Order();
             $cat_id = Yii::$app->request->get('id');
             $books= Book::find()
                 ->where(['bk_cat_id' => $cat_id])
@@ -219,6 +220,7 @@ class SiteController extends Controller
             return $this->render('bookspercat',[
                 'category'=>$category,
                 'books' => $books,
+                'order'=>$order,
             ]);
         }else return $this->render('error');
     }
@@ -243,6 +245,7 @@ class SiteController extends Controller
     public function actionBookspersubcat()
     {
         if(Yii::$app->request->get('id')){
+            $order = new Order();
             $subcat_id = Yii::$app->request->get('id');
             $subcategory=Subcategory::findOne(['subcat_id'=>$subcat_id]);
             $books= Book::find()
@@ -252,7 +255,8 @@ class SiteController extends Controller
         }
         return $this->render('bookspersubcat',[
             'books' => $books,
-            'subcategory'=>$subcategory
+            'subcategory'=>$subcategory,
+            'order'=>$order,
         ]);
     }
     public function actionBookview($id)
@@ -355,6 +359,7 @@ class SiteController extends Controller
     function actionBooksperauthor(){
         if(Yii::$app->request->get('auth_id')){
             $auth_id = Yii::$app->request->get('auth_id');
+            $order= new Order();
             $books= Book::find()
                 ->where(['bk_author_id' => $auth_id])
                 ->orderBy('bk_grouping')
@@ -363,6 +368,7 @@ class SiteController extends Controller
             return $this->render('booksperauthor',[
                 'author' => $author,
                 'books' => $books,
+                'order'=>$order,
             ]);
         }else return $this->render('error');
     }
