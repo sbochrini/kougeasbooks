@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="carousel-inner" >
                     <div class=" item active" style="padding-left: 60px;">
                         <div class="col-sm-6" >
-                            <h1 style="margin-top:25%"><span><i>Καλώς ορίσατε στο ηλεκτρονικό μας παλαιοβιβλιοπολείο.</i></span></h1>
+                            <h1 style="margin-top:25%"><span><i>Καλώς ορίσατε στο ηλεκτρονικό μας παλαιοβιβλιοπωλείο.</i></span></h1>
                            <!-- <h2> </h2>-->
                             <!--button type="button" class="btn btn-default get">Get it now</button-->
                         </div>
