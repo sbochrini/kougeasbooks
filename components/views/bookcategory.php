@@ -2,29 +2,6 @@
 use yii\helpers\Url;
 ?>
 
-<?php /*if($categories != null): */?><!--
-    <div class="list-group">
-        <?php
-/*        foreach($categories as $category):
-            if($category->cat_subcat){
-                //echo '<div class="dropdown">';
-                echo '<button class="list-group-item cat_subcat" type="button" data-toggle="collapse" data-target="#cat_'.$category->cat_id.'"  aria-expanded="false" aria-controls="cat_'.$category->cat_id.'">'.$category->cat_name.'<span class="caret"></span></button>';
-                echo '<div id="cat_'.$category->cat_id.'" class="collapse">';
-                foreach($category->subcategories as $subcategory):
-                    echo '<button id="subcat_'.$subcategory->subcat_id.'" type="button" class="list-group-item subcat"><a href="#">'.$subcategory->subcat_name.'</a></button>';
-                endforeach;
-                echo "</div>";
-               // echo '</div>';
-            }else{
-                //echo '<button id="cat_'.$category->cat_id.'" type="button" class="list-group-item catwithout"><a href="'.Url::toRoute(['site/bookspercat', 'id' => $category->cat_id]).'">'. $category->cat_name.'</a></button>';
-                echo '<a id="cat_'.$category->cat_id.'" href="'.Url::toRoute(['site/bookspercat', 'id' => $category->cat_id]).'"type="button" class="list-group-item catwithout">'. $category->cat_name.'</a>';
-            }
-
-        endforeach;
-        */?>
-    </div>
---><?php /*endif; */?>
-
 <?php if($categories != null): ?>
     <div class="panel-group category-products" id="accordian">
         <?php
@@ -32,7 +9,7 @@ use yii\helpers\Url;
                 if($category->cat_subcat){
                     //echo '<div class="dropdown">';
                     echo '<div class="panel panel-default">';
-                        echo '<div class="panel-heading">';
+                        echo '<div class="panel-heading hvr-grow">';
                             echo '<h4 class="panel-title">';
                                 //echo '<a id="'.$category->cat_id.'" class="cat_subcat" data-toggle="collapse" href="#cat_'.$category->cat_id.'"  aria-expanded="false" aria-controls="cat_'.$category->cat_id.'">'.$category->cat_name.'<span class="pull-right"><i class="fa fa-plus"></i></span></a>';
                     echo '<a data-toggle="collapse" href="#cat_'.$category->cat_id.'"  aria-expanded="false" aria-controls="cat_'.$category->cat_id.'"><span class="cat_collapse pull-right"><i class="fa fa-plus"></i></span><a href=# class="cat_subcat" id="'.$category->cat_id.'">'.$category->cat_name.'</a></a>';
@@ -51,8 +28,8 @@ use yii\helpers\Url;
                         echo '</div>';
                      echo '</div>';
                 }else{
-                    echo '<div class="panel panel-default hvr-underline-from-left">';
-                        echo '<div class="panel-heading">';
+                    echo '<div class="panel panel-default">';
+                        echo '<div class="panel-heading  hvr-grow">';
                             echo '<h4 class="panel-title">';
                             //echo '<button id="cat_'.$category->cat_id.'" type="button" class="list-group-item catwithout"><a href="'.Url::toRoute(['site/bookspercat', 'id' => $category->cat_id]).'">'. $category->cat_name.'</a></button>';
                                 echo '<a id="cat_'.$category->cat_id.'" href="'.Url::toRoute(['site/bookspercat', 'id' => $category->cat_id]).'" class="catwithout">'. $category->cat_name.'</a>';

@@ -132,6 +132,7 @@ $('document').ready(function(){
         //alert("despacito");
     });
 
+
 });
 
 //------------index usr order modal---------------\\
@@ -242,7 +243,7 @@ $('.cat_subcat').click(function(){
 
 });
 
-yii.confirm = function (message, okCallback, cancelCallback) {
+/*yii.confirm = function (message, okCallback, cancelCallback) {
     swal({
         title: message,
         type: 'warning',
@@ -250,4 +251,16 @@ yii.confirm = function (message, okCallback, cancelCallback) {
         closeOnConfirm: true,
         allowOutsideClick: true
     }, okCallback);
-};
+};*/
+
+$('.hvr-grow').hover(function ()
+{
+    var a=$(this).find('a');
+    a.css({"color": "white"});
+});
+
+$('.hvr-grow').mouseleave(function ()
+{
+    var a=$(this).find('a');
+    a.css({"color": "#446f88"});
+});
