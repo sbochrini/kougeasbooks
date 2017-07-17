@@ -113,16 +113,25 @@ $('document').ready(function(){
     }
 
     if(url.indexOf("authorcatalog") > -1) {
-        var splited = url.split('authorcatalog&letter=');
+        var dec_url=decodeURI(url);
+        var splited = dec_url.split('authorcatalog&letter=');
         if (typeof splited[1] !== 'undefined') {
             var letter = splited[1];
             var alphabet = document.getElementsByClassName("alphabet");
             for(var i = 0; i < alphabet.length; i++ ){
-                if(alphabet[i].textContent === letter || alphabet[i].getAttribute("href").indexOf(letter)>-1){
+                if(alphabet[i].textContent === letter ){
                     letter_button=alphabet[i];
+                   // alert(letter);
                     letter_button.style.backgroundColor = "#446f88";
                     letter_button.style.color = "white";
-                }
+                }/*else{
+                    if(alphabet[i].getAttribute("href").indexOf(letter)>-1){
+                        letter_button=alphabet[i];
+                        alert(letter);
+                        letter_button.style.backgroundColor = "#446f88";
+                        letter_button.style.color = "white";
+                    }
+                }*/
             }
         }
     }
