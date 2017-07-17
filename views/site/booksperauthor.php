@@ -70,7 +70,9 @@ $this->params['breadcrumbs'][] = $author->auth_name;
                                             data-datetime-format="{year}"> <!-- {year}, {month}, {day}, {hour}, {min}, {sec} -->
 
                                         <ul>
-                                            <li><span data-path=".title" data-order="asc" data-type="text" data-default="true"><i class="fa fa-sort-alpha-asc"></i>  Τίτλος</span></li>
+                                            <li> Ταξινόμηση </li>
+                                            <li><span data-path=".title" data-order="asc" data-type="text"><i class="fa fa-sort-alpha-asc"></i>  Τίτλος</span></li>
+                                            <!--<li><span data-path=".title" data-order="asc" data-type="text" data-default="true"><i class="fa fa-sort-alpha-asc"></i>  Τίτλος</span></li>-->
                                             <li><span data-path=".title" data-order="desc" data-type="text"><i class="fa fa-sort-alpha-desc"></i>  Τίτλος</span></li>
                                             <li><span data-path=".author" data-order="asc" data-type="text"><i class="fa fa-sort-alpha-asc"></i>  Συγγραφέας</span></li>
                                             <li><span data-path=".author" data-order="desc" data-type="text"><i class="fa fa-sort-alpha-desc"></i>  Συγγραφέας</span></li>

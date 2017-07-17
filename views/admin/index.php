@@ -50,7 +50,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                                         echo "<table class='table table-hover table-condensed' style='margin-bottom: 0px;'>";
                                         echo '<tbody>';
-                                        echo '<tr ><td style="border:none;">'.$no_available_book->bk_title.'</td><td style="border:none;">'.Html::a('<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>', ['book/view', 'id' => $no_available_book->bk_id]).'</td></tr>';
+                                        echo '<tr ><td style="border:none;">'.$no_available_book->bk_title.'</td><td style="border:none;">'.Html::a('<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>', ['book/view', 'id' => $no_available_book->bk_id],['target' => '_blank']).'</td></tr>';
                                         echo '</tbody>';
                                         echo "</table>";
                                         echo '</div>';
@@ -182,7 +182,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         echo '<tr class="danger"><th>Βιβλιο: <u>'.$duplicate_books[$i]['bk_title'].'</u> στις καηγορίες:<th></th></th></tr></thead>';
                         echo '<tbody>';
                         for($d=0;$d<count($duplicate_books[$i]['bk_cat']);$d++){
-                            echo '<tr><td><li>'.$duplicate_books[$i]['bk_cat'][$d].'</td><td>'.Html::a('<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>', ['book/view', 'id' => $duplicate_books[$i]['bk_ids'][$d]]).'</td></li></tr>';
+                            echo '<tr><td><li>'.$duplicate_books[$i]['bk_cat'][$d].'</td><td>'.Html::a('<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>', ['book/view', 'id' => $duplicate_books[$i]['bk_ids'][$d]],['target' => '_blank']).'</td></li></tr>';
                         }
                         echo '</tbody>';
                         echo "</table>";

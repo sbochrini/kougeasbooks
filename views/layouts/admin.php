@@ -20,7 +20,7 @@ SweetAlertAsset::register($this);
 <html lang="<?= Yii::$app->language ?>">
 <head>
     <title>Διαχειριστική Κονσόλα</title>
-    <meta charset="<?= Yii::$app->charset ?>">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
