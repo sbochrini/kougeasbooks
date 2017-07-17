@@ -25,10 +25,40 @@ $this->params['breadcrumbs'][] = $this->title;
                         echo  '<a href="#" class="list-group-item list-group-item-success">';
                         echo '<span class="badge">'.$available_books.'</span>';
                         echo 'Άμεσα Διαθέσιμα:</a>';
-                        echo  '<a href="#" class="list-group-item list-group-item-danger">';
-                        echo '<span class="badge">'.$no_available_books.'</span>';
-                        echo 'Μη Διαθέσιμα:</a>';
+                        //echo  '<a href="#" class="list-group-item list-group-item-danger">';
+                        /*echo '<span class="badge">'.$count_no_available_books.'</span>';
+                        echo 'Μη Διαθέσιμα:</a>';*/
                         ?>
+                        <div class="panel panel-danger">
+                            <div class="panel-heading" role="tab" id="no_availables">
+                                <h4 class="panel-title">
+                                    <div class="collapsed " role="button" data-toggle="collapse"  href="#collapse_no_availables">
+                                         Μη Διαθέσιμα:
+                                        <span class="badge"><?php echo $count_no_available_books; ?></span>
+                                        <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+                                    </div>
+                                </h4>
+                            </div>
+                            <div id="collapse_no_availables" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body list-group">
+                                    <?php
+                                    foreach($no_available_books as $no_available_book){
+                                        echo  '<div href="#" class="list-group-item">';
+                                        //echo '<span class="badge">'.$no_available_book->bk_title.'</span>';
+                                       // echo $no_available_book->bk_title;
+                                        //echo Html::a('<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>', ['book/view', 'id' => $no_available_book->bk_id]);
+
+                                        echo "<table class='table table-hover table-condensed' style='margin-bottom: 0px;'>";
+                                        echo '<tbody>';
+                                        echo '<tr ><td style="border:none;">'.$no_available_book->bk_title.'</td><td style="border:none;">'.Html::a('<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>', ['book/view', 'id' => $no_available_book->bk_id]).'</td></tr>';
+                                        echo '</tbody>';
+                                        echo "</table>";
+                                        echo '</div>';
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

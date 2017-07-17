@@ -110,8 +110,8 @@ class AdminController extends Controller
         endforeach;
 
         $available_books=Book::find()->where(['not',['bk_price'=>null]])->count();
-        $no_available_books=Book::find()->where(['bk_price'=>null])->count();
-
+        $no_available_books=Book::find()->where(['bk_price'=>null])->all();
+        $count_no_available_books=count($no_available_books);
         $connection = Yii::$app->getDb();
         $command = $connection->createCommand("SELECT bk_title, COUNT(*) c FROM tbl_book GROUP BY bk_title HAVING c > 1");
         $title_duplicate_books = $command->queryAll();
@@ -141,6 +141,7 @@ class AdminController extends Controller
                     'books_per_cat'=>$books_per_cat,
                     'available_books'=>$available_books,
                     'no_available_books'=>$no_available_books,
+                    'count_no_available_books'=>$count_no_available_books,
                     'orders'=>$orders,
                     'completed_orders'=>$completed_orders,
                     'uncompleted_orders'=>$uncompleted_orders,
