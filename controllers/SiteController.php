@@ -77,7 +77,7 @@ class SiteController extends Controller
         $this->layout='main_without_catlist';
         $order = new Order();
         $categories = new BookCategory();
-        $fav_books =  Book::find()->where(['bk_favorite'=>1])->orderby('bk_grouping')->all();
+        $fav_books =  Book::find()->where(['bk_favorite'=>1])->orderBy([new Expression('ISNULL(bk_grouping ),bk_grouping ASC')])->all();
         return $this->render('index',[
             'categories'=>$categories,
             'fav_books'=>$fav_books,
@@ -208,7 +208,7 @@ class SiteController extends Controller
             $cat_id = Yii::$app->request->get('id');
             $books= Book::find()
                 ->where(['bk_cat_id' => $cat_id])
-                ->orderBy([new Expression('-bk_grouping ASC')])
+                ->orderBy([new Expression('ISNULL(bk_grouping ),bk_grouping ASC')])
                 ->all();
             $category=BookCategory::findOne(['cat_id'=>$cat_id]);
             /* $dataProvider = new ActiveDataProvider([
@@ -250,7 +250,7 @@ class SiteController extends Controller
             $subcategory=Subcategory::findOne(['subcat_id'=>$subcat_id]);
             $books= Book::find()
                 ->where(['bk_subcat_id' => $subcat_id])
-                ->orderBy('bk_grouping')
+                ->orderBy([new Expression('ISNULL(bk_grouping ),bk_grouping ASC')])
                 ->all();
         }
         return $this->render('bookspersubcat',[
@@ -362,7 +362,7 @@ class SiteController extends Controller
             $order= new Order();
             $books= Book::find()
                 ->where(['bk_author_id' => $auth_id])
-                ->orderBy('bk_grouping')
+                ->orderBy([new Expression('ISNULL(bk_grouping ),bk_grouping ASC')])
                 ->all();
             $author=Author::findOne(['auth_id'=>$auth_id]);
             return $this->render('booksperauthor',[
