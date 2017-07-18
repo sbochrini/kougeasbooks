@@ -416,7 +416,7 @@ $this->params['breadcrumbs'][] = $category->cat_name;
                     <h4 class="modal-title" id="myModalLabel">Φόρμα παραγγελίας</h4>
                 </div>
                 <span class="row col-sm-12">
-                <div class="pull-right" style="padding-top:10px;padding-right:10px;padding-bottom:10px;font-size:12px"><i>Τα πεδία με <span style="display: inline;color:red;">*</span> είναι υποχρεωτικά.</i></div>
+                <div class="pull-right" style="padding-top:10px;padding-right:10px;padding-bottom:10px;font-size:12px"><i>Τα πεδία με <span style="display: inline;color:#a94442;">*</span> είναι υποχρεωτικά.</i></div>
             </span>
                 <?php $form = ActiveForm::begin(
                     [

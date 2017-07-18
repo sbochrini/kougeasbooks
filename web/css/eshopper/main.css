@@ -1481,7 +1481,7 @@ h2.title-great:before{
 }
 
 #reviews button {
-  background: #C4C4BE; /*color order button*/ 
+  background: #446f88; /*C4C4BEcolor order button*/
   border: 0 none;
   border-radius: 0;
   color: #FFFFFF;
@@ -1490,7 +1490,7 @@ h2.title-great:before{
 }
 
 #reviews button:hover {
-  background: #DCD0C0; /*color order button*/ 
+  background: #D6D6D0; /*DCD0C0color order button*/
   border: 0 none;
   border-radius: 0;
   color: #FFFFFF;

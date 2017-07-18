@@ -62,7 +62,7 @@ $this->params['breadcrumbs'][] = $subcategory->subcat_name;
                                             data-datetime-format="{year}"> <!-- {year}, {month}, {day}, {hour}, {min}, {sec} -->
 
                                         <ul>
-                                            <li><span data-control-type="reset" data-control-name="reset" data-control-action="reset">Ταξινόμηση </span></li>
+                                            <li><span data-control-type="reset" data-control-name="reset" data-control-action="reset" data-path=".grouping" data-order="asc" data-type="text" data-default="true">Ταξινόμηση </span></li>
                                             <li><span data-path=".title" data-order="asc" data-type="text"><i class="fa fa-sort-alpha-asc"></i>  Τίτλος</span></li>
                                             <!--<li><span data-path=".title" data-order="asc" data-type="text" data-default="true"><i class="fa fa-sort-alpha-asc"></i>  Τίτλος</span></li>-->
                                             <li><span data-path=".title" data-order="desc" data-type="text"><i class="fa fa-sort-alpha-desc"></i>  Τίτλος</span></li>
@@ -238,6 +238,11 @@ $this->params['breadcrumbs'][] = $subcategory->subcat_name;
                                     // </p>
                                     // </div>
                                     // <p>';
+                                    if(is_null($book->bk_grouping) || $book->bk_grouping==""){
+                                        $bk_grouping="ΩΩΩΩΩΩΩΩΩΩ";
+                                    }else{
+                                        $bk_grouping=$book->bk_grouping;
+                                    }
                                     echo ' <div class="choose-no-border-publisher">
 											<p class="p_hover">
 												<span class="header book-publisher"><strong>Έτος: </strong></span>
@@ -246,6 +251,10 @@ $this->params['breadcrumbs'][] = $subcategory->subcat_name;
 											<p class="p_hover" style="height:34px">
 												<span class="header book-author"><strong>Συγγραφέας: </strong></span>
 												<span class="author">'.$book->bkAuthor['auth_name'].'</span>
+											</p>
+											<p class="p_hover" hidden>
+												<span class="header book-grouping"><strong>Grouping: </strong></span>
+												<span class="grouping">'.$bk_grouping.'</span>
 											</p>
 										</div>
 										<p>';
@@ -396,7 +405,7 @@ $this->params['breadcrumbs'][] = $subcategory->subcat_name;
                 <h4 class="modal-title" id="myModalLabel">Φόρμα παραγγελίας</h4>
             </div>
             <span class="row col-sm-12">
-                <div class="pull-right" style="padding-top:10px;padding-right:10px;padding-bottom:10px;font-size:12px"><i>Τα πεδία με <span style="display: inline;color:red;">*</span> είναι υποχρεωτικά.</i></div>
+                <div class="pull-right" style="padding-top:10px;padding-right:10px;padding-bottom:10px;font-size:12px"><i>Τα πεδία με <span style="display: inline;color:#a94442;">*</span> είναι υποχρεωτικά.</i></div>
             </span>
             <?php $form = ActiveForm::begin(
                 [

@@ -127,7 +127,7 @@ $this->params['breadcrumbs'][] = $book->bk_title;
                     ]); ?>
                 <div class="row col-sm-12">
                     <span class="row">
-                        <p class="pull-right"><i>Τα πεδία με <span style="display: inline;color:red;">*</span> είναι υποχρεωτικά.</i></p>
+                        <p class="pull-right"><i>Τα πεδία με <span style="display: inline;color:#a94442;">*</span> είναι υποχρεωτικά.</i></p>
                     </span>
                     <?= $form->field($order, 'order_bk_id')->hiddenInput(['value'=> $book->bk_id])->label(false) ?>
                     <span class="row">
@@ -407,7 +407,7 @@ $this->params['breadcrumbs'][] = $book->bk_title;
                 <h4 class="modal-title" id="myModalLabel">Φόρμα παραγγελίας</h4>
             </div>
             <span class="row col-sm-12">
-                <div class="pull-right" style="padding-top:10px;padding-right:10px;padding-bottom:10px;font-size:12px"><i>Τα πεδία με <span style="display: inline;color:red;">*</span> είναι υποχρεωτικά.</i></div>
+                <div class="pull-right" style="padding-top:10px;padding-right:10px;padding-bottom:10px;font-size:12px"><i>Τα πεδία με <span style="display: inline;color:#a94442;">*</span> είναι υποχρεωτικά.</i></div>
             </span>
             <?php $form = ActiveForm::begin(
                 [
