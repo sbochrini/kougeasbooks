@@ -69,8 +69,8 @@ $this->params['breadcrumbs'][] = $category->cat_name;
                                             data-datetime-format="{year}"> <!-- {year}, {month}, {day}, {hour}, {min}, {sec} -->
 
                                         <ul>
-                                            <li><span data-control-type="reset" data-control-name="reset" data-control-action="reset">Ταξινόμηση </span></li>
-                                            <li style="display:none;"><span data-path=".grouping" data-order="asc" data-type="text" data-default="true">Grouping</span></li>
+                                            <li><span data-control-type="reset" data-control-name="reset" data-control-action="reset" data-path=".grouping" data-order="asc" data-type="text" data-default="true">Ταξινόμηση </span></li>
+                                            <!--<li style="display:none;"><span data-path=".grouping" data-order="asc" data-type="text" data-default="true"></span></li>-->
                                             <li><span data-path=".title" data-order="asc" data-type="text"><i class="fa fa-sort-alpha-asc"></i> Τίτλος</span></li>
                                             <!--<li><span data-path=".title" data-order="asc" data-type="text" data-default="true"><i class="fa fa-sort-alpha-asc"></i>  Τίτλος</span></li>-->
                                             <li><span data-path=".title" data-order="desc" data-type="text"><i class="fa fa-sort-alpha-desc"></i>  Τίτλος</span></li>
