@@ -70,7 +70,8 @@ $this->params['breadcrumbs'][] = $category->cat_name;
 
                                         <ul>
                                             <li><span data-control-type="reset" data-control-name="reset" data-control-action="reset">Ταξινόμηση </span></li>
-                                            <li><span data-path=".title" data-order="asc" data-type="text"><i class="fa fa-sort-alpha-asc"></i>  Τίτλος</span></li>
+                                            <li style="display:none;"><span data-path=".grouping" data-order="asc" data-type="text" data-default="true">Grouping</span></li>
+                                            <li><span data-path=".title" data-order="asc" data-type="text"><i class="fa fa-sort-alpha-asc"></i> Τίτλος</span></li>
                                             <!--<li><span data-path=".title" data-order="asc" data-type="text" data-default="true"><i class="fa fa-sort-alpha-asc"></i>  Τίτλος</span></li>-->
                                             <li><span data-path=".title" data-order="desc" data-type="text"><i class="fa fa-sort-alpha-desc"></i>  Τίτλος</span></li>
                                             <li><span data-path=".author" data-order="asc" data-type="text"><i class="fa fa-sort-alpha-asc"></i>  Συγγραφέας</span></li>
@@ -249,6 +250,11 @@ $this->params['breadcrumbs'][] = $category->cat_name;
                                     // </p>
                                     // </div>
                                     // <p>';
+                                    if(is_null($book->bk_grouping) || $book->bk_grouping==""){
+                                        $bk_grouping="ΩΩΩΩΩΩΩΩΩΩ";
+                                    }else{
+                                        $bk_grouping=$book->bk_grouping;
+                                    }
                                     echo ' <div class="choose-no-border-publisher">
 											<p class="p_hover">
 												<span class="header book-publisher"><strong>Έτος: </strong></span>
@@ -257,11 +263,13 @@ $this->params['breadcrumbs'][] = $category->cat_name;
 											<p class="p_hover" style="height:34px">
 												<span class="header book-author"><strong>Συγγραφέας: </strong></span>
 												<span class="author">'.$book->bkAuthor['auth_name'].'</span>
-											</p>
-										</div>
-										<p>';
+											</p>';
 
-
+                                    echo '<p class="p_hover" hidden >
+												<span class="header book-grouping"><strong>Grouping: </strong></span>
+												<span class="grouping">'.$bk_grouping.'</span>
+											</p>';
+                                    echo '</div>';
                                     if(is_null($book->bk_price) || $book->bk_price==""){
                                         $bk_price="-";
                                         $available='<h4><span class="label label-danger" role="alert"><small>Μη διαθέσιμο</small></span><h4>';

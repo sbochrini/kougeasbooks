@@ -63,7 +63,7 @@ a#scrollUp:hover {
   bottom: 0px;
   right: 10px;
   padding: 5px 10px;
-  background: #DCD0C0; /*color page up button background hover*/
+  background: #446f88; /*color page up button background hover*/
   color: #FFFFFF; /*color page up button arrow*/
   -webkit-animation: bounce 2s ease infinite;
   animation: bounce 2s ease infinite;
