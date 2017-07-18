@@ -208,7 +208,7 @@ class SiteController extends Controller
             $cat_id = Yii::$app->request->get('id');
             $books= Book::find()
                 ->where(['bk_cat_id' => $cat_id])
-                ->orderBy([new Expression('ISNULL(bk_grouping ),bk_grouping ASC')])
+                ->orderBy([new Expression('ISNULL(bk_grouping),bk_grouping ASC')])
                 ->all();
             $category=BookCategory::findOne(['cat_id'=>$cat_id]);
             /* $dataProvider = new ActiveDataProvider([
