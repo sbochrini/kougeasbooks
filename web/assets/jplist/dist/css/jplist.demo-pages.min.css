@@ -211,7 +211,7 @@ h2 {
     color: #0C5F1F
 }
 ::-moz-selection {
-    background: white; /*color select moz*/
+    background: #ccdce5; /*color select moz*/
     text-shadow: none
 }
 ::selection {
