@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
                         <h2 class="title-large text-center">ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ</h2>
                         <div class="alert alert-success">
-                            Ευχαριστούμε που επικοινωνήσατε μαζί μας. We will respond to you as soon as possible.
+                            Ευχαριστούμε που επικοινωνήσατε μαζί μας. Θα σας απαντήσουμε το συντομότερο δυνατόν.
                         </div>
 
                         <p>
