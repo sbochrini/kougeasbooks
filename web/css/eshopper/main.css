@@ -915,7 +915,9 @@ h2.title-great:before{
 	overflow: hidden;
 	margin-bottom:25px;
 }
-
+.product-image-wrapper:hover{
+  border:1px solid #446f88;
+}
 .single-products {
   position: relative;
 }
