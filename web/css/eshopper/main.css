@@ -1483,7 +1483,7 @@ h2.title-great:before{
 #reviews button {
   background: #446f88; /*C4C4BEcolor order button*/
   border: 0 none;
-  border-radius: 0;
+  border-radius: 2px;
   color: #FFFFFF;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
@@ -1492,7 +1492,7 @@ h2.title-great:before{
 #reviews button:hover {
   background: #D6D6D0; /*DCD0C0color order button*/
   border: 0 none;
-  border-radius: 0;
+  border-radius: 2px;
   color: #FFFFFF;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
@@ -2514,30 +2514,30 @@ h2.title-great:before{
 }
 
 .btn.btn-primary {
-  background:#C4C4BE; /*color btn-primary button*/
+  background:#446f88; /*color btn-primary button*/
   border: 0 none;
-  border-radius: 0;
+  border-radius: 2px;
   margin-top: 16px;
 }
 
 .btn.btn-primary:hover{
-  background:#DCD0C0; /*color btn-primary button hover*/
+  background:#D6D6D0; /*color btn-primary button hover*/
   border: 0 none;
-  border-radius: 0;
+  border-radius: 2px;
   margin-top: 16px;
 }
 
 .modal-footer .btn.btn-default{
   background:#C4C4BE; /*color btn-default in modal CLOSE button*/
   border: 0 none;
-  border-radius: 0;
+  border-radius: 2px;
   margin-top: 16px;
 }
 
 .modal-footer .btn.btn-default:hover{
-  background:#DCD0C0; /*color btn-default in modal CLOSE button hover*/
+  background:#D6D6D0; /*color btn-default in modal CLOSE button hover*/
   border: 0 none;
-  border-radius: 0;
+  border-radius: 2px;
   margin-top: 16px;
 }
 
@@ -2617,7 +2617,7 @@ h2.title-great:before{
 #contact-page .form-control:focus, 
 #contact-page .form-control:hover {
   box-shadow: inherit;
-  border-color: #FDB45E;
+  border-color: #446f88;
 }
 
 #contact-page .contact-info {

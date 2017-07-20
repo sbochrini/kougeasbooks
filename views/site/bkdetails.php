@@ -62,8 +62,6 @@ $this->params['breadcrumbs'][] = $book->bk_title;
                 <!--<p><b>Availability:</b> In Stock</p>-->
                 <?php $condition=((is_null($book->bk_condition) || $book->bk_condition=="")? "-" : $book->bk_condition )?>
                 <p class="p_hover"><b>Κατάσταση:</b> <?php echo $condition; ?></p>
-                <!--<p><b>Brand:</b> E-SHOPPER</p>-->
-                <a href=""><img src="<?php echo Yii::$app->homeUrl; ?>pictures/share.png" class="share img-responsive"  alt="" /></a>
             </div><!--/product-information-->
         </div>
     </div><!--/product-details-->
