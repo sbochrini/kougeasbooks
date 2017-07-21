@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="carousel-inner" >
                     <div class=" item active" style="padding-left: 60px;">
                         <div class="col-sm-6" >
-                            <h1 style="margin-top:25%"><span><i>Καλώς ορίσατε στο ηλεκτρονικό μας παλαιοβιβλιοπωλείο.</i></span></h1>
+                            <h1 style="margin-top:25%"><span><i>Καλώς ορίσατε στο ηλεκτρονικό μας παλαιοβιβλιοπωλείο</i></span></h1>
                            <!-- <h2> </h2>-->
                             <!--button type="button" class="btn btn-default get">Get it now</button-->
                         </div>
@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="item" style="padding-left: 60px;">
                         <div class="col-sm-6">
                             <!--<h1 style="margin-top:0px"><span>Βιβλιοπωλείο Κουγέας</span></h1>-->
-                            <h1 style="margin-top:20%"><span><i>Κοντά σας από το 1967.</i></span></h1>
+                            <h1 style="margin-top:20%"><span><i>Κοντά σας από το 1967</i></span></h1>
 
                             <!--button type="button" class="btn btn-default get">Get it now</button-->                        </div>
                         <div class="col-sm-6">
@@ -53,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="col-sm-6">
                             <!--<h1 style="margin-top:0px"><span>Βιβλιοπωλείο Κουγέας</span></h1>-->
                             <h1>
-                                <span><i>Στα ράφια μας θα βρείτε παλαιά, σπάνια βιβλία και παλαιότυπα.</i></span>
+                                <span><i>Στα ράφια μας θα βρείτε παλαιά και σπάνια βιβλία</i></span>
                             </h1>
                             <!--button type="button" class="btn btn-default get">Get it now</button-->                        </div>
                         <div class="col-sm-6">

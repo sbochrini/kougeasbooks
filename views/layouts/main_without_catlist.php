@@ -70,7 +70,7 @@ EshopperAsset::register($this);
     <?php
 	echo '<div class="row" style="margin-left:0px; margin-right:0px;">';
     NavBar::begin([
-        'brandLabel' => '<div class="row"><div class="col-sm-3"><img src="'.Yii::$app->homeUrl.'pictures/logo.png" class="pull-left"/></div><div class="logo-header col-sm-6" style="margin-top: 15px;">Παλαιοβιβλιοπωλείο Κουγέας</div></div>',
+        'brandLabel' => '<div class="row"><div class="col-sm-3"><img src="'.Yii::$app->homeUrl.'pictures/logo.png" class="pull-left"/></div><div class="logo-header col-sm-6" style="margin-top: 15px;">Παλαιοβιβλιοπωλείο Ιωάννης Β. Κουγέας</div></div>',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse ',
@@ -129,7 +129,7 @@ EshopperAsset::register($this);
 <footer id="footer"  style="margin-left:0px; margin-right:0px"><!--Footer-->
    <div class="footer-bottom">
         <div class="container">
-                <p class="pull-left">&copy; Βιβλιοπωλείο Κουγέας <?= date('Y') ?></p>
+                <p class="pull-left">&copy; Βιβλιοπωλείο Ιωάννης Β. Κουγέας <?= date('Y') ?></p>
             <p class="pull-right">Designed by <span><a href="mailto:s.bochrini@gmail.com">SBochrini</a></span></p>
         </div>
    </div>
