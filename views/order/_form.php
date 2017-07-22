@@ -36,7 +36,7 @@ use yii\web\JsExpression;
     ?>
     <?php $form = ActiveForm::begin(['id' => 'order_form']); ?>
     <div class="row col-sm-12">
-        <div class="row col-sm-10">
+        <div class="row col-sm-12">
             <div class="col-sm-5">
                 <?= $form->field($model, 'usr_name')->textInput(['maxlength' => true]) ?>
             </div>
@@ -44,7 +44,7 @@ use yii\web\JsExpression;
                 <?= $form->field($model, 'usr_surname')->textInput(['maxlength' => true]) ?>
             </div>
         </div>
-        <div class="row col-sm-10">
+        <div class="row col-sm-12">
             <div class="col-sm-5">
                  <?= $form->field($model, 'usr_phone')->textInput(['maxlength' => true]) ?>
             </div>
@@ -52,7 +52,7 @@ use yii\web\JsExpression;
                 <?= $form->field($model, 'usr_email')->textInput(['maxlength' => true]) ?>
             </div>
         </div>
-        <div class="row col-sm-10">
+        <div class="row col-sm-12">
             <div class="col-sm-5">
                 <?= $form->field($model, 'usr_address')->textInput(['maxlength' => true]) ?>
             </div>
@@ -63,7 +63,7 @@ use yii\web\JsExpression;
                 <?= $form->field($model, 'usr_pcode')->textInput(['maxlength' => true]) ?>
             </div>
         </div>
-        <div class="row col-sm-10">
+        <div class="row col-sm-12">
             <!--<div class="col-sm-6">-->
                 <?php
                // if($model->isNewRecord){
@@ -108,13 +108,13 @@ use yii\web\JsExpression;
          //$form->field($model, 'order_comment')->textInput(['maxlength' => true])
 
         //$form->field($model, 'order_complete')->textInput() -->
-        <div class="row col-sm-10">
+        <div class="row col-sm-12">
             <div class="col-sm-6">
                 <?= $form->field($model, 'order_admin_comment')->textArea(['maxlength' => true]) ?>
             </div>
         </div>
     </div>
-    <div class="row col-sm-10">
+    <div class="row col-sm-12">
         <div class="col-sm-5 form-group">
             <?= Html::submitButton($model->isNewRecord ? 'Δημιουργία' : 'Αποθήκευση', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
         </div>
