@@ -46,7 +46,7 @@ class Book extends \yii\db\ActiveRecord
         return [
             [['bk_title', 'bk_cat_id'], 'required', 'message' => 'Το πεδίο είναι υποχρεωτικό.'],
             [['bk_author_id', 'bk_cat_id'], 'integer'],
-            [['bk_pb_year'], 'safe'],
+            [['bk_pb_year','bk_pages'], 'safe'],
             [['bk_price'],'number','message' => 'Το πεδίο Τιμή πρέπει να είναι αριθμός.'],
             //[['bk_pb_year'],'number','message' => 'Το πεδίο Έτος Έκδοσης πρέπει να είναι αριθμός.'],
             //[['bk_price','bk_pb_year'], 'number'],

@@ -37,7 +37,7 @@ use \app\models\Book;
 
     ?>
     <div class="row col-sm-12">
-        <div class="col-sm-4">
+        <div class="col-sm-5">
             <?php //$img_path = Yii::getAlias('@img').$model->bk_id.".jpg";
             if($model->isNewRecord){
                 echo $form->field($model, 'image')->widget(FileInput::classname(), [
@@ -76,11 +76,11 @@ use \app\models\Book;
 
             ?>
         </div>
-        <div class="col-sm-8">
-            <div class="row col-sm-8">
+        <div class="col-sm-7">
+            <div class="row col-sm-12">
                 <?= $form->field($model,'bk_title',['options'=>['class'=>'col-sm-10']])->textInput(['maxlength' => true]) ?>
             </div>
-            <div class="row col-sm-8">
+            <div class="row col-sm-12">
                 <?php
                 //if($model->isNewRecord){
                     $data = Author::find()
@@ -116,7 +116,7 @@ use \app\models\Book;
         </div>
     </div>
 
-    <div class="row col-sm-8">
+    <div class="row col-sm-12">
         <?php
         if($model->isNewRecord){
             echo  $form->field($model, 'bk_cat_id',['options'=>['class'=>'col-sm-5']])->dropDownList($categoryList,['prompt'=>" Επιλογή"]);
@@ -129,7 +129,7 @@ use \app\models\Book;
         <?php
         if($model->isNewRecord){
            // echo $form->field($model, 'bk_subcat_id',['options'=>['class'=>'col-sm-4']])->dropDownList($subcategoryList,['prompt'=>" Επιλογή----"]);
-            echo $form->field($model, 'bk_subcat_id',['options'=>['class'=>'col-sm-4']])->widget(DepDrop::classname(), [
+            echo $form->field($model, 'bk_subcat_id',['options'=>['class'=>'col-sm-5']])->widget(DepDrop::classname(), [
                 'pluginOptions'=>[
                     'depends'=>['book-bk_cat_id'],
                     'placeholder' => 'Επιλογή',
@@ -141,7 +141,7 @@ use \app\models\Book;
                 $subcategories = Subcategory::find()->where(['subcat_cat_id'=>$model->bk_cat_id])->all();
                 $subcategoryList=ArrayHelper::map($subcategories,'subcat_id','subcat_name');
                // echo $form->field($model->bkSubcat, 'subcat_name',['options'=>['class'=>'col-sm-4']])->dropDownList($subcategoryList, ['name'=>"select_booksubcategory",'options' => [$model->bk_subcat_id => ['Selected'=>'selected']]]);
-                echo $form->field($model, 'bk_subcat_id',['options'=>['class'=>'col-sm-6']])->widget(DepDrop::classname(), [
+                echo $form->field($model, 'bk_subcat_id',['options'=>['class'=>'col-sm-5']])->widget(DepDrop::classname(), [
                     'data'=>$subcategoryList,
                     'type' => DepDrop::TYPE_SELECT2,
                     //'options'=>['id'=>'bk_cddsubcat_id'],
@@ -160,25 +160,25 @@ use \app\models\Book;
 
     </div>
     <div class="help-block"></div>
-    <div class="row col-sm-8">
+    <div class="row col-sm-12">
         <?= $form->field($model, 'bk_publisher',['options'=>['class'=>'col-sm-4']])->textInput(['maxlength' => true]) ?>
 
         <?= $form->field($model, 'bk_pb_place',['options'=>['class'=>'col-sm-4']])->textInput(['maxlength' => true]) ?>
 
         <?= $form->field($model, 'bk_pb_year',['options'=>['class'=>'col-sm-2']])->textInput(['maxlength' => true]) ?>
     </div>
-    <div class="row col-sm-8">
+    <div class="row col-sm-12">
         <?= $form->field($model, 'bk_pages',['options'=>['class'=>'col-sm-2']])->textInput(['maxlength' => true]) ?>
 
         <?= $form->field($model, 'bk_price',['options'=>['class'=>'col-sm-2']])->textInput(['maxlength' => true]) ?>
     </div>
-    <div class="row col-sm-8">
+    <div class="row col-sm-12">
         <?= $form->field($model, 'bk_description',['options'=>['class'=>'col-sm-6']])->textArea(['rows' => 6]) ?>
     </div>
-    <div class="row col-sm-8">
+    <div class="row col-sm-12">
          <?= $form->field($model, 'bk_condition',['options'=>['class'=>'col-sm-6']])->textInput(['rows' => 6]) ?>
     </div>
-    <div class="row col-sm-8">
+    <div class="row col-sm-12">
 <!--       $form->field($model, 'bk_grouping',['options'=>['class'=>'col-sm-6']])->textInput(['maxlength' => true]) -->
         <?php
             $data = Book::find()
