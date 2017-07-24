@@ -2789,6 +2789,12 @@ h2.title-great:before{
     margin-left: 0;
     height: auto;
     min-height: 100%;
+  width: 34%;
+}
+.navbar-form{
+  padding: 0px;
+  margin-top: 30px;
+  width: 15%;
 }
 .navbar-header .logo-header {
   margin-top: 15px;

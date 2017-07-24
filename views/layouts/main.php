@@ -80,7 +80,7 @@ EshopperAsset::register($this);
     ]);
     echo Nav::widget([
         'options' => [
-                'class' => 'navbar-nav navbar-right',
+                'class' => 'navbar-nav',
                 'style' => 'margin-top: 25px',
             ],
         'items' => [
@@ -88,23 +88,15 @@ EshopperAsset::register($this);
             ['label' => 'Κατάλογος Συγγραφέων', 'url' => ['/site/authorcatalog']],
             ['label' => 'Τρόποι Παραγγελίας', 'url' => ['/site/orders']],
             ['label' => 'Επικοινωνία', 'url' => ['/site/contact']],
-            /*Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
-            ) : (
-                '<li>'
-                . Html::beginForm(['/site/logout'], 'post')
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link logout']
-                )
-                . Html::endForm()
-                . '</li>'
-            )*/
         ],
     ]);
-    ?>
+    echo "<form class='navbar-form navbar-right' role='search'>
+       <div class='form-group has-feedback'>
+            <input id='searchbox' type='text' placeholder='Search' class='form-control'>
+            <span id='searchicon' class='fa fa-search form-control-feedback'></span>
+        </div>
+  </form>";
 
-    <?php
     NavBar::end();
     ?>
 

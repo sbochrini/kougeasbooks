@@ -70,16 +70,16 @@ EshopperAsset::register($this);
     <?php
 	echo '<div class="row" style="margin-left:0px; margin-right:0px;">';
     NavBar::begin([
-        'brandLabel' => '<div class="row"><div class="col-sm-3"><img src="'.Yii::$app->homeUrl.'pictures/logo.png" class="pull-left"/></div><div class="logo-header col-sm-6" style="margin-top: 15px;">Παλαιοβιβλιοπωλείο Ιωάννης Β. Κουγέας</div></div>',
+        'brandLabel' => '<div class="row"><div class="col-sm-4"><img src="'.Yii::$app->homeUrl.'pictures/logo.png" class="pull-left"/></div><div class="logo-header col-sm-6" style="margin-top: 15px;">Παλαιοβιβλιοπωλείο Ιωάννης Β. Κουγέας</div></div>',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse ',
+            'class' => 'navbar navbar-inverse ',
 			'style' => 'border-radius:0px; height: 100px;',
         ],
     ]);
     echo Nav::widget([
         'options' => [
-            'class' => 'navbar-nav navbar-right',
+            'class' => 'navbar-nav',
             'style' => 'margin-top: 25px',
         ],
         'items' => [
@@ -87,24 +87,18 @@ EshopperAsset::register($this);
             ['label' => 'Κατάλογος Συγγραφέων', 'url' => ['/site/authorcatalog']],
             ['label' => 'Τρόποι Παραγγελίας', 'url' => ['/site/orders']],
             ['label' => 'Επικοινωνία', 'url' => ['/site/contact']],
-            /*Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
-            ) : (
-                '<li>'
-                . Html::beginForm(['/site/logout'], 'post')
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link logout']
-                )
-                . Html::endForm()
-                . '</li>'
-            )*/
         ],
     ]);
-	echo '</div>';
-    ?>
-    <?php
+    echo "<form class='navbar-form navbar-right' role='search'>
+       <div class='form-group has-feedback'>
+            <input id='searchbox' type='text' placeholder='Search' class='form-control'>
+            <span id='searchicon' class='fa fa-search form-control-feedback'></span>
+        </div>
+  </form>";
+
+
     NavBar::end();
+    echo '</div>';
     ?>
     <div class="container">
         <!--<div  class="row" style="padding-top: 20px; margin-left:15px; margin-right:15px"> --><!--class="container"-->
