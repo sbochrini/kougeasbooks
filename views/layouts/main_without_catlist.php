@@ -89,7 +89,7 @@ EshopperAsset::register($this);
             ['label' => 'Επικοινωνία', 'url' => ['/site/contact']],
         ],
     ]);
-    echo '<form class="navbar-form navbar-right">
+    echo '<form class="navbar-form navbar-right" method="get">
   <div class="input-group has-feedback">
     <input type="text" class="form-control" placeholder="Αναζήτηση">
     <div class="input-group-btn">
