@@ -90,12 +90,16 @@ EshopperAsset::register($this);
             ['label' => 'Επικοινωνία', 'url' => ['/site/contact']],
         ],
     ]);
-    echo "<form class='navbar-form navbar-right' role='search'>
-       <div class='form-group has-feedback'>
-            <input id='searchbox' type='text' placeholder='Search' class='form-control'>
-            <span id='searchicon' class='fa fa-search form-control-feedback'></span>
-        </div>
-  </form>";
+    echo '<form class="navbar-form navbar-right">
+  <div class="input-group has-feedback">
+    <input type="text" class="form-control" placeholder="Αναζήτηση">
+    <div class="input-group-btn">
+      <button class="btn btn-default" type="submit">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+    </div>
+  </div>
+</form>';
 
     NavBar::end();
     ?>
