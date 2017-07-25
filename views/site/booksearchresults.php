@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = "Αποτελέσματα για: ".$_GET['Book
     <div class="row">
         <div class="col-sm-12">
             <div class="features_items"><!--features_items-->
-                <h2 class="title-great text-center"><?php echo "Αποτελέσματα για: <i>".$_GET['BookSearch']['generalsearch']."</i>"; ?></h2>
+                <h2 class="title-great text-center"><?php echo "Αποτελεσματα για: <i>".$_GET['BookSearch']['generalsearch']."</i>"; ?></h2>
                 <div class="box">
                     <div class="center">
                         <div id="demo" class="box jplist" style="margin: 0px 0px 50px 0px">

@@ -2728,8 +2728,8 @@ h2.title-great:before{
   /*transition-property: transform;*/
 /*}*/
 .category-products .hvr-grow:hover, .category-products .hvr-grow:focus, .category-products .hvr-grow:active {
-  -webkit-transform: scale(1.0,1.4);
-  transform: scale(1.0,1.4);
+  -webkit-transform: scale(1.0,1.3);
+  transform: scale(1.0,1.3);
   color:white !important;
   background-color: #446f88 !important;
   border-radius:0;

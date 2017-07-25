@@ -164,69 +164,6 @@ $('#userorderModal').on('show.bs.modal', function(e) {
         }
     });
 
-    /*$('#usr_index_order_form').on('keyup', function (e) {
-        var which_input=$(this).attr('id');
-       alert(which_input);
-        if( !$("#order-usr_name").val() || $.trim($("#order-usr_name").val()) === ""){
-            $("div.field-order-usr_name").addClass('has-error');
-            $(".field-order-usr_name > .help-block").append("Το πεδίο είναι υποχρεωτικό.");
-            check_name=0;
-        }else{
-            $("div.field-order-usr_name").removeClass('has-error');
-            $(".field-order-usr_name > .help-block").empty();
-            check_name=1;
-        }
-        if( !$("#order-usr_surname").val() || $.trim($("#order-usr_surname").val()) === "" ){
-            $("div.field-order-usr_surname").addClass('has-error');
-            $(".field-order-usr_surname > .help-block").append("Το πεδίο είναι υποχρεωτικό.");
-            check_surname=0;
-        }else{
-            check_surname=1;
-        }
-        if( !$("#order-usr_phone").val() || $.trim($("#order-usr_phone").val()) === ""  ){
-            $("div.field-order-usr_phone").addClass('has-error');
-            $(".field-order-usr_phone > .help-block").append("Το πεδίο είναι υποχρεωτικό.");
-            check_phone=0;
-        }else{
-            if(!$.isNumeric($("#order-usr_phone").val())){
-                $("div.field-order-usr_phone").addClass('has-error');
-                $(".field-order-usr_phone > .help-block").append("Το πεδίο τηλέφωνο πρέπει να είναι αριθμός.");
-                check_phone=0;
-            }else{
-                check_phone=1;
-            }
-        }
-
-        var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
-        var email=$("#order-usr_email").val();
-        if($.trim(email)!==""){
-            has_email=1;
-            if (testEmail.test(email)){
-                check_email=1;
-            }else{
-                $("div.field-order-usr_email").addClass('has-error');
-                $(".field-order-usr_email > .help-block").append("Το πεδίο e-mail πρέπει να είναι έγκυρη ηλεκτρονική διεύθυνση.");
-                check_email=0;
-            }
-        }
-
-
-        if(check_name===0 || check_surname===0 || check_phone===0 ||check_email === 0) {
-            e.preventDefault();
-            alert("alalal");
-            return false;
-        } else {
-            alert("xxxxxxxxxxx");
-            $.ajax({
-                type: 'POST',
-                url: 'index.php?r=site/usrindexorder',
-                data: $("#usr_index_order_form").serialize(),
-                success: function (response) {
-
-                }
-            });
-        }
-    });*/
 });
 
 
@@ -273,3 +210,4 @@ $('.hvr-grow').mouseleave(function ()
     var a=$(this).find('a');
     a.css({"color": "#446f88"});
 });
+
