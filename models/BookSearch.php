@@ -6,6 +6,7 @@ use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\Book;
+use  yii\helpers\ArrayHelper;
 
 /**
  * BookSearch represents the model behind the search form about `app\models\Book`.
@@ -141,24 +142,20 @@ class BookSearch extends Book
     }
 
     public function generalsearch($params){
-        $query = Book::find();
-        $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-        ]);
-        $this->load($params);
-
-        if (!$this->validate()) {
-            // uncomment the following line if you do not want to any records when validation fails
-            // $query->where('0=1');
-            return $dataProvider;
+        $this->generalsearch=$params;
+        $author=Author::find()->where(['like','auth_name',$this->generalsearch])->all();
+        $author_ids = ArrayHelper::getValue($author, 'auth_id');
+        if(!is_null($author_ids)){
+            $books = Book::find()
+                ->where(['like', 'bk_title', $this->generalsearch])
+                ->orWhere(['bk_author_id'=>$author_ids])
+                ->orWhere(['like', 'bk_publisher', $this->generalsearch])->all();
+        }else{
+            $books = Book::find()
+                ->where(['like', 'bk_title', $this->generalsearch])
+                ->orWhere(['like', 'bk_publisher', $this->generalsearch])->all();
         }
 
-        $query->andFilterWhere([
-            'generalsearch' => $this->generalsearch,
-        ]);
-        $query->orFilterWhere(['like', 'bk_title', $this->generalsearch])
-            ->orFilterWhere(['like', 'tbl_author.auth_name', $this->generalsearch])
-            ->orFilterWhere(['like', 'bk_publisher', $this->generalsearch]);
-        return $dataProvider;
+        return $books;
     }
 }

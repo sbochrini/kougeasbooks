@@ -375,11 +375,14 @@ class SiteController extends Controller
     }
 
     function actionBooksearch(){
+        $order= new Order();
+        $searchstring = $_GET['BookSearch']['generalsearch'];
         $searchModel = new BookSearch();
-        $dataProvider = $searchModel->generalsearch(Yii::$app->request->queryParams);
+        $results= $searchModel->generalsearch($searchstring);
         return $this->render('booksearchresults', [
             'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'results' => $results,
+            'order'=>$order,
         ]);
     }
 

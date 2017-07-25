@@ -9,8 +9,9 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\web\View;
+use yii\grid\GridView;
 
-$this->params['breadcrumbs'][] = "Αποτελέσματα για: ". Yii::$app->request->get('generalsearch');
+$this->params['breadcrumbs'][] = "Αποτελέσματα για: ".$_GET['BookSearch']['generalsearch'];
 ?>
 <div id="booklist" class="book-index">
 
@@ -24,7 +25,7 @@ $this->params['breadcrumbs'][] = "Αποτελέσματα για: ". Yii::$app-
     <div class="row">
         <div class="col-sm-12">
             <div class="features_items"><!--features_items-->
-                <h2 class="title-great text-center"><?php echo "Αποτελέσματα για: ". Yii::$app->request->get('generalsearch'); ?></h2>
+                <h2 class="title-great text-center"><?php echo "Αποτελέσματα για: <i>".$_GET['BookSearch']['generalsearch']."</i>"; ?></h2>
                 <div class="box">
                     <div class="center">
                         <div id="demo" class="box jplist" style="margin: 0px 0px 50px 0px">
@@ -217,16 +218,16 @@ $this->params['breadcrumbs'][] = "Αποτελέσματα για: ". Yii::$app-
                             </div>
                             <div class="list box text-shadow">
                                 <?php
-                                foreach ($books as $book):
+                                foreach ($results as $result):
                                     echo '<div class="list-item box">';
                                     echo '<div class="product-image-wrapper">';
                                     echo '<div class="single-products">';
                                     echo '<div class="productinfo text-center">';
                                     echo '<div class="img">';
-                                    echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $book->bk_id, 'bc'=>1]).' title="'.$book->bk_title.'">';
-                                    $path=Yii::$app->basePath. '/web/img/' . $book->bk_image_web_filename;
+                                    echo '<a href='.\yii\helpers\Url::to(['bkdetails','id' => $result->bk_id, 'bc'=>1]).' title="'.$result->bk_title.'">';
+                                    $path=Yii::$app->basePath. '/web/img/' . $result['bk_image_web_filename'];
                                     if (is_file($path)) {
-                                        echo '<img class="img-thumbnail hvr-grow-shadow" src="' . Yii::$app->homeUrl.'img/'.$book->bk_image_web_filename.'" alt="" title="'.$book->bk_title.'"/>';
+                                        echo '<img class="img-thumbnail hvr-grow-shadow" src="' . Yii::$app->homeUrl.'img/'.$result->bk_image_web_filename.'" alt="" title="'.$result->bk_title.'"/>';
                                     }else{
                                         echo '<img src="'.Yii::$app->homeUrl. 'pictures/no_image.jpg" alt="" >';
                                     }
@@ -234,7 +235,7 @@ $this->params['breadcrumbs'][] = "Αποτελέσματα για: ". Yii::$app-
                                     echo '</div>';
                                     echo '<div class="block">';
                                     //echo '<h2>'.$book->bk_price.'<i class="fa fa-eur" aria-hidden="true"></i></h2>';
-                                    echo '<p class="title" title="'.$book->bk_title.'">'.$book->bk_title.'</p>';
+                                    echo '<p class="title" title="'.$result->bk_title.'">'.$result->bk_title.'</p>';
                                     //echo '</p>';
                                     // echo ' <div class="choose-no-border-publisher"><p>
                                     // <span class="header book-author"><strong>Συγγραφέας: </strong></span>
@@ -250,19 +251,19 @@ $this->params['breadcrumbs'][] = "Αποτελέσματα για: ". Yii::$app-
                                     // </p>
                                     // </div>
                                     // <p>';
-                                    if(is_null($book->bk_grouping) || $book->bk_grouping==""){
+                                    if(is_null($result['bk_grouping']) || $result['bk_grouping']==""){
                                         $bk_grouping="ΩΩΩΩΩΩΩΩΩΩ";
                                     }else{
-                                        $bk_grouping=$book->bk_grouping;
+                                        $bk_grouping=$result['bk_grouping'];
                                     }
                                     echo ' <div class="choose-no-border-publisher">
 											<p class="p_hover">
 												<span class="header book-publisher"><strong>Έτος: </strong></span>
-												<span class="year">'.$book->bk_pb_year.'</span>
+												<span class="year">'.$result['bk_pb_year'].'</span>
 											</p>
 											<p class="p_hover" style="height:34px">
 												<span class="header book-author"><strong>Συγγραφέας: </strong></span>
-												<span class="author">'.$book->bkAuthor['auth_name'].'</span>
+												<span class="author">'.$result->bkAuthor['auth_name'].'</span>
 											</p>';
 
                                     echo '<p class="p_hover" hidden >
@@ -270,11 +271,11 @@ $this->params['breadcrumbs'][] = "Αποτελέσματα για: ". Yii::$app-
 												<span class="grouping">'.$bk_grouping.'</span>
 											</p>';
                                     echo '</div>';
-                                    if(is_null($book->bk_price) || $book->bk_price==""){
+                                    if(is_null($result['bk_price']) || $result['bk_price']==""){
                                         $bk_price="-";
                                         $available='<h4><span class="label label-danger" role="alert"><small>Μη διαθέσιμο</small></span><h4>';
                                     }else{
-                                        $bk_price=$book->bk_price;
+                                        $bk_price=$result['bk_price'];
                                         $available='<h4><span class="label label-success" role="alert"> <small>Άμεσα διαθέσιμο <i class="fa fa-paper-plane-o" aria-hidden="true"></i></small></span><h4>';
                                     }
                                     echo '<div class="choose-no-border-price">
@@ -294,10 +295,10 @@ $this->params['breadcrumbs'][] = "Αποτελέσματα για: ". Yii::$app-
 
                                     echo '<div class="choose">';
                                     echo '<ul class="nav nav-pills nav-justified">';
-                                    echo '<li>'.Html::a('<i class="fa fa-info-circle fa-2x"></i>', ['bkdetails', 'id' => $book->bk_id, 'bc'=>1]).'</li>';
+                                    echo '<li>'.Html::a('<i class="fa fa-info-circle fa-2x"></i>', ['bkdetails', 'id' => $result->bk_id, 'bc'=>1]).'</li>';
                                     echo '<li class="choose-no-border-price"><span class="header book-price"></span>
 											<span class="price"><span class="val">'.$bk_price.'</span> &euro;</span></li>';
-                                    echo '<li><a id="'.$book->bk_id.'" data-toggle="modal" href="#userorderModal"><i class="fa fa-shopping-bag fa-2x"></i></a></li>';
+                                    echo '<li><a id="'.$result['bk_id'].'" data-toggle="modal" href="#userorderModal"><i class="fa fa-shopping-bag fa-2x"></i></a></li>';
                                     echo '</ul>';
                                     echo '</div>';
                                     echo '</div>';
