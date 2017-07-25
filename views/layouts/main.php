@@ -12,7 +12,8 @@ use app\components\CategoryWidget;
 use yii\helpers\Url;
 use app\assets\BooklistAsset;
 use app\assets\EshopperAsset;
-/*use app\assets\SweetAlertAsset;*/
+use yii\widgets\ActiveForm;
+use \app\models\BookSearch;
 
 AppAsset::register($this);
 BooklistAsset::register($this);
@@ -90,7 +91,22 @@ EshopperAsset::register($this);
             ['label' => 'Επικοινωνία', 'url' => ['/site/contact']],
         ],
     ]);
-    echo '<form class="navbar-form navbar-right" method="get">
+    $searchBook=new BookSearch();
+    $form = ActiveForm::begin([
+        'action' => ['booksearch'],
+        'method' => 'get',
+        'options'=>['class'=>'navbar-form navbar-right'],
+    ]); ?>
+    <div class="input-group has-feedback">
+        <?= $form->field($searchBook, 'generalsearch')->textInput(['maxlength' => true,'placeholder'=>"Αναζήτηση"])->label(false) ?>
+        <div class="input-group-btn">
+            <?= Html::submitButton('<i class="glyphicon glyphicon-search"></i>', ['class' => 'btn btn-default']) ?>
+        </div>
+    </div>
+
+    <?php ActiveForm::end(); ?>
+
+   <!-- echo '<form class="navbar-form navbar-right" method="get">
   <div class="input-group has-feedback">
     <input type="text" class="form-control" placeholder="Αναζήτηση">
     <div class="input-group-btn">
@@ -99,10 +115,9 @@ EshopperAsset::register($this);
       </button>
     </div>
   </div>
-</form>';
+</form>';-->
 
-    NavBar::end();
-    ?>
+    <?php NavBar::end();?>
 
     <div class="container">
         <?= Breadcrumbs::widget([

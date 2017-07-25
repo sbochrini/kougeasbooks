@@ -15,6 +15,7 @@ class BookSearch extends Book
     /**
      * @inheritdoc
      */
+    public $generalsearch;
     public $author_name;
     public $cat_name;
     public $cat_id;
@@ -29,7 +30,7 @@ class BookSearch extends Book
             [['bk_id'], 'integer'],
             [['bk_title', 'bk_publisher', 'bk_pb_place', 'bk_pb_year', 'bk_pages', 'bk_condition', 'bk_grouping','bk_cat_id'], 'safe'],
             [['bk_price'], 'number'],
-            [['author_name', 'cat_name','subcat_name'], 'safe'],
+            [['author_name', 'cat_name','subcat_name','generalsearch'], 'safe'],
         ];
     }
 
@@ -136,6 +137,28 @@ class BookSearch extends Book
             ->andFilterWhere(['like', 'bk_condition', $this->bk_condition])
             ->andFilterWhere(['like', 'bk_grouping', $this->bk_grouping]);
 
+        return $dataProvider;
+    }
+
+    public function generalsearch($params){
+        $query = Book::find();
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+        $this->load($params);
+
+        if (!$this->validate()) {
+            // uncomment the following line if you do not want to any records when validation fails
+            // $query->where('0=1');
+            return $dataProvider;
+        }
+
+        $query->andFilterWhere([
+            'generalsearch' => $this->generalsearch,
+        ]);
+        $query->orFilterWhere(['like', 'bk_title', $this->generalsearch])
+            ->orFilterWhere(['like', 'tbl_author.auth_name', $this->generalsearch])
+            ->orFilterWhere(['like', 'bk_publisher', $this->generalsearch]);
         return $dataProvider;
     }
 }

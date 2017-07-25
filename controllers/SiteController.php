@@ -16,6 +16,7 @@ use app\models\ContactForm;
 use yii\data\ActiveDataProvider;
 use yii\db\Expression;
 use yii\widgets\ActiveForm;
+use \app\models\BookSearch;
 
 
 class SiteController extends Controller
@@ -371,6 +372,15 @@ class SiteController extends Controller
                 'order'=>$order,
             ]);
         }else return $this->render('error');
+    }
+
+    function actionBooksearch(){
+        $searchModel = new BookSearch();
+        $dataProvider = $searchModel->generalsearch(Yii::$app->request->queryParams);
+        return $this->render('booksearchresults', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
 }
