@@ -42,3 +42,56 @@ use yii\helpers\Url;
     </div>
 <?php endif; ?>
 
+<script>
+        var url =window.location.href;
+        var splited;
+        if(url.indexOf("bookspercat") > -1) {
+            splited = url.split('bookspercat&id=');
+            if (typeof splited[1] !== 'undefined') {
+                var cat_id = splited[1];
+                var cat_ele = document.getElementById('cat_' + cat_id);
+                cat_ele.className += " in";
+            }
+        }
+        if(url.indexOf("bookspersubcat") > -1) {
+            splited = url.split('bookspersubcat&id=');
+            if (typeof splited[1] !== 'undefined') {
+                var subcat_id = splited[1];
+                //alert(subcat_id);
+                var subcat_ele = document.getElementById('subcat_' + subcat_id);
+                var cat_subcat_eles = document.getElementsByClassName("panel-collapse");
+                for(var i = 0; i < cat_subcat_eles.length; i++ ){
+                    if(cat_subcat_eles[i].contains(subcat_ele)){
+                        // alert(cat_subcat_eles[i].id);
+                        catsubcat_ele=cat_subcat_eles[i];
+                        catsubcat_ele.className += " in";
+                    }
+                }
+            }
+        }
+
+        if(url.indexOf("authorcatalog") > -1) {
+            var dec_url=decodeURI(url);
+            splited = dec_url.split('authorcatalog&letter=');
+            if (typeof splited[1] !== 'undefined') {
+                var letter = splited[1];
+                var alphabet = document.getElementsByClassName("alphabet");
+                for(var i = 0; i < alphabet.length; i++ ){
+                    if(alphabet[i].textContent === letter ){
+                        letter_button=alphabet[i];
+                        // alert(letter);
+                        letter_button.style.backgroundColor = "#446f88";
+                        letter_button.style.color = "white";
+                    }/*else{
+                     if(alphabet[i].getAttribute("href").indexOf(letter)>-1){
+                     letter_button=alphabet[i];
+                     alert(letter);
+                     letter_button.style.backgroundColor = "#446f88";
+                     letter_button.style.color = "white";
+                     }
+                     }*/
+                }
+            }
+        }
+
+</script>
