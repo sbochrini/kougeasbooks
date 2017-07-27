@@ -66,8 +66,12 @@ use yii\helpers\Url;
                     if(cat_subcat_eles[i].contains(subcat_ele)){
                         // alert(cat_subcat_eles[i].id);
                         catsubcat_ele=cat_subcat_eles[i];
+                        var cat_id_array=catsubcat_ele.id.split("_");
+                        var cat_id=cat_id_array[1];
+                        var icon= document.getElementById('a_cat_' + cat_id).getElementsByTagName("i")[0];
                         catsubcat_ele.className += " in";
-
+                        icon.className="fa fa-minus";
+                        //alert(cat_id);
                     }
                 }
             }
