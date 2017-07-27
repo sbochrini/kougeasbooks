@@ -141,7 +141,14 @@ $('document').ready(function(){
         //alert("despacito");
     });
 
-
+//---------------hover cat menu------------------\\
+   /* $(".panel-heading").hover(
+        function() {
+            $('.panel-collapse').collapse('show');
+        }, function() {
+            $('.panel-collapse').collapse('hide');
+        }
+    );*/
 });
 
 //------------index usr order modal---------------\\
