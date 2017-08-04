@@ -32,6 +32,7 @@ echo '<div class="row cat_checkboxes">';
         $form = ActiveForm::begin([
                 'options'=>['enctype'=>'multipart/form-data'],
                 'id' => 'update_booklist_form',
+                'method'=>'get'
                 //'name'=>'book_form'
             ]);
            /* if(is_null($checked_cats)){
@@ -43,7 +44,7 @@ echo '<div class="row cat_checkboxes">';
 
             echo '<div class="form-group field-bookcategory-cat_id">';
             echo '<label class="control-label">Κατηγορίες</label>';
-            echo '<input name="BookCategory[cat_id]" value="" type="hidden">';
+           // echo '<input name="BookCategory[cat_id]" value="" type="hidden">';
             echo '<div id="bookcategory-cat_id">';
             foreach($cats as $category):
                 $checked="";
@@ -55,7 +56,7 @@ echo '<div class="row cat_checkboxes">';
                     if($category->cat_subcat==1 && in_array($category->cat_id, $checked_cats)){
                         echo '<div id="checkboxes_'.$category->cat_id.'" class="div_subcat_checkboxes">';
                         echo '<div class=" field-book-bk_subcat_id">';//$html.= '<label class="control-label">Ομαδοποίηση</label>'; form-group
-                        echo '<input name="Book[bk_subcat_id]" value="" type="hidden">';
+                       // echo '<input name="Book[bk_subcat_id]" value="" type="hidden">';
                         echo '<div id="book-bk_subcat_id">';
                         foreach($category->subcategories as $subcategory ):
                             $subcat_checked="";
@@ -105,7 +106,7 @@ $hidden_subcats=(!is_null($checked_subcats))?implode(",",$checked_subcats):"";
     echo  GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
-        'filterUrl' =>['index','BookSearch[bk_cat_id]' => $hidden_cats,'BookSearch[bk_subcat_id]'=>$hidden_subcats],         //'BookSearch[bk_grouping]'=>$hidden_groupings]
+        'filterUrl' =>['index','BookSearch[bk_cat_id]' => $hidden_cats,'BookSearch[bk_subcat_id]'=>$hidden_subcats],
         'summary' => "Εμφάνιση {begin} - {end} από {totalCount} βιβλία",
         'emptyText' => 'Δεν υπάρχουν αποτελεσματα!',
         'columns' => [
@@ -145,7 +146,7 @@ $hidden_subcats=(!is_null($checked_subcats))?implode(",",$checked_subcats):"";
                     'class'=>"form-control",
                 ],
             ],
-            /*[
+            [
                 'label'=>'Κατηγορία',
                 'attribute' => 'bk_cat_id',
                 'value' => 'bk_cat_id',
@@ -154,10 +155,10 @@ $hidden_subcats=(!is_null($checked_subcats))?implode(",",$checked_subcats):"";
                     'id' => 'bk_filter_input',
                     'value'=>$hidden_cats,
                 ],
-                'visible'=> false,
-            ],*/
 
-           /* [
+            ],
+
+            [
                 'label'=>'Υποκατηγορία',
                 'attribute' => 'bkSubcat.subcat_name',
                 'format' => 'html',
@@ -168,7 +169,7 @@ $hidden_subcats=(!is_null($checked_subcats))?implode(",",$checked_subcats):"";
                         return '<span class="not-set">Δεν έχει οριστεί</span>';
                     }
                 },
-            ],*/
+            ],
             [
                 'label'=>'Ομαδοποίηση',
                 'attribute' => 'bk_grouping',

@@ -76,71 +76,89 @@ class BookController extends Controller
         $cat=new BookCategory();
         $cats=BookCategory::find()->all();
         $cat_items=ArrayHelper::map($cats, 'cat_id', 'cat_name');
-        //$bk_grouping_items=ArrayHelper::map(Book::find()->where(['not',['bk_grouping'=>null]])->all(), 'bk_grouping', 'bk_grouping');
 
-        //$bk_grouping_items=Book::find()->select('*')->groupBy('bk_grouping')->where(['not',['bk_grouping'=>null]])->all();
-        /*foreach($arr_ids as $id):
-            $ids[]["id"]=$id->bk_cat_id;
-        endforeach;*/
-       // $categories=BookCategory::find()->all();
-        if(empty($_POST['BookCategory']['cat_id']) && empty($_POST['Book']['bk_subcat_id'])){         //empty($_POST['Book']['bk_grouping'])
+        /*if(isset($_GET['page'])){
             $searchModel = new BookSearch();
-            if(isset($_GET['BookSearch']['bk_cat_id']) && isset($_GET['BookSearch']['bk_subcat_id'])){
-                if(!empty($_GET['BookSearch']['bk_cat_id'])){
-                    $checked_cats=explode(",",$_GET['BookSearch']['bk_cat_id']);
-                    $searchModel->cat_id=explode(",",$_GET['BookSearch']['bk_cat_id']);
-                }
-                if(!empty($_POST['Book']['bk_subcat_id'])){
-                    $checked_subcats=explode(",",$_GET['BookSearch']['bk_subcat_id']);
-                    $searchModel->ch_bk_subcats=explode(",",$_GET['BookSearch']['bk_subcat_id']);
-                }
-                //$searchModel->ch_bk_subcats=explode(",",$_GET['BookSearch']['bk_subcat_id']);
-            }
             $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        }else{
-            $searchModel = new BookSearch();
-           if(isset($_POST['BookCategory']['cat_id'])){
-               $searchModel->cat_id=$_POST['BookCategory']['cat_id'];
-           }
-            if(isset($_POST['Book']['bk_subcat_id'])){
-                $searchModel->ch_bk_subcats=$_POST['Book']['bk_subcat_id'];
-            }
-            //$searchModel->ch_bk_grouping=$_POST['Book']['bk_grouping'];
-            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-            if(!empty($_POST['BookCategory']['cat_id'])){
-                foreach($_POST['BookCategory']['cat_id'] as $key=>$value):
-                    $checked_cats[]=$value;
-                endforeach;
-            }
-            if(!empty($_POST['Book']['bk_subcat_id'])){
-                foreach($_POST['Book']['bk_subcat_id'] as $key=>$value):
-                    $checked_subcats[]=$value;
-                endforeach;
-            }
-        }
 
-       /* $query = Book::find();
-        // Important: lets join the query with our previously mentioned relations
-        // I do not make any other configuration like aliases or whatever, feel free
-        // to investigate that your self
-        $query->joinWith(['bk_author_id', 'country']);
+            return $this->render('index', [
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
+                'model'=>$model,
+                'cat_items'=>$cat_items,
+                'cat'=>$cat,
+                'cats'=>$cats,
+                'checked_cats'=>$checked_cats,
+                'checked_subcats'=>$checked_subcats,
+            ]);
+        }else{*/
 
-        $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-        ]);*/
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-            'model'=>$model,
-            'cat_items'=>$cat_items,
-           // 'bk_grouping_items'=>$bk_grouping_items,
-            'cat'=>$cat,
-            'cats'=>$cats,
-            'checked_cats'=>$checked_cats,
-            'checked_subcats'=>$checked_subcats,
-            //'checked_groupings'=>$checked_groupings,
-            //'ids'=>$ids,
-        ]);
+            //$bk_grouping_items=ArrayHelper::map(Book::find()->where(['not',['bk_grouping'=>null]])->all(), 'bk_grouping', 'bk_grouping');
+
+            //$bk_grouping_items=Book::find()->select('*')->groupBy('bk_grouping')->where(['not',['bk_grouping'=>null]])->all();
+            /*foreach($arr_ids as $id):
+                $ids[]["id"]=$id->bk_cat_id;
+            endforeach;*/
+            // $categories=BookCategory::find()->all();
+            if(empty($_GET['BookCategory']['cat_id']) && empty($_GET['Book']['bk_subcat_id'])){         //empty($_POST['Book']['bk_grouping'])
+                $searchModel = new BookSearch();
+                if(isset($_GET['BookSearch']['bk_cat_id']) && isset($_GET['BookSearch']['bk_subcat_id'])){
+                    if(!empty($_GET['BookSearch']['bk_cat_id'])){
+                        $checked_cats=explode(",",$_GET['BookSearch']['bk_cat_id']);
+                        $searchModel->cat_id=explode(",",$_GET['BookSearch']['bk_cat_id']);
+                    }
+                    if(!empty($_GET['Book']['bk_subcat_id'])){
+                        $checked_subcats=explode(",",$_GET['BookSearch']['bk_subcat_id']);
+                        $searchModel->ch_bk_subcats=explode(",",$_GET['BookSearch']['bk_subcat_id']);
+                    }
+                    //$searchModel->ch_bk_subcats=explode(",",$_GET['BookSearch']['bk_subcat_id']);
+                }
+                $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+            }else{
+                $searchModel = new BookSearch();
+                if(isset($_GET['BookCategory']['cat_id'])){
+                    $searchModel->cat_id=$_GET['BookCategory']['cat_id'];
+                }
+                if(isset($_GET['Book']['bk_subcat_id'])){
+                    $searchModel->ch_bk_subcats=$_GET['Book']['bk_subcat_id'];
+                }
+                //$searchModel->ch_bk_grouping=$_POST['Book']['bk_grouping'];
+                $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+                if(!empty($_GET['BookCategory']['cat_id'])){
+                    foreach($_GET['BookCategory']['cat_id'] as $key=>$value):
+                        $checked_cats[]=$value;
+                    endforeach;
+                }
+                if(!empty($_GET['Book']['bk_subcat_id'])){
+                    foreach($_GET['Book']['bk_subcat_id'] as $key=>$value):
+                        $checked_subcats[]=$value;
+                    endforeach;
+                }
+            }
+
+            /* $query = Book::find();
+             // Important: lets join the query with our previously mentioned relations
+             // I do not make any other configuration like aliases or whatever, feel free
+             // to investigate that your self
+             $query->joinWith(['bk_author_id', 'country']);
+
+             $dataProvider = new ActiveDataProvider([
+                 'query' => $query,
+             ]);*/
+            return $this->render('index', [
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
+                'model'=>$model,
+                'cat_items'=>$cat_items,
+                // 'bk_grouping_items'=>$bk_grouping_items,
+                'cat'=>$cat,
+                'cats'=>$cats,
+                'checked_cats'=>$checked_cats,
+                'checked_subcats'=>$checked_subcats,
+                //'checked_groupings'=>$checked_groupings,
+                //'ids'=>$ids,
+            ]);
+       //}
     }
 
     /**
