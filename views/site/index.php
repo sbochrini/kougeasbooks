@@ -26,37 +26,36 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <div class="carousel-inner" >
                     <div class=" item active" style="padding-left: 60px;">
-                        <div class="col-sm-6" >
+                        <!--<div class="col-sm-6" >
                             <h1 style="margin-top:25%"><span><i>Καλώς ορίσατε στο ηλεκτρονικό μας παλαιοβιβλιοπωλείο</i></span></h1>
-                           <!-- <h2> </h2>-->
-                            <!--button type="button" class="btn btn-default get">Get it now</button-->
-                        </div>
-                        <div class="col-sm-6">
+
+                        </div>-->
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-8">
                             <img src="<?php echo Yii::$app->homeUrl; ?>pictures/kougeas_1.jpg" class=" img-responsive" style="height:327px; width: 450px; padding:10px;" alt="" />
                             <!--img src="<?php echo Yii::$app->homeUrl; ?>pictures/pricing.png"  class="pricing" alt="" /-->
 
                         </div>
                     </div>
                     <div class="item" style="padding-left: 60px;">
-                        <div class="col-sm-6">
-                            <!--<h1 style="margin-top:0px"><span>Βιβλιοπωλείο Κουγέας</span></h1>-->
+                        <!--<div class="col-sm-6">
                             <h1 style="margin-top:20%"><span><i>Κοντά σας από το 1967</i></span></h1>
-
-                            <!--button type="button" class="btn btn-default get">Get it now</button-->                        </div>
-                        <div class="col-sm-6">
+                        </div>-->
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-8">
                             <img src="<?php echo Yii::$app->homeUrl; ?>pictures/kougeas_2.jpg" class="girl img-responsive" style="height:327px; width: 450px; padding:10px;" alt="" />
                             <!--img src="<?php echo Yii::$app->homeUrl; ?>pictures/pricing.png"  class="pricing" alt="" /-->
                         </div>
                     </div>
 
                     <div class="item" style="padding-left: 60px;">
-                        <div class="col-sm-6">
-                            <!--<h1 style="margin-top:0px"><span>Βιβλιοπωλείο Κουγέας</span></h1>-->
+                        <!--<div class="col-sm-6">
                             <h1>
                                 <span><i>Στα ράφια μας θα βρείτε παλαιά και σπάνια βιβλία</i></span>
                             </h1>
-                            <!--button type="button" class="btn btn-default get">Get it now</button-->                        </div>
-                        <div class="col-sm-6">
+                        </div>-->
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-8">
                             <img src="<?php echo Yii::$app->homeUrl; ?>pictures/kougeas_3.jpg" class="girl img-responsive" style="height:327px; width: 450px; padding:10px;" alt="" />
                             <!--img src="<?php echo Yii::$app->homeUrl; ?>pictures/pricing.png"  class="pricing" alt="" /-->
                         </div>
@@ -88,13 +87,13 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 </div>
 <div class="row" style="margin-top:20px">
-    <div class="col-sm-3">
+    <!--<div class="col-sm-3">
         <div class="left-sidebar">
             <h2>ΚΑΤΗΓΟΡΙΕΣ</h2>
-            <?= CategoryWidget::widget() ?>
+            <?/*= CategoryWidget::widget() */?>
         </div>
-    </div>
-    <div class="col-sm-9">
+    </div>-->
+    <div class="col-sm-12">
         <div class="features_items"><!--features_items-->
             <h2 class="title text-center">ΟΙ ΕΠΙΛΟΓΕΣ ΜΑΣ</h2>
             <div class="box">

@@ -146,7 +146,7 @@ $hidden_subcats=(!is_null($checked_subcats))?implode(",",$checked_subcats):"";
                     'class'=>"form-control",
                 ],
             ],
-            [
+            /*[
                 'label'=>'Κατηγορία',
                 'attribute' => 'bk_cat_id',
                 'value' => 'bk_cat_id',
@@ -169,7 +169,7 @@ $hidden_subcats=(!is_null($checked_subcats))?implode(",",$checked_subcats):"";
                         return '<span class="not-set">Δεν έχει οριστεί</span>';
                     }
                 },
-            ],
+            ],*/
             [
                 'label'=>'Ομαδοποίηση',
                 'attribute' => 'bk_grouping',
