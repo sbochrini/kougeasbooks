@@ -143,18 +143,20 @@ class BookSearch extends Book
 
     public function generalsearch($params){
         $this->generalsearch=$params;
-        $author=Author::find()->where(['like','auth_name',$this->generalsearch])->all();
+        /*$author=Author::find()->where(['like','auth_name',$this->generalsearch])->all();
         $author_ids = ArrayHelper::getValue($author, 'auth_id');
         if(!is_null($author_ids)){
             $books = Book::find()
                 ->where(['like', 'bk_title', $this->generalsearch])
                 ->orWhere(['bk_author_id'=>$author_ids])
                 ->orWhere(['like', 'bk_publisher', $this->generalsearch])->all();
-        }else{
+        }else{*/
             $books = Book::find()
+                ->joinWith('bkAuthor')
                 ->where(['like', 'bk_title', $this->generalsearch])
+                ->orWhere(['like', 'tbl_author.auth_name', $this->generalsearch])
                 ->orWhere(['like', 'bk_publisher', $this->generalsearch])->all();
-        }
+        //}
 
         return $books;
     }
