@@ -77,7 +77,7 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 </div>
 <div class="row">
-    <div  id="text-div" >
+    <div  id="text-div">
         <p><i><span>Καλώς ορίσατε στο Ηλεκτρονικό μας Βιβλιοπωλείο.</span> <br>
             Το Παλαιοβιβλιοπωλείο μας λειτουργεί από το 1967 στο Μοναστηράκι. Αρχικά από τον ιδρυτή του Βασίλειο Ι. Κουγέα στην οδό Άστιγγος 6 και από το 1990 από τον Ιωάννη Β. Κουγέα στην οδό Άστιγγος 21 & Θησείου. Από φέτος με τη συμπλήρωση 50 χρόνων ζωής, μπαίνει σε λειτουργία και Ηλεκτρονικό Βιβλιοπωλείο το οποίο θα εμπλουτίζεται σταδιακά, με στόχο σε σύντομο χρονικό διάστημα να γεμίσουν τα "ράφια" του.
             Ιδιαίτερο  βάρος δίνεται στις παλαιές και σπάνιες εκδόσεις, κυρίως ελληνικών βιβλίων. Οι κύριοι τομείς δραστηριότητας αφορούν στην Ιστορία, Τοπική Ιστορία, Λαογραφία, Ελληνική Λογοτεχνία, Παιδική Λογοτεχνία, Περιοδικά, Σπάνια Σχολικά Βιβλία, Εικονογραφημένες εκδόσεις και επιλεγμένα βιβλία σε πολλούς άλλους τομείς, όπως Τέχνη, Θέατρο, Ημερολόγια, Λευκώματα κλπ.<br>
@@ -156,7 +156,22 @@ $this->params['breadcrumbs'][] = $this->title;
                                         <li><span data-path=".price" data-order="desc" data-type="number"><i class="fa fa-sort-amount-desc"></i>  Τιμή</span></li>
                                     </ul>
                                 </div>
+                                <!-- items per page dropdown -->
+                                <div
+                                        class="jplist-drop-down"
+                                        data-control-type="items-per-page-drop-down"
+                                        data-control-name="paging"
+                                        data-control-action="paging">
 
+                                    <ul>
+                                        <!-- <li><span data-number="6"> 6 ανά σελίδα </span></li>-->
+                                        <li><span data-number="12"> 12 ανά σελίδα </span></li>
+                                        <li><span data-number="16" data-default="true"> 16 ανά σελίδα </span></li>
+                                        <li><span data-number="24"> 24 ανά σελίδα </span></li>
+                                        <li><span data-number="32"> 32 ανά σελίδα </span></li>
+                                        <li><span data-number="all"> Προβολή όλων </span></li>
+                                    </ul>
+                                </div>
 
                                 <!-- jQuery UI range slider -->
                                 <!-- priceSlider and priceValues are user function defined in jQuery.fn.jplist.settings -->
@@ -178,13 +193,12 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="row"-->
 
                                 <!-- filter by book title -->
-                                <div class="text-filter-box">
+                                <!--<div class="text-filter-box">
 
                                     <i class="fa fa-search  jplist-icon"></i>
 
-                                    <!--[if lt IE 10]>
+
                                     <div class="jplist-label">Filter by Title:</div>
-                                    <![endif]-->
 
                                     <input
                                             data-path=".title"
@@ -195,16 +209,15 @@ $this->params['breadcrumbs'][] = $this->title;
                                             data-control-name="title-filter"
                                             data-control-action="filter"
                                     />
-                                </div>
+                                </div>-->
 
                                 <!-- filter by book author -->
-                                <div class="text-filter-box">
+                                <!--<div class="text-filter-box">
 
                                     <i class="fa fa-search  jplist-icon"></i>
 
-                                    <!--[if lt IE 10]>
+
                                     <div class="jplist-label">Filter by Description:</div>
-                                    <![endif]-->
 
                                     <input
                                             data-path=".author"
@@ -215,7 +228,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                             data-control-name="author-filter"
                                             data-control-action="filter"
                                     />
-                                </div>
+                                </div>-->
 
                                 <!-- filter by publisher -->
                                 <!--div class="text-filter-box">
@@ -249,24 +262,6 @@ $this->params['breadcrumbs'][] = $this->title;
                             </div>
 
                             <div class="row">
-
-                                <!-- items per page dropdown -->
-                                <div
-                                        class="jplist-drop-down"
-                                        data-control-type="items-per-page-drop-down"
-                                        data-control-name="paging"
-                                        data-control-action="paging">
-
-                                    <ul>
-                                       <!-- <li><span data-number="6"> 6 ανά σελίδα </span></li>-->
-                                        <li><span data-number="12"> 12 ανά σελίδα </span></li>
-                                        <li><span data-number="16" data-default="true"> 16 ανά σελίδα </span></li>
-                                        <li><span data-number="24"> 24 ανά σελίδα </span></li>
-                                        <li><span data-number="32"> 32 ανά σελίδα </span></li>
-                                        <li><span data-number="all"> Προβολή όλων </span></li>
-                                    </ul>
-                                </div>
-
                                 <!-- pagination results -->
                                 <div
                                         class="jplist-label"

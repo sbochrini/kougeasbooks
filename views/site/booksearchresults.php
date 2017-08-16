@@ -87,100 +87,6 @@ $this->params['breadcrumbs'][] = "Αποτελέσματα για: ".$_GET['Book
                                             <li><span data-path=".price" data-order="desc" data-type="number"><i class="fa fa-sort-amount-desc"></i>  Τιμή</span></li>
                                         </ul>
                                     </div>
-
-
-                                    <!-- jQuery UI range slider -->
-                                    <!-- priceSlider and priceValues are user function defined in jQuery.fn.jplist.settings -->
-                                    <!--div
-                                            class="jplist-range-slider"
-                                            data-control-type="range-slider"
-                                            data-control-name="range-slider-price"
-                                            data-control-action="filter"
-                                            data-path=".price .val"
-                                            data-slider-func="priceSlider"
-                                            data-setvalues-func="priceValues">
-
-                                        <div class="value" data-type="prev-value"></div>
-                                        <div class="ui-slider" data-type="ui-slider"></div>
-                                        <div class="value" data-type="next-value"></div>
-                                    </div-->
-                                    <!--/div>
-
-                                    <div class="row"-->
-
-                                    <!-- filter by book title -->
-                                    <div class="text-filter-box">
-
-                                        <i class="fa fa-search  jplist-icon"></i>
-
-                                        <!--[if lt IE 10]>
-                                        <div class="jplist-label">Filter by Title:</div>
-                                        <![endif]-->
-
-                                        <input
-                                                data-path=".title"
-                                                type="text"
-                                                value=""
-                                                placeholder="Τίτλος"
-                                                data-control-type="textbox"
-                                                data-control-name="title-filter"
-                                                data-control-action="filter"
-                                        />
-                                    </div>
-
-                                    <!-- filter by book author -->
-                                    <div class="text-filter-box">
-
-                                        <i class="fa fa-search  jplist-icon"></i>
-
-                                        <!--[if lt IE 10]>
-                                        <div class="jplist-label">Filter by Description:</div>
-                                        <![endif]-->
-
-                                        <input
-                                                data-path=".author"
-                                                type="text"
-                                                value=""
-                                                placeholder="Συγγραφέας"
-                                                data-control-type="textbox"
-                                                data-control-name="author-filter"
-                                                data-control-action="filter"
-                                        />
-                                    </div>
-
-                                    <!-- filter by publisher -->
-                                    <!--div class="text-filter-box">
-
-                                        <i class="fa fa-search  jplist-icon"></i>
-
-                                        <input
-                                                data-path=".publisher"
-                                                type="text"
-                                                value=""
-                                                placeholder="Φίλτρο με Εκδότη"
-                                                data-control-type="textbox"
-                                                data-control-name="publisher-filter"
-                                                data-control-action="filter"
-                                        />
-                                    </div-->
-
-                                    <!-- views -->
-
-                                    <div
-                                            class="jplist-views"
-                                            data-control-type="views"
-                                            data-control-name="views"
-                                            data-control-action="views"
-                                            data-default="jplist-grid-view">
-
-                                        <!--button type="button" class="jplist-view jplist-grid-view" data-type="jplist-grid-view"></button>
-                                        <button type="button" class="jplist-view jplist-list-view" data-type="jplist-list-view"></button>
-                                        <button type="button" class="jplist-view jplist-thumbs-view" data-type="jplist-thumbs-view"></button-->
-                                    </div>
-                                </div>
-
-                                <div class="row">
-
                                     <!-- items per page dropdown -->
                                     <div
                                             class="jplist-drop-down"
@@ -197,6 +103,22 @@ $this->params['breadcrumbs'][] = "Αποτελέσματα για: ".$_GET['Book
                                             <li><span data-number="all"> Προβολή όλων </span></li>
                                         </ul>
                                     </div>
+                                    <div
+                                            class="jplist-views"
+                                            data-control-type="views"
+                                            data-control-name="views"
+                                            data-control-action="views"
+                                            data-default="jplist-grid-view">
+
+                                        <!--<button type="button" class="jplist-view jplist-grid-view" data-type="jplist-grid-view"></button>
+                                        <button type="button" class="jplist-view jplist-list-view" data-type="jplist-list-view"></button>
+                                        <button type="button" class="jplist-view jplist-thumbs-view" data-type="jplist-thumbs-view"></button>-->
+                                    </div>
+                                </div>
+
+                                <div class="row">
+
+
 
                                     <!-- pagination results -->
                                     <div
