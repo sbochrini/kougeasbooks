@@ -84,6 +84,9 @@ $('document').ready(function() {
         itemsBox: '.list',
         itemPath: '.list-item',
         panelPath: '.jplist-panel',
+        storage: 'cookies',
+        storageName: 'storage-name',
+        cookiesExpiration: -1
     });
 
 
