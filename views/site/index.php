@@ -8,8 +8,17 @@ use yii\web\View;
 
 /*$this->title = 'Κουγέας';*/
 $this->params['breadcrumbs'][] = $this->title;
-
-?>
+/*if (isset($_COOKIE['storage-name'])) {
+    unset($_COOKIE['storage-name']);
+    setcookie('storage-name', '', time() - 3600, '/'); // empty value and old timestamp
+}
+*/?><!--
+<script>
+    var delete_cookie = function(name) {
+        document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    };
+    delete_cookie('storage-name');
+</script>-->
 <!--<div class="site-index">-->
 <div class="row">
     <div class="col-sm-12">
@@ -98,7 +107,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <h2 class="title text-center">ΟΙ ΕΠΙΛΟΓΕΣ ΜΑΣ</h2>
             <div class="box">
                 <div class="center">
-                    <div id="demo" class="box jplist" style="margin: 0px 0px 50px 0px">
+                    <div id="index_demo" class="box jplist" style="margin: 0px 0px 50px 0px">
 
                         <!-- ios button: show/hide panel -->
                         <div class="jplist-ios-button">
@@ -514,4 +523,3 @@ $this->registerJs(
     View::POS_READY
 );
 ?>
-

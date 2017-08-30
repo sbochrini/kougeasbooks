@@ -11,7 +11,18 @@ use yii\widgets\ActiveForm;
 use yii\web\View;
 
 $this->params['breadcrumbs'][] = $category->cat_name;
+/*if (isset($_COOKIE['storage-name'])) {
+    unset($_COOKIE['storage-name']);
+    setcookie('storage-name', '', time() - 3600, '/'); // empty value and old timestamp
+}*/
 ?>
+?>
+   <!-- <script>
+        var delete_cookie = function(name) {
+            document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        };
+        delete_cookie('storage-name');
+    </script>-->
 <div id="booklist" class="book-index">
 
    <!-- <h1><?/*= Html::encode($this->title) */?></h1>
@@ -27,7 +38,7 @@ $this->params['breadcrumbs'][] = $category->cat_name;
                 <h2 class="title-great text-center"><?php echo $category->cat_name; ?></h2>
                 <div class="box">
                     <div class="center">
-                        <div id="demo" class="box jplist" style="margin: 0px 0px 50px 0px">
+                        <div id="cat_demo" class="box jplist" style="margin: 0px 0px 50px 0px">
 
                             <!-- ios button: show/hide panel -->
                             <div class="jplist-ios-button">

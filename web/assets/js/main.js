@@ -1,14 +1,19 @@
 /**
  * Created by Voula on 19/4/2017.
  */
-var check_name=0;
+/*var check_name=0;
 var check_surname=0;
 var check_phone=0;
 var check_email=0;
-var has_email=0;
+var has_email=0;*/
+var delete_cookie = function(name) {
+    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+};
 
 $(function() {
-    $('button.catwithout').on('click', function() {
+    /*$('button.catwithout').on('click', function() {
+
+        delete_cookie('storage-name');
         let str=$(this).attr('id');
         let res = str.split('_');
         let id =res[1];
@@ -23,6 +28,7 @@ $(function() {
     });
 
     $('button.subcat').on('click', function() {
+        delete_cookie('storage-name');
         let str=$(this).attr('id');
         let res = str.split('_');
         let id =res[1];
@@ -34,7 +40,7 @@ $(function() {
                 $('#mainpage').html(response);
             },
         });
-    });
+    });*/
 
 
     // get url params
@@ -80,16 +86,39 @@ $('document').ready(function() {
         },
     };
 
-    $('#demo').jplist({
+    $('#index_demo').jplist({
         itemsBox: '.list',
         itemPath: '.list-item',
         panelPath: '.jplist-panel',
         storage: 'cookies',
-        storageName: 'storage-name',
+        storageName: 'storage-index',
         cookiesExpiration: -1
     });
 
-
+    $('#cat_demo').jplist({
+        itemsBox: '.list',
+        itemPath: '.list-item',
+        panelPath: '.jplist-panel',
+        storage: 'cookies',
+        storageName: 'storage-cat',
+        cookiesExpiration: -1
+    });
+    $('#subcat_demo').jplist({
+        itemsBox: '.list',
+        itemPath: '.list-item',
+        panelPath: '.jplist-panel',
+        storage: 'cookies',
+        storageName: 'storage-subcat',
+        cookiesExpiration: -1
+    });
+    $('#author_demo').jplist({
+        itemsBox: '.list',
+        itemPath: '.list-item',
+        panelPath: '.jplist-panel',
+        storage: 'cookies',
+        storageName: 'storage-author',
+        cookiesExpiration: -1
+    });
    /* if(url.indexOf("bookspercat") > -1) {
         var splited = url.split('bookspercat&id=');
         if (typeof splited[1] !== 'undefined') {
