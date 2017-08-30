@@ -12,18 +12,22 @@ use yii\web\View;
 
 $this->params['breadcrumbs'][] = ['label' => $subcategory->subcatCat['cat_name'], 'url' => ['bookspercat','id'=>$subcategory->subcat_cat_id]];
 $this->params['breadcrumbs'][] = $subcategory->subcat_name;
-/*if (isset($_COOKIE['storage-name'])) {
-    unset($_COOKIE['storage-name']);
-    setcookie('storage-name', '', time() - 3600, '/'); // empty value and old timestamp
-}*/
+
+if(isset($_SERVER['REQUEST_URI'])) {
+	$current = $_SERVER['REQUEST_URI']; //GET CURRENT URI
+	
+	if (isset($_COOKIE['referencePage'])) {
+		$reference = $_COOKIE['referencePage'];
+		if ($current == $reference) {
+		}else {
+			setcookie('storage-name', '', time() - 3600, '/');
+		}
+	}
+
+	setcookie("referencePage", $_SERVER['REQUEST_URI'], time()+86400);
+}
 ?>
-?>
-<!--<script>
-    var delete_cookie = function(name) {
-        document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-    };
-    delete_cookie('storage-name');
-</script>-->
+
 <div id="booklist" class="book-index">
     <div class="row">
         <div class="col-sm-12">
@@ -31,7 +35,7 @@ $this->params['breadcrumbs'][] = $subcategory->subcat_name;
                 <h2 class="title-great text-center"><?php echo $subcategory->subcat_name; ?></h2>
                 <div class="box">
                     <div class="center">
-                        <div id="subcat_demo" class="box jplist" style="margin: 0px 0px 50px 0px">
+                        <div id="demo" class="box jplist" style="margin: 0px 0px 50px 0px">
 
                             <!-- ios button: show/hide panel -->
                             <div class="jplist-ios-button">

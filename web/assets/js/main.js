@@ -86,40 +86,16 @@ $('document').ready(function() {
         },
     };
 
-    $('#index_demo').jplist({
+    $('#demo').jplist({
         itemsBox: '.list',
         itemPath: '.list-item',
         panelPath: '.jplist-panel',
         storage: 'cookies',
-        storageName: 'storage-index',
+        storageName: 'storage-name',
         cookiesExpiration: -1
     });
 
-    $('#cat_demo').jplist({
-        itemsBox: '.list',
-        itemPath: '.list-item',
-        panelPath: '.jplist-panel',
-        storage: 'cookies',
-        storageName: 'storage-cat',
-        cookiesExpiration: -1
-    });
-    $('#subcat_demo').jplist({
-        itemsBox: '.list',
-        itemPath: '.list-item',
-        panelPath: '.jplist-panel',
-        storage: 'cookies',
-        storageName: 'storage-subcat',
-        cookiesExpiration: -1
-    });
-    $('#author_demo').jplist({
-        itemsBox: '.list',
-        itemPath: '.list-item',
-        panelPath: '.jplist-panel',
-        storage: 'cookies',
-        storageName: 'storage-author',
-        cookiesExpiration: -1
-    });
-   /* if(url.indexOf("bookspercat") > -1) {
+    /* if(url.indexOf("bookspercat") > -1) {
         var splited = url.split('bookspercat&id=');
         if (typeof splited[1] !== 'undefined') {
             var cat_id = splited[1];
