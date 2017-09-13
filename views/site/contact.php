@@ -113,8 +113,34 @@ $this->params['breadcrumbs'][] = $this->title;
                         <p>Email: <a href="mailto:info@kougeasbooks.gr">info@kougeasbooks.gr</a></p>
                     </address>
                     <div class="social-networks">
-                        <h2 class="title text-center">Social Networking</h2>
-                        <ul>
+                        <h2 class="title text-center">ΩΡΑΡΙΟ ΛΕΙΤΟΥΡΓΙΑΣ</h2>
+                        <!--<ul>
+                            <li>Δευτέρα:	9:00π.μ.–3:00μ.μ.</li>
+                            <li>Τρίτη:	9:00π.μ.–6:30μ.μ.</li>
+                            <li>Τετάρτη:	9:00π.μ.–3:00μ.μ.</li>
+                            <li>Πέμπτη:	9:00π.μ.–6:30μ.μ.</li>
+                            <li>Παρασκευή:	9:00π.μ.–6:30μ.μ.</li>
+                            <li>Σάββατο:	9:00π.μ.–3:00μ.μ.</li>
+                            <li>Κυριακή:	9:00π.μ.–4:00μ.μ.</li>
+                        </ul>-->
+                        <dl class="row">
+                            <dt class="col-sm-2"><p>Δευτέρα:</p></dt>
+                            <dd class="col-sm-9"><p>9:00π.μ.–3:00μ.μ.</p></dd>
+                            <dt class="col-sm-2"><p>Τρίτη:</p></dt>
+                            <dd class="col-sm-9"><p>9:00π.μ.–6:30μ.μ.</p></dd>
+                            <dt class="col-sm-2"><p>Τετάρτη:</p></dt>
+                            <dd class="col-sm-9"><p>9:00π.μ.–3:00μ.μ.</p></dd>
+                            <dt class="col-sm-2"><p>Πέμπτη:</p></dt>
+                            <dd class="col-sm-9"><p>9:00π.μ.–6:30μ.μ.</p></dd>
+                            <dt class="col-sm-2"><p>Παρασκευή:</p></dt>
+                            <dd class="col-sm-9"><p>9:00π.μ.–6:30μ.μ.</p></dd>
+                            <dt class="col-sm-2"><p>Σάββατο:</p></dt>
+                            <dd class="col-sm-9"><p>9:00π.μ.–3:00μ.μ.</p></dd>
+                            <dt class="col-sm-2"><p>Κυριακή:</p></dt>
+                            <dd class="col-sm-9"><p>9:00π.μ.–4:00μ.μ.</p></dd>
+
+                        </dl>
+                        <!--<ul>
                             <li>
                                 <a href="https://www.facebook.com/palaiobibliopoleio/" target="_blank"><i class="fa fa-facebook"></i></a>
                             </li>
@@ -124,7 +150,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <li>
                                 <a href="#"><i class="fa fa-google-plus"></i></a>
                             </li>
-                        </ul>
+                        </ul>-->
                     </div>
                 </div>
             </div>
